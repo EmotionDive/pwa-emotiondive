@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 function App() {
-  return (
-    <>
-      <h1>Hola</h1>
-      <p>¿Cómo están?</p>
-    </>
-  );
+	return (
+		<>
+			<h1 className='heading--big'>Hola</h1>
+			<p className='text--small'>¿Cómo están?</p>
+		</>
+	)
 }
 
-export default App;
+export default App

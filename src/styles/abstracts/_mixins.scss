@@ -7,3 +7,13 @@
 		@content;
 	}
 }
+
+/* Media Query Example
+	background-color: red; //Mobile
+	@include mediaQuery('tablet') {
+		background-color: yellow;
+	}
+	@include mediaQuery('desktop') {
+		background-color: blue;
+	}
+*/

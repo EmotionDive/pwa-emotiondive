@@ -1,0 +1,42 @@
+@use 'fontVariables' as *;
+
+@mixin bigHeading {
+	font-size: 2rem;
+	font-weight: map-get($fontWeights, 'bold');
+}
+
+@mixin bigText {
+	font-size: 1.563rem;
+	font-weight: map-get($fontWeights, 'medium');
+}
+
+@mixin normalText {
+	font-size: 1.125rem;
+	font-weight: map-get($fontWeights, 'regular');
+}
+
+@mixin smallText {
+	font-size: 1rem;
+	font-weight: map-get($fontWeights, 'regular');
+}
+
+@mixin systemInstructions {
+	font-size: 1.25rem;
+	font-weight: map-get($fontWeights, 'medium');
+}
+
+@mixin systemButtons {
+	font-size: 1.25rem;
+	font-weight: map-get($fontWeights, 'semibold');
+}
+
+@mixin paragraph {
+	line-height: 120%;
+	letter-spacing: 0.02em;
+}
+
+@mixin justify {
+	text-align: justify;
+	text-justify: inter-word;
+	white-space: pre-line;
+}
