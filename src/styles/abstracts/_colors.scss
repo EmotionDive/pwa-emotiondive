@@ -1,0 +1,59 @@
+$colors: (
+	primary: (
+		100: #eee8fb,
+		200: #dccff8,
+		300: #c9b2f5,
+		400: #b490f2,
+		500: #9c64ef,
+		600: #8b59d5,
+		700: #784db9,
+		800: #623f97,
+		900: #452c6a,
+	),
+	secondary: (
+		100: #e7f2fd,
+		200: #cce5fc,
+		300: #aed7fb,
+		400: #89c8fa,
+		500: #56b9f9,
+		600: #4ca5de,
+		700: #428fc0,
+		800: #36759d,
+		900: #26526f,
+	),
+	neutral: (
+		400: #ffffff,
+		500: #f8f8f8,
+		600: #a3a3a3,
+	),
+	text: (
+		400: #757577,
+		500: #1f1e29,
+		600: #18171f,
+	),
+	alerts: (
+		error: #fc5d5d,
+	),
+	IE: (
+		self-knowledge: (
+			400: #7589fa,
+			500: #1f56f9,
+			600: #1b4cde,
+		),
+		self-regulation: (
+			400: #ff9d72,
+			500: #ff7900,
+			600: #e46c00,
+		),
+		self-efficacy: (
+			400: #84f1be,
+			500: #4beeaa,
+			600: #43d498,
+		),
+		empathy: (
+			400: #fba8f2,
+			500: #fa8aef,
+			600: #df7bd5,
+		),
+	),
+);

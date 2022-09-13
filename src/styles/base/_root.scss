@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+:root {
+	/* COLORS */
+	@each $colorName, $shade in $colors {
+		@if $colorName != 'IE' {
+			@each $shadeName, $value in $shade {
+				--#{$colorName}-#{$shadeName}: #{$value};
+			}
+		} @else {
+			@each $colorIE, $shadeIE in $shade {
+				@each $shadeIEName, $value in $shadeIE {
+					--#{$colorName}-#{$colorIE}-#{$shadeIEName}: #{$value};
+				}
+			}
+		}
+	}
+}
