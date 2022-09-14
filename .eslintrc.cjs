@@ -8,7 +8,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:jsx-a11y/recommended',
-		'plugin:prettier/recommended',
 		'plugin:react-hooks/recommended',
 	],
 	overrides: [],
@@ -16,9 +15,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['prettier'],
 	rules: {
-		'prettier/prettier': ['error', {}, { usePrettierrc: true }],
 		'react/react-in-jsx-scope': 'off',
 		'jsx-a11y/accessible-emoji': 'off',
 		'jsx-a11y/anchor-is-valid': [
@@ -30,4 +27,4 @@ module.exports = {
 			},
 		],
 	},
-};
+}
