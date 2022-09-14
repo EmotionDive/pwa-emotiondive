@@ -40,3 +40,10 @@
 	text-justify: inter-word;
 	white-space: pre-line;
 }
+
+@mixin EmotionDiveText {
+	font-size: 1.563rem;
+	font-weight: map-get($fontWeights, 'regular');
+	line-height: 100%;
+	letter-spacing: -0.05em;
+}

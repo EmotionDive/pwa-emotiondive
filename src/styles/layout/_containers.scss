@@ -3,7 +3,7 @@
 .mainWrapper {
 	margin: 0 auto;
 	padding: 0 1.125rem;
-	position: relative;
+	position: absolute;
 	max-width: 1440px;
 
 	@include mediaQuery('tablet') {

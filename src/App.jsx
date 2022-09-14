@@ -1,5 +1,7 @@
+import LoginPage from './modules/login/loginPage'
+
 function App() {
-	return <div className='mainWrapper'>Hola </div>;
+	return <LoginPage />
 }
 
-export default App;
+export default App

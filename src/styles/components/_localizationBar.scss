@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+.localizationBar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 15px;
+
+	&--transparent {
+		img {
+			width: 3.2rem;
+			margin-right: 10px;
+		}
+	}
+	@include EmotionDiveText;
+	@include mediaQuery('tablet') {
+		margin-top: 30px;
+	}
+}
