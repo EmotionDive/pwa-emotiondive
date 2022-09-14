@@ -35,9 +35,14 @@
 	letter-spacing: 0.02em;
 }
 
-@mixin justify {
+@mixin justifyText {
 	text-align: justify;
 	text-justify: inter-word;
+	white-space: pre-line;
+}
+
+@mixin centerText {
+	text-align: center;
 	white-space: pre-line;
 }
 

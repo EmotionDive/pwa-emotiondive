@@ -12,8 +12,12 @@ body {
 
 .text--big,
 h1 {
+	margin-bottom: 20px;
 	color: var(--text-600);
 	@include bigText;
+	@include mediaQuery('tablet') {
+		margin-bottom: 30px;
+	}
 }
 
 .heading--big {
@@ -22,7 +26,7 @@ h1 {
 }
 
 .systemText__instruction {
-	color: var(--text-600);
+	color: var(--text-400);
 	@include systemInstructions;
 	@include paragraph;
 }
@@ -38,6 +42,6 @@ h1 {
 }
 
 .user__paragraph {
-	@include justify;
+	@include justifyText;
 	@include paragraph;
 }

@@ -1,4 +1,4 @@
-import LoginPage from './modules/login/loginPage'
+import LoginPage from './modules/login/LoginPage'
 
 function App() {
 	return <LoginPage />
