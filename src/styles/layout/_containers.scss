@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.mainWrapper {
+	margin: 0 auto;
+	padding: 0 1.125rem;
+	position: relative;
+	max-width: 1440px;
+
+	@include mediaQuery('tablet') {
+		padding: 0 3.125rem;
+	}
+
+	@include mediaQuery('desktop') {
+		padding: 0 6.25rem;
+	}
+}
