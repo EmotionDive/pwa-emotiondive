@@ -1,10 +1,16 @@
 @use '../abstracts' as *;
 
 .mainWrapper {
+	display: flex;
+	flex-direction: column;
 	margin: 0 auto;
 	padding: 0 1.125rem;
 	position: absolute;
+	width: 100%;
 	max-width: 1440px;
+	height: 100%;
+	left: 0;
+	right: 0;
 
 	@include mediaQuery('tablet') {
 		padding: 0 3.125rem;
@@ -12,5 +18,21 @@
 
 	@include mediaQuery('desktop') {
 		padding: 0 6.25rem;
+	}
+
+	&__centerContent {
+		width: 100%;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include centerText;
+	}
+
+	&__bottom {
+		@include centerText;
+		margin: 0 auto;
+		margin-bottom: 40px;
 	}
 }

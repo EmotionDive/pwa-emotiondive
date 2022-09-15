@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.button {
+	border-radius: 2rem;
+	padding: 12px 0px;
+	border: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	@include systemButtons;
+
+	&--socialMedia {
+		width: 100vw;
+		max-width: 379px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 3px solid var(--text-600);
+		background-color: var(--neutral-400);
+		svg {
+			max-width: 35px;
+			max-height: 35px;
+			margin-right: 18px;
+		}
+		span {
+			padding-top: 0.2rem;
+		}
+	}
+}
+
+.link {
+	@include systemButtons;
+	color: var(--primary-700);
+	max-width: 300px;
+
+	span {
+		display: inline-block;
+	}
+
+	span:last-of-type {
+		cursor: pointer;
+	}
+
+	&--secondary {
+		color: var(--secondary-700);
+	}
+}

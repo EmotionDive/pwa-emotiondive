@@ -1,5 +1,10 @@
 @use '../abstracts' as *;
 
 .loginPage {
-	@include centerText;
+	&__socialButtons {
+		display: flex;
+		flex-direction: column;
+		margin: 70px;
+		gap: 40px;
+	}
 }
