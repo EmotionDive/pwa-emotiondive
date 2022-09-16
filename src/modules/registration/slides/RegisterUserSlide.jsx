@@ -1,4 +1,5 @@
 import { SocialMediaButton } from '@/components/Buttons'
+import { Link } from 'react-router-dom'
 
 const RegisterUserSlide = () => {
 	return (
@@ -11,14 +12,14 @@ const RegisterUserSlide = () => {
 				<div className='registerPage__socialButtons'>
 					<SocialMediaButton social='Google' actionType='register' />
 					<SocialMediaButton social='Facebook' actionType='register' />
-					<SocialMediaButton social='Email' />
+					<SocialMediaButton social='Email' actionType='register' />
 				</div>
 			</section>
 			<section className='mainWrapper__bottom link'>
 				<span>¿Ya tienes una cuenta?</span>
-				<span>
+				<Link to='/registro'>
 					Inicia sesión <u>aquí</u>
-				</span>
+				</Link>
 			</section>
 		</>
 	)

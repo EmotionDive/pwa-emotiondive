@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.textfield {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 379px;
+	span {
+		@include systemInstructions;
+		margin-bottom: 5px;
+	}
+	input {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 379px;
+		padding: 14px 17px;
+		border-radius: 0.7rem;
+		background-color: var(--neutral-500);
+		border: 3px solid var(--neutral-600);
+		transition: all $transitionDuration ease-in-out;
+		outline: none;
+	}
+
+	input::placeholder {
+		color: var(--neutral-600);
+	}
+
+	input:focus {
+		border: 3px solid var(--text-500);
+	}
+
+	input:disabled {
+		background-color: transparentize(
+			map-get(map-get($colors, neutral), 500),
+			0.4
+		);
+		border: 3px solid
+			transparentize(map-get(map-get($colors, neutral), 600), 0.4);
+		color: transparentize(map-get(map-get($colors, text), 500), 0.4);
+		cursor: not-allowed;
+	}
+
+	&--error {
+		input {
+			border: 3px solid var(--alerts-error);
+		}
+
+		&::after {
+			content: attr(data-error);
+			margin-top: 2.5px;
+			color: var(--alerts-error);
+			@include smallText;
+		}
+	}
+}

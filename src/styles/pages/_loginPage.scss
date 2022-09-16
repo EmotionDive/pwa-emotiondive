@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.loginPage {
+	h1 {
+		@include EmotionDiveText;
+		@include centerText;
+		font-size: 2.25rem;
+		margin-top: 15px;
+		margin-bottom: 0px;
+
+		@include mediaQuery('tablet') {
+			font-size: 3.875rem;
+			margin-top: 60px;
+		}
+
+		@include mediaQuery('desktop') {
+			font-size: 2.25rem;
+			margin-top: 30px;
+		}
+	}
+
+	&__image {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 0;
+		img {
+			width: 30%;
+			height: auto;
+			max-width: 150px;
+			@include mediaQuery('tablet') {
+				width: 40%;
+				max-width: 270px;
+			}
+
+			@include mediaQuery('desktop') {
+				width: 30%;
+				max-width: 200px;
+			}
+		}
+	}
+
+	&__mainContent {
+		margin-bottom: 25px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+
+		@include mediaQuery('desktop') {
+			flex-direction: row;
+		}
+	}
+
+	&__optionsContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+
+	&__orLine {
+		display: grid;
+		max-width: 375px;
+		width: 100%;
+		grid-template-columns: 1fr 0.5fr 1fr;
+		margin: 20px auto;
+		align-items: center;
+
+		hr {
+			background-color: var(--text-600);
+			border: none;
+			border-radius: 1rem;
+			width: 100%;
+			height: 3px;
+		}
+
+		span {
+			text-align: center;
+			font-size: 1.25rem;
+			font-weight: map-get($fontWeights, 'medium');
+			color: var(--text-600);
+		}
+	}
+
+	.link {
+		span:last-child {
+			margin-left: 5px;
+		}
+	}
+}

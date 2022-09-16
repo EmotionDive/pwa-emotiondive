@@ -2,21 +2,26 @@
 
 .button {
 	border-radius: 2rem;
-	padding: 12px 0px;
+	padding: 12px 19px;
 	border: none;
 	box-sizing: border-box;
 	cursor: pointer;
 	@include systemButtons;
+	transition: all $transitionDuration ease-in-out;
+
+	&:active {
+		transform: translateY(2px);
+	}
 
 	&--socialMedia {
 		width: 100vw;
 		max-width: 379px;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
+		padding-left: 45px;
 		align-items: center;
 		border: 3px solid var(--text-600);
 		background-color: var(--neutral-400);
-		transition: all 0.2s ease-in-out;
 
 		svg {
 			max-width: 35px;
@@ -30,9 +35,27 @@
 		&:hover {
 			box-shadow: 0px 5px 8px rgba(24, 23, 31, 0.16);
 		}
+	}
+
+	&--large {
+		width: 100vw;
+		max-width: 379px;
+		background-color: var(--primary-500);
+		color: var(--neutral-400);
+
+		&:hover {
+			box-shadow: 0px 4px 20px rgba(156, 100, 239, 0.66);
+		}
 
 		&:active {
-			transform: translateY(3px);
+			box-shadow: 0px 4px 15px rgba(156, 100, 239, 0.25),
+				inset 0px 4px 15px rgba(0, 0, 0, 0.16);
+		}
+
+		&:disabled {
+			background-color: var(--primary-300);
+			pointer-events: none;
+			cursor: auto;
 		}
 	}
 }
@@ -46,7 +69,10 @@
 		display: inline-block;
 	}
 
-	span:last-of-type {
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: var(--primary-700);
 		cursor: pointer;
 
 		&:hover {
@@ -57,7 +83,7 @@
 	&--secondary {
 		color: var(--secondary-700);
 
-		span:last-of-type {
+		a {
 			&:hover {
 				color: var(--primary-400);
 			}
