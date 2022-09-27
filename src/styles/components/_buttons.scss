@@ -75,7 +75,8 @@
 		color: var(--primary-700);
 		cursor: pointer;
 
-		&:hover {
+		&:hover,
+		&:active {
 			color: var(--secondary-400);
 		}
 	}
@@ -84,7 +85,10 @@
 		color: var(--secondary-700);
 
 		a {
-			&:hover {
+			color: var(--secondary-700);
+
+			&:hover,
+			&:active {
 				color: var(--primary-400);
 			}
 		}

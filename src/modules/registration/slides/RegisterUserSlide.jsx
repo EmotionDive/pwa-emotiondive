@@ -17,7 +17,7 @@ const RegisterUserSlide = () => {
 			</section>
 			<section className='mainWrapper__bottom link'>
 				<span>¿Ya tienes una cuenta?</span>
-				<Link to='/registro'>
+				<Link to='/'>
 					Inicia sesión <u>aquí</u>
 				</Link>
 			</section>
