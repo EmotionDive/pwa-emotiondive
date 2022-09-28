@@ -7,14 +7,16 @@ const SlideSwitch = ({ children }) => {
 	const [state, setState] = useState(null)
 
 	useEffect(() => {
-		if (children) {
+		if (React.Children.count(children) !== 0) {
 			changeSlide('/')
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	const changeSlide = (path) => {
-		const slide = children.find((slide) => slide.props.path === path)
+	function changeSlide(path) {
+		const slide = React.Children.toArray(children).find(
+			(slide) => slide.props.path === path
+		)
 		if (slide === undefined) {
 			setCurrentSlide('')
 			console.warn(`No slides matched location "${path}"`)
@@ -42,6 +44,10 @@ SlideSwitch.propTypes = {
 		})
 		return error
 	},
+}
+
+SlideSwitch.defaultProps = {
+	children: [],
 }
 
 export default SlideSwitch
