@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types'
 
-const LargeButton = ({ children }) => {
-	return <button className='button button--large'>{children}</button>
+const LargeButton = ({ children, onClick }) => {
+	const handleOnClick = () => {
+		setTimeout(onClick, 400)
+	}
+	return (
+		<button className='button button--large' onClick={handleOnClick}>
+			{children}
+		</button>
+	)
 }
 
 LargeButton.propTypes = {
 	children: PropTypes.string,
+	onClick: PropTypes.func,
 }
 
 LargeButton.defaultProps = {

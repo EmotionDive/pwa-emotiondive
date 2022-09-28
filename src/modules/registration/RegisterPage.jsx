@@ -1,12 +1,16 @@
+// import { useState } from 'react'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
-import { RegisterUserSlide } from './slides'
+import { EmailRegisterSlide, RegisterUserSlide } from './slides'
+import { SlideSwitch, Slide } from '../../utils/Slides'
 
 const RegisterPage = () => {
 	return (
 		<div className='mainWrapper'>
 			<TransparentLocalizationBar localization='Registro' />
-			<RegisterUserSlide />
-			{/* TODO: MemoryRouter slides */}
+			<SlideSwitch>
+				<Slide path='/' element={<RegisterUserSlide />} />
+				<Slide path='/email' element={<EmailRegisterSlide />} />
+			</SlideSwitch>
 		</div>
 	)
 }

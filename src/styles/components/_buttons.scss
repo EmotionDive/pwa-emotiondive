@@ -43,8 +43,10 @@
 		background-color: var(--primary-500);
 		color: var(--neutral-400);
 
-		&:hover {
-			box-shadow: 0px 4px 20px rgba(156, 100, 239, 0.66);
+		@include mediaQuery('desktop') {
+			&:hover {
+				box-shadow: 0px 4px 20px rgba(156, 100, 239, 0.66);
+			}
 		}
 
 		&:active {
@@ -56,6 +58,34 @@
 			background-color: var(--primary-300);
 			pointer-events: none;
 			cursor: auto;
+		}
+	}
+
+	&__text {
+		@include systemButtons;
+		cursor: pointer;
+		position: relative;
+		color: var(--primary-700);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: fit-content;
+		padding: 10px 20px;
+		transition: all $transitionDuration ease-in-out;
+
+		svg {
+			height: 20px;
+			margin-right: 10px;
+			fill: var(--primary-700);
+			color: var(--primary-700);
+		}
+
+		&:hover {
+			filter: drop-shadow(0px 4px 8px rgba(31, 30, 41, 0.31));
+		}
+
+		&:active {
+			transform: translateY(2px);
 		}
 	}
 }

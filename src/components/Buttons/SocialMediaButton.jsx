@@ -3,7 +3,7 @@ import GoogleIcon from '../../assets/icons/Google.svg?component'
 import EmailIcon from '../../assets/icons/Email.svg?component'
 import PropTypes from 'prop-types'
 
-const SocialMediaButton = ({ social, actionType }) => {
+const SocialMediaButton = ({ social, actionType, onClick }) => {
 	const renderIcon = (social) => {
 		switch (social) {
 			case 'Email':
@@ -15,8 +15,12 @@ const SocialMediaButton = ({ social, actionType }) => {
 		}
 	}
 
+	const handleOnClick = () => {
+		setTimeout(onClick, 400)
+	}
+
 	return (
-		<button className='button button--socialMedia'>
+		<button className='button button--socialMedia' onClick={handleOnClick}>
 			{renderIcon(social)}
 			<span>
 				{actionType === 'register' ? 'Registrar con' : 'Continuar con'} {social}
@@ -28,6 +32,7 @@ const SocialMediaButton = ({ social, actionType }) => {
 SocialMediaButton.propTypes = {
 	social: PropTypes.oneOf(['Facebook', 'Email', 'Google']),
 	actionType: PropTypes.oneOf(['continue', 'register']),
+	onClick: PropTypes.func,
 }
 
 SocialMediaButton.defaultProps = {

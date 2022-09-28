@@ -8,6 +8,7 @@
 	span {
 		@include systemInstructions;
 		margin-bottom: 5px;
+		text-align: left;
 	}
 	input {
 		box-sizing: border-box;
