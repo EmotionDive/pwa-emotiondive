@@ -2,6 +2,7 @@ import { SocialMediaButton } from '@/components/Buttons'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSlides } from '../../../utils/Slides'
+import image from '@assets/images/pictures/New-User-Image.png'
 
 const RegisterUserSlide = () => {
 	const { slideTo, state, setState } = useSlides()
@@ -28,14 +29,19 @@ const RegisterUserSlide = () => {
 				<span className='systemText__instruction'>
 					Elige como quieres registrarte:
 				</span>
-				<div className='registerPage__socialButtons'>
-					<SocialMediaButton social='Google' actionType='register' />
-					<SocialMediaButton social='Facebook' actionType='register' />
-					<SocialMediaButton
-						social='Email'
-						actionType='register'
-						onClick={() => slideTo('/email')}
-					/>
+				<div className='registerUserSlide registerPage__desktopImageDistribution'>
+					<div className='registerPage__image'>
+						<img src={image} alt='New User' />
+					</div>
+					<div className='registerPage__socialButtons'>
+						<SocialMediaButton social='Google' actionType='register' />
+						<SocialMediaButton social='Facebook' actionType='register' />
+						<SocialMediaButton
+							social='Email'
+							actionType='register'
+							onClick={() => slideTo('/email')}
+						/>
+					</div>
 				</div>
 			</section>
 			<section className='mainWrapper__bottom link'>

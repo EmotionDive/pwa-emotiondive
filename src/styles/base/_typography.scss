@@ -8,6 +8,7 @@ body {
 
 .text--small {
 	@include smallText;
+	color: var(--text-400);
 }
 
 .text--big,

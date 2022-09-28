@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
-import { EmailRegisterSlide, RegisterUserSlide } from './slides'
+import { EmailRegisterSlide, RegisterUserSlide, UsernameSlide } from './slides'
 import { SlideSwitch, Slide } from '../../utils/Slides'
 import TermsConditionsSlide from './slides/TermsConditionsSlide'
 
@@ -12,6 +12,7 @@ const RegisterPage = () => {
 				<Slide path='/' element={<RegisterUserSlide />} />
 				<Slide path='/email' element={<EmailRegisterSlide />} />
 				<Slide path='/T&Cs' element={<TermsConditionsSlide />} />
+				<Slide path='/username' element={<UsernameSlide />} />
 			</SlideSwitch>
 		</div>
 	)
