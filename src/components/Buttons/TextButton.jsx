@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
+import BackIcon from '../../assets/icons/Back.svg?component'
 
-const TextButton = ({ children, iconSVG, onClick }) => {
+const TextButton = ({ children, withBack, onClick }) => {
 	const handleOnClick = () => {
 		setTimeout(onClick, 400)
 	}
@@ -13,7 +14,7 @@ const TextButton = ({ children, iconSVG, onClick }) => {
 			onClick={handleOnClick}
 			onKeyDown={handleOnClick}
 		>
-			{iconSVG}
+			{withBack && <BackIcon />}
 			<span>{children}</span>
 		</div>
 	)
@@ -21,12 +22,13 @@ const TextButton = ({ children, iconSVG, onClick }) => {
 
 TextButton.propTypes = {
 	children: PropTypes.string,
-	iconSVG: PropTypes.node,
+	withBack: PropTypes.bool,
 	onClick: PropTypes.func,
 }
 
 TextButton.defaultProps = {
 	children: 'Button',
+	withBack: false,
 }
 
 export default TextButton

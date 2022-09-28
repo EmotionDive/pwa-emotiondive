@@ -1,7 +1,6 @@
 import { LargeButton, TextButton } from '../../../components/Buttons'
 import { Textfield } from '../../../components/Forms'
 import { useSlides } from '../../../utils/Slides'
-import BackIcon from '../../../assets/icons/Back.svg?component'
 
 const EmailRegisterSlide = () => {
 	const { state, slideTo } = useSlides()
@@ -19,8 +18,8 @@ const EmailRegisterSlide = () => {
 					/>
 					<Textfield label='Contraseña' placeholder='*******' />
 					<Textfield label='Confirmar Contraseña' placeholder='*******' />
-					<LargeButton onClick={() => slideTo('/')}>Listo</LargeButton>
-					<TextButton iconSVG={<BackIcon />} onClick={() => slideTo('/')}>
+					<LargeButton onClick={() => slideTo('/T&Cs')}>Listo</LargeButton>
+					<TextButton withBack={true} onClick={() => slideTo('/')}>
 						Atrás
 					</TextButton>
 				</div>
