@@ -54,3 +54,36 @@
 		}
 	}
 }
+
+.select {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 379px;
+	span {
+		@include systemInstructions;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+
+	select {
+		appearance: none;
+		box-sizing: border-box;
+
+		background-color: var(--neutral-500);
+		background-image: url('@assets/icons/Dropdown.svg');
+		background-repeat: no-repeat;
+		background-position-x: 95%;
+		background-position-y: 45%;
+
+		width: 100%;
+		max-width: 379px;
+		padding: 14px 17px;
+		border-radius: 0.7rem;
+		border: 3px solid var(--neutral-600);
+		transition: all $transitionDuration ease-in-out;
+		outline: none;
+
+		// TODO: Add square on arrow, arrow flip, and style dropdown
+	}
+}
