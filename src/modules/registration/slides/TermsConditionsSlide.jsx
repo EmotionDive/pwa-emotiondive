@@ -18,13 +18,13 @@ const TermsConditionsSlide = () => {
 
 	const handleScroll = (e) => {
 		const bottom =
-			e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight
+			e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight * 1.25
 		if (bottom) setScrollAtBottom(true)
 	}
 
 	return (
 		<>
-			<section className='mainWrapper__centerContent termsAndConditions__top'>
+			<section className='mainWrapper__centerContent registerPage__top'>
 				<h1 className='text--big'>Antes de empezar, conoce nuestro T&Cs</h1>
 				<section className='termsAndConditions' onScroll={handleScroll}>
 					{terms.map((paragraph, index) => (
@@ -41,7 +41,7 @@ const TermsConditionsSlide = () => {
 				>
 					Continuar
 				</LargeButton>
-				<span className=''>
+				<span>
 					Dando click en “Continuar”, aceptas nuestros Términos & Condiciones.
 				</span>
 				<TextButton withBack={true} onClick={() => slideTo('/email')}>
