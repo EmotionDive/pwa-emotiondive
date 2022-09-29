@@ -87,3 +87,75 @@
 		// TODO: Add square on arrow, arrow flip, and style dropdown
 	}
 }
+
+.radioOptionGroup {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	span:not(label span, .customRadio) {
+		@include systemInstructions;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+	label {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		span {
+			cursor: pointer;
+		}
+
+		input[type='radio'] {
+			cursor: pointer;
+			position: absolute;
+			opacity: 0;
+			height: 0;
+			width: 0;
+
+			&:checked ~ .customRadio::after {
+				display: block;
+			}
+		}
+
+		.customRadio {
+			height: 20px;
+			width: 20px;
+			background-color: var(--neutral-500);
+			border: 3px solid var(--text-500);
+			border-radius: 50%;
+
+			&::after {
+				content: '';
+				display: none;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: var(--text-400);
+				margin: 0 auto;
+				position: relative;
+				bottom: -2.1px;
+			}
+
+			&--primary {
+				background-color: var(--primary-100);
+				border-color: var(--primary-900);
+				&::after {
+					background-color: var(--primary-700);
+				}
+			}
+
+			&--secondary {
+				background-color: var(--secondary-100);
+				border-color: var(--secondary-900);
+				&::after {
+					background-color: var(--secondary-700);
+				}
+			}
+		}
+	}
+}
