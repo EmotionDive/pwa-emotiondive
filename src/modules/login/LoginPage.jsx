@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import logo from '@assets/images/logos/BigLogoInApp.png'
 import { LargeButton, SocialMediaButton } from '../../components/Buttons'
 import { Textfield } from '../../components/Forms'
 import { Link } from 'react-router-dom'
 
 const LoginPage = () => {
+	const navigate = useNavigate()
 	return (
 		<div className='mainWrapper loginPage'>
 			<h1>EmotionDive</h1>
@@ -12,7 +14,10 @@ const LoginPage = () => {
 			</section>
 			<section className='loginPage__mainContent'>
 				{/* LOGIN FORM */}
-				<form className='loginPage__optionsContainer'>
+				<form
+					className='loginPage__optionsContainer'
+					onSubmit={() => navigate('/cuentaNoActiva')}
+				>
 					<Textfield
 						label='Correo Electrónico'
 						placeholder='ejemplo@mail.com'

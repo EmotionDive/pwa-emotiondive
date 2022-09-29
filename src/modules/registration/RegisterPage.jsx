@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
 import {
 	EmailRegisterSlide,
