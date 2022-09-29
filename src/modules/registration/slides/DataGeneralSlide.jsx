@@ -53,6 +53,7 @@ const DataGeneralSlide = () => {
 					className='marginCenter'
 					withBack={true}
 					onClick={() => slideTo('/username')}
+					color='secondary'
 				>
 					Atrás
 				</TextButton>

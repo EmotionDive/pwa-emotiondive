@@ -65,7 +65,7 @@
 		@include systemButtons;
 		cursor: pointer;
 		position: relative;
-		color: var(--primary-700);
+		color: var(--primary-600);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -76,8 +76,8 @@
 		svg {
 			height: 20px;
 			margin-right: 10px;
-			fill: var(--primary-700);
-			color: var(--primary-700);
+			fill: var(--primary-600);
+			color: var(--primary-600);
 		}
 
 		&:hover {
@@ -86,6 +86,14 @@
 
 		&:active {
 			transform: translateY(2px);
+		}
+
+		&--secondary {
+			color: var(--secondary-600);
+			svg {
+				fill: var(--secondary-600);
+				color: var(--secondary-600);
+			}
 		}
 	}
 }

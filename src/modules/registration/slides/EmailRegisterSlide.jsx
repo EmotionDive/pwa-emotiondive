@@ -19,7 +19,11 @@ const EmailRegisterSlide = () => {
 					<Textfield label='Contraseña' placeholder='*******' />
 					<Textfield label='Confirmar Contraseña' placeholder='*******' />
 					<LargeButton onClick={() => slideTo('/T&Cs')}>Listo</LargeButton>
-					<TextButton withBack={true} onClick={() => slideTo('/')}>
+					<TextButton
+						withBack={true}
+						onClick={() => slideTo('/')}
+						color='secondary'
+					>
 						Atrás
 					</TextButton>
 				</div>

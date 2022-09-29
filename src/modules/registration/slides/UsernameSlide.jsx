@@ -26,7 +26,11 @@ const UsernameSlide = () => {
 						<LargeButton onClick={() => slideTo('/dataGeneral')}>
 							Continuar
 						</LargeButton>
-						<TextButton withBack={true} onClick={() => slideTo('/T&Cs')}>
+						<TextButton
+							withBack={true}
+							onClick={() => slideTo('/T&Cs')}
+							color='secondary'
+						>
 							Atrás
 						</TextButton>
 					</div>

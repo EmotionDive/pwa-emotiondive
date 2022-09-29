@@ -44,7 +44,11 @@ const TermsConditionsSlide = () => {
 				<span>
 					Dando click en “Continuar”, aceptas nuestros Términos & Condiciones.
 				</span>
-				<TextButton withBack={true} onClick={() => slideTo('/email')}>
+				<TextButton
+					withBack={true}
+					onClick={() => slideTo('/email')}
+					color='secondary'
+				>
 					Atrás
 				</TextButton>
 			</section>

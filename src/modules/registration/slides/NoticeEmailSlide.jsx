@@ -20,8 +20,17 @@ const NoticeEmailSlide = () => {
 						<span className='text--small'>
 							Activa tu cuenta con el correo que te hemos enviado.
 						</span>
-						<LargeButton>Abrir Correo</LargeButton>
-						<TextButton withBack={true} onClick={() => navigate('/')}>
+						<LargeButton
+							onClick={() =>
+								window.open(
+									'https://mail.google.com/mail/u/0/#search/EmotionDive',
+									'_blank'
+								)
+							}
+						>
+							Abrir Correo
+						</LargeButton>
+						<TextButton onClick={() => navigate('/')} color='secondary'>
 							Ir a Inicio de Sesión
 						</TextButton>
 					</div>

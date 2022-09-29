@@ -5,7 +5,8 @@ const TransparentLocalizationBar = ({ localization }) => {
 	return (
 		<div className='localizationBar localizationBar--transparent'>
 			<img src={logo} alt='EmotionDive Logo' />
-			<span>EmotionDive | {localization}</span>
+			<span>EmotionDive |&nbsp;</span>
+			<span>{localization}</span>
 		</div>
 	)
 }
