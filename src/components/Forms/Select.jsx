@@ -16,8 +16,9 @@ Select.propTypes = {
 		let error
 		const prop = props[propName]
 		React.Children.forEach(prop, (child) => {
-			if (child.type.name !== 'option')
+			if (child.type !== 'option') {
 				error = new Error(`<Select> only accepts children of type <option>".`)
+			}
 		})
 		return error
 	},

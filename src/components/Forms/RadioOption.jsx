@@ -15,7 +15,9 @@ const RadioOption = ({ value, name, defaultChecked, color }) => {
 						? 'customRadio--primary'
 						: color === 'secondary' && 'customRadio--secondary'
 				}`}
-			></span>
+			>
+				<span></span>
+			</span>
 			<span>{value}</span>
 		</label>
 	)

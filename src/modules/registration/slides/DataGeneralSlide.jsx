@@ -1,9 +1,17 @@
+import { useState } from 'react'
 import { LargeButton, TextButton } from '../../../components/Buttons'
-import { Select, Textfield } from '../../../components/Forms'
+import {
+	RadioOption,
+	RadioOptionGroup,
+	Select,
+	Textfield,
+} from '../../../components/Forms'
 import { useSlides } from '../../../utils/Slides'
 
 const DataGeneralSlide = () => {
 	const { slideTo } = useSlides()
+	const [sexo, setSexo] = useState('Masculino')
+
 	return (
 		<>
 			<section className='mainWrapper__centerContent'>
@@ -13,8 +21,17 @@ const DataGeneralSlide = () => {
 				</span>
 				<div className='registerPage__mainContent'>
 					<Textfield label='Nombre' placeholder='Tu nombre' />
-					<div>
+					<div className='dataGeneralSlide__ageGender'>
 						<Textfield label='Edad' placeholder='Tu edad' />
+						<RadioOptionGroup
+							value={sexo}
+							onChange={setSexo}
+							label='Sexo'
+							name='sexo'
+						>
+							<RadioOption value='Masculino' />
+							<RadioOption value='Femenino' />
+						</RadioOptionGroup>
 					</div>
 					<Select label='Estado Civil'>
 						<option value='0'>Soltero</option>
@@ -28,8 +45,10 @@ const DataGeneralSlide = () => {
 					</Select>
 				</div>
 			</section>
-			<section className='mainWrapper__bottom'>
-				<LargeButton>Finalizar Registro</LargeButton>
+			<section className='mainWrapper__bottom dataGeneralSlide__bottom'>
+				<LargeButton onClick={() => slideTo('/noticeEmail')}>
+					Finalizar Registro
+				</LargeButton>
 				<TextButton
 					className='marginCenter'
 					withBack={true}

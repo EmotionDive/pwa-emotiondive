@@ -91,7 +91,7 @@
 .radioOptionGroup {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: fit-content;
 	span:not(label span, .customRadio) {
 		@include systemInstructions;
 		margin-bottom: 5px;
@@ -117,7 +117,7 @@
 			height: 0;
 			width: 0;
 
-			&:checked ~ .customRadio::after {
+			&:checked ~ .customRadio span {
 				display: block;
 			}
 		}
@@ -128,17 +128,17 @@
 			background-color: var(--neutral-500);
 			border: 3px solid var(--text-500);
 			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
 
-			&::after {
-				content: '';
+			span {
 				display: none;
 				width: 10px;
 				height: 10px;
-				border-radius: 50%;
+				border-radius: 100%;
 				background-color: var(--text-400);
-				margin: 0 auto;
-				position: relative;
-				bottom: -2.1px;
 			}
 
 			&--primary {
