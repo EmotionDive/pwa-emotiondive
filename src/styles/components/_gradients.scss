@@ -2,11 +2,27 @@ body:has(.gradient__container) {
 	background-color: var(--text-600);
 }
 
-#gradient--bibble {
-	--gradient-color-1: var(--secondary-800);
-	--gradient-color-2: var(--primary-600);
-	--gradient-color-3: var(--secondary-500);
-	--gradient-color-4: var(--primary-400);
+#gradient {
+	&--bibble {
+		--gradient-color-1: var(--secondary-800);
+		--gradient-color-2: var(--primary-600);
+		--gradient-color-3: var(--secondary-500);
+		--gradient-color-4: var(--primary-400);
+	}
+
+	&--bibble-light {
+		--gradient-color-1: #005992;
+		--gradient-color-2: var(--primary-600);
+		--gradient-color-3: var(--secondary-500);
+		--gradient-color-4: #6931bc;
+	}
+
+	&--shades-of-purple {
+		--gradient-color-1: #7c50a3;
+		--gradient-color-2: #6c3492;
+		--gradient-color-3: #3c167a;
+		--gradient-color-4: #321e5a;
+	}
 }
 
 .gradient {

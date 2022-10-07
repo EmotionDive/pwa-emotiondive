@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import { Gradient } from '../../utils/Gradient/Gradient.js'
 import PropTypes from 'prop-types'
 
-const AnimatedGradient = ({ children }) => {
+const AnimatedGradient = ({ children, theme }) => {
 	useEffect(() => {
 		// Create your instance
 		const gradient = new Gradient()
 		// Call `initGradient` with the selector to your canvas
-		gradient.initGradient('#gradient--bibble')
+		gradient.initGradient(`#gradient--${theme}`)
 	}, [])
 
 	return (
@@ -17,7 +17,7 @@ const AnimatedGradient = ({ children }) => {
 			<div className='gradient__overlay-noise' />
 			<canvas
 				className='gradient__canvas'
-				id='gradient--bibble'
+				id={`gradient--${theme}`}
 				data-js-darken-top
 				data-transition-in
 			/>
@@ -27,6 +27,11 @@ const AnimatedGradient = ({ children }) => {
 
 AnimatedGradient.propTypes = {
 	children: PropTypes.any,
+	theme: PropTypes.oneOf(['bibble', 'bibble-light', 'shades-of-purple']),
+}
+
+AnimatedGradient.defaultProps = {
+	theme: 'bibble',
 }
 
 export default AnimatedGradient
