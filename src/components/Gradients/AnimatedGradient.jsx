@@ -6,14 +6,22 @@ const AnimatedGradient = ({ children }) => {
 	useEffect(() => {
 		// Create your instance
 		const gradient = new Gradient()
-
 		// Call `initGradient` with the selector to your canvas
-		gradient.initGradient('#gradient-canvas')
+		gradient.initGradient('#gradient--bibble')
 	}, [])
+
 	return (
-		<canvas id='gradient-canvas' data-js-darken-top data-transition-in>
-			{children}
-		</canvas>
+		<div className='gradient__container'>
+			<div className='gradient__content'>{children}</div>
+			<div className='gradient__overlay-opacity' />
+			<div className='gradient__overlay-noise' />
+			<canvas
+				className='gradient__canvas'
+				id='gradient--bibble'
+				data-js-darken-top
+				data-transition-in
+			/>
+		</div>
 	)
 }
 
