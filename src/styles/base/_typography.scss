@@ -3,6 +3,7 @@
 body {
 	font-family: $mainFont, sans-serif;
 	color: var(--text-500);
+	letter-spacing: 0.02em;
 	@include normalText;
 }
 

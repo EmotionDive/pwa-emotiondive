@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.tutorialPage {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include bigText;
+}
+
+footer {
+	margin: auto;
+	img {
+		filter: invert(1);
+		margin-bottom: 40px;
+		max-width: 190px;
+	}
+}
