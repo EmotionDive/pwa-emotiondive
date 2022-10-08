@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.testIEPage {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	color: var(--primary-200);
+
+	h1 {
+		color: var(--neutral-400);
+		margin: 0;
+		line-height: 100%;
+		@include centerText;
+	}
+
+	p {
+		@include justifyText;
+	}
+
+	main {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		section {
+			max-width: 379px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+
+			button {
+				margin-top: 20px;
+			}
+
+			.button__text {
+				color: var(--primary-400);
+				&:hover {
+					filter: drop-shadow(0px 4px 8px rgba(156, 100, 239, 0.5));
+				}
+			}
+		}
+	}
+
+	footer {
+		margin-inline: auto;
+		img {
+			filter: invert(1);
+			margin-bottom: 40px;
+			max-width: 190px;
+		}
+	}
+
+	&__duration {
+		@include systemButtons;
+		font-size: 1rem;
+	}
+}
