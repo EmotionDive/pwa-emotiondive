@@ -61,6 +61,24 @@
 		}
 	}
 
+	&--large-outlined {
+		width: 100vw;
+		max-width: 379px;
+		background-color: transparent;
+		border: 3px solid var(--primary-500);
+		color: var(--primary-500);
+		box-shadow: 0px 4px 10px rgba(156, 100, 239, 0.151);
+
+		&:hover {
+			box-shadow: 0px 4px 15px rgba(156, 100, 239, 0.5);
+		}
+
+		&-lighter {
+			border-color: var(--primary-400);
+			color: var(--primary-400);
+		}
+	}
+
 	&__text {
 		@include systemButtons;
 		cursor: pointer;
