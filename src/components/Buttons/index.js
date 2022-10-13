@@ -1,3 +1,6 @@
 export { default as SocialMediaButton } from './SocialMediaButton'
 export { default as LargeButton } from './LargeButton'
 export { default as TextButton } from './TextButton'
+export { default as SmallButton } from './SmallButton'
+export { default as OptionButton } from './OptionButton'
+export { default as OptionButtonGroup } from './OptionButtonGroup'

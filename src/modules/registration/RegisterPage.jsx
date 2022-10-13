@@ -11,7 +11,7 @@ import { SlideSwitch, Slide } from '../../utils/Slides'
 
 const RegisterPage = () => {
 	return (
-		<div className='mainWrapper'>
+		<div className='mainWrapper mainWrapper__fullHeight'>
 			<TransparentLocalizationBar localization='Registro' />
 			<SlideSwitch>
 				<Slide path='/' element={<RegisterUserSlide />} />

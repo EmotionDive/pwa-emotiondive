@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const LoginPage = () => {
 	const navigate = useNavigate()
 	return (
-		<div className='mainWrapper loginPage'>
+		<div className='mainWrapper loginPage mainWrapper__fullHeight'>
 			<h1>EmotionDive</h1>
 			<section className='loginPage__image'>
 				<img src={logo} alt='EmotionDive Logo' />

@@ -6,7 +6,7 @@ const ActivatedAccountPage = () => {
 	const navigate = useNavigate()
 
 	return (
-		<div className='mainWrapper'>
+		<div className='mainWrapper mainWrapper__fullHeight'>
 			<TransparentLocalizationBar localization='Registro' />
 			<section className='mainWrapper__centerContent'>
 				<h1 className='text--big'>¡Todo listo para empezar!</h1>

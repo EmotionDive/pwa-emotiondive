@@ -57,3 +57,30 @@
 		font-size: 1rem;
 	}
 }
+
+.testIEQuestions {
+	margin: 50px auto;
+	width: 100%;
+	max-width: 570px;
+
+	@include mediaQuery('desktop') {
+		max-width: 60vw;
+	}
+
+	&__question {
+		@include bigText;
+		color: var(--neutral-400);
+	}
+
+	&__answers {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		margin-top: 30px;
+
+		@include mediaQuery('tablet') {
+			gap: 40px;
+			margin-top: 40px;
+		}
+	}
+}
