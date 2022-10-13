@@ -79,6 +79,31 @@
 		}
 	}
 
+	&--small {
+		background-color: var(--primary-800);
+		color: var(--primary-100);
+		max-height: 50px;
+
+		&:disabled {
+			pointer-events: none;
+			cursor: auto;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 2rem;
+				background-color: black;
+				opacity: 50%;
+			}
+		}
+	}
+
 	&__text {
 		@include systemButtons;
 		cursor: pointer;
@@ -147,6 +172,58 @@
 			&:active {
 				color: var(--primary-400);
 			}
+		}
+	}
+}
+
+.optionButton {
+	@include systemButtons;
+	display: flex;
+	color: var(--neutral-400);
+	cursor: pointer;
+	transition: all $transitionDuration ease-in-out;
+	border-radius: 8px;
+
+	&:active {
+		transform: translateY(2px);
+	}
+
+	&:hover {
+		box-shadow: 0px 4px 15px rgba(156, 100, 239, 0.5);
+	}
+
+	&__square {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--neutral-400);
+		border: 3px solid var(--primary-500);
+		border-radius: 8px 0px 0px 8px;
+		border-right: none;
+		width: 50px;
+		height: 50px;
+		color: var(--primary-500);
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		color: var(--neutral-400);
+		border: 3px solid var(--primary-500);
+		border-radius: 0px 8px 8px 0px;
+		flex-grow: 1;
+		padding: 0 10px;
+		font-size: 1.05rem;
+
+		@include mediaQuery('tablet') {
+			font-size: 1.125rem;
+		}
+	}
+
+	&--checked {
+		.optionButton__square {
+			background-color: var(--primary-500);
+			color: var(--neutral-400);
 		}
 	}
 }
