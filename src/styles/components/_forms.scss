@@ -159,3 +159,30 @@
 		}
 	}
 }
+
+.progressBar {
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	&__bar {
+		display: block;
+		height: 10px;
+		border-radius: 2rem;
+		flex-grow: 1;
+		background-color: var(--primary-600);
+	}
+
+	&__progress {
+		height: 100%;
+		border-radius: 2rem;
+		background-color: var(--primary-300);
+		transition: width 1s ease-in-out;
+	}
+
+	&__text {
+		@include systemInstructions;
+		color: var(--primary-200);
+		margin-left: 22px;
+	}
+}

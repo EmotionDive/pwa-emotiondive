@@ -59,7 +59,7 @@
 }
 
 .testIEQuestions {
-	margin: 50px auto;
+	margin: 30px auto;
 	width: 100%;
 	max-width: 570px;
 
@@ -82,5 +82,16 @@
 			gap: 40px;
 			margin-top: 40px;
 		}
+	}
+}
+
+.testIEProgress {
+	margin-top: 50px;
+	@include mediaQuery('tablet') {
+		margin-top: 60px;
+	}
+
+	@include mediaQuery('desktop') {
+		margin-top: 40px;
 	}
 }

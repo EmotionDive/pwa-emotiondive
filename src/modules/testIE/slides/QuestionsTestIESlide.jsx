@@ -5,6 +5,7 @@ import {
 	OptionButtonGroup,
 	OptionButton,
 } from '../../../components/Buttons'
+import { ProgressBar } from '../../../components/Forms'
 
 const QuestionsTestIESlide = () => {
 	const [answerValue, setAnswerValue] = useState(null)
@@ -12,6 +13,7 @@ const QuestionsTestIESlide = () => {
 	return (
 		<div className='appWrapper'>
 			<main className='mainWrapper'>
+				<ProgressBar className='testIEProgress' completed={20} />
 				<div className='testIEQuestions'>
 					<span className='testIEQuestions__question'>
 						La mayor parte del tiempo me siento aburrido en mi trabajo.
