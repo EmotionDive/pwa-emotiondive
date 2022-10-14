@@ -10,7 +10,7 @@ const TextButton = ({ children, withBack, onClick, className, color }) => {
 		<div
 			className={`button__text ${
 				color === 'secondary' ? 'button__text--secondary' : ''
-			} ${className} `}
+			} ${className}`}
 			tabIndex='0'
 			role='button'
 			onClick={handleOnClick}
