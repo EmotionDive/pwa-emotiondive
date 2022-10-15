@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 
 const OptionButtonGroup = ({
 	children,
@@ -8,27 +8,33 @@ const OptionButtonGroup = ({
 	value,
 	onChange,
 }) => {
-	const [currentValue, setCurrentValue] = useState(value || null)
+	const [currentValue, setCurrentValue] = useState(null)
 
-	const onClick = (value) => {
+	useEffect(() => {
 		setCurrentValue(value)
-		onChange(value)
-	}
+	}, [value])
 
-	const childs = React.Children.map(children, (child) => {
-		if (React.isValidElement(child)) {
-			if (child.props.value === currentValue) {
-				const checked = true
+	const childs = useMemo(() => {
+		const onClick = (value) => {
+			setCurrentValue(value)
+			onChange(value)
+		}
+
+		return React.Children.map(children, (child) => {
+			if (React.isValidElement(child)) {
+				if (child.props.value === currentValue) {
+					const checked = true
+					return React.cloneElement(child, {
+						checked,
+						onClick,
+					})
+				}
 				return React.cloneElement(child, {
-					checked,
 					onClick,
 				})
 			}
-			return React.cloneElement(child, {
-				onClick,
-			})
-		}
-	})
+		})
+	}, [children, currentValue, onChange])
 
 	switch (wrapWith) {
 		case 'div':

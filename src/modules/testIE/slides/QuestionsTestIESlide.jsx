@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
 	TextButton,
 	SmallButton,
@@ -7,21 +7,57 @@ import {
 } from '../../../components/Buttons'
 import { ProgressBar } from '../../../components/Forms'
 
+import questions from '../../../assets/data/testIE.json'
+
 const QuestionsTestIESlide = () => {
-	const [answerValue, setAnswerValue] = useState(null)
+	const answers = useRef([...Array(questions.length)])
+
+	const [answered, setAnswered] = useState(0)
+	const [isFinalQuestion, setIsFinalQuestion] = useState(false)
+
+	const [currentQuestion, setCurrentQuestion] = useState(0)
+	const [currentAnswer, setCurrentAnswer] = useState(null)
+
+	const progress = useMemo(() => {
+		return Math.floor((answered * 100) / questions.length)
+	}, [answered])
+
+	useEffect(() => {
+		const boolean = answered >= questions.length - 1
+		setIsFinalQuestion(boolean)
+	}, [answered])
+
+	const saveAnswer = () => {
+		answers.current[currentQuestion] = currentAnswer
+	}
+
+	const next = () => {
+		setAnswered((prev) => prev + 1)
+		saveAnswer()
+		setCurrentAnswer(null)
+		setCurrentQuestion((prev) => prev + 1)
+	}
+
+	const finishTest = () => {
+		saveAnswer()
+		console.log('Finished ' + answered)
+		alert('Terminaste el Test')
+		console.log(answers.current)
+	}
 
 	return (
 		<div className='appWrapper'>
 			<main className='mainWrapper'>
-				<ProgressBar className='testIEProgress' completed={20} />
+				<ProgressBar className='testIEProgress' completed={progress} />
 				<div className='testIEQuestions'>
 					<span className='testIEQuestions__question'>
-						La mayor parte del tiempo me siento aburrido en mi trabajo.
+						{questions[currentQuestion]}
 					</span>
 					<OptionButtonGroup
 						wrapWith='div'
 						className='testIEQuestions__answers'
-						onChange={(value) => setAnswerValue(value)}
+						onChange={(value) => setCurrentAnswer(value)}
+						value={currentAnswer}
 					>
 						<OptionButton value='1'>Completamente falso para mí</OptionButton>
 						<OptionButton value='2'>Bastante falso para mí</OptionButton>
@@ -35,7 +71,12 @@ const QuestionsTestIESlide = () => {
 			</main>
 			<footer>
 				<TextButton>Saltar Pregunta</TextButton>
-				<SmallButton disabled={answerValue === null}>Siguiente</SmallButton>
+				<SmallButton
+					disabled={currentAnswer === null}
+					onClick={isFinalQuestion ? finishTest : next}
+				>
+					{isFinalQuestion ? 'Terminar' : 'Siguiente'}
+				</SmallButton>
 			</footer>
 		</div>
 	)
