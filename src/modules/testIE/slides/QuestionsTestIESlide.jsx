@@ -47,7 +47,7 @@ const QuestionsTestIESlide = () => {
 
 	return (
 		<div className='appWrapper'>
-			<main className='mainWrapper'>
+			<main className='mainWrapper testIEPage__scroll'>
 				<ProgressBar className='testIEProgress' completed={progress} />
 				<div className='testIEQuestions'>
 					<span className='testIEQuestions__question'>
