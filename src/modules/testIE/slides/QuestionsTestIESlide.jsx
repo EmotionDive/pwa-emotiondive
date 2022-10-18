@@ -8,41 +8,56 @@ import {
 import { ProgressBar } from '../../../components/Forms'
 
 import questions from '../../../assets/data/testIE.json'
+import { useSlides } from '../../../utils/Slides'
 
 const QuestionsTestIESlide = () => {
+	// Save all answers on a ref
 	const answers = useRef([...Array(questions.length)])
-
-	const [answered, setAnswered] = useState(0)
+	// State of the current answer of the current question.
+	const [currentAnswer, setCurrentAnswer] = useState(null)
+	// Questions left to answer
+	const [toAnswer, setToAnswer] = useState([...Array(questions.length).keys()])
+	// Boolean in order to see if it is the last question
 	const [isFinalQuestion, setIsFinalQuestion] = useState(false)
 
-	const [currentQuestion, setCurrentQuestion] = useState(0)
-	const [currentAnswer, setCurrentAnswer] = useState(null)
+	const { slideTo } = useSlides()
 
 	const progress = useMemo(() => {
-		return Math.floor((answered * 100) / questions.length)
-	}, [answered])
+		return Math.floor(
+			((questions.length - toAnswer.length) * 100) / questions.length
+		)
+	}, [toAnswer.length])
 
 	useEffect(() => {
-		const boolean = answered >= questions.length - 1
-		setIsFinalQuestion(boolean)
-	}, [answered])
+		setIsFinalQuestion(toAnswer.length === 1)
+	}, [toAnswer.length])
 
 	const saveAnswer = () => {
-		answers.current[currentQuestion] = currentAnswer
+		answers.current[toAnswer[0]] = currentAnswer
+	}
+
+	const skip = () => {
+		setCurrentAnswer(null)
+		setToAnswer((prev) => {
+			prev.push(prev.shift())
+			return [...prev]
+		})
 	}
 
 	const next = () => {
-		setAnswered((prev) => prev + 1)
 		saveAnswer()
 		setCurrentAnswer(null)
-		setCurrentQuestion((prev) => prev + 1)
+		setToAnswer((prev) => {
+			prev.shift()
+			return prev
+		})
 	}
 
 	const finishTest = () => {
 		saveAnswer()
-		console.log('Finished ' + answered)
-		alert('Terminaste el Test')
+		console.log('Finished')
 		console.log(answers.current)
+		slideTo('/end')
 	}
 
 	return (
@@ -51,7 +66,7 @@ const QuestionsTestIESlide = () => {
 				<ProgressBar className='testIEProgress' completed={progress} />
 				<div className='testIEQuestions'>
 					<span className='testIEQuestions__question'>
-						{questions[currentQuestion]}
+						{questions[toAnswer[0]]}
 					</span>
 					<OptionButtonGroup
 						wrapWith='div'
@@ -70,7 +85,7 @@ const QuestionsTestIESlide = () => {
 				</div>
 			</main>
 			<footer>
-				<TextButton>Saltar Pregunta</TextButton>
+				<TextButton onClick={skip}>Saltar Pregunta</TextButton>
 				<SmallButton
 					disabled={currentAnswer === null}
 					onClick={isFinalQuestion ? finishTest : next}
