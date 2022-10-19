@@ -36,9 +36,15 @@
 		@include mediaQuery('desktop') {
 			padding: 0 6.25rem;
 		}
+
+		&__info {
+			display: flex;
+			align-items: center;
+			margin-right: auto;
+		}
 	}
 
-	span:last-child {
+	span:last-child:not(.desktopFragmentNavBar span) {
 		color: var(--primary-700);
 	}
 }
