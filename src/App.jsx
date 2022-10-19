@@ -6,6 +6,8 @@ import NoActivatedAccountPage from './modules/registration/NoActivatedAccountPag
 import TutorialPage from './modules/tutorial/TutorialPage'
 import TestIEPage from './modules/testIE/TestIEPage'
 import StatisticsPage from './modules/statistics/StatisticsPage'
+import MainAppLayout from './layouts/MainAppLayout'
+import ActivitiesPage from './modules/activities/ActivitiesPage'
 
 function App() {
 	return (
@@ -16,7 +18,10 @@ function App() {
 			<Route path='/cuentaNoActiva' element={<NoActivatedAccountPage />} />
 			<Route path='/tutorial' element={<TutorialPage />} />
 			<Route path='/testIE' element={<TestIEPage />} />
-			<Route path='/estadisticas' element={<StatisticsPage />} />
+			<Route element={<MainAppLayout />}>
+				<Route path='/estadisticas' element={<StatisticsPage />} />
+				<Route path='/actividades' element={<ActivitiesPage />} />
+			</Route>
 		</Routes>
 	)
 }
