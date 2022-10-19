@@ -3,22 +3,42 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-top: 15px;
+	@include EmotionDiveText;
 
 	&--transparent {
+		margin-top: 15px;
 		img {
 			width: 3.2rem;
 			margin-right: 10px;
 			filter: drop-shadow(0px 2.02703px 5.40541px rgba(31, 30, 41, 0.2));
 		}
+		@include mediaQuery('tablet') {
+			margin-top: 30px;
+		}
+	}
+
+	&--background {
+		height: 50px;
+		font-size: 1.25rem;
+		padding: 0 1.125rem;
+		background-color: var(--neutral-500);
+		box-shadow: 0px 4px 20px rgba(31, 30, 41, 0.2);
+
+		img {
+			width: 2.1rem;
+			margin-right: 10px;
+			filter: drop-shadow(0px 1.58108px 4.21622px rgba(31, 30, 41, 0.2));
+		}
+		@include mediaQuery('tablet') {
+			padding: 0 3.125rem;
+		}
+
+		@include mediaQuery('desktop') {
+			padding: 0 6.25rem;
+		}
 	}
 
 	span:last-child {
 		color: var(--primary-700);
-	}
-
-	@include EmotionDiveText;
-	@include mediaQuery('tablet') {
-		margin-top: 30px;
 	}
 }
