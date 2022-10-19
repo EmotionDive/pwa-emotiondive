@@ -6,7 +6,9 @@ const OptionButton = ({ value, children, checked, onClick }) => {
 			tabIndex='0'
 			role='button'
 			onClick={() => onClick(value)}
-			onKeyDown={() => onClick(value)}
+			onKeyDown={(e) => {
+				if (e.key === 'Enter') onClick(value)
+			}}
 			className={`optionButton ${checked ? 'optionButton--checked' : ''}`}
 		>
 			<div className='optionButton__square'>{value}</div>
