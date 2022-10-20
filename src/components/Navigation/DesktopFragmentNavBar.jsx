@@ -2,11 +2,18 @@ import StatisticsIcon from '../../assets/icons/Statistics.svg?component'
 import ActivitiesIcon from '../../assets/icons/Activities.svg?component'
 import HamburguerIcon from '../../assets/icons/Hamburguer.svg?component'
 import { useLocation, useNavigate } from 'react-router-dom'
-import NavBarButton from '../Buttons/NavBarButton'
+import { NavBarButton, NavBarDropdown } from './components'
+import { useState } from 'react'
 
 const DesktopFragmentNavBar = () => {
 	const selectedButton = useLocation().pathname
 	const navigate = useNavigate()
+	const [openDropdown, setOpenDropdown] = useState(true)
+
+	const toggleDropdown = (e) => {
+		e.stopPropagation()
+		setOpenDropdown(!openDropdown)
+	}
 
 	return (
 		<div className='desktopFragmentNavBar'>
@@ -29,8 +36,9 @@ const DesktopFragmentNavBar = () => {
 			<NavBarButton
 				className='desktopFragmentNavBar__option--hamburguer'
 				iconSVG={<HamburguerIcon />}
-				selected={selectedButton.includes('otros')}
+				onClick={toggleDropdown}
 			/>
+			{openDropdown ? <NavBarDropdown onClickOutside={toggleDropdown} /> : null}
 		</div>
 	)
 }

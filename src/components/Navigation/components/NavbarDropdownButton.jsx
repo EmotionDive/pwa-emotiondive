@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types'
 
-const ButtonBarBotton = ({ label, iconSVG, selected, onClick }) => {
+const NavbarDropdownButton = ({ label, iconSVG, selected, onClick }) => {
 	return (
 		<div
-			className={`bottomBar__option ${
-				selected ? 'bottomBar__option--selected' : ''
-			}`}
+			className='desktopFragmentNavBar__dropdown__button'
 			tabIndex='0'
 			role='button'
 			onClick={onClick}
@@ -13,22 +11,23 @@ const ButtonBarBotton = ({ label, iconSVG, selected, onClick }) => {
 				if (e.key === 'Enter') onClick()
 			}}
 		>
-			<div>{iconSVG}</div>
+			{iconSVG}
 			<span>{label}</span>
 		</div>
 	)
 }
 
-ButtonBarBotton.propTypes = {
-	label: PropTypes.string.isRequired,
+NavbarDropdownButton.propTypes = {
+	label: PropTypes.string,
 	iconSVG: PropTypes.element.isRequired,
 	selected: PropTypes.bool,
 	onClick: PropTypes.func,
 }
 
-ButtonBarBotton.defaultProps = {
+NavbarDropdownButton.defaultProps = {
+	label: '',
 	selected: false,
 	onClick: () => {},
 }
 
-export default ButtonBarBotton
+export default NavbarDropdownButton

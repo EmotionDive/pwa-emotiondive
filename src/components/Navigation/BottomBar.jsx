@@ -1,7 +1,7 @@
 import StatisticsIcon from '../../assets/icons/Statistics.svg?component'
 import ActivitiesIcon from '../../assets/icons/Activities.svg?component'
 import HamburguerIcon from '../../assets/icons/Hamburguer.svg?component'
-import { ButtonBarBotton } from '../Buttons'
+import { BottomBarBotton } from './components'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const BottomBar = () => {
@@ -10,7 +10,7 @@ const BottomBar = () => {
 
 	return (
 		<footer className='bottomBar'>
-			<ButtonBarBotton
+			<BottomBarBotton
 				label='Estadísticas'
 				iconSVG={<StatisticsIcon />}
 				selected={selectedButton.includes('estadisticas')}
@@ -18,7 +18,7 @@ const BottomBar = () => {
 					navigate('/estadisticas')
 				}}
 			/>
-			<ButtonBarBotton
+			<BottomBarBotton
 				label='Actividades'
 				iconSVG={<ActivitiesIcon />}
 				selected={selectedButton.includes('actividades')}
@@ -26,7 +26,7 @@ const BottomBar = () => {
 					navigate('/actividades')
 				}}
 			/>
-			<ButtonBarBotton
+			<BottomBarBotton
 				label='Ver Más'
 				iconSVG={<HamburguerIcon />}
 				selected={selectedButton.includes('otros')}
