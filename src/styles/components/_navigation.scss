@@ -135,9 +135,9 @@
 
 		&__button {
 			display: flex;
-			align-content: center;
+			align-items: center;
 			padding: 6px 12px;
-			gap: 3px;
+			gap: 6px;
 			border-radius: 0.45rem;
 			cursor: pointer;
 			user-select: none;
@@ -162,6 +162,17 @@
 				color: var(--neutral-400);
 				svg {
 					fill: var(--neutral-400);
+				}
+			}
+
+			&--logout {
+				color: var(--alerts-error);
+				svg {
+					fill: rgb(252, 93, 93, 0.9);
+				}
+
+				&:active {
+					background-color: var(--alerts-error);
 				}
 			}
 		}

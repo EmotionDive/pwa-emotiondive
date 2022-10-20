@@ -8,10 +8,10 @@ import { useState } from 'react'
 const DesktopFragmentNavBar = () => {
 	const selectedButton = useLocation().pathname
 	const navigate = useNavigate()
-	const [openDropdown, setOpenDropdown] = useState(true)
+	const [openDropdown, setOpenDropdown] = useState(false)
 
 	const toggleDropdown = (e) => {
-		e.stopPropagation()
+		if (e) e.stopPropagation()
 		setOpenDropdown(!openDropdown)
 	}
 
@@ -38,7 +38,12 @@ const DesktopFragmentNavBar = () => {
 				iconSVG={<HamburguerIcon />}
 				onClick={toggleDropdown}
 			/>
-			{openDropdown ? <NavBarDropdown onClickOutside={toggleDropdown} /> : null}
+			{openDropdown ? (
+				<NavBarDropdown
+					onClickOutside={toggleDropdown}
+					selectedButton={selectedButton}
+				/>
+			) : null}
 		</div>
 	)
 }
