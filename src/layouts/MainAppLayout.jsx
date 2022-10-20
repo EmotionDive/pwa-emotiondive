@@ -5,6 +5,8 @@ import { BottomBar } from '../components/Navigation'
 const localizations = {
 	'/estadisticas': 'Estadísticas IE',
 	'/actividades': 'Actividades IE',
+	'/configuracion': 'Configuración',
+	'/ayuda': 'Ayuda',
 }
 
 const MainAppLayout = () => {

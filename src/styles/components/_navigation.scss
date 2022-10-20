@@ -175,6 +175,14 @@
 					background-color: var(--alerts-error);
 				}
 			}
+
+			&--selected {
+				background: linear-gradient(180deg, #4ca5de 0%, #89c8fa 100%);
+				color: var(--neutral-400);
+				svg {
+					fill: var(--neutral-400);
+				}
+			}
 		}
 	}
 }
