@@ -18,19 +18,19 @@ const DesktopFragmentNavBar = () => {
 	return (
 		<div className='desktopFragmentNavBar'>
 			<NavBarButton
-				label='Estadísticas'
-				iconSVG={<StatisticsIcon />}
-				selected={selectedButton.includes('estadisticas')}
-				onClick={() => {
-					navigate('/estadisticas')
-				}}
-			/>
-			<NavBarButton
 				label='Actividades'
 				iconSVG={<ActivitiesIcon />}
 				selected={selectedButton.includes('actividades')}
 				onClick={() => {
 					navigate('/actividades')
+				}}
+			/>
+			<NavBarButton
+				label='Estadísticas'
+				iconSVG={<StatisticsIcon />}
+				selected={selectedButton.includes('estadisticas')}
+				onClick={() => {
+					navigate('/estadisticas')
 				}}
 			/>
 			<NavBarButton

@@ -2,6 +2,14 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
 .marginCenter {
 	margin: 0 auto;
 }

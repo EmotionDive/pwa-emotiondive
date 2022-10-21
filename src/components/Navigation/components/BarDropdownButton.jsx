@@ -9,8 +9,8 @@ const NavbarDropdownButton = ({
 }) => {
 	return (
 		<div
-			className={`desktopFragmentNavBar__dropdown__button ${className} 
-				${selected ? 'desktopFragmentNavBar__dropdown__button--selected' : ''}`}
+			className={`BarDropdown__button ${className} 
+				${selected ? 'BarDropdown__button--selected' : ''}`}
 			tabIndex='0'
 			role='button'
 			onClick={onClick}

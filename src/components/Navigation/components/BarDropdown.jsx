@@ -3,7 +3,7 @@ import ConfigurationIcon from '../../../assets/icons/Configuration.svg?component
 import HelpIcon from '../../../assets/icons/Help.svg?component'
 import LogoutIcon from '../../../assets/icons/Logout.svg?component'
 import { useOutsideClick } from '../../../utils/hooks/useOutsideClick'
-import NavbarDropdownButton from './NavbarDropdownButton'
+import NavbarDropdownButton from './BarDropdownButton'
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,14 +11,19 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 	const ref = useOutsideClick(onClickOutside)
 	const navigate = useNavigate()
 
+	const handleNavigate = (path) => {
+		navigate(path)
+		setTimeout(onClickOutside, 300)
+	}
+
 	return (
-		<div ref={ref} className='desktopFragmentNavBar__dropdown'>
+		<div ref={ref} className='BarDropdown'>
 			<NavbarDropdownButton
 				iconSVG={<TestIcon />}
 				label={'Test IE'}
 				selected={selectedButton.includes('testIE')}
 				onClick={() => {
-					navigate('/testIE')
+					handleNavigate('/testIE')
 				}}
 			/>
 			<NavbarDropdownButton
@@ -26,7 +31,7 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 				label={'Configuración'}
 				selected={selectedButton.includes('configuracion')}
 				onClick={() => {
-					navigate('/configuracion')
+					handleNavigate('/configuracion')
 				}}
 			/>
 			<NavbarDropdownButton
@@ -34,11 +39,11 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 				label={'Ayuda'}
 				selected={selectedButton.includes('ayuda')}
 				onClick={() => {
-					navigate('/ayuda')
+					handleNavigate('/ayuda')
 				}}
 			/>
 			<NavbarDropdownButton
-				className='desktopFragmentNavBar__dropdown__button--logout'
+				className='BarDropdown__button--logout'
 				iconSVG={<LogoutIcon />}
 				label={'Cerrar Sesión'}
 				onClick={() => {
