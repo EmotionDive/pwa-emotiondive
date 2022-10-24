@@ -86,13 +86,15 @@
 	flex-direction: column;
 	main {
 		flex-grow: 1;
-		padding: 0 1.125rem;
+		padding: 30px 1.125rem calc(30px + 85px) 1.125rem;
+		overflow: hidden;
+
 		@include mediaQuery('tablet') {
-			padding: 0 3.125rem;
+			padding: 40px 3.125rem calc(40px + 85px) 3.125rem;
 		}
 
 		@include mediaQuery('desktop') {
-			padding: 0 6.25rem;
+			padding: 30px 6.25rem;
 		}
 	}
 }

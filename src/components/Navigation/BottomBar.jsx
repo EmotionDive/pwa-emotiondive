@@ -8,7 +8,7 @@ import { useState } from 'react'
 const BottomBar = () => {
 	const selectedButton = useLocation().pathname
 	const navigate = useNavigate()
-	const [openDropdown, setOpenDropdown] = useState(true)
+	const [openDropdown, setOpenDropdown] = useState(false)
 
 	const toggleDropdown = (e) => {
 		if (e) e.stopPropagation()
