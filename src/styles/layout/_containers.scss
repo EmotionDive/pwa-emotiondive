@@ -94,7 +94,11 @@
 		}
 
 		@include mediaQuery('desktop') {
-			padding: 30px 6.25rem;
+			padding: 40px 3.125rem 40px 3.125rem;
+		}
+
+		@include mediaQuery('largeDesktop') {
+			padding: 40px 6.25rem;
 		}
 	}
 }

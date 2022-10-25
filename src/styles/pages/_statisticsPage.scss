@@ -1,0 +1,112 @@
+@use '../abstracts/' as *;
+
+.statisticsPage {
+	.tab__container {
+		margin-bottom: 30px;
+		margin: 0 auto 30px auto;
+	}
+	div {
+		p:not(p:last-child) {
+			@include justifyText;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__sectionGeneral {
+		@include mediaQuery('largeDesktop') {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			gap: 20px;
+			align-items: center;
+
+			.statisticsPage__graph {
+				margin: 0px;
+			}
+		}
+	}
+
+	&__graph {
+		width: 100%;
+		height: 435px;
+		background-color: var(--secondary-300);
+		margin: 20px 0 30px 0;
+	}
+
+	&__sectionOportunities {
+		margin-top: 30px;
+	}
+}
+
+.cardOpportunityArea {
+	background-color: var(--neutral-400);
+	border-radius: 15px;
+	filter: drop-shadow(0px 4px 8px rgba(31, 30, 41, 0.12));
+	transition: all $transitionDuration ease-in-out;
+	width: 100%;
+
+	@include mediaQuery('tablet') {
+		width: clamp(320px, calc(50vw - 3.125rem - 20px), 350px);
+	}
+
+	@include mediaQuery('desktop') {
+		width: clamp(320px, calc(50vw - 3.125rem - 20px), 550px);
+	}
+
+	&:hover {
+		translate: 0px -2px;
+		filter: drop-shadow(0px 4px 10px rgba(31, 30, 41, 0.2));
+	}
+
+	&__area {
+		&--SelfKnowledge {
+			background-color: var(--IE-self-knowledge-400);
+		}
+
+		&--SelfRegulation {
+			background-color: var(--IE-self-regulation-400);
+		}
+
+		&--SelfEfficacy {
+			background-color: var(--IE-self-efficacy-400);
+		}
+
+		&--Empathy {
+			background-color: var(--IE-empathy-400);
+		}
+
+		padding: 10px;
+		border-radius: 15px 15px 0 0;
+		div {
+			border-radius: 5rem;
+			background-color: var(--neutral-400);
+			width: 110px;
+			height: 110px;
+			margin: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		img {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	&__text {
+		padding: 10px;
+		@include justifyText;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		@include mediaQuery('tablet') {
+			flex-direction: row;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+	}
+}
