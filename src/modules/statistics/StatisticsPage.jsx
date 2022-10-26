@@ -1,6 +1,21 @@
+import { BarChart, ChartContainer, ChartLabels } from '../../components/Charts'
 import { TabContainer } from '../../components/Controls'
 import TabButton from '../../components/Controls/TabButton'
 import CardOpportunityArea from './components/CardOpportunityArea'
+
+const seriesColors = [
+	'var(--IE-self-knowledge-500)',
+	'var(--IE-self-regulation-500)',
+	'var(--IE-self-efficacy-500)',
+	'var(--IE-empathy-500)',
+]
+
+const seriesLabels = [
+	'Autoconocimiento',
+	'Autoregulación',
+	'Autoeficacia',
+	'Empatía',
+]
 
 const StatisticsPage = () => {
 	return (
@@ -16,7 +31,13 @@ const StatisticsPage = () => {
 						de tus competencias cognitivas de la Inteligencia Emocional para que
 						así puedas ver poco a poco tu progreso.
 					</p>
-					<div className='statisticsPage__graph'> GRAPH </div>
+					<ChartContainer className='statisticsPage__graph'>
+						<ChartLabels
+							seriesLabels={seriesLabels}
+							seriesColors={seriesColors}
+						/>
+						<BarChart series={[30, 70, 50, 100]} seriesColors={seriesColors} />
+					</ChartContainer>
 				</div>
 				<div>
 					<h1>Descripción General</h1>

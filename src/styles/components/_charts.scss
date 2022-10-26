@@ -1,0 +1,102 @@
+@use '../abstracts/' as *;
+
+.barChart {
+	display: grid;
+	grid-template-areas:
+		'yL yA chart'
+		'n xA xA'
+		'n xL xL';
+	grid-template-columns: 8% 3px auto;
+	grid-template-rows: auto 3px 8%;
+
+	&__xAxis {
+		grid-area: xA;
+		background-color: var(--text-400);
+		height: 3px;
+		border-radius: 0 1rem 1rem 1rem;
+	}
+
+	&__yAxis {
+		grid-area: yA;
+		background-color: var(--text-400);
+		width: 3px;
+		border-radius: 1rem 1rem 0 0;
+	}
+
+	&__xLabels {
+		grid-area: xL;
+		display: flex;
+		padding: 0 1em 0 1em;
+		justify-content: space-around;
+		align-items: center;
+		span {
+			height: 10px;
+			background-color: var(--neutral-600);
+			border-radius: 0.2rem;
+		}
+	}
+
+	&__yLabels {
+		grid-area: yL;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		align-items: flex-end;
+		font-size: 0.75rem;
+
+		span {
+			margin-right: 4px;
+		}
+	}
+
+	&__chart {
+		grid-area: chart;
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-end;
+		padding: 0 1em 0 1em;
+
+		span {
+			background-color: var(--neutral-600);
+			height: 0;
+			border-radius: 0.3rem 0.3rem 0 0;
+			transition: filter $transitionDuration ease-in-out;
+			animation: in-out 2s ease-in-out;
+			&:hover {
+				filter: brightness(90%);
+			}
+		}
+	}
+}
+
+.chartLabels {
+	font-size: 0.75rem;
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10px;
+		transition: all $transitionDuration ease-in-out;
+
+		&:hover {
+			translate: 0 2px;
+		}
+	}
+
+	span {
+		width: 30px;
+		height: 10px;
+		background-color: var(--neutral-600);
+		border-radius: 0.2rem;
+	}
+}
+
+@keyframes in-out {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: currentHeight;
+	}
+}
