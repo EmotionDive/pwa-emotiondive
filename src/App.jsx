@@ -10,21 +10,32 @@ import MainAppLayout from './layouts/MainAppLayout'
 import ActivitiesPage from './modules/activities/ActivitiesPage'
 import ConfigurationPage from './modules/configuration/ConfigurationPage'
 import HelpPage from './modules/assistance/HelpPage'
+import AuthorizeRedirect from './auth/AuthorizeRedirect'
+import { useAuth0 } from '@auth0/auth0-react'
+import AuthorizedRoutes from './auth/AuthorizedRoutes'
 
 function App() {
+	const { isLoading } = useAuth0()
+
+	if (isLoading) return <div>Loading...</div>
+
 	return (
 		<Routes>
 			<Route path='/' element={<LoginPage />} />
 			<Route path='/registro' element={<RegisterPage />} />
-			<Route path='/cuentaActiva' element={<ActivatedAccountPage />} />
-			<Route path='/cuentaNoActiva' element={<NoActivatedAccountPage />} />
-			<Route path='/tutorial' element={<TutorialPage />} />
-			<Route path='/testIE' element={<TestIEPage />} />
-			<Route element={<MainAppLayout />}>
-				<Route path='/estadisticas' element={<StatisticsPage />} />
-				<Route path='/actividades' element={<ActivitiesPage />} />
-				<Route path='/configuracion' element={<ConfigurationPage />} />
-				<Route path='/ayuda' element={<HelpPage />} />
+			<Route path='/authorize' element={<AuthorizeRedirect />} />
+			{/* Authorized Routes */}
+			<Route element={<AuthorizedRoutes />}>
+				<Route path='/tutorial' element={<TutorialPage />} />
+				<Route path='/testIE' element={<TestIEPage />} />
+				<Route path='/cuentaActiva' element={<ActivatedAccountPage />} />
+				<Route path='/cuentaNoActiva' element={<NoActivatedAccountPage />} />
+				<Route element={<MainAppLayout />}>
+					<Route path='/estadisticas' element={<StatisticsPage />} />
+					<Route path='/actividades' element={<ActivitiesPage />} />
+					<Route path='/configuracion' element={<ConfigurationPage />} />
+					<Route path='/ayuda' element={<HelpPage />} />
+				</Route>
 			</Route>
 		</Routes>
 	)
