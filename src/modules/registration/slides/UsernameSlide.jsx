@@ -28,7 +28,7 @@ const UsernameSlide = () => {
 						</LargeButton>
 						<TextButton
 							withBack={true}
-							onClick={() => slideTo('/T&Cs')}
+							onClick={() => slideTo('/')}
 							color='secondary'
 						>
 							Atrás

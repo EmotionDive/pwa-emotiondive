@@ -1,6 +1,5 @@
 import RegisterPage from './modules/registration/RegisterPage'
 import { Routes, Route } from 'react-router-dom'
-import LoginPage from './modules/login/LoginPage'
 import ActivatedAccountPage from './modules/registration/ActivatedAccountPage'
 import NoActivatedAccountPage from './modules/registration/NoActivatedAccountPage'
 import TutorialPage from './modules/tutorial/TutorialPage'
@@ -13,6 +12,7 @@ import HelpPage from './modules/assistance/HelpPage'
 import AuthorizeRedirect from './auth/AuthorizeRedirect'
 import { useAuth0 } from '@auth0/auth0-react'
 import AuthorizedRoutes from './auth/AuthorizedRoutes'
+import RootAuthPage from './auth/RootAuthPage'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -21,7 +21,7 @@ function App() {
 
 	return (
 		<Routes>
-			<Route path='/' element={<LoginPage />} />
+			<Route path='/' element={<RootAuthPage />} />
 			<Route path='/registro' element={<RegisterPage />} />
 			<Route path='/authorize' element={<AuthorizeRedirect />} />
 			{/* Authorized Routes */}

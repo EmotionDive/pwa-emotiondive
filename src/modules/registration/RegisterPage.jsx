@@ -14,9 +14,9 @@ const RegisterPage = () => {
 		<div className='mainWrapper mainWrapper__fullHeight'>
 			<TransparentLocalizationBar localization='Registro' />
 			<SlideSwitch>
-				<Slide path='/' element={<RegisterUserSlide />} />
-				<Slide path='/email' element={<EmailRegisterSlide />} />
-				<Slide path='/T&Cs' element={<TermsConditionsSlide />} />
+				{/* <Slide path='/' element={<RegisterUserSlide />} /> */}
+				{/* <Slide path='/email' element={<EmailRegisterSlide />} /> */}
+				<Slide path='/' element={<TermsConditionsSlide />} />
 				<Slide path='/username' element={<UsernameSlide />} />
 				<Slide path='/dataGeneral' element={<DataGeneralSlide />} />
 				<Slide path='/noticeEmail' element={<NoticeEmailSlide />} />
