@@ -23,9 +23,9 @@ function App() {
 		<Routes>
 			<Route path='/' element={<RootAuthPage />} />
 			<Route path='/registro' element={<RegisterPage />} />
-			<Route path='/authorize' element={<AuthorizeRedirect />} />
 			{/* Authorized Routes */}
 			<Route element={<AuthorizedRoutes />}>
+				<Route path='/authorize' element={<AuthorizeRedirect />} />
 				<Route path='/tutorial' element={<TutorialPage />} />
 				<Route path='/testIE' element={<TestIEPage />} />
 				<Route path='/cuentaActiva' element={<ActivatedAccountPage />} />

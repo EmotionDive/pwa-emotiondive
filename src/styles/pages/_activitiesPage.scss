@@ -1,0 +1,57 @@
+@use '../abstracts/' as *;
+
+.appWrapper {
+	main:has(.activitiesPage) {
+		padding-top: 0;
+	}
+}
+
+.activitiesPage {
+	&__tabNav {
+		width: 100vw;
+		height: 40px;
+		margin-left: -1.125rem;
+		background-color: var(--neutral-500);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5vw;
+		user-select: none;
+
+		@include mediaQuery('tablet') {
+			margin-left: -3.125rem;
+		}
+
+		@include mediaQuery('largeDesktop') {
+			margin-left: -6.25rem;
+		}
+
+		span {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			cursor: pointer;
+			gap: 8px;
+			transition: color $transitionDuration ease-in-out;
+			svg {
+				transition: fill $transitionDuration ease-in-out;
+			}
+		}
+
+		.active {
+			color: var(--primary-700);
+			border-bottom: 2px solid var(--primary-700);
+			margin-bottom: -2px;
+			svg {
+				fill: var(--primary-700);
+			}
+		}
+	}
+
+	&__content {
+		margin-top: 30px;
+		@include mediaQuery('tablet') {
+			margin-top: 40px;
+		}
+	}
+}
