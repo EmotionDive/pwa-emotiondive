@@ -2,9 +2,21 @@ import { LargeButton, TextButton } from '../../../components/Buttons'
 import { Textfield } from '../../../components/Forms'
 import { useSlides } from '../../../utils/Slides'
 import image from '@assets/images/pictures/User-Image.png'
+import { useRef, useState } from 'react'
 
 const UsernameSlide = () => {
-	const { slideTo } = useSlides()
+	const { slideTo, state, setState } = useSlides()
+	const username = useRef()
+	const [error, setError] = useState('')
+
+	const handleOnClick = () => {
+		if (username.current.value === '') {
+			setError('Escribe un nombre de usuario')
+		} else {
+			setState((prev) => ({ ...prev, username: username.current.value }))
+			slideTo('/dataGeneral')
+		}
+	}
 
 	return (
 		<>
@@ -18,14 +30,21 @@ const UsernameSlide = () => {
 						<img src={image} alt='User' />
 					</div>
 					<div className='registerPage__mainContent'>
-						<Textfield label='Nombre de usuario' placeholder='Usuario123' />
+						<Textfield
+							label='Nombre de usuario'
+							placeholder='Usuario123'
+							innerRef={username}
+							defaultValue={state?.username}
+							onChange={() => {
+								if (error) setError('')
+							}}
+							error={error}
+						/>
 						<span className='text--small'>
 							Dando click en “Continuar”, aceptas nuestros Términos &
 							Condiciones.
 						</span>
-						<LargeButton onClick={() => slideTo('/dataGeneral')}>
-							Continuar
-						</LargeButton>
+						<LargeButton onClick={handleOnClick}>Continuar</LargeButton>
 						<TextButton
 							withBack={true}
 							onClick={() => slideTo('/')}

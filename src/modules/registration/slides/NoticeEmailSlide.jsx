@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import { LargeButton, TextButton } from '../../../components/Buttons'
 import image from '@assets/images/pictures/Email-Image.png'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const NoticeEmailSlide = () => {
 	const navigate = useNavigate()
+	const { logout } = useAuth0()
 
 	return (
 		<>
@@ -30,7 +32,10 @@ const NoticeEmailSlide = () => {
 						>
 							Abrir Correo
 						</LargeButton>
-						<TextButton onClick={() => navigate('/')} color='secondary'>
+						<TextButton
+							onClick={() => logout({ returnTo: window.location.origin })}
+							color='secondary'
+						>
 							Ir a Inicio de Sesión
 						</TextButton>
 					</div>

@@ -5,6 +5,7 @@
 	flex-direction: column;
 	width: 100%;
 	max-width: 379px;
+	text-align: left;
 	span {
 		@include systemInstructions;
 		margin-bottom: 5px;
