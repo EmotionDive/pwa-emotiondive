@@ -21,7 +21,7 @@ const UsernameSlide = () => {
 	return (
 		<>
 			<section className='mainWrapper__centerContent registerPage__top'>
-				<h1 className='text--big'>¿Cómo te gustaría que te llamaramos?</h1>
+				<h1 className='text--big'>¿Cómo te gustaría que te llamáramos?</h1>
 				<span className='systemText__instruction'>
 					Escribe un nombre de usuario:
 				</span>

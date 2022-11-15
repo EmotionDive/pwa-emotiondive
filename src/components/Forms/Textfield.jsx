@@ -9,6 +9,11 @@ const Textfield = ({
 	value,
 	defaultValue,
 	onChange,
+
+	type,
+	min,
+	max,
+	maxLength,
 }) => {
 	return (
 		<label
@@ -20,10 +25,13 @@ const Textfield = ({
 				ref={innerRef}
 				value={value}
 				defaultValue={defaultValue}
-				type='text'
+				type={type}
 				placeholder={placeholder}
 				disabled={disabled}
 				onChange={onChange}
+				min={min}
+				max={max}
+				maxLength={maxLength}
 			/>
 		</label>
 	)
@@ -38,6 +46,10 @@ Textfield.propTypes = {
 	value: PropTypes.string,
 	defaultValue: PropTypes.string,
 	onChange: PropTypes.func,
+	type: PropTypes.oneOf(['text', 'number']),
+	min: PropTypes.number,
+	max: PropTypes.number,
+	maxLength: PropTypes.number,
 }
 
 Textfield.defaultProps = {
@@ -48,6 +60,10 @@ Textfield.defaultProps = {
 	value: undefined,
 	defaultValue: undefined,
 	onChange: () => {},
+	type: 'text',
+	min: undefined,
+	max: undefined,
+	maxLength: undefined,
 }
 
 export default Textfield

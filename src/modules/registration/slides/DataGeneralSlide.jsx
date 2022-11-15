@@ -13,20 +13,21 @@ import { useSlides } from '../../../utils/Slides'
 const DataGeneralSlide = () => {
 	const { user, logout } = useAuth0()
 	const { slideTo, state } = useSlides()
+	//Data
 	const [sex, setSex] = useState('Masculino')
-	const [error, setError] = useState(false)
+	const [age, setAge] = useState('')
 	const nameRef = useRef()
-	const ageRef = useRef()
 	const civil_statusRef = useRef()
 	const housing_situationRef = useRef()
+	//Error
+	const [error, setError] = useState(false)
 
 	const handleOnClick = () => {
 		const name = nameRef.current.value
-		const age = ageRef.current.value
 		const civil_status = civil_statusRef.current.value
 		const housing_situation = housing_situationRef.current.value
 
-		if (!name || !age) {
+		if (!name || !age || age < 18) {
 			setError(true)
 			return
 		}
@@ -56,6 +57,13 @@ const DataGeneralSlide = () => {
 			})
 	}
 
+	const handleAge = (value) => {
+		if (error) setError(false)
+		if (value > 99) setAge(99)
+		else if (value < 0) setAge(0)
+		else setAge(value)
+	}
+
 	return (
 		<>
 			<section className='mainWrapper__centerContent'>
@@ -77,11 +85,17 @@ const DataGeneralSlide = () => {
 						<Textfield
 							label='Edad'
 							placeholder='Tu edad'
-							innerRef={ageRef}
-							error={error & !ageRef.current?.value ? 'Escribe tu edad' : ''}
-							onChange={() => {
-								if (error) setError(false)
-							}}
+							value={age}
+							error={
+								error
+									? !age
+										? 'Escribe tu edad'
+										: 'Debes tener más de 18 años'
+									: ''
+							}
+							type='number'
+							max={99}
+							onChange={(e) => handleAge(e.target.value)}
 						/>
 						<RadioOptionGroup
 							value={sex}
