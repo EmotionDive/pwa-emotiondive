@@ -1,0 +1,126 @@
+@use '../abstracts/' as *;
+
+.modal {
+	&__background {
+		width: 100vw;
+		height: calc(100vh - 50px);
+		position: fixed;
+		top: 50px;
+		left: 0px;
+		z-index: 1;
+		background-color: rgb(24 23 31 / 0.5);
+		display: flex;
+		justify-content: center;
+		animation: enterModalBackground 0.4s ease-out;
+	}
+	&__frame {
+		max-width: 380px;
+		width: 90%;
+		height: fit-content;
+		margin-top: 18vh;
+		padding: 20px;
+		background-color: var(--neutral-500);
+		border-radius: 30px;
+		box-shadow: 0px 5px 17px rgba(31, 30, 41, 0.46);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+		animation: enterModal 0.8s ease-out;
+
+		.systemText__instruction {
+			color: var(--text-600);
+			text-align: center;
+		}
+
+		@include mediaQuery('desktop') {
+			max-width: 450px;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+
+		button {
+			width: 45%;
+		}
+
+		button:first-child {
+			color: var(--neutral-400);
+			background-color: var(--primary-500);
+			&:active {
+				box-shadow: 0px 4px 15px rgba(156, 100, 239, 0.25),
+					inset 0px 4px 15px rgba(0, 0, 0, 0.16);
+			}
+			@include mediaQuery('desktop') {
+				&:hover {
+					box-shadow: 0px 4px 20px rgba(156, 100, 239, 0.66);
+				}
+			}
+		}
+
+		button:last-child {
+			background-color: var(--neutral-500);
+			color: var(--secondary-600);
+		}
+	}
+
+	&__cta {
+		background-color: var(--secondary-600);
+		color: var(--neutral-400);
+		&:active {
+			box-shadow: 0px 4px 15px rgba(86, 185, 249, 0.25),
+				inset 0px 4px 15px rgba(0, 0, 0, 0.16);
+		}
+		@include mediaQuery('desktop') {
+			&:hover {
+				box-shadow: 0px 4px 20px rgba(86, 185, 249, 0.66);
+			}
+		}
+	}
+
+	&--exit {
+		animation: exitModalBackground 0.4s ease-in-out 0s 1 normal forwards;
+
+		.modal__frame {
+			animation: exitModal 0.2s ease-in-out 0s 1 normal forwards;
+		}
+	}
+}
+
+@keyframes enterModal {
+	0% {
+		translate: 0 100vh;
+	}
+	100% {
+		translate: 0;
+	}
+}
+
+@keyframes enterModalBackground {
+	0% {
+		background-color: rgb(24 23 31 / 0);
+	}
+	100% {
+		background-color: currentBackgroundColor;
+	}
+}
+
+@keyframes exitModal {
+	0% {
+		translate: 0;
+	}
+	100% {
+		translate: 0 100vh;
+	}
+}
+
+@keyframes exitModalBackground {
+	0% {
+		background-color: currentBackgroundColor;
+	}
+	100% {
+		background-color: rgb(24 23 31 / 0);
+	}
+}

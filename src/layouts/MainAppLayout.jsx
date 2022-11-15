@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { BackgroundLocalizationBar } from '../components/LocalizationBar'
+import { ModalAction, ModalProvider } from '../components/Modal'
 import { BottomBar } from '../components/Navigation'
 
 const localizations = {
@@ -21,9 +22,12 @@ const MainAppLayout = () => {
 			<BackgroundLocalizationBar
 				localization={localizations[useLocation().pathname]}
 			/>
-			<main>
-				<Outlet />
-			</main>
+			<ModalProvider>
+				<main>
+					<Outlet />
+					<ModalAction />
+				</main>
+			</ModalProvider>
 			<BottomBar />
 		</div>
 	)
