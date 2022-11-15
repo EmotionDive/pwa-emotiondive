@@ -7,6 +7,10 @@
 }
 
 .activitiesPage {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
 	&__tabNav {
 		width: 100vw;
 		height: 40px;
@@ -17,6 +21,8 @@
 		align-items: center;
 		gap: 5vw;
 		user-select: none;
+		position: fixed;
+		top: 50px;
 
 		@include mediaQuery('tablet') {
 			margin-left: -3.125rem;
@@ -49,9 +55,120 @@
 	}
 
 	&__content {
-		margin-top: 30px;
+		margin-top: 70px;
 		@include mediaQuery('tablet') {
-			margin-top: 40px;
+			margin-top: 80px;
+		}
+		@include mediaQuery('desktop') {
+			margin-top: 70px;
+		}
+	}
+}
+
+.chooseCompetencesSlide {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+
+	h1 {
+		line-height: 100%;
+		margin: 0;
+	}
+
+	.text--small {
+		color: var(--text-600);
+	}
+
+	@include mediaQuery('tablet') {
+		margin-top: 4vh;
+	}
+
+	@include mediaQuery('desktop') {
+		margin-top: 0;
+	}
+
+	.cognitiveCards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 15px;
+
+		&__card {
+			border: none;
+			font-weight: 600;
+			color: var(--neutral-400);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-radius: 12px;
+			cursor: pointer;
+			opacity: 60%;
+			transition: opacity $transitionDuration ease-in-out,
+				color $transitionDuration ease-in-out;
+
+			&.SelfKnowledge {
+				background-color: var(--IE-self-knowledge-400);
+			}
+
+			&.SelfRegulation {
+				background-color: var(--IE-self-regulation-400);
+			}
+
+			&.SelfEfficacy {
+				background-color: var(--IE-self-efficacy-400);
+			}
+
+			&.Empathy {
+				background-color: var(--IE-empathy-400);
+			}
+
+			div {
+				width: 140px;
+				height: 140px;
+				background-color: var(--neutral-400);
+				border-radius: 5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 20px 15px;
+
+				img {
+					width: 130px;
+					height: 130px;
+				}
+			}
+
+			span {
+				margin-top: -5px;
+				margin-bottom: 20px;
+			}
+
+			&:hover {
+				opacity: 100%;
+			}
+
+			&.active {
+				opacity: 100%;
+
+				&.SelfKnowledge {
+					background-color: var(--IE-self-knowledge-600);
+				}
+
+				&.SelfRegulation {
+					background-color: var(--IE-self-regulation-600);
+				}
+
+				&.SelfEfficacy {
+					background-color: var(--IE-self-efficacy-600);
+				}
+
+				&.Empathy {
+					background-color: var(--IE-empathy-600);
+				}
+			}
 		}
 	}
 }

@@ -1,5 +1,7 @@
+import ChooseCompetenceSlide from './ChooseCompetenceSlide'
+
 const ActivitiesMenuPage = () => {
-	return <div>ActivitiesMenuPage</div>
+	return <ChooseCompetenceSlide />
 }
 
 export default ActivitiesMenuPage
