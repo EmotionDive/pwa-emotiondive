@@ -23,6 +23,7 @@
 		user-select: none;
 		position: fixed;
 		top: 50px;
+		z-index: 1;
 
 		@include mediaQuery('tablet') {
 			margin-left: -3.125rem;
@@ -146,8 +147,10 @@
 				margin-bottom: 20px;
 			}
 
-			&:hover {
-				opacity: 100%;
+			@include mediaQuery('desktop') {
+				&:hover {
+					opacity: 100%;
+				}
 			}
 
 			&.active {
@@ -170,5 +173,10 @@
 				}
 			}
 		}
+	}
+
+	.error {
+		color: var(--alerts-error);
+		@include systemInstructions;
 	}
 }
