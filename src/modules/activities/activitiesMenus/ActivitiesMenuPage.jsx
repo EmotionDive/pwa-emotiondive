@@ -1,7 +1,7 @@
-import ChooseCompetenceSlide from './ChooseCompetenceSlide'
+// TODO: Make redirections to other activities pages
 
 const ActivitiesMenuPage = () => {
-	return <ChooseCompetenceSlide />
+	return <div>Activities</div>
 }
 
 export default ActivitiesMenuPage

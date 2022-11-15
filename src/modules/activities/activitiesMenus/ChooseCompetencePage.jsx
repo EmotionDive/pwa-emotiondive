@@ -4,7 +4,7 @@ import { LargeButton } from '../../../components/Buttons'
 import { useModalAction } from '../../../components/Modal'
 import { CognitiveChooser } from '../components'
 
-const ChooseCompetenceSlide = () => {
+const ChooseCompetencePage = () => {
 	const competences = useRef([])
 	const [error, setError] = useState(false)
 	const { operateModal } = useModalAction()
@@ -68,4 +68,4 @@ const ChooseCompetenceSlide = () => {
 	)
 }
 
-export default ChooseCompetenceSlide
+export default ChooseCompetencePage

@@ -7,6 +7,7 @@ import { BottomBar } from '../components/Navigation'
 const localizations = {
 	'/estadisticas': 'Estadísticas IE',
 	'/actividades': 'Actividades IE',
+	'/actividades/planSemanal': 'Plan Semanal',
 	'/configuracion': 'Configuración',
 	'/ayuda': 'Ayuda',
 }
@@ -20,7 +21,7 @@ const MainAppLayout = () => {
 	return (
 		<div className='appWrapper'>
 			<BackgroundLocalizationBar
-				localization={localizations[useLocation().pathname]}
+				localization={localizations[useLocation().pathname] || 'Actividades IE'}
 			/>
 			<ModalProvider>
 				<main>
