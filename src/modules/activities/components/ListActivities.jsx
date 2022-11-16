@@ -1,3 +1,4 @@
+import React from 'react'
 import selfKnowledge from '../../../assets/images/pictures/Self-knowledge.png'
 import selfEfficacy from '../../../assets/images/pictures/Self-efficacy.png'
 import selfRegulation from '../../../assets/images/pictures/Self-regulation.png'
@@ -18,35 +19,42 @@ const labels = {
 	Empathy: 'Empatía',
 }
 
-const CognitiveButton = ({ variant, active, onClick }) => {
+const ListActivities = ({ variant, children }) => {
 	return (
-		<button
-			className={`cognitiveCards__card ${variant} ${active ? 'active' : ''}`}
-			onClick={onClick}
-		>
-			<div>
-				<img src={images[variant]} alt={labels[variant]} />
+		<div className='listActivities'>
+			<div className={`listActivities__title ${variant}`}>
+				<span>
+					<img src={images[variant]} alt={labels[variant]} />
+				</span>
+				{labels[variant]}
 			</div>
-			<span>{labels[variant]}</span>
-		</button>
+			<div className='listActivities__containerCards'>{children}</div>
+		</div>
 	)
 }
 
-CognitiveButton.propTypes = {
+ListActivities.propTypes = {
+	children: (props, propName) => {
+		let error
+		const prop = props[propName]
+		React.Children.forEach(prop, (child) => {
+			if (child.type.name !== 'CardActivitie')
+				error = new Error(
+					`<ListActivities> only accepts children of type <CardActivitie>".`
+				)
+		})
+		return error
+	},
 	variant: PropTypes.oneOf([
 		'SelfKnowledge',
 		'SelfRegulation',
 		'SelfEfficacy',
 		'Empathy',
 	]),
-	active: PropTypes.bool,
-	onClick: PropTypes.func,
 }
 
-CognitiveButton.defaultProps = {
+ListActivities.defaultProps = {
 	variant: 'SelfKnowledge',
-	active: false,
-	onClick: () => {},
 }
 
-export default CognitiveButton
+export default ListActivities
