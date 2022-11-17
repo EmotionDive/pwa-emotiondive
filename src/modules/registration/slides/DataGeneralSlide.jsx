@@ -34,25 +34,25 @@ const DataGeneralSlide = () => {
 
 		const data = {
 			email: user.email,
+			name: name,
 			age: +age,
 			sex: sex === 'Masculino' ? 'M' : 'F',
 			civil_status,
 			housing_situation: +housing_situation,
-			active_account: Math.floor(
-				Math.random() * (999 - 100 + 1) + 100
-			).toString(),
 		}
 
 		UserService.registerUser(state.username, data)
 			.then((response) => {
-				if (response.status === 'Success') slideTo('/noticeEmail')
+				if (response.status === 'success') slideTo('/noticeEmail')
 				else {
 					console.log(response)
+					alert('Error en Servidor')
 					logout({ returnTo: window.location.origin }) //Change for Error
 				}
 			})
 			.catch((error) => {
 				console.error(error)
+				alert('Error en Servidor')
 				logout({ returnTo: window.location.origin }) //Change for Error
 			})
 	}

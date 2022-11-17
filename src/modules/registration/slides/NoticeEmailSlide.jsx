@@ -1,11 +1,19 @@
-import { useNavigate } from 'react-router-dom'
 import { LargeButton, TextButton } from '../../../components/Buttons'
 import image from '@assets/images/pictures/Email-Image.png'
 import { useAuth0 } from '@auth0/auth0-react'
+import { useEffect } from 'react'
+import UserService from '../../../fetchers/UserService'
+import { useSlides } from '../../../utils/Slides'
 
 const NoticeEmailSlide = () => {
-	const navigate = useNavigate()
 	const { logout } = useAuth0()
+	const { state } = useSlides()
+
+	useEffect(() => {
+		//TODO: ADD USER CONTEXT WITH FLAGS AND MAKE REDIRECTS ON PAGES
+		//TODO: SEND EMAIL WITH USERSERVICE
+		// UserService.sendEmail()
+	}, [])
 
 	return (
 		<>
