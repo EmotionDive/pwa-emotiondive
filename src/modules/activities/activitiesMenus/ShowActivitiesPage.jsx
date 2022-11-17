@@ -1,7 +1,12 @@
-import { ListActivities } from '../components'
+import { ActivityInfo, ListActivities } from '../components'
 import CardActivitie from '../components/CardActivitie'
 import { LargeButton } from '../../../components/Buttons'
+import { useState } from 'react'
 const ShowActivitiesPage = () => {
+	const [openInfoActivity, setOpenInfoActivity] = useState(false)
+
+	//TODO: SEE HOW THE DATA WILL BE PASED TO THE INFOACTIVITY
+
 	return (
 		<div className='activitiesPage__container showActivitiesPage'>
 			<span className='systemText__instruction'>
@@ -15,30 +20,35 @@ const ShowActivitiesPage = () => {
 						variant='SelfKnowledge'
 						title='¡Identifica emociones faciales!'
 						description='Aprende a identificar las emociones faciales de las personas.'
+						onClick={() => setOpenInfoActivity(true)}
 					/>
 					<CardActivitie
 						variant='SelfKnowledge'
 						number={2}
 						title='¡Identifica emociones faciales!'
 						description='Aprende a identificar las emociones faciales de las personas.'
+						onClick={() => setOpenInfoActivity(true)}
 					/>
 					<CardActivitie
 						variant='SelfKnowledge'
 						number={3}
 						title='¡Identifica emociones faciales!'
 						description='Aprende a identificar las emociones faciales de las personas.'
+						onClick={() => setOpenInfoActivity(true)}
 					/>
 					<CardActivitie
 						variant='SelfKnowledge'
 						number={4}
 						title='¡Identifica emociones faciales!'
 						description='Aprende a identificar las emociones faciales de las personas.'
+						onClick={() => setOpenInfoActivity(true)}
 					/>
 					<CardActivitie
 						variant='SelfKnowledge'
 						optional
 						title='¡Identifica emociones faciales!'
 						description='Aprende a identificar las emociones faciales de las personas.'
+						onClick={() => setOpenInfoActivity(true)}
 					/>
 				</ListActivities>
 				<ListActivities variant='SelfEfficacy'>
@@ -75,6 +85,11 @@ const ShowActivitiesPage = () => {
 				</ListActivities>
 			</div>
 			<LargeButton>Crear Plan Semanal</LargeButton>
+			<ActivityInfo
+				open={openInfoActivity}
+				onClickButton={() => setOpenInfoActivity(false)}
+				onClickOutside={() => setOpenInfoActivity(false)}
+			/>
 		</div>
 	)
 }

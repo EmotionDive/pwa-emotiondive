@@ -7,9 +7,18 @@ const CardActivitie = ({
 	description,
 	variant = 'SelfKnowledge',
 	optional = false,
+	onClick,
 }) => {
 	return (
-		<div className={`activitieCard ${variant}`}>
+		<div
+			className={`activitieCard ${variant}`}
+			tabIndex='0'
+			role='button'
+			onClick={onClick}
+			onKeyDown={(e) => {
+				if (e.key === 'Enter') onClick()
+			}}
+		>
 			<div className='activitieCard__title'>
 				<span>{number}</span>
 				{title}
@@ -33,6 +42,11 @@ CardActivitie.propTypes = {
 		'SelfEfficacy',
 		'Empathy',
 	]),
+	onClick: PropTypes.func,
+}
+
+CardActivitie.defaultProps = {
+	onClick: () => {},
 }
 
 export default CardActivitie

@@ -348,6 +348,192 @@
 	}
 }
 
+.activityInfo {
+	max-width: 380px;
+	width: 90%;
+	height: fit-content;
+	margin-top: 6vh;
+	margin-bottom: 12vh;
+	border-radius: 15px;
+	background-color: var(--neutral-500);
+	box-shadow: 0px 5px 17px rgba(31, 30, 41, 0.46);
+	line-height: 120%;
+	animation: enterModal 0.8s ease-out;
+
+	// TODO: Add Cognitive Competences Classes Colors
+
+	@include mediaQuery('tablet') {
+		max-width: 500px;
+		.activityInfo__title {
+			gap: 10px;
+		}
+	}
+
+	@include mediaQuery('desktop') {
+		max-width: 700px;
+	}
+
+	@include mediaQuery('largeDesktop') {
+		max-width: 900px;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		padding: 15px;
+		border-radius: 15px;
+		background-color: var(--IE-self-knowledge-400);
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--neutral-400);
+		gap: 6px;
+
+		span {
+			display: flex;
+			width: 28px;
+			height: 28px;
+			border-radius: 2rem;
+			border: 2px dashed var(--neutral-400);
+			justify-content: center;
+			align-items: center;
+			font-weight: 600;
+		}
+	}
+
+	&__content {
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__chips {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		span {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			font-size: 1rem;
+			font-weight: 500;
+			padding: 6px 10px;
+			border-radius: 7.5px;
+
+			svg {
+				width: auto;
+				height: 14px;
+			}
+		}
+
+		&__chipActivity {
+			background-color: var(--primary-200);
+			color: var(--primary-800);
+
+			svg {
+				fill: var(--primary-800);
+			}
+		}
+
+		&__chipOffline {
+			background-color: rgba(163, 163, 163, 0.2);
+			color: var(--neutral-600);
+
+			svg {
+				fill: var(--neutral-600);
+			}
+		}
+	}
+
+	&__data {
+		display: flex;
+		gap: 10px;
+
+		div:first-child {
+			display: flex;
+			flex: 0 0 40px;
+			height: 40px;
+			border-radius: 5rem;
+			background-color: var(--IE-self-knowledge-400);
+			justify-content: center;
+			align-items: center;
+			svg {
+				fill: var(--neutral-400);
+			}
+		}
+
+		div:last-child {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		p {
+			@include justifyText;
+		}
+
+		p:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		&.book {
+			svg {
+				height: 22px;
+				width: auto;
+			}
+		}
+
+		&.progress {
+			svg {
+				height: 23px;
+				width: auto;
+				margin-left: 3px;
+			}
+		}
+
+		&.time {
+			svg {
+				height: 25px;
+				width: auto;
+				margin-bottom: 3px;
+			}
+		}
+
+		&.benefits {
+			svg {
+				height: 21px;
+				width: auto;
+				margin: 3px 0px 0px 3px;
+			}
+		}
+	}
+
+	.button {
+		width: 100%;
+		max-width: 160px;
+		align-self: center;
+		background-color: var(--secondary-600);
+		color: var(--neutral-400);
+		&:active {
+			box-shadow: 0px 4px 15px rgba(86, 185, 249, 0.25),
+				inset 0px 4px 15px rgba(0, 0, 0, 0.16);
+		}
+		@include mediaQuery('desktop') {
+			&:hover {
+				box-shadow: 0px 4px 20px rgba(86, 185, 249, 0.66);
+			}
+		}
+	}
+}
+
+.modal--exit {
+	.activityInfo {
+		animation: exitModal 0.2s ease-in-out 0s 1 normal forwards;
+	}
+}
+
 @keyframes headShake {
 	0% {
 		-webkit-transform: translateX(0);

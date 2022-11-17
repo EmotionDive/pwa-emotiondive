@@ -89,6 +89,21 @@
 	}
 }
 
+body:has(.modal__background.open) {
+	overflow-y: hidden;
+
+	.modal__background {
+		overflow-y: auto;
+	}
+
+	@include mediaQuery('desktop') {
+		overflow-y: auto;
+		.modal__background {
+			overflow-y: hidden;
+		}
+	}
+}
+
 @keyframes enterModal {
 	0% {
 		translate: 0 100vh;
