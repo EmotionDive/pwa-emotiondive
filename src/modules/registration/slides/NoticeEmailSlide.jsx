@@ -1,18 +1,35 @@
 import { LargeButton, TextButton } from '../../../components/Buttons'
 import image from '@assets/images/pictures/Email-Image.png'
-import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect } from 'react'
 import UserService from '../../../fetchers/UserService'
 import { useSlides } from '../../../utils/Slides'
+import useUser from '../../../data/hooks/useUser'
 
 const NoticeEmailSlide = () => {
-	const { logout } = useAuth0()
+	const { logout, flags, updateFlags } = useUser()
 	const { state } = useSlides()
 
 	useEffect(() => {
-		//TODO: ADD USER CONTEXT WITH FLAGS AND MAKE REDIRECTS ON PAGES
-		//TODO: SEND EMAIL WITH USERSERVICE
-		// UserService.sendEmail()
+		window.addEventListener('beforeunload', logout)
+
+		return () => {
+			window.removeEventListener('beforeunload', logout)
+		}
+	}, [])
+
+	useEffect(() => {
+		UserService.sendEmail(state.username)
+			.then((response) => {
+				if (response.status !== 'success')
+					console.error(
+						`No se pudo enviar el correo: ${JSON.parse(response.message)}`
+					)
+			})
+			.catch((error) => {
+				console.error(error)
+			})
+		flags.is_registered = true
+		updateFlags(flags)
 	}, [])
 
 	return (
@@ -40,10 +57,7 @@ const NoticeEmailSlide = () => {
 						>
 							Abrir Correo
 						</LargeButton>
-						<TextButton
-							onClick={() => logout({ returnTo: window.location.origin })}
-							color='secondary'
-						>
+						<TextButton onClick={() => logout()} color='secondary'>
 							Ir a Inicio de Sesión
 						</TextButton>
 					</div>

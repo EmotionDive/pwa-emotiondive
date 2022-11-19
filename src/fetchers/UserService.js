@@ -15,4 +15,22 @@ export default class UserService {
 			data: data,
 		})
 	}
+
+	static verifyUsernameAvailability(username) {
+		return clientRequest({
+			method: 'get',
+			url: `/verification/username_state/${username}`,
+		})
+	}
+
+	static sendEmail(username) {
+		return clientRequest({
+			method: 'get',
+			url: `/verification/verify_mail/${username}`,
+		})
+	}
+
+	static verifyEmail(username) {
+		return clientRequest()
+	}
 }

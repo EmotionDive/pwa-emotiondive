@@ -1,10 +1,19 @@
-import { useNavigate } from 'react-router-dom'
 import { LargeButton, TextButton } from '../../components/Buttons'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
 import image from '@assets/images/pictures/NoActive-Image.png'
+import { useEffect } from 'react'
+import useUser from '../../data/hooks/useUser'
 
 const NoActivatedAccountPage = () => {
-	const navigate = useNavigate()
+	const { logout } = useUser()
+
+	useEffect(() => {
+		window.addEventListener('beforeunload', logout)
+
+		return () => {
+			window.removeEventListener('beforeunload', logout)
+		}
+	}, [])
 
 	return (
 		<div className='mainWrapper mainWrapper__fullHeight'>
@@ -39,7 +48,9 @@ const NoActivatedAccountPage = () => {
 						<TextButton
 							color='secondary'
 							withBack={true}
-							onClick={() => navigate('/')}
+							onClick={() => {
+								logout()
+							}}
 						>
 							Regresar a Inicio de Sesión
 						</TextButton>

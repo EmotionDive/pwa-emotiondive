@@ -6,8 +6,14 @@ import {
 	NoticeEmailSlide,
 } from './slides'
 import { SlideSwitch, Slide } from '../../utils/Slides'
+import useUser from '../../data/hooks/useUser'
+import { Navigate } from 'react-router-dom'
 
 const RegisterPage = () => {
+	const { flags } = useUser()
+
+	if (flags.is_registered) return <Navigate to='/' /> //Send to 404
+
 	return (
 		<div className='mainWrapper mainWrapper__fullHeight'>
 			<TransparentLocalizationBar localization='Registro' />

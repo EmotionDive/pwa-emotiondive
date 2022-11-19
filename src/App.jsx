@@ -26,13 +26,13 @@ function App() {
 	return (
 		<Routes>
 			<Route path='/' element={<RootAuthPage />} />
-			<Route path='/registro' element={<RegisterPage />} />
+			<Route path='/activeAccount' element={<ActivatedAccountPage />} />
 			{/* Authorized Routes */}
 			<Route element={<AuthorizedRoutes />}>
+				<Route path='/registro' element={<RegisterPage />} />
 				<Route path='/authorize' element={<AuthorizeRedirect />} />
 				<Route path='/tutorial' element={<TutorialPage />} />
 				<Route path='/testIE' element={<TestIEPage />} />
-				<Route path='/cuentaActiva' element={<ActivatedAccountPage />} />
 				<Route path='/cuentaNoActiva' element={<NoActivatedAccountPage />} />
 				<Route element={<MainAppLayout />}>
 					<Route path='/estadisticas' element={<StatisticsPage />} />

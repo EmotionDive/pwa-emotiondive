@@ -3,6 +3,7 @@ import { Textfield } from '../../../components/Forms'
 import { useSlides } from '../../../utils/Slides'
 import image from '@assets/images/pictures/User-Image.png'
 import { useRef, useState } from 'react'
+import UserService from '../../../fetchers/UserService'
 
 const UsernameSlide = () => {
 	const { slideTo, state, setState } = useSlides()
@@ -13,8 +14,26 @@ const UsernameSlide = () => {
 		if (username.current.value === '') {
 			setError('Escribe un nombre de usuario')
 		} else {
-			setState((prev) => ({ ...prev, username: username.current.value }))
-			slideTo('/dataGeneral')
+			UserService.verifyUsernameAvailability(username.current.value)
+				.then((response) => {
+					if (response.status === 'success') {
+						if (response.username_state === 'available') {
+							setState((prev) => ({
+								...prev,
+								username: username.current.value,
+							}))
+							slideTo('/dataGeneral')
+						} else {
+							setError(`${username.current.value} ya esta ocupado`)
+						}
+					} else {
+						alert('Error en el servidor')
+					}
+				})
+				.catch((error) => {
+					console.error(error)
+					alert('Error en el servidor')
+				})
 		}
 	}
 
