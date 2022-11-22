@@ -17,6 +17,13 @@ import WeekPlanPage from './modules/activities/weekPlan/WeekPlanPage'
 import ActivitiesLayout from './modules/activities/ActivitiesLayout'
 import ChooseCompetencePage from './modules/activities/activitiesMenus/ChooseCompetencePage'
 import ShowActivitiesPage from './modules/activities/activitiesMenus/ShowActivitiesPage'
+import {
+	HowSelfRegulateActivity,
+	LearnStrategiesActivity,
+	SelfRegulationStrategiesActivity,
+	SelfRegulationTestActivity,
+	UseStrategiesOnYouActivity,
+} from './modules/activities/TCC/SelfRegulation'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -48,6 +55,16 @@ function App() {
 							/>
 							<Route path='verActividades' element={<ShowActivitiesPage />} />
 						</Route>
+					</Route>
+				</Route>
+				<Route path='actividades'>
+					<Route path='autoregulacion'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<HowSelfRegulateActivity />} />
+						<Route path='2' element={<SelfRegulationStrategiesActivity />} />
+						<Route path='3' element={<LearnStrategiesActivity />} />
+						<Route path='4' element={<UseStrategiesOnYouActivity />} />
+						<Route path='5' element={<SelfRegulationTestActivity />} />
 					</Route>
 				</Route>
 			</Route>

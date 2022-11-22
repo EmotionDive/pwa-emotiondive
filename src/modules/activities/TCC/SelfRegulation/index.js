@@ -1,0 +1,5 @@
+export { default as SelfRegulationStrategiesActivity } from './SelfRegulationStrategiesActivity'
+export { default as LearnStrategiesActivity } from './LearnStrategiesActivity'
+export { default as UseStrategiesOnYouActivity } from './UseStrategiesOnYouActivity'
+export { default as HowSelfRegulateActivity } from './HowSelfRegulateActivity'
+export { default as SelfRegulationTestActivity } from './SelfRegulationTestActivity'
