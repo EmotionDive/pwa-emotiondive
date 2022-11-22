@@ -51,6 +51,7 @@ const QuestionsTestIESlide = () => {
 			prev.shift()
 			return prev
 		})
+		console.log(answers)
 	}
 
 	const finishTest = () => {
@@ -74,11 +75,11 @@ const QuestionsTestIESlide = () => {
 						onChange={(value) => setCurrentAnswer(value)}
 						value={currentAnswer}
 					>
-						<OptionButton value='1'>Completamente falso para mí</OptionButton>
-						<OptionButton value='2'>Bastante falso para mí</OptionButton>
-						<OptionButton value='3'>Ni verdadero ni falso para mí</OptionButton>
-						<OptionButton value='4'>Bastante verdadero para mí</OptionButton>
-						<OptionButton value='5'>
+						<OptionButton value={1}>Completamente falso para mí</OptionButton>
+						<OptionButton value={2}>Bastante falso para mí</OptionButton>
+						<OptionButton value={3}>Ni verdadero ni falso para mí</OptionButton>
+						<OptionButton value={4}>Bastante verdadero para mí</OptionButton>
+						<OptionButton value={5}>
 							Completamente verdadero para mí
 						</OptionButton>
 					</OptionButtonGroup>

@@ -2,14 +2,45 @@ import { LargeButton, TextButton } from '../../../components/Buttons'
 import { Textfield } from '../../../components/Forms'
 import { useSlides } from '../../../utils/Slides'
 import image from '@assets/images/pictures/User-Image.png'
+import { useRef, useState } from 'react'
+import UserService from '../../../fetchers/UserService'
 
 const UsernameSlide = () => {
-	const { slideTo } = useSlides()
+	const { slideTo, state, setState } = useSlides()
+	const username = useRef()
+	const [error, setError] = useState('')
+
+	const handleOnClick = () => {
+		if (username.current.value === '') {
+			setError('Escribe un nombre de usuario')
+		} else {
+			UserService.verifyUsernameAvailability(username.current.value)
+				.then((response) => {
+					if (response.status === 'success') {
+						if (response.username_state === 'available') {
+							setState((prev) => ({
+								...prev,
+								username: username.current.value,
+							}))
+							slideTo('/dataGeneral')
+						} else {
+							setError(`${username.current.value} ya esta ocupado`)
+						}
+					} else {
+						alert('Error en el servidor')
+					}
+				})
+				.catch((error) => {
+					console.error(error)
+					alert('Error en el servidor')
+				})
+		}
+	}
 
 	return (
 		<>
 			<section className='mainWrapper__centerContent registerPage__top'>
-				<h1 className='text--big'>¿Cómo te gustaría que te llamaramos?</h1>
+				<h1 className='text--big'>¿Cómo te gustaría que te llamáramos?</h1>
 				<span className='systemText__instruction'>
 					Escribe un nombre de usuario:
 				</span>
@@ -18,17 +49,24 @@ const UsernameSlide = () => {
 						<img src={image} alt='User' />
 					</div>
 					<div className='registerPage__mainContent'>
-						<Textfield label='Nombre de usuario' placeholder='Usuario123' />
+						<Textfield
+							label='Nombre de usuario'
+							placeholder='Usuario123'
+							innerRef={username}
+							defaultValue={state?.username}
+							onChange={() => {
+								if (error) setError('')
+							}}
+							error={error}
+						/>
 						<span className='text--small'>
 							Dando click en “Continuar”, aceptas nuestros Términos &
 							Condiciones.
 						</span>
-						<LargeButton onClick={() => slideTo('/dataGeneral')}>
-							Continuar
-						</LargeButton>
+						<LargeButton onClick={handleOnClick}>Continuar</LargeButton>
 						<TextButton
 							withBack={true}
-							onClick={() => slideTo('/T&Cs')}
+							onClick={() => slideTo('/')}
 							color='secondary'
 						>
 							Atrás

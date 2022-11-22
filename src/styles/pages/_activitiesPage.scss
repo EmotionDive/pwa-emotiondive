@@ -1,0 +1,568 @@
+@use '../abstracts/' as *;
+
+.appWrapper {
+	main:has(.activitiesPage) {
+		padding-top: 0;
+	}
+}
+
+.activitiesPage {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	&__tabNav {
+		width: 100vw;
+		height: 40px;
+		margin-left: -1.125rem;
+		background-color: var(--neutral-500);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5vw;
+		user-select: none;
+		position: fixed;
+		top: 50px;
+		z-index: 1;
+
+		@include mediaQuery('tablet') {
+			margin-left: -3.125rem;
+		}
+
+		@include mediaQuery('largeDesktop') {
+			margin-left: -6.25rem;
+		}
+
+		span {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			cursor: pointer;
+			gap: 8px;
+			transition: color $transitionDuration ease-in-out;
+			svg {
+				transition: fill $transitionDuration ease-in-out;
+			}
+		}
+
+		.active {
+			color: var(--primary-700);
+			border-bottom: 2px solid var(--primary-700);
+			margin-bottom: -2px;
+			svg {
+				fill: var(--primary-700);
+			}
+		}
+	}
+
+	&__content {
+		margin-top: 70px;
+		@include mediaQuery('tablet') {
+			margin-top: 80px;
+		}
+		@include mediaQuery('desktop') {
+			margin-top: 70px;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
+	}
+}
+
+.chooseCompetencesSlide {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+
+	h1 {
+		line-height: 100%;
+		margin: 0;
+	}
+
+	.text--small {
+		color: var(--text-600);
+	}
+
+	@include mediaQuery('tablet') {
+		margin-top: 4vh;
+	}
+
+	@include mediaQuery('desktop') {
+		margin-top: 0;
+	}
+
+	.cognitiveCards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 15px;
+
+		&__card {
+			border: none;
+			font-weight: 600;
+			color: var(--neutral-400);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-radius: 12px;
+			cursor: pointer;
+			opacity: 60%;
+			transition: opacity $transitionDuration ease-in-out,
+				color $transitionDuration ease-in-out;
+
+			&.SelfKnowledge {
+				background-color: var(--IE-self-knowledge-400);
+			}
+
+			&.SelfRegulation {
+				background-color: var(--IE-self-regulation-400);
+			}
+
+			&.SelfEfficacy {
+				background-color: var(--IE-self-efficacy-400);
+			}
+
+			&.Empathy {
+				background-color: var(--IE-empathy-400);
+			}
+
+			div {
+				width: 140px;
+				height: 140px;
+				background-color: var(--neutral-400);
+				border-radius: 5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 20px 15px;
+
+				img {
+					width: 130px;
+					height: 130px;
+				}
+			}
+
+			span {
+				margin-top: -5px;
+				margin-bottom: 20px;
+			}
+
+			@include mediaQuery('desktop') {
+				&:hover {
+					opacity: 100%;
+				}
+			}
+
+			&.active {
+				opacity: 100%;
+
+				&.SelfKnowledge {
+					background-color: var(--IE-self-knowledge-600);
+				}
+
+				&.SelfRegulation {
+					background-color: var(--IE-self-regulation-600);
+				}
+
+				&.SelfEfficacy {
+					background-color: var(--IE-self-efficacy-600);
+				}
+
+				&.Empathy {
+					background-color: var(--IE-empathy-600);
+				}
+			}
+		}
+	}
+
+	.error {
+		color: var(--alerts-error);
+		@include systemInstructions;
+	}
+}
+
+.showActivitiesPage {
+	&__displayActivities {
+		display: flex;
+		gap: 20px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.button--large {
+		position: sticky;
+		-webkit-animation-timing-function: ease-in-out;
+		animation-timing-function: ease-in-out;
+		-webkit-animation-name: headShake;
+		animation-name: headShake;
+		-webkit-animation-duration: 3.5s;
+		animation-duration: 3.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-delay: 1s;
+		animation-delay: 1s;
+	}
+}
+
+.listActivities {
+	width: 100%;
+	max-width: 378px;
+	box-shadow: 0px 4px 8px rgba(31, 30, 41, 0.12);
+	border-radius: 15px;
+
+	&__title {
+		border-radius: 15px;
+		display: flex;
+		align-items: center;
+		color: var(--neutral-400);
+		font-size: 1.563rem;
+		font-weight: 700;
+
+		span {
+			width: 54px;
+			height: 54px;
+			border-radius: 5rem;
+			background-color: var(--neutral-400);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 15px;
+			img {
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		&.SelfKnowledge {
+			background-color: var(--IE-self-knowledge-500);
+		}
+
+		&.SelfRegulation {
+			background-color: var(--IE-self-regulation-500);
+		}
+
+		&.SelfEfficacy {
+			background-color: var(--IE-self-efficacy-500);
+		}
+
+		&.Empathy {
+			background-color: var(--IE-empathy-500);
+		}
+	}
+
+	&__containerCards {
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+
+.activitieCard {
+	width: 100%;
+	max-width: 350px;
+	padding: 10px;
+	border-radius: 7.5px;
+	border: 3px solid var(--IE-self-knowledge-500);
+	cursor: pointer;
+	line-height: 120%;
+	transition: box-shadow $transitionDuration ease-in-out,
+		translate $transitionDuration ease-in-out;
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-weight: 600;
+		margin-bottom: 4px;
+
+		span {
+			display: flex;
+			width: 25px;
+			height: 25px;
+			border-radius: 2rem;
+			border: 2px dashed var(--IE-self-knowledge-500);
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	b {
+		margin-right: 5px;
+	}
+
+	&:hover {
+		box-shadow: 0px 4px 8px rgba(31, 30, 41, 0.12);
+		translate: 0 1px;
+	}
+
+	&.SelfKnowledge {
+		border-color: var(--IE-self-knowledge-500);
+		.activitieCard__title {
+			color: var(--IE-self-knowledge-500);
+			span {
+				border-color: var(--IE-self-knowledge-500);
+			}
+		}
+	}
+
+	&.SelfRegulation {
+		border-color: var(--IE-self-regulation-500);
+		.activitieCard__title {
+			color: var(--IE-self-regulation-500);
+			span {
+				border-color: var(--IE-self-regulation-500);
+			}
+		}
+	}
+
+	&.SelfEfficacy {
+		border-color: var(--IE-self-efficacy-500);
+		.activitieCard__title {
+			color: var(--IE-self-efficacy-500);
+			span {
+				border-color: var(--IE-self-efficacy-500);
+			}
+		}
+	}
+
+	&.Empathy {
+		border-color: var(--IE-empathy-500);
+		.activitieCard__title {
+			color: var(--IE-empathy-500);
+			span {
+				border-color: var(--IE-empathy-500);
+			}
+		}
+	}
+}
+
+.activityInfo {
+	max-width: 380px;
+	width: 90%;
+	height: fit-content;
+	margin-top: 6vh;
+	margin-bottom: 12vh;
+	border-radius: 15px;
+	background-color: var(--neutral-500);
+	box-shadow: 0px 5px 17px rgba(31, 30, 41, 0.46);
+	line-height: 120%;
+	animation: enterModal 0.8s ease-out;
+
+	// TODO: Add Cognitive Competences Classes Colors
+
+	@include mediaQuery('tablet') {
+		max-width: 500px;
+		.activityInfo__title {
+			gap: 10px;
+		}
+	}
+
+	@include mediaQuery('desktop') {
+		max-width: 700px;
+	}
+
+	@include mediaQuery('largeDesktop') {
+		max-width: 900px;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		padding: 15px;
+		border-radius: 15px;
+		background-color: var(--IE-self-knowledge-400);
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--neutral-400);
+		gap: 6px;
+
+		span {
+			display: flex;
+			width: 28px;
+			height: 28px;
+			border-radius: 2rem;
+			border: 2px dashed var(--neutral-400);
+			justify-content: center;
+			align-items: center;
+			font-weight: 600;
+		}
+	}
+
+	&__content {
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__chips {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		span {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			font-size: 1rem;
+			font-weight: 500;
+			padding: 6px 10px;
+			border-radius: 7.5px;
+
+			svg {
+				width: auto;
+				height: 14px;
+			}
+		}
+
+		&__chipActivity {
+			background-color: var(--primary-200);
+			color: var(--primary-800);
+
+			svg {
+				fill: var(--primary-800);
+			}
+		}
+
+		&__chipOffline {
+			background-color: rgba(163, 163, 163, 0.2);
+			color: var(--neutral-600);
+
+			svg {
+				fill: var(--neutral-600);
+			}
+		}
+	}
+
+	&__data {
+		display: flex;
+		gap: 10px;
+
+		div:first-child {
+			display: flex;
+			flex: 0 0 40px;
+			height: 40px;
+			border-radius: 5rem;
+			background-color: var(--IE-self-knowledge-400);
+			justify-content: center;
+			align-items: center;
+			svg {
+				fill: var(--neutral-400);
+			}
+		}
+
+		div:last-child {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		p {
+			@include justifyText;
+		}
+
+		p:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		&.book {
+			svg {
+				height: 22px;
+				width: auto;
+			}
+		}
+
+		&.progress {
+			svg {
+				height: 23px;
+				width: auto;
+				margin-left: 3px;
+			}
+		}
+
+		&.time {
+			svg {
+				height: 25px;
+				width: auto;
+				margin-bottom: 3px;
+			}
+		}
+
+		&.benefits {
+			svg {
+				height: 21px;
+				width: auto;
+				margin: 3px 0px 0px 3px;
+			}
+		}
+	}
+
+	.button {
+		width: 100%;
+		max-width: 160px;
+		align-self: center;
+		background-color: var(--secondary-600);
+		color: var(--neutral-400);
+		&:active {
+			box-shadow: 0px 4px 15px rgba(86, 185, 249, 0.25),
+				inset 0px 4px 15px rgba(0, 0, 0, 0.16);
+		}
+		@include mediaQuery('desktop') {
+			&:hover {
+				box-shadow: 0px 4px 20px rgba(86, 185, 249, 0.66);
+			}
+		}
+	}
+}
+
+.modal--exit {
+	.activityInfo {
+		animation: exitModal 0.2s ease-in-out 0s 1 normal forwards;
+	}
+}
+
+@keyframes headShake {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	6.5% {
+		-webkit-transform: translateX(-6px) rotateY(-9deg);
+		transform: translateX(-6px) rotateY(-9deg);
+	}
+
+	18.5% {
+		-webkit-transform: translateX(5px) rotateY(7deg);
+		transform: translateX(5px) rotateY(7deg);
+	}
+
+	31.5% {
+		-webkit-transform: translateX(-3px) rotateY(-5deg);
+		transform: translateX(-3px) rotateY(-5deg);
+	}
+
+	43.5% {
+		-webkit-transform: translateX(2px) rotateY(3deg);
+		transform: translateX(2px) rotateY(3deg);
+	}
+
+	50%,
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}

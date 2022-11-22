@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Select = ({ label, children }) => {
+const Select = ({ label, children, innerRef }) => {
 	return (
 		<label className='select'>
 			<span>{label}</span>
-			<select>{children}</select>
+			<select ref={innerRef}>{children}</select>
 		</label>
 	)
 }
@@ -22,6 +22,7 @@ Select.propTypes = {
 		})
 		return error
 	},
+	innerRef: PropTypes.any,
 }
 
 Select.defaultProps = {

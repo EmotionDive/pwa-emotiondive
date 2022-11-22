@@ -18,7 +18,7 @@ const OptionButton = ({ value, children, checked, onClick }) => {
 }
 
 OptionButton.propTypes = {
-	value: PropTypes.string.isRequired,
+	value: PropTypes.any.isRequired,
 	children: PropTypes.string,
 	checked: PropTypes.bool,
 	onClick: PropTypes.func,

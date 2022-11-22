@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { LargeButton, TextButton } from '../../../components/Buttons'
+import { LargeButton } from '../../../components/Buttons'
 import { useSlides } from '../../../utils/Slides'
 import TextFormatter from '../../../utils/TextFormatter/TextFormatter'
 
@@ -44,13 +44,6 @@ const TermsConditionsSlide = () => {
 				<span>
 					Dando click en “Continuar”, aceptas nuestros Términos & Condiciones.
 				</span>
-				<TextButton
-					withBack={true}
-					onClick={() => slideTo('/email')}
-					color='secondary'
-				>
-					Atrás
-				</TextButton>
 			</section>
 		</>
 	)
