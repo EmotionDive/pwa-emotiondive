@@ -44,6 +44,31 @@
 			display: flex;
 			align-items: center;
 			margin-right: auto;
+
+			&.activities {
+				margin: 0;
+				font-weight: 500;
+			}
+
+			&.SelfKnowledge {
+				color: var(--IE-self-knowledge-500);
+			}
+
+			&.SelfRegulation {
+				color: var(--IE-self-regulation-500);
+			}
+
+			&.SelfEfficacy {
+				color: var(--IE-self-efficacy-500);
+			}
+
+			&.Empathy {
+				color: var(--IE-empathy-500);
+			}
+		}
+
+		&.activities {
+			justify-content: center;
 		}
 	}
 
