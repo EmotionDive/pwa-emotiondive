@@ -98,3 +98,25 @@ And in the ``_selfRegulation.scss`` file:
     }
 }
 ```
+
+### Add activity on a route
+In the ``App.jsx`` file there will be the routes of all the aplication and you need to locate each activity as following (inside ``<Route element={<AuthorizedRoutes />}>``):
+```jsx
+<Route path='actividades'>
+    <Route path='autoregulacion'>
+        <Route path='1' element={<HowSelfRegulateActivity />} />
+        ...
+        <Route path='5' element={<SelfRegulationTestActivity />} />
+    </Route>
+    ...
+    <Route path='empatia'>
+        ...
+    </Route>
+</Route>
+```
+**IMPORTANT:** For development purposes you can name the path of each activity as a number (1-5) but in integration the path of each activity must correspond to the ID on the database.
+
+## General Considerations
+In some cases there are already some pages that uses the API and Auth0, so you need to run the API first in order to prevent issues on the development.
+
+Also, you need to have an ``.env.development`` file with the same secrets as in ``.env.example``.
