@@ -204,8 +204,8 @@
 		border: 3px solid var(--primary-500);
 		border-radius: 8px 0px 0px 8px;
 		border-right: none;
-		width: 50px;
-		height: 50px;
+		min-width: 50px;
+		min-height: 50px;
 		color: var(--primary-500);
 	}
 
@@ -228,6 +228,112 @@
 		.optionButton__square {
 			background-color: var(--primary-500);
 			color: var(--neutral-400);
+		}
+	}
+
+	&.medium {
+		.optionButton__text {
+			font-weight: 500;
+		}
+	}
+
+	&.black {
+		.optionButton__square {
+			color: var(--text-500);
+			border-color: var(--text-500);
+		}
+		.optionButton__text {
+			color: var(--text-500);
+			border-color: var(--text-500);
+		}
+		&.optionButton--checked {
+			.optionButton__square {
+				background-color: var(--text-500);
+				color: var(--neutral-400);
+			}
+		}
+		&:hover {
+			box-shadow: 0px 4px 15px rgba(31, 30, 41, 0.3);
+		}
+	}
+
+	&.SelfKnowledge {
+		.optionButton__square {
+			color: var(--IE-self-knowledge-500);
+			border-color: var(--IE-self-knowledge-500);
+		}
+		.optionButton__text {
+			color: var(--IE-self-knowledge-500);
+			border-color: var(--IE-self-knowledge-500);
+		}
+		&.optionButton--checked {
+			.optionButton__square {
+				background-color: var(--IE-self-knowledge-500);
+				color: var(--neutral-400);
+			}
+		}
+		&:hover {
+			box-shadow: 0px 4px 13px rgba(31, 86, 249, 0.2);
+		}
+	}
+
+	&.SelfRegulation {
+		.optionButton__square {
+			color: var(--IE-self-regulation-500);
+			border-color: var(--IE-self-regulation-500);
+		}
+		.optionButton__text {
+			color: var(--IE-self-regulation-500);
+			border-color: var(--IE-self-regulation-500);
+		}
+		&.optionButton--checked {
+			.optionButton__square {
+				background-color: var(--IE-self-regulation-500);
+				color: var(--neutral-400);
+			}
+		}
+		&:hover {
+			box-shadow: 0px 4px 13px rgba(255, 121, 0, 0.2);
+		}
+	}
+
+	&.SelfEfficacy {
+		.optionButton__square {
+			color: var(--IE-self-efficacy-500);
+			border-color: var(--IE-self-efficacy-500);
+		}
+		.optionButton__text {
+			color: var(--IE-self-efficacy-500);
+			border-color: var(--IE-self-efficacy-500);
+		}
+		&.optionButton--checked {
+			.optionButton__square {
+				background-color: var(--IE-self-efficacy-500);
+				color: var(--neutral-400);
+			}
+		}
+		&:hover {
+			box-shadow: 0px 4px 13px rgba(75, 238, 170, 0.2);
+		}
+	}
+
+	&.Empathy {
+		.optionButton__square {
+			color: var(--IE-empathy-500);
+			border-color: var(--IE-empathy-500);
+		}
+		.optionButton__text {
+			color: var(--IE-empathy-500);
+			border-color: var(--IE-empathy-500);
+		}
+		&.optionButton--checked {
+			.optionButton__square {
+				background-color: var(--IE-empathy-500);
+				color: var(--neutral-400);
+			}
+		}
+		&:hover {
+			box-shadow: 0px 4px 13px rgba(250, 138, 239, 0.2);
 		}
 	}
 }
