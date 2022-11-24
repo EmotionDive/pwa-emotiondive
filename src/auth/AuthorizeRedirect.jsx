@@ -6,16 +6,23 @@ import useUser from '../data/hooks/useUser'
 
 const AuthorizeRedirect = () => {
 	const { user } = useAuth0()
-	const { updateFlags } = useUser()
+	const { updateFlags, updateUserData } = useUser()
 
 	const { isLoading, data, isSuccess } = useQuery('userFlags', () =>
 		UserService.getAccountStatus(user.email)
 	)
 
-	if (isLoading) return <div>Redirecting...</div>
+	const {
+		isLoading: isLoadingUser,
+		data: dataUser,
+		isSuccess: isSuccessUser,
+	} = useQuery('userData', () => UserService.getUserData(user.email))
 
-	if (isSuccess) {
+	if (isLoading || isLoadingUser) return <div>Redirecting...</div>
+
+	if (isSuccess && isSuccessUser) {
 		updateFlags(data)
+		updateUserData(dataUser)
 		if (!data.is_registered) return <Navigate to='/registro' replace />
 		else if (!data.is_active) return <Navigate to='/cuentaNoActiva' replace />
 		else if (data.is_first_time) return <Navigate to='/tutorial' replace />

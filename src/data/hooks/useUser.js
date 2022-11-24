@@ -3,13 +3,18 @@ import { useContext } from 'react'
 import { UserContext } from '../UserProvider'
 
 export default function useUser() {
-	const { flags } = useContext(UserContext)
+	const { flags, userData } = useContext(UserContext)
 	const { logout: logoutFromAuth } = useAuth0()
 
 	const updateFlags = (newFlags) => {
 		flags.current = newFlags
 		localStorage.setItem('flags', JSON.stringify(newFlags))
 		console.log('updated flags')
+	}
+
+	const updateUserData = (newData) => {
+		localStorage.setItem('user', JSON.stringify(newData))
+		console.log('updated user')
 	}
 
 	const logout = () => {
@@ -21,7 +26,9 @@ export default function useUser() {
 
 	return {
 		flags: flags.current,
+		userData: userData.current,
 		updateFlags,
+		updateUserData,
 		logout,
 	}
 }
