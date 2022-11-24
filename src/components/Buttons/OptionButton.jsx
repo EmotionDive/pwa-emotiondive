@@ -7,6 +7,7 @@ const OptionButton = ({
 	onClick,
 	variant,
 	fontWeight,
+	errorSucces,
 }) => {
 	return (
 		<div
@@ -18,7 +19,7 @@ const OptionButton = ({
 			}}
 			className={`optionButton ${
 				checked ? 'optionButton--checked' : ''
-			} ${variant} ${fontWeight}`}
+			} ${variant} ${fontWeight} ${errorSucces}`}
 		>
 			<div className='optionButton__square'>{value}</div>
 			<div className='optionButton__text'>{children}</div>
@@ -40,6 +41,7 @@ OptionButton.propTypes = {
 		'Empathy',
 	]),
 	fontWeight: PropTypes.oneOf(['semibold', 'medium']),
+	errorSucces: PropTypes.oneOf(['error', 'success', 'none']),
 }
 
 OptionButton.defaultProps = {
@@ -47,6 +49,7 @@ OptionButton.defaultProps = {
 	checked: false,
 	variant: 'normal',
 	fontWeight: 'semibold',
+	errorSucces: 'none',
 }
 
 export default OptionButton

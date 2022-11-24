@@ -59,6 +59,18 @@
 			pointer-events: none;
 			cursor: auto;
 		}
+
+		&.secondary {
+			background-color: var(--secondary-500);
+			@include mediaQuery('desktop') {
+				&:hover {
+					box-shadow: 0px 4px 20px rgba(86, 185, 249, 0.66);
+				}
+			}
+			&:disabled {
+				background-color: var(--secondary-300);
+			}
+		}
 	}
 
 	&--large-outlined {
@@ -334,6 +346,50 @@
 		}
 		&:hover {
 			box-shadow: 0px 4px 13px rgba(250, 138, 239, 0.2);
+		}
+	}
+
+	&.error {
+		pointer-events: none;
+		cursor: auto;
+
+		.optionButton__square {
+			background-color: var(--alerts-error) !important;
+			color: var(--alerts-error) !important;
+			border-color: var(--alerts-error) !important;
+			&::after {
+				content: '✕';
+				position: absolute;
+				color: var(--neutral-400);
+				font-weight: 700;
+				font-size: 1.5rem;
+			}
+		}
+		.optionButton__text {
+			color: var(--alerts-error);
+			border-color: var(--alerts-error);
+		}
+	}
+
+	&.success {
+		pointer-events: none;
+		cursor: auto;
+
+		.optionButton__square {
+			background-color: var(--alerts-success) !important;
+			color: var(--alerts-success) !important;
+			border-color: var(--alerts-success) !important;
+			&::after {
+				content: '✔';
+				position: absolute;
+				color: var(--neutral-400);
+				font-weight: 700;
+				font-size: 1.5rem;
+			}
+		}
+		.optionButton__text {
+			color: var(--alerts-success);
+			border-color: var(--alerts-success);
 		}
 	}
 }

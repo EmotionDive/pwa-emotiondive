@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const LargeButton = ({ children, onClick, disabled, type }) => {
+const LargeButton = ({ children, onClick, disabled, type, color }) => {
 	const handleOnClick = () => {
 		setTimeout(onClick, 400)
 	}
@@ -9,7 +9,9 @@ const LargeButton = ({ children, onClick, disabled, type }) => {
 		<button
 			className={`button 
 			${type === 'normal' ? 'button--large' : 'button--large-outlined'}
-			${type === 'outlined-lighter' ? 'button--large-outlined-lighter' : ''}`}
+			${
+				type === 'outlined-lighter' ? 'button--large-outlined-lighter' : ''
+			} ${color}`}
 			onClick={handleOnClick}
 			disabled={disabled}
 		>
@@ -23,12 +25,14 @@ LargeButton.propTypes = {
 	type: PropTypes.oneOf(['normal', 'outlined', 'outlined-lighter']),
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,
+	color: PropTypes.oneOf(['primary', 'secondary']),
 }
 
 LargeButton.defaultProps = {
 	children: 'Button',
 	disabled: false,
 	type: 'normal',
+	color: 'primary',
 }
 
 export default LargeButton
