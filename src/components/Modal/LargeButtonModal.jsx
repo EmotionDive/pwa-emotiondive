@@ -10,12 +10,15 @@ const LargeButtonModal = ({
 	buttonLabels,
 	onConfirmationCallback,
 	exitOnClickOut,
+	disabled,
+	type,
+	color,
 }) => {
 	const { operateModal } = useModalAction()
 
 	return (
 		<LargeButton
-			onClick={() =>
+			onClick={(e) => {
 				operateModal(
 					title,
 					info,
@@ -24,7 +27,10 @@ const LargeButtonModal = ({
 					onConfirmationCallback,
 					exitOnClickOut
 				)
-			}
+			}}
+			disabled={disabled}
+			type={type}
+			color={color}
 		>
 			{children}
 		</LargeButton>
@@ -39,6 +45,9 @@ LargeButtonModal.propTypes = {
 	buttonLabels: PropTypes.arrayOf(PropTypes.string),
 	onConfirmationCallback: PropTypes.func,
 	exitOnClickOut: PropTypes.bool,
+	disabled: PropTypes.bool,
+	color: PropTypes.oneOf(['primary', 'secondary']),
+	type: PropTypes.oneOf(['normal', 'outlined', 'outlined-lighter']),
 }
 
 LargeButtonModal.defaultProps = {
@@ -49,6 +58,9 @@ LargeButtonModal.defaultProps = {
 	buttonLabels: ['Ok'],
 	onConfirmationCallback: () => {},
 	exitOnClickOut: true,
+	disabled: false,
+	type: 'normal',
+	color: 'primary',
 }
 
 export default LargeButtonModal
