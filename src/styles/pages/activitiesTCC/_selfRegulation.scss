@@ -101,4 +101,51 @@
 			}
 		}
 	}
+
+	.learnStrategiesActivity {
+		.systemText__instruction {
+			text-align: center;
+		}
+
+		.question {
+			margin: 20px auto;
+			width: 100%;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__label {
+				@include systemButtons;
+			}
+
+			&__situation {
+				@include justifyText;
+				margin-bottom: 10px;
+			}
+
+			&__answers {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				margin-top: 20px;
+
+				&.disabled {
+					pointer-events: none;
+				}
+			}
+
+			&__bottom {
+				margin-top: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				&__explication {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
 }
