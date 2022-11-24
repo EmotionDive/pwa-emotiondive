@@ -148,4 +148,54 @@
 			}
 		}
 	}
+
+	.useStrategiesOnYouActivity {
+		.formContainer {
+			margin: 20px 0;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			@include mediaQuery('desktop') {
+				max-width: 70vw;
+				width: 100%;
+				margin: 20px auto;
+			}
+
+			div {
+				display: flex;
+				gap: 20px;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				@include mediaQuery('tablet') {
+					flex-wrap: nowrap;
+				}
+			}
+
+			button {
+				align-self: center;
+			}
+		}
+
+		@include mediaQuery('tablet') {
+			margin-top: 40px;
+			p {
+				margin-bottom: 20px;
+			}
+			.formContainer {
+				gap: 30px;
+			}
+		}
+
+		@include mediaQuery('desktop') {
+			margin-top: 0;
+			p {
+				margin-bottom: 0;
+			}
+			.formContainer {
+				gap: 20px;
+			}
+		}
+	}
 }
