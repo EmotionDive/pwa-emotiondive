@@ -9,6 +9,8 @@ import { ProgressBar } from '../../../components/Forms'
 
 import questions from '../../../assets/data/testIE.json'
 import { useSlides } from '../../../utils/Slides'
+import TestService from '../../../fetchers/TestService'
+import useUser from '../../../data/hooks/useUser'
 
 const QuestionsTestIESlide = () => {
 	// Save all answers on a ref
@@ -19,6 +21,8 @@ const QuestionsTestIESlide = () => {
 	const [toAnswer, setToAnswer] = useState([...Array(questions.length).keys()])
 	// Boolean in order to see if it is the last question
 	const [isFinalQuestion, setIsFinalQuestion] = useState(false)
+	//UserData
+	const { userData } = useUser()
 
 	const { slideTo } = useSlides()
 
@@ -56,9 +60,18 @@ const QuestionsTestIESlide = () => {
 
 	const finishTest = () => {
 		saveAnswer()
-		console.log('Finished')
-		console.log(answers.current)
-		slideTo('/end')
+		TestService.createTest(userData.username, answers.current)
+			.then((data) => {
+				if (data.status === 'success') slideTo('/end')
+				else {
+					alert('Error en API')
+					console.error(data)
+				}
+			})
+			.catch((error) => {
+				alert('Error en API')
+				console.error(error)
+			})
 	}
 
 	return (
