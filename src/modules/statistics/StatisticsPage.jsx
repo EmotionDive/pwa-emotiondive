@@ -6,7 +6,7 @@ import TabButton from '../../components/Controls/TabButton'
 import useUser from '../../data/hooks/useUser'
 import TestService from '../../fetchers/TestService'
 import OpportunityAreas from './components/OpportunityAreas'
-
+import TextFormatter from '../../utils/TextFormatter/TextFormatter'
 const seriesColors = [
 	'var(--IE-self-knowledge-500)',
 	'var(--IE-self-regulation-500)',
@@ -63,10 +63,18 @@ const StatisticsPage = () => {
 					</div>
 					<div>
 						<h1>Descripción General</h1>
-						<p>{data[tab].autoconocimiento.message}</p>
-						<p>{data[tab].autoregulacion.message}</p>
-						<p>{data[tab].autoeficacia.message}</p>
-						<p>{data[tab].empatia.message}</p>
+						<TextFormatter wrapWith='p'>
+							{data[tab].autoconocimiento.message}
+						</TextFormatter>
+						<TextFormatter wrapWith='p'>
+							{data[tab].autoregulacion.message}
+						</TextFormatter>
+						<TextFormatter wrapWith='p'>
+							{data[tab].autoeficacia.message}
+						</TextFormatter>
+						<TextFormatter wrapWith='p'>
+							{data[tab].empatia.message}
+						</TextFormatter>
 					</div>
 				</section>
 				<section className='statisticsPage__sectionOportunities'>
