@@ -36,12 +36,13 @@ const NoActivatedAccountPage = () => {
 							correo que te hemos enviado.
 						</span>
 						<LargeButton
-							onClick={() =>
+							onClick={() => {
 								window.open(
 									'https://mail.google.com/mail/u/0/#search/EmotionDive',
 									'_blank'
 								)
-							}
+								logout()
+							}}
 						>
 							Abrir Correo
 						</LargeButton>
