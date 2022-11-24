@@ -24,6 +24,7 @@ import {
 	SelfRegulationTestActivity,
 	UseStrategiesOnYouActivity,
 } from './modules/activities/TCC/SelfRegulation'
+import { SuccessesAndFailuresActivity } from './modules/activities/TCC/SelfEfficacy'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -59,12 +60,16 @@ function App() {
 				</Route>
 				<Route path='actividades'>
 					<Route path='autoregulacion'>
-						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						{/* IMPORTANT: The path will be the acitivity ID on BD */}
 						<Route path='1' element={<HowSelfRegulateActivity />} />
 						<Route path='2' element={<SelfRegulationStrategiesActivity />} />
 						<Route path='3' element={<LearnStrategiesActivity />} />
 						<Route path='4' element={<UseStrategiesOnYouActivity />} />
 						<Route path='5' element={<SelfRegulationTestActivity />} />
+					</Route>
+					<Route path='autoeficacia'>
+						{/* IMPORTANT: The path will be the acitivity ID on BD */}
+						<Route path='4' element={<SuccessesAndFailuresActivity />} />
 					</Route>
 				</Route>
 			</Route>
