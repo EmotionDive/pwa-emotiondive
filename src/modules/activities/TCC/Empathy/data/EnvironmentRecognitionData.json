@@ -1,0 +1,29 @@
+[
+	{
+		"env_id": 1,
+		"env_name": "Carrera profesional",
+		"env_description": "A tu amigo Isaac no le gusta la carrera que esta estudiando pero siente que ya es muy tarde para cambiarse de carrera ya que le falta un año para terminarla, pero no parece agradarle las oportunidades a futuro.",
+		"env_questions": [
+			"¿Cómo crees que se siente Isaac?"
+		]		
+	},
+	{
+		"env_id": 2,
+		"env_name": "Relaciones y rupturas",
+		"env_description": "Tu amigo Edwin termino recientemente con su novia Maria y recientemente se entero que su amigo Juan la ha estado viendo y han estado saliendo juntos, esto a molestado mucho a Edwin a tal grado de que le ha dicho a varios de sus amigos en comun que Juan es un traidor y que deberian dejar de hablarle.",
+		"env_questions": [
+			"¿Cómo crees que se siente Edwin?",
+			"¿Cómo crees que se siente Juan?",
+			"¿Cómo crees que se siente Maria?"
+		]		
+	},
+	{
+		"env_id": 3,
+		"env_name": "Logros academicos",
+		"env_description": "Despues de mucho esfuerzo, Betty ha logrado obtener una beca de excelencia debido a sus excelentes calificaciones y le ha contado a su mamá, despues de oirlo, la mamá de Betty ha decido organizarle una fiesta el fin de semana para celebrar.",
+		"env_questions": [
+			"¿Cómo crees que se siente Betty?",
+			"¿Cómo crees que se siente la mamá de Betty?"
+		]		
+	}
+]

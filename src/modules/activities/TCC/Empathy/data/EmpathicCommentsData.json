@@ -1,0 +1,20 @@
+[
+	{
+		"post_id": 1,
+		"post_content": "El día de hoy perdi mi celular amigos :(, estoy muy triste, lo puse en la mesa de un restaurante y se me olvido recogerlo, cuando volvi por el media hora despues, ya no estaba.",
+		"comment_content:": "Pues fue tu culpa, a quien se le ocurre olvida su celular.",
+		"comment_feedback": "No es tu culpa, a todos se nos puede olvidar algo, eso no significa que deban desaparecer."
+	},
+	{
+		"post_id": 2,
+		"post_content": "Ultimamente, me ha costado mucho trabajo conseguir empleo, espero puedan ayudarme amigos.",
+		"comment_content:": "Seguramente te faltan habilidades, yo no tuve problemas para encontrar empleo.",
+		"comment_feedback": "Tranquilo amigo, no es tan facil, puede ser que necesites pulir tu CV o tal vez checar si te falta algunas habilidades interpersonales, sientete con confianza de mandarme un mensaje."
+	},
+	{
+		"post_id": 3,
+		"post_content": "Amigos, quiero informarles que he quedado embarazada, a esta edad se que es complicado, pero he decidido seguir adelante y tener el bebe ya que considero que es una bendición.",
+		"comment_content:": "Te comiste la torta antes del recreo jajaja, no se para que finges que fue una bendición.",
+		"comment_feedback": "Amiga, me alegro y espero que todo salga muy bien durante el embarazo, ahi me avisas para el baby shower :)"
+	}
+]
