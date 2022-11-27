@@ -16,6 +16,7 @@
 		@include mediaQuery('desktop') {
 			padding: 30px 6.25rem;
 		}
+
 		.questions {
 			display: flex;
 			flex-direction: column;
@@ -58,6 +59,44 @@
 				}
 				.formContainer {
 					gap: 20px;
+				}
+			}
+		}
+
+		&:has(.introduction) {
+			justify-content: center;
+		}
+
+		.introduction {
+			display: flex;
+			gap: 20px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			@include justifyText;
+
+			.textWithImage {
+				display: grid;
+				gap: 30px;
+
+				img {
+					margin: 0 auto;
+					width: 80%;
+				}
+
+				p:not(:last-child) {
+					margin-bottom: 20px;
+				}
+
+				@include mediaQuery('desktop') {
+					max-width: 1366px;
+					grid-template-columns: auto 30%;
+					align-items: center;
+					gap: 5vw;
+					img {
+						order: 1;
+						width: 100%;
+					}
 				}
 			}
 		}
