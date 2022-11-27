@@ -26,11 +26,19 @@ import {
 } from './modules/activities/TCC/SelfRegulation'
 
 import {
+	EmpathicConversations,
+	EnvironmentRecognition,
+	EmpathicComments,
+	EmpathySympathyAntipathy,
+	EmpathySympathyAntipathy2,
+} from './modules/activities/TCC/Empathy'
+
+import {
 	OwnDecisionsEmotionandReasonsActivity,
 	ReasonsEmotionActivity,
 	SuccesAndFailsActivity,
-	SuccesAndFailsActivity2,
-	WhatwouldyoudoActivity
+	WhatwouldyoudoActivity,
+	SuccessesAndFailuresActivity
 } from './modules/activities/TCC/SelfEfficacy'
 
 function App() {
@@ -67,7 +75,7 @@ function App() {
 				</Route>
 				<Route path='actividades'>
 					<Route path='autoregulacion'>
-						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						{/* IMPORTANT: The path will be the acitivity ID on BD */}
 						<Route path='1' element={<HowSelfRegulateActivity />} />
 						<Route path='2' element={<SelfRegulationStrategiesActivity />} />
 						<Route path='3' element={<LearnStrategiesActivity />} />
@@ -79,11 +87,19 @@ function App() {
 						<Route path='1' element={<OwnDecisionsEmotionandReasonsActivity />} />
 						<Route path='2' element={<ReasonsEmotionActivity/>} />
 						<Route path='3' element={<SuccesAndFailsActivity />} />
-						<Route path='4' element={<SuccesAndFailsActivity2 />} />
+						<Route path='4' element={<SuccessesAndFailuresActivity />} />
 						<Route path='5' element={<WhatwouldyoudoActivity />} />
 					</Route> 
+					</Route>
+					<Route path='empatia'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<EmpathySympathyAntipathy />} />
+						<Route path='2' element={<EmpathySympathyAntipathy2 />} />
+						<Route path='3' element={<EnvironmentRecognition />} />
+						<Route path='4' element={<EmpathicConversations />} />
+						<Route path='5' element={<EmpathicComments />} />
+					</Route>
 				</Route>
-			</Route>
 		</Routes>
 	)
 }
