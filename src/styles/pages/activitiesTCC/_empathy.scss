@@ -157,6 +157,7 @@
 				margin-bottom: 10px;
 				color: var(--IE-empathy-600);
 			}
+
 			&__situation {
 				@include justifyText;
 				margin-bottom: 10px;
@@ -170,6 +171,113 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+			}
+		}
+	}
+
+	.EmpathicCommentsActivity {
+		.posts {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 20px auto;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__title {
+				font-size: 30px;
+				font-weight: 500;
+				text-align: center;
+				margin-bottom: 25px;
+				color: var(--IE-empathy-600);
+			}
+
+			&__label {
+				@include systemButtons;
+				margin-bottom: 15px;
+			}
+
+			&__bottom {
+				min-width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 20px;
+			}
+			
+
+		}
+	}
+}
+
+.card {
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+	border: 2px solid var(--IE-empathy-500);
+	border-radius: 15px;
+	margin-bottom: 20px;
+
+	@include mediaQuery('desktop') {
+		width: 55%;
+		padding: 2%;
+	}
+
+	&__user {
+		display: grid;
+		grid-template-columns: 2fr 7fr;
+		grid-gap: 10px;
+		margin-bottom: 15px;
+		@include mediaQuery('desktop') {
+			grid-template-columns: 1fr 7fr;
+		}
+
+		.profilePicture {
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			border-radius: 50px;
+		}
+
+		.userInfo {
+			&__publicname {
+				color: var(--IE-empathy-600);
+			}
+
+			&__username {
+				color: var(--text-400);
+			}
+		}
+	}
+
+	&__content {
+		margin-bottom: 20px;
+	}
+
+	&__reactions {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.reactionInfo {
+			display: flex;
+			flex-direction: row;
+
+			p {
+				color: var(--IE-empathy-500);
+			}
+
+			.reactionIcon {
+				width: 30px;
+				height: 30px;
+				filter: invert(78%) sepia(17%) saturate(1999%) hue-rotate(274deg) brightness(88%) contrast(98%);
+				margin-right: 10px;
 			}
 		}
 	}
