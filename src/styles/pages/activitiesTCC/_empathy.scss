@@ -138,4 +138,39 @@
 			}
 		}
 	}
+
+	.EnvironmentRecognitionActivity {
+		.environment {
+			display: flex;
+			flex-direction: column;
+			margin: 20px auto;
+			width: 100%;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__title {
+				font-size: 30px;
+				font-weight: 500;
+				text-align: center;
+				margin-bottom: 10px;
+				color: var(--IE-empathy-600);
+			}
+			&__situation {
+				@include justifyText;
+				margin-bottom: 10px;
+			}
+			&__questions {
+				margin-bottom: 20px;
+			}
+			&__bottom {
+				margin-top: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 }

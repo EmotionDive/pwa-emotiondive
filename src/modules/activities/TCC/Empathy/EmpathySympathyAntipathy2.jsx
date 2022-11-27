@@ -50,7 +50,9 @@ const EmpathySympathyAntipathy2 = () => {
                         <span className='instruction' ref={scrollTop}>
                             {data.instruction}
                         </span>
-                        <span className='scenario__title'>{data.sets[currentSet].scenarios[currentScenario].title}</span>
+                        <span className='scenario__title'>
+                            {data.sets[currentSet].scenarios[currentScenario].title}
+                        </span>
                         <p className='scenario__situation'>
                             {data.sets[currentSet].scenarios[currentScenario].description}
                         </p>
