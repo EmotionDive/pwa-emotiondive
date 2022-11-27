@@ -8,8 +8,12 @@ import {
 	ModalProvider,
 	LargeButtonModal,
 } from '../../../../components/Modal'
-import img5 from '../../../../assets/images/pictures/SelfRegulationAct2-5.png'
+import empathyImg from '../../../../assets/images/pictures/Empathy-EmpathyLogo.png'
+import sympathyImg from '../../../../assets/images/pictures/Empathy-SympathyLogo.png'
+import antipathyImg from '../../../../assets/images/pictures/Empathy-AntipathyLogo.png'
 import data from './data/EmpathySympathyAntipathyData.json'
+
+const conceptImg = [empathyImg, sympathyImg, antipathyImg]
 
 const EmpathySympathyAntipathy = () => {
     const [currentSlide, setCurrentSlide] = useState(1)
@@ -71,7 +75,7 @@ const EmpathySympathyAntipathy = () => {
                         >
                             {data.concepts.map((obj, index) => (
                                 <div key={index} className='slide'>
-                                    <img src={img5} className='slide__img' alt='Concepto de empatia' />
+                                    <img src={conceptImg[index]} className='slide__img' alt='Concepto de empatia' />
                                     <h1>{obj.concept_name}</h1>
                                     <p className='slide__text'>{obj.concept_definition}</p>
                                 </div>
