@@ -9,12 +9,83 @@
 		flex-direction: column;
 		padding: 30px 1.125rem;
 
+		.instruction {
+			font-size: larger;
+			text-align: center;	
+			margin-bottom: 15px;
+			color: var(--text-400);
+		}
+
 		@include mediaQuery('tablet') {
 			padding: 30px 3.125rem;
 		}
 
 		@include mediaQuery('phone') {
 			padding: 30px 6.25rem;
+		}
+	}
+
+	.EmpathySympathyAntipathy2Activity {
+		display: flex;
+		flex-direction: column;
+		margin: 20px auto;
+		width: 100%;
+
+		@include mediaQuery('desktop') {
+			max-width: 80vw;
+		}
+
+		h1 {
+			text-align: center;
+			color: var(--IE-empathy-600);
+		}
+
+		.sliderContainer {
+			width: 100%;
+			overflow: hidden;
+
+			.slider {
+				display: flex;
+				flex-wrap: nowrap;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				transition: ease 1000ms;
+
+				.slide {
+					@include justifyText;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					flex-shrink: 0;
+
+					&__img {
+						height: 40vh;
+						width: auto;
+						margin-bottom: 15px;
+					}
+
+					&__text {
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+
+		.controls {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.slideMovement {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-bottom: 20px;
+			}
 		}
 	}
 
@@ -27,13 +98,6 @@
 
 			@include mediaQuery('desktop') {
 				max-width: 80vw;
-			}
-
-			&__instruction {
-				font-size: larger;
-				text-align: center;	
-				margin-bottom: 15px;
-				color: var(--text-400);
 			}
 
 			&__label {

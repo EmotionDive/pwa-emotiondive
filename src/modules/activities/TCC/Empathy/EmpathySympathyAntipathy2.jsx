@@ -35,7 +35,7 @@ const EmpathySympathyAntipathy2 = () => {
     const handleNext = () => {
         setCurrentAnswer(null)
         setCorrectAnswer(null)
-        setCurrentScenario(currentScenario+1)
+        setCurrentScenario((prev) => (prev + 1))
     }
     
     return(
@@ -47,7 +47,7 @@ const EmpathySympathyAntipathy2 = () => {
 				/>
                 <main className='EmpathySympathyAntipathy2Activity'>
                     <div className='scenario'>
-                        <span className='scenario__instruction' ref={scrollTop}>
+                        <span className='instruction' ref={scrollTop}>
                             {data.instruction}
                         </span>
                         <span className='scenario__title'>{data.sets[currentSet].scenarios[currentScenario].title}</span>
