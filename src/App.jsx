@@ -25,6 +25,13 @@ import {
 	UseStrategiesOnYouActivity,
 } from './modules/activities/TCC/SelfRegulation'
 import { SuccessesAndFailuresActivity } from './modules/activities/TCC/SelfEfficacy'
+import {
+	EmpathicConversations,
+	EnvironmentRecognition,
+	EmpathicComments,
+	EmpathySympathyAntipathy,
+	EmpathySympathyAntipathy2,
+} from './modules/activities/TCC/Empathy'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -70,6 +77,14 @@ function App() {
 					<Route path='autoeficacia'>
 						{/* IMPORTANT: The path will be the acitivity ID on BD */}
 						<Route path='4' element={<SuccessesAndFailuresActivity />} />
+					</Route>
+					<Route path='empatia'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<EmpathySympathyAntipathy />} />
+						<Route path='2' element={<EmpathySympathyAntipathy2 />} />
+						<Route path='3' element={<EnvironmentRecognition />} />
+						<Route path='4' element={<EmpathicConversations />} />
+						<Route path='5' element={<EmpathicComments />} />
 					</Route>
 				</Route>
 			</Route>
