@@ -11,7 +11,7 @@
 
 		.instruction {
 			font-size: larger;
-			text-align: center;	
+			text-align: center;
 			margin-bottom: 15px;
 			color: var(--text-400);
 		}
@@ -209,11 +209,170 @@
 				justify-content: center;
 				margin-top: 20px;
 			}
-			
+		}
+	}
 
+	.EmpathicConversationsActivity {
+		.scenario {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 20px auto;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__title {
+				font-size: 30px;
+				font-weight: 500;
+				text-align: center;
+				margin-bottom: 25px;
+				color: var(--IE-empathy-600);
+			}
+
+			&__label {
+				@include systemButtons;
+				margin-bottom: 15px;
+			}
+
+			&__situation {
+				@include justifyText;
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
+
+/***********************************************************************************
+*
+* CLASSES FOR THE EMPATHIC CONVERSATIONS COMPONENTS
+*
+***********************************************************************************/
+
+.chatWindow {
+	width: 100%;
+	min-height: 80vh;
+	border: 1px solid black;
+	border-radius: 25px;
+}
+
+.messageContainer {
+	min-width: 100%;
+	padding: 25px 25px 0 25px;
+}
+
+.receivedDisplay {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	.receivedMessage {
+		max-width: 80%;
+		color: white;
+		padding: 20px;
+		background-color: var(--primary-500);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.sendDisplay {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	.sendMessage {
+		max-width: 80%;
+		color: white;
+		padding: 20px;
+		background-color: var(--primary-300);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.feedbackContainer {
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__label {
+		color: var(--text-400);
+		margin: 0 10px 10px 10px;
+	}
+
+	.feedbackMessage {
+		max-width: 80%;
+		color: white;
+		padding: 20px;
+		background-color: var(--secondary-600);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.optionsContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__label {
+		color: var(--text-400);
+		margin-top: 25px;
+	}
+
+	.optionDisplay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@include mediaQuery('desktop') {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		.optionMessage {
+			color: white;
+			padding: 20px;
+			background-color: var(--secondary-400);
+			border-radius: 20px;
+			margin: 0 20px 20px 20px;
+
+			@include mediaQuery('phone') {
+				max-width: 100%;
+			}
+
+			@include mediaQuery('tablet') {
+				max-width: 70%;
+			}
+
+			@include mediaQuery('desktop') {
+				max-width: 40%;
+			}
+		}
+	}
+}
+
+/***********************************************************************************
+*
+* CLASSES FOR THE EMPATHIC COMMENTS COMPONENTS
+*
+***********************************************************************************/
 
 .card {
 	width: 95%;
@@ -276,7 +435,8 @@
 			.reactionIcon {
 				width: 30px;
 				height: 30px;
-				filter: invert(78%) sepia(17%) saturate(1999%) hue-rotate(274deg) brightness(88%) contrast(98%);
+				filter: invert(78%) sepia(17%) saturate(1999%) hue-rotate(274deg)
+					brightness(88%) contrast(98%);
 				margin-right: 10px;
 			}
 		}
