@@ -39,6 +39,7 @@ import {
 	SuccesAndFailsActivity,
 	WhatwouldyoudoActivity,
 	SuccessesAndFailuresActivity,
+	SuccesAndFailsActivity2,
 } from './modules/activities/TCC/SelfEfficacy'
 
 function App() {
@@ -84,14 +85,11 @@ function App() {
 					</Route>
 					<Route path='autoeficacia'>
 						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
-						<Route
-							path='1'
-							element={<OwnDecisionsEmotionandReasonsActivity />}
-						/>
-						<Route path='2' element={<ReasonsEmotionActivity />} />
-						<Route path='3' element={<SuccesAndFailsActivity />} />
+						<Route path='1' element={<ReasonsEmotionActivity />}/>
+						<Route path='2' element={<OwnDecisionsEmotionandReasonsActivity />} />
+						<Route path='3' element={<WhatwouldyoudoActivity/>} />
 						<Route path='4' element={<SuccessesAndFailuresActivity />} />
-						<Route path='5' element={<WhatwouldyoudoActivity />} />
+						<Route path='5' element={<SuccesAndFailsActivity2 />} /> 
 					</Route>
 					<Route path='empatia'>
 						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
