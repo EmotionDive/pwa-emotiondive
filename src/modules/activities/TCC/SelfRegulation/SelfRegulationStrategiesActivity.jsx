@@ -25,9 +25,6 @@ const SelfRegulationStrategiesActivity = () => {
 	const [finishDistraction, setFinishDistraction] = useState(false)
 	const [finishReevaluation, setFinishReevaluation] = useState(false)
 
-	console.log(scriptIndex < 3)
-	console.log(watchSlide !== -1)
-	console.log(scriptIndex)
 	return (
 		<div className='SelfRegulationActivity'>
 			<ModalProvider>

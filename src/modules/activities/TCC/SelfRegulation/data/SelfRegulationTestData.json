@@ -1,0 +1,101 @@
+{
+	"title": "Autorregulación a prueba",
+	"introduction": [
+		"**¡Llegó el momento de poner a prueba todo lo aprendido!**",
+		"Deberás de analizar las diferentes situaciones que se te presentan y elegir la mejor manera de actuar con base en las estrategias que aprendiste.",
+		"Para poder completar esta actividad deberás de obtener un puntaje perfecto."
+	],
+	"instruction": "Dada la situación, elige la mejor forma de actuar haciendo uso de las estrategia de autorregulación.",
+	"situations": [
+		{
+			"situation": "Vas en el transporte público y, ansiosamente, te diriges a la revisión de la presentación de tu proyecto final que haz realizado por meses.",
+			"answers": [
+				"Repasas en tu cabeza toda tu presentación una y otra vez, de modo que buscas adelantar cualquier posible pregunta, problema o situación que pueda ocurrir en la presentación real.",
+				"Empiezas a pensar que muy posiblemente será una presentación difícil y que es posible que algo se te olvide de la presentación así que sacas un cuaderno y te pones a escribir todo lo que tiene que ver con tu proyecto para tener \"más fresco\" todo.",
+				"Empiezas a pensar que lo que realizaste te costó mucho trabajo y debes confiar más en tu proyecto. Además, sabes que \"lo hecho, hecho está\" así que mejor sacas tu celular y te distraes viendo un capítulo de tu serie en lo que llegas a la presentación.",
+				"Por la ansia que tienes de que todo este perfecto decides sacar tu laptop para revisar tu proyecto una vez más en caso de que haya algo que arreglar de último momento."
+			],
+			"correct": 2,
+			"explication": "En esta situación, el reevaluar nos permite identificar el crédito que nos merecemos por el arduo trabajo de lo que se va a presentar, mientras que la distracción nos permite apaciguar un tanto la ansiedad para llegar más seguros a la presentación. No vale la pena hacer que ese trayecto en transporte público sea un generador de estrés por buscar soluciones de problemas que no sabes si sucederán."
+		},
+		{
+			"situation": "Aceptaste una gran oportunidad laboral (que andabas buscando por meses) donde tienes que irte a vivir a otro país y te ofrecerán muy buen salario y prestaciones. Sin embargo, empiezas a sentirte tristeza de dejar tu hogar.",
+			"answers": [
+				"Sabes que te da mucha nostalgia dejar a tu familia pero empiezas a pensar en todo las buenas cosas que vienen para ti, las oportunidades de vivir y conocer nuevas cosas.",
+				"Te sigues concentrando en no dejar tu hogar decidiendo llamar a tu reclutador y declinar el empleo.",
+				"Buscas la manera de convencer a algunos miembros de tu familia de dejar sus vidas aquí e irse contigo.",
+				"Sientes la necesidad de pedir a tu reclutador un puesto en tu país independientemente si tiene menos beneficios."
+			],
+			"correct": 0,
+			"explication": "Dejar un hogar siempre es duro, y más cuando las distancias implican que no sea tan sencillo regresar. Sin embargo, el reevaluar tus emociones de tristeza permitirá que veas los lados positivo y no actues de forma reactiva."
+		},
+		{
+			"situation": "Vas a inicios de camino rumbo a tu escuela usando el transporte público. Sin embargo, ves que hay mucho tráfico y según el mapa de tu celular vas en la ruta más rápida. Te empiezas a frustar e irritar porque sabes que llegarás tarde.",
+			"answers": [
+				"Empiezas a frustarte de más y empiezas a gritar al chofer del transporte público para que vaya más rápido.",
+				"Sientes que necesitas hacer algo y, a pesar de que sabes que sigues muy lejos de tu escuela, sales del transporte público e intentas correr para ver si de casualidad llegas.",
+				"Empiezas a pensar que te ira muy mal en la escuela de ahora en adelante, que tu maestro te reprobará y que no terminarás tu carrera.",
+				"Empiezas a reconocer que no tienes control de la situación y no hay manera de llegar a tu escuela sin el transporte así que mejor te dispones a tratar de relajarte escuchando música en tu celular."
+			],
+			"correct": 3,
+			"explication": "No poder atender a tiempo un compromiso en el trayecto puede ser muy frustante, es por ello que cuando nos pasa algo así lo primero que buscamos son alternativas para evitar el retraso. Sin embargo, si no apaciguamos de alguna manera la frustación e irritación puede hacer que tomemos medidas muy radicales (y algunas veces irracionales) para \"solucionar\". Es por ello que usar la estrategia de distracción apaciguará la emoción y evitará que sobrepienses demasiado la situación."
+		},
+		{
+			"situation": "Vas a la casa de tu pareja a cenar con su familia. Al ayudar con los platos resbalas y se te caen por completo. Su familia ríe un poco de la situación y te sientes un tanto ridiculizado y apenado por haber roto unos platos. Sin embargo, la mamá de tu pareja te dice que no te preocupes y que los accidentes pasan.",
+			"answers": [
+				"Empiezas a revisitar en tu mente toda la escena que viviste una y otra vez toda la noche para lograr divisar que hubieras hecho para evitar que se te cayeran los platos.",
+				"Empiezas a pensar que la familia de tu pareja siempre te va a estar recordando y humillando como el que tiro los platos en la cena familiar.",
+				"Reconoces las palabras de la mamá de tu pareja \"Los accidentes pasan\" y empiezas a pensar que éste mal rato no te define como persona y viniste a disfrutar de la cena con tu pareja, por lo que te propones a hacer eso.",
+				"Para evitar sentirte más ridiculizado y apenado le dices a tu pareja que te surgió un inconveniente y te dispones a salirte de la cena familiar."
+			],
+			"correct": 2,
+			"explication": "Todos cometemos accidentes y es normal sentirse apenado y algunas veces ridiculizado. Sin embargo, la estrategia de de reevaluación nos permite superar estas situaciones quitandonos pesos que no deberiamos cargar y lograr \"pasar página\" de forma más sencilla."
+		},
+		{
+			"situation": "Es Viernes y vas ansioso a un examen del cual estudiaste mucho toda la semana. No obstante, al llegar el profesor les dice que decidió recorrer el examen para el Lunes de la siguiente semana ya que tiene junta con los demás profesores de la academia. Dentro de tí querías ya realizar el examen para terminar con la ansiedad.",
+			"answers": [
+				"Dispones de todo tu fin de semana para volver a estudiar todo aquello que ya habías estudiado en la semana, para así asegurar tu calificación.",
+				"Para evitar la espera del examen buscas al profesor después de su junta para decirle que si puedes hacer el examen de una vez (inventando una excusa del porqué no esperar hasta el Lunes)",
+				"Empiezas a pensar más a fondo que podría venir en el examen ya que asumes que, como se recorrió el examen, es posible que el profe lo ponga más difícil por darles más tiempo.",
+				"Empiezas a planear con tus compañeros como disfrutar este fin de semana, de modo que tienen la decisión de ir a la playa o ir a las películas."
+			],
+			"correct": 3,
+			"explication": "Un examen puede llegar a generar mucha ansiedad y miedo. No obstante, dada esta situación donde ya se estudió lo suficiente, no conviene ahondar más en ese estado todo el fin de semana, lo mejor que podemos hacer es usar la estrategia de distracción, haciendo que descansemos un poco y hasta generemos mejores resultados cuando ya se realice el examen por el hecho de estar más tranquilos."
+		},
+		{
+			"situation": "Vas en el transporte público y, sin querer, empujas a una persona. Esta persona se enoja contigo y te dice de una forma hostil que tengas cuidado, haciendo que tú también te enfurezcas.",
+			"answers": [
+				"Reconoces que te estas enfureciendo, sin embargo, sabes que empujarlo no fue tu intención y no es necesario discutir más con la persona, así que le pides disculpas por lo del empujón y, si es necesario te cambias de lugar.",
+				"Empiezas a insultarlo y tratar de idear de que manera denigrarlo para que deje de meterse contigo.",
+				"Sabes que nadie se debe meter contigo asi que para \"imponer respeto\" le das un puñetazo.",
+				"Empiezas a buscar personas que te hayan visto para que así te ayuden a discutir con la persona que empujaste."
+			],
+			"correct": 0,
+			"explication": "Dejar que el enojo se apodere de nosotros puede conducirnos a tener un comportamiento agresivo que puede traer consecuencias muy graves. Reevaluar las emociones es vital para poder apaciguar y tener conductas más asertivas."
+		},
+		{
+			"situation": "Estas tranquilo viendo la televisión por la noche cuando de repente ves en las noticias que pasó un terrible accidente en un lugar que acostumbras ir seguido. Esto te hace sentir conmocionado y espantado.",
+			"answers": [
+				"Empiezas a imaginarte toda la noche el cómo pudiste haber sido tú una de las personas que sufrió ese accidente en ese lugar si tan solo hubieras estado presente.",
+				"Analizas que es un hecho terrible del cual empatizas y reconoces que es aterrador pensar que pudiste ser tú. No obstante, agradeces que afortunadamente no estuviste presente en ese momento y estas sano y salvo en tu casa.",
+				"Por lo sorprendente de la noticia te obsesionas y empiezas a investigar toda la noche mediante redes sociales cada pequeño detalle del accidente.",
+				"Por la conmoción que sientes decides salir en la noche a ver con tus propios ojos el lugar de los hechos para así empaparte de primera mano de todo lo que ocurrió."
+			],
+			"correct": 1,
+			"explication": "En este tipo de situación la conmoción es muy natural en las personas, sin embargo, la estrategia de reevaluación nos permite apaciguar un tanto esta emoción ya que el no salirnos de ese estado implica entorpecer nuestras actividades diarias o hasta descuidar nuestra salud (como por ejemplo horas de sueño)."
+		},
+		{
+			"situation": "Presentas un proyecto en el que te esforzaste mucho y la mayoría de tu clase te felicita él. No obstante, un compañero se acerca a ti y trata de darte unas observaciones. Sin embargo, lo hace de forma burlona e intentando de demeritar tu trabajo haciendote sentir herido.",
+			"answers": [
+				"Empiezas a pensar que tus compañeros te dijeron por compromiso que tu proyecto era bueno y pones en duda todo lo que hiciste en el pasado para dar con el resultado que tienes.",
+				"Empiezas a pensar una y otra vez el comentario de la persona que demerito tu proyecto de modo que dejas de creer en el proyecto que realizaste.",
+				"Sientes que tu compañero que demeritó tu trabajo esta celoso de tu proyecto y le empiezas a decir observaciones de su proyecto para igualmente demeritarlo.",
+				"Piensas en que trabajaste muy duro en tu proyecto y haberlo terminado es todo un logro. Sin embargo, es posible que tu proyecto tenga áreas de mejora, así que, a pesar de que tal vez te dieron una retroalimentación de forma no tan asertiva, analizas su punto e igualmente lo comparas con lo que otros te dijeron y lo usas a tu favor."
+			],
+			"correct": 3,
+			"explication": "Dar y recibir retroalimentación es algo que no todos hacemos de la forma más amable y asertiva posible. Puede que al hacerlo de mala manera terminemos heridos o hiriendo a otras personas, por lo que reevaluar nos permite encontrar un balance entre la retroalimentación y tu opinión propia de tu trabajo, además de que mejorar ese sentir de estar herido."
+		}
+	],
+	"badFinal": "Oops!, parece ser que necesitas repasar tus estrategias. Intenta de nuevo esta actividad para que te queden claro el uso de las estrategias de autorregulación.",
+	"goodFinal": "Tuviste una puntuación perfecta y ahora ya sabes usar estrategias de autorregulación. Continúa practicando en tu vida diaria y trata de identificar siempre las situaciones en las que puedes ocuparlas."
+}
