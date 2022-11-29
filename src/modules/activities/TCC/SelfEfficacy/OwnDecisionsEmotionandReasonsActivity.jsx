@@ -49,14 +49,12 @@ const OwnDecisionsEmotionandReasonsActivity = () => {
 							/>
 							<LargeButtonModal
 								title={'¡Excelente, concluiste la actividad!'}
-								// info={repetition !== 4 ? data.finalPartial : data.finalComplete}
 								variant='confirmation'
 								buttonLabels={['Okey']}
 								exitOnClickOut={false}
 								onConfirmationCallback={() => {
 									console.log('Finish')
 								}}
-								// disabled={situation.length === 0 || strategie.length === 0}
 							>
 								Terminar
 							</LargeButtonModal>

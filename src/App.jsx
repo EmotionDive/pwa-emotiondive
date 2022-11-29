@@ -42,6 +42,14 @@ import {
 	SuccesAndFailsActivity2,
 } from './modules/activities/TCC/SelfEfficacy'
 
+import {
+	DescribeSituationandEmotionAssigmentActivity,
+	EmotionalAssigmentActivity,
+	FacialEmotionActivity,
+	IdentifyEmotionsActivity,
+	WhatDoilLikeActivity,
+} from './modules/activities/TCC/SelfKnowledge'
+
 function App() {
 	const { isLoading } = useAuth0()
 
@@ -85,11 +93,25 @@ function App() {
 					</Route>
 					<Route path='autoeficacia'>
 						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
-						<Route path='1' element={<ReasonsEmotionActivity />}/>
-						<Route path='2' element={<OwnDecisionsEmotionandReasonsActivity />} />
-						<Route path='3' element={<WhatwouldyoudoActivity/>} />
+						<Route path='1' element={<ReasonsEmotionActivity />} />
+						<Route
+							path='2'
+							element={<OwnDecisionsEmotionandReasonsActivity />}
+						/>
+						<Route path='3' element={<WhatwouldyoudoActivity />} />
 						<Route path='4' element={<SuccessesAndFailuresActivity />} />
-						<Route path='5' element={<SuccesAndFailsActivity2 />} /> 
+						<Route path='5' element={<SuccesAndFailsActivity2 />} />
+					</Route>
+					<Route path='autoconocimiento'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<IdentifyEmotionsActivity />} />
+						<Route path='2' element={<EmotionalAssigmentActivity />} />
+						<Route
+							path='3'
+							element={<DescribeSituationandEmotionAssigmentActivity />}
+						/>
+						<Route path='4' element={<IdentifyEmotionsActivity />} />
+						<Route path='5' element={<WhatDoilLikeActivity />} />
 					</Route>
 					<Route path='empatia'>
 						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
