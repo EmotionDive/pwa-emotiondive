@@ -3,17 +3,6 @@
 	"instructions": "Dada la situación, elige la forma de actuar que represente de mejor manera el uso de la ",
 	"distraction": [
 		{
-			"situation": "Es Viernes por la tarde; tu jefe anunció que el Lunes dará a conocer quien recibirá el bono al \"empleado del mes\". Eres uno de los dos posibles candidatos a mejor empleado y deseas mucho ganar ese bono ya que opinas que has hecho todo lo posible para merecerlo.",
-			"answers": [
-				"Buscar todo el fin de semana a mi jefe para incrementar mis posibilidades de recibir el bono.",
-				"Pensar qué hacer el Lunes al llegar al trabajo para asegurar la ganancia del bono.",
-				"Eliminar a la competencia.",
-				"Pensar en pasar tiempo con mi familia y amigos."
-			],
-			"correct": 3,
-			"explication": "Puede que pienses que debas de hacer más cosas para asegurar recibir el bono, pero en un fin de semana no laboral no lograrás marcar ninguna diferencia en ello por lo que distraerte en cosas importantes como lo son tu familia y amigos pueden ser algo que mejore esas ansias por saber el resultado del Lunes."
-		},
-		{
 			"situation": "Llegas de un día normal de trabajo y te dispones a platicar con tu pareja por teléfono. Ya es de noche y la notas algo cansada, al final te dice: \"Oye, necesito hablar contigo de algo en persona, mañana te veo.\" y se despiden de forma usual.",
 			"answers": [
 				"Te dispones a analizar todas tus acciones de la semana para poder hallar la razón del porqué tu pareja quiere hablar contigo.",
@@ -23,6 +12,17 @@
 			],
 			"correct": 1,
 			"explication": "No es fácil afrontar las famosas palabras \"Tenemos que hablar\", pero algo que debemos de entender es que nunca sabremos con exactitud de qué se quiere dialogar hasta que sea el momento de conversar con la otra persona. Generar hipotesis sobre posibles problemas a partir de las acciones de uno mismo o de la otra persona puede ser muy desgastante, o peor aún, puedes ocasionar un problema si no se respetas los tiempos de la otra persona para hablar, por lo que es mejor esperar el momento y concentrarse en uno mismo, como prepararse una buena taza de café, ver un último episodio de tu serie favorita y disponerse a dormir."
+		},
+		{
+			"situation": "Es Viernes por la tarde; tu jefe anunció que el Lunes dará a conocer quien recibirá el bono al \"empleado del mes\". Eres uno de los dos posibles candidatos a mejor empleado y deseas mucho ganar ese bono ya que opinas que has hecho todo lo posible para merecerlo.",
+			"answers": [
+				"Buscar todo el fin de semana a mi jefe para incrementar mis posibilidades de recibir el bono.",
+				"Pensar qué hacer el Lunes al llegar al trabajo para asegurar la ganancia del bono.",
+				"Eliminar a la competencia.",
+				"Pensar en pasar tiempo con mi familia y amigos."
+			],
+			"correct": 3,
+			"explication": "Puede que pienses que debas de hacer más cosas para asegurar recibir el bono, pero en un fin de semana no laboral no lograrás marcar ninguna diferencia en ello por lo que distraerte en cosas importantes como lo son tu familia y amigos pueden ser algo que mejore esas ansias por saber el resultado del Lunes."
 		},
 		{
 			"situation": "Quedaste de ir por unos tragos con tus amigos para celebrar el nuevo trabajo de tu mejor amigo. Al llegar observas que van a un lugar donde de momento no puedes permitirte gastar tanto dinero. Al verte un poco angustiado, tu mejor amigo se acerca y le explicas la situación. Él te dice que no te preocupes y disfrutes junto a él ya que los tragos los va a invitar por ser una ocasión especial.",
