@@ -1,0 +1,20 @@
+{
+	"title": "Éxitos y Fracasos 2",
+	"mainScript": [
+		[
+			"Los éxitos y fracasos son parte natural de nuestras vidas y ambos son necesarios vivirlos.",
+			"Sin embargo, en ambas situaciones es necesario entender cómo es que funcionan nuestras emociones tanto antes, durante y después de la experiencia vivida."
+		],
+		[
+			"Recuerda: “El maestro ha fallado más veces de las que el principiante ha intentado”.",
+			"- Stephen McCranie"
+		]
+	],
+	"instructions": [
+		"A continuación, redacta el último éxito que recuerdes y contesta las siguientes preguntas:",
+
+		"A continuación, redacta el último fracaso que recuerdes y contesta las siguientes preguntas:"
+	],
+	"finalPartial": "¡Muy bien!, Mañana regresa para recordar otro éxito y otro fracaso, así te será más fácil practicar la identificación de emociones en ambas situaciones.",
+	"finalComplete": "¡Felicidades, has terminado! Recordar y hacer este ejercició de identificar factores dentro de tus éxitos y fracasos es muy beneficioso porque así identificas que emociones jugaron en tí."
+}

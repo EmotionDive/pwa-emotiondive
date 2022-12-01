@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { ActivitiesLocalizationBar } from '../../../../components/LocalizationBar'
 import {
 	LargeButtonModal,
@@ -6,28 +6,27 @@ import {
 	ModalProvider,
 } from '../../../../components/Modal'
 import { Select, TextArea } from '../../../../components/Forms'
-import data from "./data/DecisionsEmotionReason.json"
-
-const ReasonEmotionActivity =() => {
-	console.log(data.scenarios[0].messages)
-    return (
-		<div className="SelfEfficacy">
+import data from './data/DecisionsEmotionReason.json'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import RedactSuccess from './components/RedactSuccess'
+import { Slide, SlideSwitch } from '../../../../utils/Slides'
+import RedactEmotionsAndReasons from './components/RedactEmotionsAndReasons'
+const ReasonEmotionActivity = () => {
+	return (
+		<div className='SelfEfficacyActivity'>
 			<ModalProvider>
-				<ActivitiesLocalizationBar
-				title={data.title}
-				variant= 'SelfEfficacy'
-				/>
-				<main className="useStrategiesOnYouActivity">
-					<p className="systemText_instruction justifyTexy">
-						{data.instructions}
-					</p>
-					<div className="scenario">
-						<span className="question_label"> Situación</span>
-						<p className="question_situation">
-		                {data.scenarios[0].situation}
-						</p>
-					</div>
+				<ActivitiesLocalizationBar title={data.title} variant='SelfEfficacy' />
+				<main className='successesAndFailuresActivity'>
+					<SlideSwitch>
+						<Slide path='/' element={<RedactSuccess data={data} />} />
+						<Slide
+							path='/RedactEmotionsAndReasons'
+							element={<RedactEmotionsAndReasons />}
+						/>
+					</SlideSwitch>
 				</main>
+				<ModalAction />
 			</ModalProvider>
 		</div>
 	)
