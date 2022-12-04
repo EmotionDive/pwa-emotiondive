@@ -198,4 +198,9 @@
 			}
 		}
 	}
+
+	.explication {
+		margin-top: 10px;
+		@include smallText;
+	}
 }

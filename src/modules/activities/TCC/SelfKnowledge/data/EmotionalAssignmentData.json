@@ -1,0 +1,18 @@
+{
+	"title": "Emociones en la vida diaria",
+	"instructions": "Lee la situación que se te presenta y asigna las emociones (una o varias) que crees puedan generarse.",
+	"situations": [
+		{
+			"situation": "Hola",
+			"emotions": ["scare", "happiness", "sad"],
+			"explication": "explicacion"
+		},
+		{
+			"situation": "Hola2",
+			"emotions": ["angry", "sad"],
+			"explication": "explicacion2"
+		}
+	],
+	"finalPartial": "Muy bien, poco a poco ya estas identificando qué emociones se producen comúnmente en diversas situaciones. ¡Vuelve mañana para seguir practicando!",
+	"finalComplete": "!Excelente! Finalizaste toda la actividad. Recuerda que el reconocer las emociones en la vida diaria nos permite conocer cómo nos desenvolvemos normalmente en ciertas situaciones. Una vez bien conocidas las razones por las que se generan podremos mejorar en sus efectos."
+}

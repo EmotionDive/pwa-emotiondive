@@ -1,9 +1,9 @@
 {
-	"title": "Desciciones Razón-Emoción Actividad 1",
-	"instructions": "Se te presentara un caso en el que podras elegir una opción al final de la actividad, para seleccionar tu opción deberas descomponer en razones y emociones el caso, es decir, ¿Por qué razones escogeria la primera opción? y ¿Qué emociones me produce esa elección?, posteriormente describiras las razones por las que escogerías la opción 2 y las emociones que te produce esa elección.",
+	"title": "Identificación de emociones faciales",
+	"instructions": "Se presentaran distintas imagenes en las cuales deberas de identificar la emoción que cada imagen representa.",
 	"scenarios": [
 		{
-			"situation": "Tienes la oportunidad de emprender el negocio que siempre soñaste, sin embargo, llega una oferta de trabajo que resuelve tus necesidades economicas ademas de ofrecer un contrato seguro por un largo periodo de tiempo, tienes que responder a la oferta de trabajo lo antes posible, ¿Qué decidiras? Opción 1: Emprender el negocio de tus sueños, Opción 2: Tomar la oferta laboral.",
+			"situation": "Se encuentra en la oportunidad de emprender, el emprendimiento que soño alguna vez, sin embargo al mismo tiempo llega una muy buena oferta laboral, debera dar una respuesta lo antes posible, realizara cuatro listas, dos en donde exponga las razones y emociones por las que debería tomar la oferta laboral y dos listas que expongan la descición de emprender.",
 			"messages": [
 				"Comience con la lista de razones correspondiente a la oferta laboral.",
 				"Continue con la lista de razones correspondiente a emprendimiento.",
