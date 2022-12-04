@@ -1,0 +1,46 @@
+{
+	"title": "Identifica tus emociones",
+	"instructions": "Debes de realizar esta actividad una vez en tu plan semanal y sera una actividad totalmente autoreflexiva.",
+	"emotions": [
+		{
+			"emotion_id": 1,
+			"emotion": "Alegría",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras alegría?",
+				"¿Qué similitudes notas con la forma en que tu muestras alegría?"
+			]
+		},
+		{
+			"emotion_id": 2,
+			"emotion": "Tristeza",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras tristeza?",
+				"¿Qué similitudes notas con la forma en que tu muestras tristeza?"
+			]
+		},
+		{
+			"emotion_id": 3,
+			"emotion": "Miedo",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras miedo?",
+				"¿Qué similitudes notas con la forma en que tu muestras miedo?"
+			]
+		},
+		{
+			"emotion_id": 4,
+			"emotion": "Enojo",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras enojo?",
+				"¿Qué similitudes notas con la forma en que tu muestras enojo?"
+			]
+		},
+		{
+			"emotion_id": 5,
+			"emotion": "Afecto",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras afecto?",
+				"¿Qué similitudes notas con la forma en que tu muestras afect?"
+			]
+		}
+	]
+}

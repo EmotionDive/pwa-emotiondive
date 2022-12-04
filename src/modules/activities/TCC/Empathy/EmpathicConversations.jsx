@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ActivitiesLocalizationBar } from '../../../../components/LocalizationBar'
 import {
 	ModalAction,

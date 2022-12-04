@@ -45,7 +45,7 @@ import {
 import {
 	DescribeSituationandEmotionAssigmentActivity,
 	EmotionalAssigmentActivity,
-	FacialEmotionActivity,
+	EmotionRecognitionActivity,
 	IdentifyEmotionsActivity,
 	WhatDoilLikeActivity,
 } from './modules/activities/TCC/SelfKnowledge'
@@ -110,7 +110,7 @@ function App() {
 							path='3'
 							element={<DescribeSituationandEmotionAssigmentActivity />}
 						/>
-						<Route path='4' element={<IdentifyEmotionsActivity />} />
+						<Route path='4' element={<EmotionRecognitionActivity />} />
 						<Route path='5' element={<WhatDoilLikeActivity />} />
 					</Route>
 					<Route path='empatia'>
