@@ -6,6 +6,7 @@
 			"scenario_id": 1,
 			"name": "Mi amigo el desempleado",
 			"description": "Tu amigo Ronaldo te manda un mensaje de texto despues de haberte comentado sobre posibles cambios en su empresa. Dentro de esta conversación escoge la opcion que más se adecue a como contestarias.",
+			"person": "Ronaldo",
 			"conversation": [
 				{
 					"message": "Hey, ¿recuerdas lo que te habia comentado hace unos dias? Pues me despidieron del trabajo.",
@@ -42,6 +43,7 @@
 		{
 			"scenario_id": 2,
 			"name": "Momentos dificiles",
+			"person": "Essau",
 			"description": "Tu compañero de la escuela Essau y tu se encuentran trabajando juntos en un proyecto, pero ultimamente el no ha estado contribuyendo y la fecha de entrega se acerca, recientemente te ha mandado el siguiente mensaje. Dentro de esta conversación escoge la opcion que más se adecue a como contestarias.",
 			"conversation": [
 				{
