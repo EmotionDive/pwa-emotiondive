@@ -25,6 +25,31 @@ import {
 	UseStrategiesOnYouActivity,
 } from './modules/activities/TCC/SelfRegulation'
 
+import {
+	EmpathicConversations,
+	EnvironmentRecognition,
+	EmpathicComments,
+	EmpathySympathyAntipathy,
+	EmpathySympathyAntipathy2,
+} from './modules/activities/TCC/Empathy'
+
+import {
+	OwnDecisionsEmotionandReasonsActivity,
+	ReasonsEmotionActivity,
+	SuccesAndFailsActivity,
+	WhatwouldyoudoActivity,
+	SuccessesAndFailuresActivity,
+	SuccesAndFailsActivity2,
+} from './modules/activities/TCC/SelfEfficacy'
+
+import {
+	DescribeSituationandEmotionAssigmentActivity,
+	EmotionalAssigmentActivity,
+	EmotionRecognitionActivity,
+	IdentifyEmotionsActivity,
+	WhatDoilLikeActivity,
+} from './modules/activities/TCC/SelfKnowledge'
+
 function App() {
 	const { isLoading } = useAuth0()
 
@@ -59,12 +84,42 @@ function App() {
 				</Route>
 				<Route path='actividades'>
 					<Route path='autoregulacion'>
-						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						{/* IMPORTANT: The path will be the acitivity ID on BD */}
 						<Route path='1' element={<HowSelfRegulateActivity />} />
 						<Route path='2' element={<SelfRegulationStrategiesActivity />} />
 						<Route path='3' element={<LearnStrategiesActivity />} />
 						<Route path='4' element={<UseStrategiesOnYouActivity />} />
 						<Route path='5' element={<SelfRegulationTestActivity />} />
+					</Route>
+					<Route path='autoeficacia'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<ReasonsEmotionActivity />} />
+						<Route
+							path='2'
+							element={<OwnDecisionsEmotionandReasonsActivity />}
+						/>
+						<Route path='3' element={<WhatwouldyoudoActivity />} />
+						<Route path='4' element={<SuccessesAndFailuresActivity />} />
+						<Route path='5' element={<SuccesAndFailsActivity2 />} />
+					</Route>
+					<Route path='autoconocimiento'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<IdentifyEmotionsActivity />} />
+						<Route path='2' element={<EmotionalAssigmentActivity />} />
+						<Route
+							path='3'
+							element={<DescribeSituationandEmotionAssigmentActivity />}
+						/>
+						<Route path='4' element={<EmotionRecognitionActivity />} />
+						<Route path='5' element={<WhatDoilLikeActivity />} />
+					</Route>
+					<Route path='empatia'>
+						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
+						<Route path='1' element={<EmpathySympathyAntipathy />} />
+						<Route path='2' element={<EmpathySympathyAntipathy2 />} />
+						<Route path='3' element={<EnvironmentRecognition />} />
+						<Route path='4' element={<EmpathicConversations />} />
+						<Route path='5' element={<EmpathicComments />} />
 					</Route>
 				</Route>
 			</Route>
