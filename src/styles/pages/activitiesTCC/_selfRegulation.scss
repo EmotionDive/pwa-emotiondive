@@ -1,3 +1,206 @@
+@use '../../abstracts/' as *;
+
 .SelfRegulationActivity {
-	// * GENERATE ALL STYLES INSIDE HERE
+	main {
+		width: 100%;
+		height: 100%;
+		min-height: calc(100vh - 50px);
+		padding: 30px 1.125rem;
+		display: flex;
+		flex-direction: column;
+
+		@include mediaQuery('tablet') {
+			padding: 30px 3.125rem;
+		}
+
+		@include mediaQuery('desktop') {
+			padding: 30px 6.25rem;
+		}
+	}
+
+	.explainStrategiesActivity {
+		justify-content: center;
+		.centerMain {
+			display: flex;
+			gap: 20px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			@include justifyText;
+
+			.textWithImage {
+				display: grid;
+				gap: 30px;
+
+				img {
+					margin: 0 auto;
+					width: 80%;
+				}
+
+				p:not(:last-child) {
+					margin-bottom: 20px;
+				}
+
+				@include mediaQuery('desktop') {
+					max-width: 1366px;
+					grid-template-columns: auto 30%;
+					align-items: center;
+					gap: 5vw;
+					img {
+						order: 1;
+						width: 100%;
+					}
+				}
+			}
+
+			h1 {
+				margin-bottom: 10px;
+				color: var(--IE-self-regulation-500);
+			}
+		}
+
+		.strategiesButtons {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 4vh;
+			margin-bottom: 30px;
+
+			img {
+				max-width: 300px;
+				margin: auto;
+				margin-bottom: 30px;
+			}
+
+			@include mediaQuery('desktop') {
+				gap: 10vw;
+				img {
+					max-width: 400px;
+				}
+			}
+
+			div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.strategiesContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.systemText__instruction {
+				margin-bottom: 20px;
+				text-align: center;
+			}
+		}
+	}
+
+	.learnStrategiesActivity {
+		.systemText__instruction {
+			text-align: center;
+		}
+
+		.question {
+			margin: 20px auto;
+			width: 100%;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__label {
+				@include systemButtons;
+			}
+
+			&__situation {
+				@include justifyText;
+				margin-bottom: 10px;
+			}
+
+			&__answers {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				margin-top: 20px;
+
+				&.disabled {
+					pointer-events: none;
+				}
+			}
+
+			&__bottom {
+				margin-top: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				&__explication {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	.useStrategiesOnYouActivity {
+		.formContainer {
+			margin: 20px 0;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			@include mediaQuery('desktop') {
+				max-width: 70vw;
+				width: 100%;
+				margin: 20px auto;
+			}
+
+			div {
+				display: flex;
+				gap: 20px;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				@include mediaQuery('tablet') {
+					flex-wrap: nowrap;
+				}
+			}
+
+			button {
+				align-self: center;
+			}
+		}
+
+		@include mediaQuery('tablet') {
+			margin-top: 40px;
+			p {
+				margin-bottom: 20px;
+			}
+			.formContainer {
+				gap: 30px;
+			}
+		}
+
+		@include mediaQuery('desktop') {
+			margin-top: 0;
+			p {
+				margin-bottom: 0;
+			}
+			.formContainer {
+				gap: 20px;
+			}
+		}
+	}
+
+	.explication {
+		margin-top: 10px;
+		@include smallText;
+	}
 }

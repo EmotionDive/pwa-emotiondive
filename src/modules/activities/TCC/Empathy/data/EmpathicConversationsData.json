@@ -1,0 +1,82 @@
+{
+	"title": "Mensajes empaticos",
+	"instruction": "Lee el siguiente escenario y empieza a interactuar con la conversación para aprender a comunicarte de forma más empatica al enviar mensajes.",
+	"scenarios": [
+		{
+			"scenario_id": 1,
+			"name": "Mi amigo el desempleado",
+			"description": "Tu amigo Ronaldo te manda un mensaje de texto despues de haberte comentado sobre posibles cambios en su empresa. Dentro de esta conversación escoge la opcion que más se adecue a como contestarias.",
+			"person": "Ronaldo",
+			"conversation": [
+				{
+					"message": "Hey, ¿recuerdas lo que te habia comentado hace unos dias? Pues me despidieron del trabajo.",
+					"options": [
+						{
+							"answer": "Caracoles! Lo siento mucho amigo, se que es dificil quedar desempleado, si quieres desahogarte, aqui estoy!",
+							"feedback": "Tal vez no sea una mala respuesta para un amigo!, pero no es la respuesta más empatica ya que tu asumes como se siente la otra persona sin asegurarte de ello."
+						},
+						{
+							"answer": "¿Y como te sientes?",
+							"feedback": "Una respuesta bastante empatica, ya que primero te preocupas en saber como se siente la otra persona."
+						},
+						{
+							"answer": "Bro, ni te topo.",
+							"feedback": "Tal vez sea un buen chiste local entre amigos, pero no es una respuesta empatica y es importante darle la seriedad debida a las situaciones por las que un amigo pueda estar pasando."
+						}
+					]
+				},
+				{
+					"message": "Bueno amigo, dejame decirte que me siento aliviado, la verdad es que ya no me sentia agusto en ese trabajo, el ambiente se habia vuelto muy pesado. Es hora de buscar un lugar donde pueda crecer.",
+					"options": [
+						{
+							"answer": "Ah bueno amigo, me alegro que sea ese el caso, avisame si te pueddo ayudar en algo.",
+							"feedback": "Buena respuesta!, parte de la empatia incluye reconocer como se sienten los demas."
+						},
+						{
+							"answer": "Deberias preocuparte! ¿Has visto como esta la situación financiera? No se trata de si te sientes agusto o no!",
+							"feedback": "Esta es una respuesta carente de empatia, puede que lo veas como ser realista ante la situación, pero lo cierto es que es una respuesta pesada y dificilmente ayudara a algun amigo."
+						}
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": 2,
+			"name": "Momentos dificiles",
+			"person": "Essau",
+			"description": "Tu compañero de la escuela Essau y tu se encuentran trabajando juntos en un proyecto, pero ultimamente el no ha estado contribuyendo y la fecha de entrega se acerca, recientemente te ha mandado el siguiente mensaje. Dentro de esta conversación escoge la opcion que más se adecue a como contestarias.",
+			"conversation": [
+				{
+					"message": "Hola compañero, una disculpa que no he podido avanzar en mi parte. Espero poder continuar esta semana.",
+					"options": [
+						{
+							"answer": "No te preocupes compañero, ¿Esta todo bien?",
+							"feedback": "Una respuesta bastante empatica. Recordemos que la empatía es la capacidad de reconocer las emociones de los demas."
+						},
+						{
+							"answer": "Ni continues, ya te saque del equipo.",
+							"feedback": "Una respuesta que ignora por completa las situaciones que puede estar atravesando otra persona y puede dificultar la forma en la que te involucras con otras personas. Trata de mejorar tus respuestas."
+						},
+						{
+							"answer": "Esta bien, pero tienes que apurarte, esto no es ningun juego, la vida no es un anime, ponte a trabajar.",
+							"feedback": "Tal vez pueda parecer una respuesta asertiva, pero carece de empatia y esta clase de respuestas ignoran otras situaciones ademas de que pueden causar cierta fricción en un equipo."
+						}
+					]
+				},
+				{
+					"message": "Lo que pasa es que me encontraba enfermo y tuvieron que intervenir quirurjicamente, pero esta semana ya estoy del todo recuperado y listo para trabajar!",
+					"options": [
+						{
+							"answer": "Perfecto compañero, estaria perfecto si nos avisas en caso de que otra situación de presente para poder como podemos apoyarte.",
+							"feedback": "Buena respuesta!, parte de la empatia incluye tener en cuenta las situaciones por las que pueden estar pasando otras personas.."
+						},
+						{
+							"answer": "Una excusa cualquiera, si no ibas a hacer nada, al menos hubieras avisado.",
+							"feedback": "Esta es una respuesta carente de empatia, puede que lo veas como ser realista ante la situación, pero lo cierto es que es una respuesta pesada y dificilmente ayudara en el trabajo en equipo."
+						}
+					]
+				}
+			]
+		}
+	]
+}
