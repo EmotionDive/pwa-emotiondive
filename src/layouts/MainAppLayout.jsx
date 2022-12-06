@@ -1,8 +1,9 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { BackgroundLocalizationBar } from '../components/LocalizationBar'
 import { ModalAction, ModalProvider } from '../components/Modal'
 import { BottomBar } from '../components/Navigation'
+import useUser from '../data/hooks/useUser'
 
 const localizations = {
 	'/estadisticas': 'Estadísticas IE',
@@ -13,25 +14,27 @@ const localizations = {
 }
 
 const MainAppLayout = () => {
-	const { user, isAuthenticated } = useAuth0()
+	const { flags } = useUser()
+	const local = useLocation()
 
-	console.log('isAuthenticated: ' + isAuthenticated)
-	console.log(user?.email)
-
-	return (
-		<div className='appWrapper'>
-			<BackgroundLocalizationBar
-				localization={localizations[useLocation().pathname] || 'Actividades IE'}
-			/>
-			<ModalProvider>
-				<main>
-					<Outlet />
-					<ModalAction />
-				</main>
-			</ModalProvider>
-			<BottomBar />
-		</div>
-	)
+	if (!flags.is_registered) return <Navigate to='/registro' replace />
+	else if (!flags.is_active) return <Navigate to='/cuentaNoActiva' replace />
+	else if (flags.is_first_time) return <Navigate to='/tutorial' replace />
+	else
+		return (
+			<div className='appWrapper'>
+				<BackgroundLocalizationBar
+					localization={localizations[local.pathname] || 'Actividades IE'}
+				/>
+				<ModalProvider>
+					<main>
+						<Outlet />
+						<ModalAction />
+					</main>
+				</ModalProvider>
+				<BottomBar />
+			</div>
+		)
 }
 
 export default MainAppLayout

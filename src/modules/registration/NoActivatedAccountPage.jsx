@@ -3,9 +3,10 @@ import { TransparentLocalizationBar } from '../../components/LocalizationBar'
 import image from '@assets/images/pictures/NoActive-Image.png'
 import { useEffect } from 'react'
 import useUser from '../../data/hooks/useUser'
+import { Navigate } from 'react-router-dom'
 
 const NoActivatedAccountPage = () => {
-	const { logout } = useUser()
+	const { logout, flags } = useUser()
 
 	useEffect(() => {
 		window.addEventListener('beforeunload', logout)
@@ -14,6 +15,8 @@ const NoActivatedAccountPage = () => {
 			window.removeEventListener('beforeunload', logout)
 		}
 	}, [])
+
+	if (flags.is_active) return <Navigate to='/' replace />
 
 	return (
 		<div className='mainWrapper mainWrapper__fullHeight'>
