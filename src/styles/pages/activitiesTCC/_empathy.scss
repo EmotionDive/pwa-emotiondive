@@ -11,7 +11,7 @@
 
 		.instruction {
 			font-size: larger;
-			text-align: center;	
+			text-align: center;
 			margin-bottom: 15px;
 			color: var(--text-400);
 		}
@@ -209,11 +209,207 @@
 				justify-content: center;
 				margin-top: 20px;
 			}
-			
+		}
+	}
 
+	.EmpathicConversationsActivity {
+		.scenario {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 20px auto;
+
+			@include mediaQuery('desktop') {
+				max-width: 80vw;
+			}
+
+			&__title {
+				font-size: 30px;
+				font-weight: 500;
+				text-align: center;
+				margin-bottom: 25px;
+				color: var(--IE-empathy-600);
+			}
+
+			&__label {
+				@include systemButtons;
+				margin-bottom: 15px;
+			}
+
+			&__situation {
+				@include justifyText;
+				margin-bottom: 10px;
+			}
+
+			&__bottom {
+				padding: 25px;
+			}
 		}
 	}
 }
+
+/***********************************************************************************
+*
+* CLASSES FOR THE EMPATHIC CONVERSATIONS COMPONENTS
+*
+***********************************************************************************/
+.chatContainer {
+	width: 100%;
+	display: flex;
+	border: 1px solid gray;
+	flex-direction: column;
+
+	.userDisplay {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 20px 30px 20px 50px;
+		z-index: 1;
+		box-shadow: 0 3px 2px gray;
+
+		img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.username {
+			font-size: 30px;
+			font-weight: 400;
+			color: var(--IE-empathy-600);
+			margin-left: 30px;
+		}
+	}
+
+	.chatWindow {
+		width: 100%;
+		height: 90vh;
+		overflow-y: scroll;
+		padding: 25px 5px 25px 5px;
+	}
+}
+
+.messageContainer {
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+	padding: 25px 25px 0 25px;
+}
+
+.receivedDisplay {
+	display: flex;
+	flex-direction: column wrap;
+	align-content: flex-start;
+
+	.receivedMessage {
+		max-width: 80%;
+		min-width: auto;
+		color: white;
+		padding: 20px;
+		background-color: var(--primary-500);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.sendDisplay {
+	display: flex;
+	flex-flow: column wrap;
+	align-content: flex-end;
+
+	.sendMessage {
+		max-width: 80%;
+		min-width: auto;
+		color: white;
+		padding: 20px;
+		background-color: var(--primary-300);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.feedbackContainer {
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__label {
+		color: var(--text-400);
+		margin: 0 10px 10px 10px;
+	}
+
+	.feedbackMessage {
+		max-width: 80%;
+		color: white;
+		padding: 20px;
+		background-color: var(--secondary-600);
+		border-radius: 20px;
+
+		@include mediaQuery('desktop') {
+			max-width: 60%;
+		}
+	}
+}
+
+.optionsContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__label {
+		color: var(--text-400);
+		margin-top: 25px;
+		text-align: center;
+	}
+
+	.optionDisplay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@include mediaQuery('desktop') {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		.optionMessage {
+			color: white;
+			padding: 20px;
+			background-color: var(--secondary-400);
+			border-radius: 20px;
+			margin: 0 20px 20px 20px;
+			cursor: pointer;
+
+			@include mediaQuery('phone') {
+				max-width: 100%;
+			}
+
+			@include mediaQuery('tablet') {
+				max-width: 70%;
+			}
+
+			@include mediaQuery('desktop') {
+				max-width: 40%;
+			}
+		}
+	}
+}
+
+/***********************************************************************************
+*
+* CLASSES FOR THE EMPATHIC COMMENTS COMPONENTS
+*
+***********************************************************************************/
 
 .card {
 	width: 95%;
@@ -276,7 +472,8 @@
 			.reactionIcon {
 				width: 30px;
 				height: 30px;
-				filter: invert(78%) sepia(17%) saturate(1999%) hue-rotate(274deg) brightness(88%) contrast(98%);
+				filter: invert(78%) sepia(17%) saturate(1999%) hue-rotate(274deg)
+					brightness(88%) contrast(98%);
 				margin-right: 10px;
 			}
 		}

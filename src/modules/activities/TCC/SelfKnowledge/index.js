@@ -1,5 +1,5 @@
 export { default as DescribeSituationandEmotionAssigmentActivity } from './DescribeSituationandEmotionAssigmentActivity'
 export { default as EmotionalAssigmentActivity } from './EmotionalAssigmentActivity'
-export { default as FacialEmotionActivity } from './FacialEmotionActivity'
+export { default as EmotionRecognitionActivity } from './EmotionRecognitionActivity'
 export { default as IdentifyEmotionsActivity } from './IdentifyEmotionsActivity'
 export { default as WhatDoilLikeActivity } from './WhatDoilLikeActivity'
