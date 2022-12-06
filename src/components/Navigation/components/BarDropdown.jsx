@@ -6,12 +6,12 @@ import { useOutsideClick } from '../../../utils/hooks/useOutsideClick'
 import NavbarDropdownButton from './BarDropdownButton'
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
-import { useAuth0 } from '@auth0/auth0-react'
+import useUser from '../../../data/hooks/useUser'
 
 const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 	const ref = useOutsideClick(onClickOutside)
 	const navigate = useNavigate()
-	const { logout } = useAuth0()
+	const { logout } = useUser()
 
 	const handleNavigate = (path) => {
 		navigate(path)

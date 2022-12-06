@@ -12,7 +12,7 @@ const opportunityCards = [
 		enfocar.
 	</CardOpportunityArea>,
 	<CardOpportunityArea key={1} type='SelfRegulation'>
-		En <b>autoconocimiento</b> tienes muchas oportunidades para poder crecer,
+		En <b>autoregulación</b> tienes muchas oportunidades para poder crecer,
 		donde el entender mejor cómo es que funcionan tus emociones básicas como la
 		alegría, la tristeza o la ira sería de lo primero en lo que te tienes que
 		enfocar.
@@ -23,10 +23,9 @@ const opportunityCards = [
 		día (no en contra).
 	</CardOpportunityArea>,
 	<CardOpportunityArea key={3} type='Empathy'>
-		En <b>autoconocimiento</b> tienes muchas oportunidades para poder crecer,
-		donde el entender mejor cómo es que funcionan tus emociones básicas como la
-		alegría, la tristeza o la ira sería de lo primero en lo que te tienes que
-		enfocar.
+		En <b>empatía</b> tienes muchas oportunidades para poder crecer, donde el
+		entender mejor cómo es que funcionan tus emociones básicas como la alegría,
+		la tristeza o la ira sería de lo primero en lo que te tienes que enfocar.
 	</CardOpportunityArea>,
 ]
 
