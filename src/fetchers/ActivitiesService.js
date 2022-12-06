@@ -28,4 +28,14 @@ export default class ActivitiesService {
 			},
 		})
 	}
+
+	static getActivities(competences) {
+		return clientRequest({
+			method: 'post',
+			url: '/activities/description',
+			data: {
+				competences: competences,
+			},
+		})
+	}
 }

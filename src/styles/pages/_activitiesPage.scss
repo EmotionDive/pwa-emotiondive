@@ -291,6 +291,7 @@
 		gap: 8px;
 		font-weight: 600;
 		margin-bottom: 4px;
+		text-align: justify;
 
 		span {
 			display: flex;
@@ -364,8 +365,6 @@
 	box-shadow: 0px 5px 17px rgba(31, 30, 41, 0.46);
 	line-height: 120%;
 	animation: enterModal 0.8s ease-out;
-
-	// TODO: Add Cognitive Competences Classes Colors
 
 	@include mediaQuery('tablet') {
 		max-width: 500px;
@@ -511,6 +510,39 @@
 				height: 21px;
 				width: auto;
 				margin: 3px 0px 0px 3px;
+			}
+		}
+	}
+
+	&.SelfEfficacy {
+		.activityInfo__title {
+			background-color: var(--IE-self-efficacy-400);
+		}
+		.activityInfo__data {
+			div:first-child {
+				background-color: var(--IE-self-efficacy-400);
+			}
+		}
+	}
+
+	&.Empathy {
+		.activityInfo__title {
+			background-color: var(--IE-empathy-400);
+		}
+		.activityInfo__data {
+			div:first-child {
+				background-color: var(--IE-empathy-400);
+			}
+		}
+	}
+
+	&.SelfRegulation {
+		.activityInfo__title {
+			background-color: var(--IE-self-regulation-400);
+		}
+		.activityInfo__data {
+			div:first-child {
+				background-color: var(--IE-self-regulation-400);
 			}
 		}
 	}

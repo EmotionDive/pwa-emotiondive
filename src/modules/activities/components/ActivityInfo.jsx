@@ -8,7 +8,13 @@ import Time from '../../../assets/icons/Time.svg?component'
 import Benefits from '../../../assets/icons/Benefits.svg?component'
 import PropTypes from 'prop-types'
 
-const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
+const ActivityInfo = ({
+	open,
+	onClickButton,
+	onClickOutside,
+	data,
+	variant,
+}) => {
 	const [openInfo, setOpenInfo] = useState(false)
 	const [exit, onExit] = useState(false)
 
@@ -32,6 +38,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 		onClickOutside()
 	})
 
+	// console.log(variant)
+	// console.log(data)
+
 	if (openInfo)
 		return (
 			<div
@@ -39,10 +48,10 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 					open ? 'open' : ''
 				} `}
 			>
-				<div className='activityInfo' ref={ref}>
+				<div className={`activityInfo ${variant}`} ref={ref}>
 					<div className='activityInfo__title'>
-						<span>1</span>
-						¡Identifica emociones faciales!
+						<span>{data.id_actividad}</span>
+						{data.nombre}
 					</div>
 					<div className='activityInfo__content'>
 						<div className='activityInfo__chips'>
@@ -50,21 +59,21 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 								<ActivitiesTCC />
 								Act. Anterior: 1
 							</span>
-							<span className='activityInfo__chips__chipOffline'>
-								<Offline />
-								Offline
-							</span>
+							{data.offline_bandera ? (
+								<span className='activityInfo__chips__chipOffline'>
+									<Offline />
+									Offline
+								</span>
+							) : null}
 						</div>
 						<div className='activityInfo__data book'>
 							<div>
 								<Book />
 							</div>
 							<div>
-								<p>Aprende a identificar las emociones de las personas.</p>
-								<p>
-									Se te plantearan una breve situación y un rostro de una
-									persona, tu trabajo es identificar que emoción se percibe.
-								</p>
+								{data.descripcion.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
 						<div className='activityInfo__data progress'>
@@ -72,10 +81,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 								<Progress />
 							</div>
 							<div>
-								<p>
-									Debes de realizar 1 vez esta actividad y se te retroalimentará
-									al finalizar.
-								</p>
+								{data.instrucciones.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
 						<div className='activityInfo__data time'>
@@ -84,7 +92,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 							</div>
 							<div>
 								<p>
-									Esta actividad te tomará alrededor de 15 minutos completarla.
+									Esta actividad te tomará alrededor de{' '}
+									{parseInt(data.tiempo_estimado.split(':')[1])} minutos
+									completarla.
 								</p>
 							</div>
 						</div>
@@ -93,10 +103,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 								<Benefits />
 							</div>
 							<div>
-								<p>
-									Al completar esta actividad comprenderás como se expresan las
-									emociones ante diversas situaciones.
-								</p>
+								{data.beneficios.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
 						<button className='button' onClick={onClickButton}>
@@ -115,12 +124,20 @@ ActivityInfo.propTypes = {
 	onClickOutside: PropTypes.func,
 	exitOnClickButton: PropTypes.bool,
 	exitOnClickOutside: PropTypes.bool,
+	data: PropTypes.object,
+	variant: PropTypes.oneOf([
+		'SelfKnowledge',
+		'SelfRegulation',
+		'SelfEfficacy',
+		'Empathy',
+	]),
 }
 
 ActivityInfo.defaultProps = {
 	open: false,
 	onClickButton: () => {},
 	onClickOutside: () => {},
+	data: {},
 }
 
 export default ActivityInfo
