@@ -1,24 +1,10 @@
 {
 	"title": "Identificación de emociones faciales",
-	"instructions": "Se presentaran distintas imagenes en las cuales deberas de identificar la emoción que cada imagen representa.",
+	"instructions": "Se presentaran distintas imagenes en las cuales deberas de identificar la emoción que cada imagen representa, sabiendo que solo representan las 5 emociones basicas que contempla MATEA (Miedo, Alegría, Tristeza, Enojo, Alegría).",
+	"situation": "¿Qué emocion representa la imagen presentada según MATEA (Miedo, Alegría, Tristeza, Enojo y Amor)?",
 	"scenarios": [
 		{
-			"situation": "Se encuentra en la oportunidad de emprender, el emprendimiento que soño alguna vez, sin embargo al mismo tiempo llega una muy buena oferta laboral, debera dar una respuesta lo antes posible, realizara cuatro listas, dos en donde exponga las razones y emociones por las que debería tomar la oferta laboral y dos listas que expongan la descición de emprender.",
-			"messages": [
-				"Comience con la lista de razones correspondiente a la oferta laboral.",
-				"Continue con la lista de razones correspondiente a emprendimiento.",
-				"Genial!, avanza con la lista de emociones que te produce el tomar la descición de la propuesta de trabajo.",
-				"Estas a un paso, sigue así!, por ultimo realiza la lista de emociones que te produce el tomar la descición de emprender."
-			]
-		},
-		{
-			"situation": "Tienes la oportunidad de estudiar en el extranjero, sin embargo mantienes una relación en tu país natal, deberas de tomar la elección de viajar al extranjero o quedarte en tu país con tu relación, realizara cuatro listas, dos en donde exponga las razones y emociones por las que debería tomar la oportunidad de ir al extranjero y dos listas que expongan la descición de quedarte en tu país",
-			"messages": [
-				"Comience con la lista de razones correspondiente a tomar la oferta de estudiar en el extranjero.",
-				"Continue con la lista de razones correspondiente a quedarte en tu país.",
-				"Genial!, avanza con la lista de emociones que te produce el quedarte con tu relación dentro de tu país.",
-				"Estas a un paso, sigue así!, por ultimo realiza la lista de emociones que te produce el salir del país a estudiar."
-			]
+			"messages": ["Miedo", "Alegría", "Tristeza", "Enojo", "Amor"]
 		}
 	],
 	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una descición, recuerda que lo mas importante es siempre sentirse bien con uno mismo!!, sigue así."
