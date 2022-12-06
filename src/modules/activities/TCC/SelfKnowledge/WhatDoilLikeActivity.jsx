@@ -41,8 +41,9 @@ const WhatDoilLikeActivity = () => {
 				'Pienso que mis capacidades de analisis de información no estan en un nivel alto, noy soy capaz de desarrollar soluciones.',
 		},
 		{
-			oportunidad: 'Falta',
-			descripción: 'Lorem ipsum',
+			oportunidad: 'Reconocimiento Emocional',
+			descripción:
+				'No siento que soy capaz de entender mis emociones y las de personas en mi entorno, regularmente me cuesta externar mis emociones.',
 		},
 	])
 
@@ -66,13 +67,13 @@ const WhatDoilLikeActivity = () => {
 		}
 	}
 	return (
-		<div className='SelfEfficacyActivity'>
+		<div className='WhatDoiLikeActivity'>
 			<ModalProvider>
 				<ActivitiesLocalizationBar
 					title='¿Qué me gusta?'
 					variant='SelfKnowledge'
 				/>
-				<main className='successesAndFailuresActivity'>
+				<main className='WhatDoiLikeActivity'>
 					<div className='questions'>
 						<p className='systemText__instruction'>
 							Deberas realizar la selección de las cosas que te agradan de ti,
