@@ -1,27 +1,48 @@
 import { useState } from 'react'
 import { useRef } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { LargeButton } from '../../../components/Buttons'
 import { useModalAction } from '../../../components/Modal'
+import useActivities from '../../../data/hooks/useActivities'
+import useUser from '../../../data/hooks/useUser'
+import ActivitiesService from '../../../fetchers/ActivitiesService'
 import { CognitiveChooser } from '../components'
 
 const ChooseCompetencePage = () => {
 	const competences = useRef([])
+	const navigate = useNavigate()
+	const { userData } = useUser()
 	const [error, setError] = useState(false)
 	const { operateModal } = useModalAction()
+	const { updateCompetences, competences: actualCompetences } = useActivities()
 
 	const modalActivities = () => {
-		setTimeout(() => {
-			operateModal(
-				'¡Listo! Ya está todo preparado para trabajar tu Inteligencia Emocional.',
-				'Ahora, para empezar, vamos a ver con que actividades puedes iniciar para así preparar tu plan de esta semana.',
-				'confirm',
-				['¡Vamos a las Actividades!'],
-				() => {
-					console.log('Yiyi')
-				},
-				false
-			)
-		}, 400)
+		ActivitiesService.registerCompetences(
+			userData.username,
+			competences.current
+		)
+			.then((res) => {
+				if (res.status === 'success')
+					setTimeout(() => {
+						operateModal(
+							'¡Listo! Ya está todo preparado para trabajar tu Inteligencia Emocional.',
+							'Ahora, para empezar, vamos a ver con que actividades puedes iniciar para así preparar tu plan de esta semana.',
+							'confirm',
+							['¡Vamos a las Actividades!'],
+							() => {
+								updateCompetences()
+								navigate('/actividades', {
+									replace: true,
+								})
+							},
+							false
+						)
+					}, 400)
+				else alert('Error en el servidor')
+			})
+			.catch(() => {
+				alert('Error en el servidor')
+			})
 	}
 
 	const readyButton = () => {
@@ -40,6 +61,9 @@ const ChooseCompetencePage = () => {
 			)
 		}
 	}
+
+	if (actualCompetences.length !== 0)
+		return <Navigate to='/actividades' replace />
 
 	return (
 		<div className='chooseCompetencesSlide'>

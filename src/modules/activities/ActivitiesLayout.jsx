@@ -1,15 +1,15 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import useActivities from '../../data/hooks/useActivities'
 import { ActivitiesTabNav } from './components'
 
 const ActivitiesLayout = () => {
 	const navigate = useNavigate()
+	const { competences } = useActivities()
 
 	const handleTab = (activeTab) => {
 		if (activeTab === 'activities') navigate('/actividades')
 		else navigate('/actividades/planSemanal')
 	}
-
-	// TODO: Build "CU009: Ver Actividades TCC" and "CU011: Ver Actividad TCC"
 
 	return (
 		<div className='activitiesPage'>
@@ -20,6 +20,7 @@ const ActivitiesLayout = () => {
 						: 'activities'
 				}
 				onChange={handleTab}
+				disableWeekPlan={!competences || competences.length === 0}
 			/>
 			<div className='activitiesPage__content'>
 				<Outlet />

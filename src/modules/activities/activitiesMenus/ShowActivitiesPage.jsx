@@ -2,8 +2,14 @@ import { ActivityInfo, ListActivities } from '../components'
 import CardActivitie from '../components/CardActivitie'
 import { LargeButton } from '../../../components/Buttons'
 import { useState } from 'react'
+import useActivities from '../../../data/hooks/useActivities'
+import { Navigate } from 'react-router-dom'
 const ShowActivitiesPage = () => {
 	const [openInfoActivity, setOpenInfoActivity] = useState(false)
+	const { competences } = useActivities()
+
+	if (!competences || competences.length === 0)
+		return <Navigate to='/actividades' replace />
 
 	//TODO: SEE HOW THE DATA WILL BE PASED TO THE INFOACTIVITY
 

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef } from 'react'
+import { createContext, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 export const UserContext = createContext(null)

@@ -36,7 +36,6 @@ import {
 import {
 	OwnDecisionsEmotionandReasonsActivity,
 	ReasonsEmotionActivity,
-	SuccesAndFailsActivity,
 	WhatwouldyoudoActivity,
 	SuccessesAndFailuresActivity,
 	SuccesAndFailsActivity2,

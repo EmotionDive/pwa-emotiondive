@@ -53,6 +53,11 @@
 				fill: var(--primary-700);
 			}
 		}
+
+		.disabled {
+			pointer-events: none;
+			opacity: 40%;
+		}
 	}
 
 	&__content {
