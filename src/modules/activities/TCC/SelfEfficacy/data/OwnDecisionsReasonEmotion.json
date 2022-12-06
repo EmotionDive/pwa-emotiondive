@@ -1,5 +1,5 @@
 {
-	"title": "Desciciones Razón-Emoción Actividad 1",
+	"title": "Decisiones Razón-Emoción Actividad 1",
 	"instructions": "Se te presentara un caso en el que podras elegir una opción al final de la actividad, para seleccionar tu opción deberas descomponer en razones y emociones el caso, es decir, ¿Por qué razones escogeria la primera opción? y ¿Qué emociones me produce esa elección?, posteriormente describiras las razones por las que escogerías la opción 2 y las emociones que te produce esa elección.",
 	"scenarios": [
 		{
@@ -21,5 +21,5 @@
 			]
 		}
 	],
-	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una descición, recuerda que lo mas importante es siempre sentirse bien con uno mismo!!, sigue así."
+	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una decisión, recuerda que lo mas importante es siempre sentirse bien con uno mismo!!, sigue así."
 }
