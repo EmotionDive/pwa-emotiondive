@@ -13,6 +13,7 @@ export default function useUser() {
 	}
 
 	const updateUserData = (newData) => {
+		userData.current = newData
 		localStorage.setItem('user', JSON.stringify(newData))
 		console.log('updated user')
 	}
