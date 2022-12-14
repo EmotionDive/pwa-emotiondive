@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useQuery } from 'react-query'
+import { useNavigate } from 'react-router-dom'
 import img from '../../../assets/images/pictures/WeekPlan.png'
 import { LargeButton } from '../../../components/Buttons'
 import { useModalAction } from '../../../components/Modal'
@@ -41,12 +42,13 @@ const CreateWeekPlanPage = () => {
 	const [availableForSelection, setAvailableForSelection] = useState()
 	const { operateModal } = useModalAction()
 	const { userData } = useUser()
+	const navigate = useNavigate()
 
 	const [openInfoActivity, setOpenInfoActivity] = useState(false)
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
 	const [addOrDelete, setAddOrDelete] = useState('true')
-	const { competences } = useActivities()
+	const { competences, statusWeekPlan } = useActivities()
 
 	const { data } = useQuery(
 		'getActivities',
@@ -140,7 +142,11 @@ const CreateWeekPlanPage = () => {
 							`Tienes hasta el ${weekPlanEnd} para terminar tus actividades. ¡Mucho éxito trabajando tu Inteligencia Emocional!`,
 							'confirm',
 							['¡Empecemos ya!'],
-							() => {},
+							() => {
+								navigate('/actividades', {
+									replace: true,
+								})
+							},
 							false
 						)
 					}, 400)
@@ -152,7 +158,17 @@ const CreateWeekPlanPage = () => {
 	}
 
 	useEffect(() => {
+		if (statusWeekPlan === 'expired')
+			operateModal(
+				'Se acabó tu plan semanal',
+				'Llegó la hora de una nueva semana. Si no acabaste alguna actividad podrás incluirla en este nuevo plan. ¡Mucho éxito!',
+				'confirm',
+				['¡Vamos allá!'],
+				() => {},
+				true
+			)
 		// When first render
+		//TODO: Add first available activities
 		setAvailableForSelection([1, 11])
 	}, [data])
 

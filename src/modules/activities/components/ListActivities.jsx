@@ -20,6 +20,7 @@ const labels = {
 }
 
 const ListActivities = ({ variant, children }) => {
+	console.log(variant)
 	return (
 		<div className='listActivities'>
 			<div className={`listActivities__title ${variant}`}>

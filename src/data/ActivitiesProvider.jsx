@@ -5,7 +5,7 @@ export const ActivitiesContext = createContext(null)
 
 const ActivitiesProvider = ({ children }) => {
 	const [competences, setCompetences] = useState(null)
-	const [statusWeekPlan, setStatusWeekPlan] = useState('none')
+	const [statusWeekPlan, setStatusWeekPlan] = useState(null)
 	const weekplan = useRef({})
 
 	return (

@@ -19,7 +19,7 @@ const ShowActivitiesPage = () => {
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
 	const navigate = useNavigate()
-	const { competences } = useActivities()
+	const { competences, statusWeekPlan } = useActivities()
 
 	const { isLoading, data, isSuccess } = useQuery(
 		'getActivities',
@@ -77,9 +77,11 @@ const ShowActivitiesPage = () => {
 						</ListActivities>
 					))}
 				</div>
-				<LargeButton onClick={() => navigate('/actividades/planSemanal')}>
-					Crear Plan Semanal
-				</LargeButton>
+				{statusWeekPlan === 'onTime' ? null : (
+					<LargeButton onClick={() => navigate('/actividades/planSemanal')}>
+						Crear Plan Semanal
+					</LargeButton>
+				)}
 				<ActivityInfo
 					open={openInfoActivity}
 					data={dataActivityInfo}
