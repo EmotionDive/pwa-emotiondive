@@ -64,7 +64,7 @@ const QuestionsTestIESlide = () => {
 			.then((data) => {
 				if (data.status === 'success') slideTo('/end')
 				else {
-					alert('Error en API')
+					// alert('Error en API')
 					console.error(data)
 				}
 			})

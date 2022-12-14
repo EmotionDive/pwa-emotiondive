@@ -14,6 +14,8 @@ const ActivityInfo = ({
 	onClickOutside,
 	data,
 	variant,
+	addToWeekPlanButton,
+	onClickAddToWeekPlanButton,
 }) => {
 	const [openInfo, setOpenInfo] = useState(false)
 	const [exit, onExit] = useState(false)
@@ -37,9 +39,6 @@ const ActivityInfo = ({
 	const ref = useOutsideClick(() => {
 		onClickOutside()
 	})
-
-	// console.log(variant)
-	// console.log(data)
 
 	if (openInfo)
 		return (
@@ -108,9 +107,25 @@ const ActivityInfo = ({
 								))}
 							</div>
 						</div>
-						<button className='button' onClick={onClickButton}>
-							Okey
-						</button>
+						<div
+							className={`button__container ${
+								addToWeekPlanButton !== null ? 'weekPlan' : ''
+							}`}
+						>
+							<button className='button' onClick={onClickButton}>
+								{addToWeekPlanButton !== null ? 'Ver otra' : 'Okey'}
+							</button>
+							{addToWeekPlanButton === null ? null : (
+								<button
+									className='button'
+									onClick={() => onClickAddToWeekPlanButton(data.id_actividad)}
+								>
+									{addToWeekPlanButton === 'true'
+										? 'Agregar a Plan Semanal'
+										: 'Quitar de Plan Semanal'}
+								</button>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -130,7 +145,10 @@ ActivityInfo.propTypes = {
 		'SelfRegulation',
 		'SelfEfficacy',
 		'Empathy',
+		'',
 	]),
+	addToWeekPlanButton: PropTypes.oneOf(['true', 'false']),
+	onClickAddToWeekPlanButton: PropTypes.func,
 }
 
 ActivityInfo.defaultProps = {
@@ -138,6 +156,8 @@ ActivityInfo.defaultProps = {
 	onClickButton: () => {},
 	onClickOutside: () => {},
 	data: {},
+	addToWeekPlanButton: null,
+	onClickAddToWeekPlanButton: () => {},
 }
 
 export default ActivityInfo

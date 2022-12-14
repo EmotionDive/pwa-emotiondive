@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActivitiesTCC from '../../../assets/icons/ActivitiesTCC.svg?component'
 import WeekPlan from '../../../assets/icons/WeekPlan.svg?component'
 import PropTypes from 'prop-types'
 
 const ActivitiesTabNav = ({ value, onChange, disableWeekPlan }) => {
 	const [active, setActive] = useState(value)
+
+	useEffect(() => setActive(value), [value])
 
 	const toggleActive = (tab) => {
 		if (active !== tab) {
@@ -26,7 +28,7 @@ const ActivitiesTabNav = ({ value, onChange, disableWeekPlan }) => {
 				Actividades
 			</span>
 			<span
-				className={`${active === 'weekPlan' ? 'active' : ''} ${
+				className={`${active === 'weekPlan' ? 'active' : ''}${
 					disableWeekPlan ? 'disabled' : ''
 				}`}
 				onClick={() => toggleActive('weekPlan')}

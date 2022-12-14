@@ -5,12 +5,11 @@ import { useState } from 'react'
 import { useQuery } from 'react-query'
 import useActivities from '../../../data/hooks/useActivities'
 import ActivitiesService from '../../../fetchers/ActivitiesService'
-import { Navigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const competencesTranslation = {
 	Autoconocimiento: 'SelfKnowledge',
-	Autorregulacion: 'SelfRegulation',
+	Autorregulación: 'SelfRegulation',
 	Autoeficacia: 'SelfEfficacy',
 	Empatia: 'Empathy',
 }
@@ -19,7 +18,7 @@ const ShowActivitiesPage = () => {
 	const [openInfoActivity, setOpenInfoActivity] = useState(false)
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
-	// const [data, setData] = useState([])
+	const navigate = useNavigate()
 	const { competences } = useActivities()
 
 	const { isLoading, data, isSuccess } = useQuery(
@@ -78,7 +77,9 @@ const ShowActivitiesPage = () => {
 						</ListActivities>
 					))}
 				</div>
-				<LargeButton>Crear Plan Semanal</LargeButton>
+				<LargeButton onClick={() => navigate('/actividades/planSemanal')}>
+					Crear Plan Semanal
+				</LargeButton>
 				<ActivityInfo
 					open={openInfoActivity}
 					data={dataActivityInfo}

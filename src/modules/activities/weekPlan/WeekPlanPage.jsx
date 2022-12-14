@@ -1,7 +1,9 @@
 // TODO: Make redirections to other activities pages
 
+import CreateWeekPlanPage from './CreateWeekPlanPage'
+
 const WeekPlanPage = () => {
-	return <div>WeekPlanPage</div>
+	return <CreateWeekPlanPage />
 }
 
 export default WeekPlanPage

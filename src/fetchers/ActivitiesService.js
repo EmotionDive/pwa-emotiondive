@@ -38,4 +38,21 @@ export default class ActivitiesService {
 			},
 		})
 	}
+
+	static getWeekPlan(username) {
+		return clientRequest({
+			method: 'get',
+			url: `/weekly_plan/${username}`,
+		})
+	}
+
+	static createWeekPlan(username, activities) {
+		return clientRequest({
+			method: 'post',
+			url: `/weekly_plan/${username}`,
+			data: {
+				activities: activities,
+			},
+		})
+	}
 }

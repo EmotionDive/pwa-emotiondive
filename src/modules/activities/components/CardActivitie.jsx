@@ -8,10 +8,14 @@ const CardActivitie = ({
 	variant = 'SelfKnowledge',
 	optional = false,
 	onClick,
+	choosed,
+	disabled,
 }) => {
 	return (
 		<div
-			className={`activitieCard ${variant}`}
+			className={`activitieCard ${variant} ${choosed ? 'choosed' : ''} ${
+				disabled ? 'disabled' : ''
+			}`}
 			tabIndex='0'
 			role='button'
 			onClick={onClick}
@@ -43,10 +47,14 @@ CardActivitie.propTypes = {
 		'Empathy',
 	]),
 	onClick: PropTypes.func,
+	choosed: PropTypes.bool,
+	disabled: PropTypes.bool,
 }
 
 CardActivitie.defaultProps = {
 	onClick: () => {},
+	choosed: false,
+	disabled: false,
 }
 
 export default CardActivitie
