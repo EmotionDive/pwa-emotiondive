@@ -55,7 +55,6 @@ const QuestionsTestIESlide = () => {
 			prev.shift()
 			return prev
 		})
-		console.log(answers)
 	}
 
 	const finishTest = () => {
