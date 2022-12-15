@@ -5,9 +5,14 @@ import LoginPage from '../modules/login/LoginPage'
 
 const RootAuthPage = () => {
 	const { isAuthenticated } = useAuth0()
-	const { flags } = useUser()
+	const { flags, logout } = useUser()
 
 	if (isAuthenticated) {
+		if (flags === null) {
+			logout()
+			return <div>Logout...</div>
+		}
+
 		if (!flags.is_registered) return <Navigate to='/registro' replace />
 		else if (!flags.is_active) return <Navigate to='/cuentaNoActiva' replace />
 		else if (flags.is_first_time) return <Navigate to='/tutorial' replace />

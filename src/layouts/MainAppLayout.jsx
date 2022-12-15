@@ -14,8 +14,10 @@ const localizations = {
 }
 
 const MainAppLayout = () => {
-	const { flags } = useUser()
+	const { flags, logout } = useUser()
 	const local = useLocation()
+
+	if (flags === null) logout()
 
 	if (!flags.is_registered) return <Navigate to='/registro' replace />
 	else if (!flags.is_active) return <Navigate to='/cuentaNoActiva' replace />
