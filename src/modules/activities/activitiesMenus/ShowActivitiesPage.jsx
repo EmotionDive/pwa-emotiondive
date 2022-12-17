@@ -66,11 +66,11 @@ const ShowActivitiesPage = () => {
 						>
 							{competence.activities.map((activity, indexActivity) => (
 								<CardActivitie
-									number={activity.id_actividad}
+									number={activity.activity.id_actividad}
 									variant={competencesTranslation[competence.competence]}
-									key={activity.id_actividad}
-									title={activity.nombre}
-									description={activity.descripcion.split('\n')[0]}
+									key={activity.activity.id_actividad}
+									title={activity.activity.nombre}
+									description={activity.activity.descripcion.split('\n')[0]}
 									onClick={() => handleOpenInfo(indexCompetence, indexActivity)}
 								/>
 							))}

@@ -16,6 +16,8 @@ const ActivityInfo = ({
 	variant,
 	addToWeekPlanButton,
 	onClickAddToWeekPlanButton,
+	addDoActivityButton,
+	onClickDoActivityButton,
 }) => {
 	const [openInfo, setOpenInfo] = useState(false)
 	const [exit, onExit] = useState(false)
@@ -49,16 +51,18 @@ const ActivityInfo = ({
 			>
 				<div className={`activityInfo ${variant}`} ref={ref}>
 					<div className='activityInfo__title'>
-						<span>{data.id_actividad}</span>
-						{data.nombre}
+						<span>{data.activity.id_actividad}</span>
+						{data.activity.nombre}
 					</div>
 					<div className='activityInfo__content'>
 						<div className='activityInfo__chips'>
-							<span className='activityInfo__chips__chipActivity'>
-								<ActivitiesTCC />
-								Act. Anterior: 1
-							</span>
-							{data.offline_bandera ? (
+							{data.next_activity === null ? null : (
+								<span className='activityInfo__chips__chipActivity'>
+									<ActivitiesTCC />
+									Act. Siguiente: {data.next_activity}
+								</span>
+							)}
+							{data.activity.offline_bandera ? (
 								<span className='activityInfo__chips__chipOffline'>
 									<Offline />
 									Offline
@@ -70,7 +74,7 @@ const ActivityInfo = ({
 								<Book />
 							</div>
 							<div>
-								{data.descripcion.split('\n').map((p, key) => (
+								{data.activity.descripcion.split('\n').map((p, key) => (
 									<p key={key}>{p}</p>
 								))}
 							</div>
@@ -80,7 +84,7 @@ const ActivityInfo = ({
 								<Progress />
 							</div>
 							<div>
-								{data.instrucciones.split('\n').map((p, key) => (
+								{data.activity.instrucciones.split('\n').map((p, key) => (
 									<p key={key}>{p}</p>
 								))}
 							</div>
@@ -92,8 +96,8 @@ const ActivityInfo = ({
 							<div>
 								<p>
 									Esta actividad te tomará alrededor de{' '}
-									{parseInt(data.tiempo_estimado.split(':')[1])} minutos
-									completarla.
+									{parseInt(data.activity.tiempo_estimado.split(':')[1])}{' '}
+									minutos completarla.
 								</p>
 							</div>
 						</div>
@@ -102,27 +106,43 @@ const ActivityInfo = ({
 								<Benefits />
 							</div>
 							<div>
-								{data.beneficios.split('\n').map((p, key) => (
+								{data.activity.beneficios.split('\n').map((p, key) => (
 									<p key={key}>{p}</p>
 								))}
 							</div>
 						</div>
 						<div
 							className={`button__container ${
-								addToWeekPlanButton !== null ? 'weekPlan' : ''
+								addToWeekPlanButton === null && addDoActivityButton === false
+									? ''
+									: 'weekPlan'
 							}`}
 						>
 							<button className='button' onClick={onClickButton}>
-								{addToWeekPlanButton !== null ? 'Ver otra' : 'Okey'}
+								{addToWeekPlanButton === null && addDoActivityButton === false
+									? 'Okey'
+									: 'Ver otra'}
 							</button>
 							{addToWeekPlanButton === null ? null : (
 								<button
 									className='button'
-									onClick={() => onClickAddToWeekPlanButton(data.id_actividad)}
+									onClick={() =>
+										onClickAddToWeekPlanButton(data.activity.id_actividad)
+									}
 								>
 									{addToWeekPlanButton === 'true'
 										? 'Agregar a Plan Semanal'
 										: 'Quitar de Plan Semanal'}
+								</button>
+							)}
+							{addDoActivityButton === false ? null : (
+								<button
+									className='button'
+									onClick={() =>
+										onClickDoActivityButton(data.activity.id_actividad)
+									}
+								>
+									Realizar actividad
 								</button>
 							)}
 						</div>
@@ -149,6 +169,8 @@ ActivityInfo.propTypes = {
 	]),
 	addToWeekPlanButton: PropTypes.oneOf(['true', 'false']),
 	onClickAddToWeekPlanButton: PropTypes.func,
+	addDoActivityButton: PropTypes.bool,
+	onClickDoActivityButton: PropTypes.func,
 }
 
 ActivityInfo.defaultProps = {
@@ -158,6 +180,8 @@ ActivityInfo.defaultProps = {
 	data: {},
 	addToWeekPlanButton: null,
 	onClickAddToWeekPlanButton: () => {},
+	addDoActivityButton: false,
+	onClickDoActivityButton: () => {},
 }
 
 export default ActivityInfo

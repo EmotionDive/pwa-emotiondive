@@ -82,7 +82,7 @@ function App() {
 					</Route>
 				</Route>
 				<Route path='actividades'>
-					<Route path='autoregulacion'>
+					<Route path='autorregulacion'>
 						{/* IMPORTANT: The path will be the acitivity ID on BD */}
 						<Route path='1' element={<HowSelfRegulateActivity />} />
 						<Route path='2' element={<SelfRegulationStrategiesActivity />} />

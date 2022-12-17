@@ -76,7 +76,7 @@ const CreateWeekPlanPage = () => {
 		setAddOrDelete(
 			selectedActivities.includes(
 				data.competence_activities[indexCompetence].activities[indexActivity]
-					.id_actividad
+					.activity.id_actividad
 			)
 				? 'false'
 				: 'true'
@@ -213,17 +213,21 @@ const CreateWeekPlanPage = () => {
 							>
 								{competence.activities.map((activity, indexActivity) => (
 									<CardActivitie
-										number={activity.id_actividad}
+										number={activity.activity.id_actividad}
 										variant={competencesTranslation[competence.competence]}
-										key={activity.id_actividad}
-										title={activity.nombre}
-										description={activity.descripcion.split('\n')[0]}
+										key={activity.activity.id_actividad}
+										title={activity.activity.nombre}
+										description={activity.activity.descripcion.split('\n')[0]}
 										onClick={() =>
 											handleOpenInfo(indexCompetence, indexActivity)
 										}
-										choosed={selectedActivities.includes(activity.id_actividad)}
+										choosed={selectedActivities.includes(
+											activity.activity.id_actividad
+										)}
 										disabled={
-											!availableForSelection.includes(activity.id_actividad)
+											!availableForSelection.includes(
+												activity.activity.id_actividad
+											)
 										}
 									/>
 								))}
