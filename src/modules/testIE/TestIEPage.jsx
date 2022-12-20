@@ -1,3 +1,4 @@
+import { Navigate, useLocation } from 'react-router-dom'
 import AnimatedGradient from '../../components/Gradients/AnimatedGradient'
 import { Slide, SlideSwitch } from '../../utils/Slides'
 import {
@@ -7,6 +8,10 @@ import {
 } from './slides'
 
 const TestIEPage = () => {
+	const location = useLocation()
+
+	if (!location.state?.fromTestIE) return <Navigate to='/' replace />
+
 	return (
 		<AnimatedGradient theme='shades-of-purple'>
 			<SlideSwitch>

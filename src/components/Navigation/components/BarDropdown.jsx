@@ -7,14 +7,47 @@ import NavbarDropdownButton from './BarDropdownButton'
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 import useUser from '../../../data/hooks/useUser'
+import { useModalAction } from '../../Modal'
+import useActivities from '../../../data/hooks/useActivities'
+import ActivitiesService from '../../../fetchers/ActivitiesService'
 
 const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 	const ref = useOutsideClick(onClickOutside)
 	const navigate = useNavigate()
-	const { logout } = useUser()
+	const { logout, userData } = useUser()
+	const { competences } = useActivities()
+	const { operateModal } = useModalAction()
 
 	const handleNavigate = (path) => {
 		navigate(path)
+		setTimeout(onClickOutside, 300)
+	}
+
+	const handleTestIE = () => {
+		let isTime = false
+		if (competences.length !== 0) {
+			ActivitiesService.areCompletedAndTimeForTest(
+				userData.username,
+				competences
+			)
+				.then((res) => {
+					if (res.status == 'success') {
+						isTime = res.test_ready_flag
+					}
+				})
+				.catch(() => console.error('Error on Server'))
+		}
+
+		if (!isTime)
+			operateModal(
+				'¡No tan rápido!',
+				'Aún no es tiempo de volver a realizar el Test de Inteligencia Emocional. ¡Vuelve cuando hayas terminado todas las actividades de tus competencias seleccionadas!',
+				'confirm',
+				['De acuerdo'],
+				() => {},
+				true
+			)
+		else navigate('/testIE')
 		setTimeout(onClickOutside, 300)
 	}
 
@@ -24,9 +57,7 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 				iconSVG={<TestIcon />}
 				label={'Test IE'}
 				selected={selectedButton.includes('testIE')}
-				onClick={() => {
-					handleNavigate('/testIE')
-				}}
+				onClick={() => handleTestIE()}
 			/>
 			<NavbarDropdownButton
 				iconSVG={<ConfigurationIcon />}

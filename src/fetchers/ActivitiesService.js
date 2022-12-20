@@ -32,10 +32,17 @@ export default class ActivitiesService {
 	static getActivities(competences) {
 		return clientRequest({
 			method: 'post',
-			url: '/activities/description',
+			url: '/activities/description/by_competence',
 			data: {
 				competences: competences,
 			},
+		})
+	}
+
+	static activitiesCompletedByTheUser(username) {
+		return clientRequest({
+			method: 'get',
+			url: `/activities/completed/by_user/${username}`,
 		})
 	}
 
@@ -52,6 +59,17 @@ export default class ActivitiesService {
 			url: `/weekly_plan/${username}`,
 			data: {
 				activities: activities,
+			},
+		})
+	}
+
+	static areCompletedAndTimeForTest(username, competences) {
+		return clientRequest({
+			method: 'post',
+			url: `/activities/competence_completed/by_user/${username}`,
+			data: {
+				competences: competences,
+				test_flag: true,
 			},
 		})
 	}

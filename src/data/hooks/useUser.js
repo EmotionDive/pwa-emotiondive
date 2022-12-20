@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { UserContext } from '../UserProvider'
 
 export default function useUser() {

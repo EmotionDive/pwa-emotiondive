@@ -24,18 +24,18 @@ const MainAppLayout = () => {
 	else if (flags.is_first_time) return <Navigate to='/tutorial' replace />
 	else
 		return (
-			<div className='appWrapper'>
-				<BackgroundLocalizationBar
-					localization={localizations[local.pathname] || 'Actividades IE'}
-				/>
-				<ModalProvider>
+			<ModalProvider>
+				<div className='appWrapper'>
+					<BackgroundLocalizationBar
+						localization={localizations[local.pathname] || 'Actividades IE'}
+					/>
 					<main>
 						<Outlet />
 						<ModalAction />
 					</main>
-				</ModalProvider>
-				<BottomBar />
-			</div>
+					<BottomBar />
+				</div>
+			</ModalProvider>
 		)
 }
 
