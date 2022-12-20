@@ -7,6 +7,7 @@ import Progress from '../../../assets/icons/Progress.svg?component'
 import Time from '../../../assets/icons/Time.svg?component'
 import Benefits from '../../../assets/icons/Benefits.svg?component'
 import PropTypes from 'prop-types'
+import { TextButton } from '../../../components/Buttons'
 
 const ActivityInfo = ({
 	open,
@@ -21,6 +22,7 @@ const ActivityInfo = ({
 	showRealizations,
 }) => {
 	const [openInfo, setOpenInfo] = useState(false)
+	const [notTimeToDo, setNotTimeToDo] = useState(false)
 	const [exit, onExit] = useState(false)
 
 	useEffect(() => {
@@ -30,6 +32,18 @@ const ActivityInfo = ({
 			close()
 		}
 	}, [open])
+
+	useEffect(() => {
+		let bool = false
+		if (data.last_realization) {
+			const currentTime = new Date()
+			const lastTime = new Date(data.last_realization)
+			lastTime.setDate(lastTime.getDate() + 1)
+			bool = currentTime.getTime() < lastTime.getTime()
+		}
+
+		setNotTimeToDo(bool)
+	}, [data])
 
 	const close = () => {
 		onExit(true)
@@ -117,6 +131,12 @@ const ActivityInfo = ({
 								))}
 							</div>
 						</div>
+						{notTimeToDo && addDoActivityButton === true && !data.done_flag ? (
+							<span className='systemText__paragraph'>
+								Ya realizaste la iteración de hoy, vuelve mañana para realizar
+								la siguiente.
+							</span>
+						) : null}
 						<div
 							className={`button__container ${
 								addToWeekPlanButton === null && addDoActivityButton === false
@@ -141,12 +161,17 @@ const ActivityInfo = ({
 										: 'Quitar de Plan Semanal'}
 								</button>
 							)}
-							{addDoActivityButton === false ? null : (
+							{addDoActivityButton === false ? null : data.done_flag ? (
+								<TextButton className='disabled'>
+									¡Actividad Completada!
+								</TextButton>
+							) : (
 								<button
 									className='button'
 									onClick={() =>
 										onClickDoActivityButton(data.activity.id_actividad)
 									}
+									disabled={notTimeToDo}
 								>
 									Realizar actividad
 								</button>

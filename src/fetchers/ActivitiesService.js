@@ -73,4 +73,18 @@ export default class ActivitiesService {
 			},
 		})
 	}
+
+	static activityCompleted(username, activityId) {
+		const progress = clientRequest({
+			method: 'post',
+			url: `/weekly_plan/${username}/activity_progress/${activityId}`,
+		})
+
+		const realizationDate = clientRequest({
+			method: 'post',
+			url: `/weekly_plan/${username}/activity_realization/${activityId}`,
+		})
+
+		return Promise.all([progress, realizationDate])
+	}
 }

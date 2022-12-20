@@ -218,6 +218,20 @@
 		-webkit-animation-delay: 1s;
 		animation-delay: 1s;
 	}
+
+	&__doneWeekPlan {
+		img {
+			margin: -20px auto 20px auto;
+			max-width: 80vw;
+			@include mediaQuery('tablet') {
+				max-width: 50vw;
+			}
+			@include mediaQuery('desktop') {
+				margin-top: -10px;
+				max-width: 20vw;
+			}
+		}
+	}
 }
 
 .listActivities {
@@ -652,6 +666,10 @@
 			&:hover {
 				box-shadow: 0px 4px 20px rgba(86, 185, 249, 0.66);
 			}
+		}
+		&:disabled {
+			pointer-events: none;
+			background-color: var(--secondary-300);
 		}
 	}
 }
