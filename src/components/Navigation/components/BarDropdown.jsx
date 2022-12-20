@@ -47,7 +47,7 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 				() => {},
 				true
 			)
-		else navigate('/testIE')
+		else navigate('/testIE', { state: { fromTestIE: true } })
 		setTimeout(onClickOutside, 300)
 	}
 
