@@ -9,38 +9,44 @@ import {
 } from '../../../../components/Modal'
 import data from './data/IdentifyEmotionsActivity.json'
 
+import { LargeButton } from '../../../../components/Buttons'
 const IdentifyEmotionsActivity = () => {
+	const [preguntaActual, setPreguntaActual] = useState(0)
+	const [puntuación, setPuntuacion] = useState(0)
+	const [isFinished, setIsFinished] = useState(false)
+	const handlerAnswer = (index) => {
+		console.log(index)
+	}
 	return (
-		<div className='SelfKnowledgeActivity'>
+		<div className='IdentifyEmotionsActivity'>
 			<ModalProvider>
 				<ActivitiesLocalizationBar title={data.title} variant='SelfKnowledge' />
-				<main className='successesAndFailuresActivity'>
+				<main className='IdentifyEmotionsActivity'>
+					<br></br>
 					<div className='questions'>
-						<p className='systemText__instruction'>{data.instructions}</p>
-						<br />
+						<span className='systemText__instruction'>{data.instructions}</span>
+						<br></br>
+						<br></br>
 						<div className='formContainer'>
-							<TextArea
-								label='Describe las emociones que sentirias, al escoger la opción 1'
-								placeholder='Redacta aquí el último éxito que recuerdes...'
-								rows={4}
-							/>
-							<TextArea
-								label='Describe las razones por las que escogerias la opción 1'
-								placeholder='Redacta aquí tu respuesta...'
-								rows={4}
-							/>
 							<br />
-							<LargeButtonModal
-								title={'¡Excelente, concluiste la actividad!'}
-								variant='confirmation'
-								buttonLabels={['Okey']}
-								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
-							>
-								Terminar
-							</LargeButtonModal>
+							<div className='Question'>Imagen</div>
+							<div className='Description'>{data.scenarios[0].situation}</div>
+							<div className='Question'>{data.situation}</div>
+							<div className='answers'>
+								{data.scenarios[preguntaActual].messages.map(
+									(emociones, index) => (
+										<button
+											key={index}
+											onClick={() => {
+												handlerAnswer(index)
+											}}
+										>
+											{emociones}
+										</button>
+									)
+								)}
+							</div>
+							<LargeButton></LargeButton>
 						</div>
 					</div>
 				</main>
