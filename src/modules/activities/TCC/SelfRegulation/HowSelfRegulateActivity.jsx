@@ -15,12 +15,13 @@ import {
 	OptionButton,
 	OptionButtonGroup,
 } from '../../../../components/Buttons'
+import { Navigate } from 'react-router-dom'
+import ActivitiesService from '../../../../fetchers/ActivitiesService'
+import useActivityUtils from '../../hooks/useActivityUtils'
 
 const img = [img1, img2, img3]
 
 const letters = ['A', 'B', 'C', 'D']
-
-// TODO: CONNECT TO API AND MAKE REDIRECTS
 
 const HowSelfRegulateActivity = () => {
 	const [scriptIndex, setScriptIndex] = useState(0)
@@ -30,8 +31,10 @@ const HowSelfRegulateActivity = () => {
 	const allAnswers = useRef([])
 	const scrollTop = useRef(null)
 
+	const { accessFromMenu, completeActivity } = useActivityUtils()
+
 	useEffect(() => {
-		scrollTop.current.scrollIntoView({ behavior: 'smooth' })
+		scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [questionIndex, scriptIndex])
 
 	const nextQuestion = () => {
@@ -39,6 +42,8 @@ const HowSelfRegulateActivity = () => {
 		setCurrentAnswer(null)
 		setQuestionIndex((prev) => prev + 1)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfRegulationActivity' ref={scrollTop}>
@@ -161,9 +166,7 @@ const HowSelfRegulateActivity = () => {
 								variant='confirmation'
 								buttonLabels={['Okey']}
 								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
+								onConfirmationCallback={completeActivity}
 							>
 								Terminar
 							</LargeButtonModal>

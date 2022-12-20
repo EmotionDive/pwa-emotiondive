@@ -13,12 +13,16 @@ import {
 import TextFormatter from '../../../../utils/TextFormatter/TextFormatter'
 import data from './data/SelfRegulationTestData.json'
 import img from '../../../../assets/images/pictures/SelfRegulationAct5.png'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const letters = ['A', 'B', 'C', 'D']
 
 // TODO: CONNECT TO API AND MAKE REDIRECTS
 
 const SelfRegulationTestActivity = () => {
+	const { accessFromMenu, completeActivity } = useActivityUtils()
+	const navigator = useNavigate()
 	const [questionIndex, setQuestionIndex] = useState(0)
 	const [currentAnswer, setCurrentAnswer] = useState(null)
 	const [grade, setGrade] = useState(0)
@@ -27,7 +31,7 @@ const SelfRegulationTestActivity = () => {
 	const scrollTop = useRef(null)
 
 	useEffect(() => {
-		scrollTop.current.scrollIntoView({ behavior: 'smooth' })
+		scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [questionIndex])
 
 	const nextQuestion = () => {
@@ -45,6 +49,8 @@ const SelfRegulationTestActivity = () => {
 		}
 		setGrade(grade)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfRegulationActivity' ref={scrollTop}>
@@ -171,7 +177,7 @@ const SelfRegulationTestActivity = () => {
 								title={
 									grade !== data.situations.length
 										? '¡No te rindas!'
-										: '¡Felicidades. terminaste la actividad!'
+										: '¡Felicidades, terminaste la actividad!'
 								}
 								info={
 									grade !== data.situations.length
@@ -182,7 +188,8 @@ const SelfRegulationTestActivity = () => {
 								buttonLabels={['Okey']}
 								exitOnClickOut={false}
 								onConfirmationCallback={() => {
-									console.log('Finish')
+									if (grade !== data.situations.length) navigator('/')
+									else completeActivity()
 								}}
 							>
 								Terminar
