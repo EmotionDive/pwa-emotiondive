@@ -19,7 +19,7 @@ const ShowActivitiesPage = () => {
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
 	const navigate = useNavigate()
-	const { competences, statusWeekPlan } = useActivities()
+	const { competences, statusWeekPlan, doneActivities } = useActivities()
 
 	const { isLoading, data, isSuccess } = useQuery(
 		'getActivities',
@@ -72,6 +72,7 @@ const ShowActivitiesPage = () => {
 									title={activity.activity.nombre}
 									description={activity.activity.descripcion.split('\n')[0]}
 									onClick={() => handleOpenInfo(indexCompetence, indexActivity)}
+									done={doneActivities.includes(activity.activity.id_actividad)}
 								/>
 							))}
 						</ListActivities>

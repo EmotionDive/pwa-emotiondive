@@ -375,6 +375,45 @@
 		}
 	}
 
+	&.done {
+		&.SelfKnowledge {
+			.activitieCard__title {
+				span {
+					background-color: var(--IE-self-knowledge-500);
+					border-color: var(--IE-self-knowledge-500);
+					color: var(--neutral-500);
+				}
+			}
+		}
+		&.SelfEfficacy {
+			.activitieCard__title {
+				span {
+					background-color: var(--IE-self-efficacy-500);
+					border-color: var(--IE-self-efficacy-500);
+					color: var(--neutral-500);
+				}
+			}
+		}
+		&.SelfRegulation {
+			.activitieCard__title {
+				span {
+					background-color: var(--IE-self-regulation-500);
+					border-color: var(--IE-self-regulation-500);
+					color: var(--neutral-500);
+				}
+			}
+		}
+		&.Empathy {
+			.activitieCard__title {
+				span {
+					background-color: var(--IE-empathy-500);
+					border-color: var(--IE-empathy-500);
+					color: var(--neutral-500);
+				}
+			}
+		}
+	}
+
 	&.disabled {
 		pointer-events: none;
 		opacity: 40%;

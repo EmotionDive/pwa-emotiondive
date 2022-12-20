@@ -2,13 +2,14 @@
 
 import useActivities from '../../../data/hooks/useActivities'
 import CreateWeekPlanPage from './CreateWeekPlanPage'
+import ShowWeekPlanPage from './ShowWeekPlanPage'
 
 const WeekPlanPage = () => {
 	const { statusWeekPlan } = useActivities()
 
 	if (statusWeekPlan === null) return <div>Loading...</div>
 
-	if (statusWeekPlan === 'onTime') return <div>WeekPlan</div>
+	if (statusWeekPlan === 'onTime') return <ShowWeekPlanPage />
 
 	return <CreateWeekPlanPage />
 }

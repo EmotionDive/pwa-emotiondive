@@ -10,6 +10,8 @@ export default function useActivities() {
 		statusWeekPlan,
 		setStatusWeekPlan,
 		weekplan,
+		doneActivities,
+		setDoneActivities,
 	} = useContext(ActivitiesContext)
 	const [isLoading] = useState(true)
 	const { userData } = useUser()
@@ -56,10 +58,29 @@ export default function useActivities() {
 			})
 	}
 
+	const updateDoneActivities = () => {
+		ActivitiesService.activitiesCompletedByTheUser(userData.username)
+			.then((res) => {
+				if (res.status === 'success') {
+					setDoneActivities(res.activities_by_user)
+					localStorage.setItem(
+						'doneActivities',
+						JSON.stringify(res.activities_by_user)
+					)
+				} else {
+					localStorage.setItem('doneActivities', doneActivities)
+				}
+			})
+			.catch(() => {
+				localStorage.setItem('doneActivities', doneActivities)
+			})
+	}
+
 	useEffect(() => {
 		//If internet
 		if (!competences) updateCompetences()
 		updateWeekPlan()
+		updateDoneActivities()
 	}, [competences, weekplan, statusWeekPlan])
 
 	return {
@@ -68,5 +89,6 @@ export default function useActivities() {
 		weekplan: weekplan.current,
 		statusWeekPlan,
 		isLoading,
+		doneActivities,
 	}
 }

@@ -18,6 +18,7 @@ const ActivityInfo = ({
 	onClickAddToWeekPlanButton,
 	addDoActivityButton,
 	onClickDoActivityButton,
+	showRealizations,
 }) => {
 	const [openInfo, setOpenInfo] = useState(false)
 	const [exit, onExit] = useState(false)
@@ -56,7 +57,12 @@ const ActivityInfo = ({
 					</div>
 					<div className='activityInfo__content'>
 						<div className='activityInfo__chips'>
-							{data.next_activity === null ? null : (
+							{showRealizations ? (
+								<span className='activityInfo__chips__chipActivity'>
+									<ActivitiesTCC />
+									Realizada {data.progreso} veces
+								</span>
+							) : data.next_activity === null ? null : (
 								<span className='activityInfo__chips__chipActivity'>
 									<ActivitiesTCC />
 									Act. Siguiente: {data.next_activity}
@@ -171,6 +177,7 @@ ActivityInfo.propTypes = {
 	onClickAddToWeekPlanButton: PropTypes.func,
 	addDoActivityButton: PropTypes.bool,
 	onClickDoActivityButton: PropTypes.func,
+	showRealizations: PropTypes.bool,
 }
 
 ActivityInfo.defaultProps = {
@@ -182,6 +189,7 @@ ActivityInfo.defaultProps = {
 	onClickAddToWeekPlanButton: () => {},
 	addDoActivityButton: false,
 	onClickDoActivityButton: () => {},
+	showRealizations: false,
 }
 
 export default ActivityInfo

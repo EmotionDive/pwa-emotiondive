@@ -48,7 +48,7 @@ const CreateWeekPlanPage = () => {
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
 	const [addOrDelete, setAddOrDelete] = useState('true')
-	const { competences, statusWeekPlan } = useActivities()
+	const { competences, statusWeekPlan, doneActivities } = useActivities()
 
 	const { data } = useQuery(
 		'getActivities',
@@ -157,6 +157,24 @@ const CreateWeekPlanPage = () => {
 			})
 	}
 
+	const searchFirstAvailables = () => {
+		const array = []
+
+		//First competence
+		const first = data.competence_activities[0].activities.find(
+			(element) => !doneActivities.includes(element.activity.id_actividad)
+		)
+		//Second competence
+		const second = data.competence_activities[1].activities.find(
+			(element) => !doneActivities.includes(element.activity.id_actividad)
+		)
+
+		if (first !== undefined) array.push(first.activity.id_actividad)
+		if (second !== undefined) array.push(second.activity.id_actividad)
+
+		return array
+	}
+
 	useEffect(() => {
 		if (statusWeekPlan === 'expired')
 			operateModal(
@@ -168,8 +186,7 @@ const CreateWeekPlanPage = () => {
 				true
 			)
 		// When first render
-		//TODO: Add first available activities
-		setAvailableForSelection([1, 11])
+		setAvailableForSelection(searchFirstAvailables())
 	}, [data])
 
 	return (

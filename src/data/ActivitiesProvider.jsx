@@ -6,6 +6,7 @@ export const ActivitiesContext = createContext(null)
 const ActivitiesProvider = ({ children }) => {
 	const [competences, setCompetences] = useState(null)
 	const [statusWeekPlan, setStatusWeekPlan] = useState(null)
+	const [doneActivities, setDoneActivities] = useState([])
 	const weekplan = useRef({})
 
 	return (
@@ -16,6 +17,8 @@ const ActivitiesProvider = ({ children }) => {
 				statusWeekPlan,
 				setStatusWeekPlan,
 				weekplan,
+				doneActivities,
+				setDoneActivities,
 			}}
 		>
 			{children}
