@@ -246,6 +246,9 @@ const CreateWeekPlanPage = () => {
 												activity.activity.id_actividad
 											)
 										}
+										done={doneActivities.includes(
+											activity.activity.id_actividad
+										)}
 									/>
 								))}
 							</ListActivities>
