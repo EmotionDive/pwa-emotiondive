@@ -116,8 +116,8 @@ function App() {
 						{/* IMPORTATNE: El path será el ID de la actividad en BD */}
 						<Route path='1' element={<EmpathySympathyAntipathy />} />
 						<Route path='2' element={<EmpathySympathyAntipathy2 />} />
-						<Route path='3' element={<EnvironmentRecognition />} />
-						<Route path='4' element={<EmpathicConversations />} />
+						<Route path='3' element={<EmpathicConversations />} />
+						<Route path='4' element={<EnvironmentRecognition />} />
 						<Route path='5' element={<EmpathicComments />} />
 					</Route>
 				</Route>
