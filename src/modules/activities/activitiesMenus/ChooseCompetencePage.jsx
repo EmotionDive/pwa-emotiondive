@@ -68,7 +68,7 @@ const ChooseCompetencePage = () => {
 	return (
 		<div className='chooseCompetencesSlide'>
 			<h1 className='text--big'>
-				!Es hora de elegir que competencia trabajarás¡
+				¡Es hora de elegir que competencia trabajarás!
 			</h1>
 			<span className='systemText__instruction'>
 				Elige 2 competencias de la Inteligencia Emocional:

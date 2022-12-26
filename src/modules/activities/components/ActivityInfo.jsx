@@ -74,7 +74,8 @@ const ActivityInfo = ({
 							{showRealizations ? (
 								<span className='activityInfo__chips__chipActivity'>
 									<ActivitiesTCC />
-									Realizada {data.progreso} veces
+									Realizada {data.progreso}{' '}
+									{data.progreso === 1 ? 'vez' : 'veces'}
 								</span>
 							) : data.next_activity === null ? null : (
 								<span className='activityInfo__chips__chipActivity'>
