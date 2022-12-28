@@ -21,8 +21,6 @@ const seriesLabels = [
 	'Empatía',
 ]
 
-// TODO: ADD TEXTFORMATTER AND EMPATHY API
-
 const StatisticsPage = () => {
 	const { userData } = useUser()
 	const [tab, setTab] = useState(0)

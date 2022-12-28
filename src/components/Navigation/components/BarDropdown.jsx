@@ -23,10 +23,10 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 		setTimeout(onClickOutside, 300)
 	}
 
-	const handleTestIE = () => {
+	const handleTestIE = async () => {
 		let isTime = false
 		if (competences.length !== 0) {
-			ActivitiesService.areCompletedAndTimeForTest(
+			await ActivitiesService.areCompletedAndTimeForTest(
 				userData.username,
 				competences
 			)

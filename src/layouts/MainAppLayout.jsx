@@ -1,8 +1,9 @@
-import { useAuth0 } from '@auth0/auth0-react'
+import { useEffect } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { BackgroundLocalizationBar } from '../components/LocalizationBar'
 import { ModalAction, ModalProvider } from '../components/Modal'
 import { BottomBar } from '../components/Navigation'
+import useActivities from '../data/hooks/useActivities'
 import useUser from '../data/hooks/useUser'
 
 const localizations = {
@@ -15,9 +16,14 @@ const localizations = {
 
 const MainAppLayout = () => {
 	const { flags, logout } = useUser()
+	const { updateAll } = useActivities()
 	const local = useLocation()
 
 	if (flags === null) logout()
+
+	useEffect(() => {
+		updateAll()
+	}, [])
 
 	if (!flags.is_registered) return <Navigate to='/registro' replace />
 	else if (!flags.is_active) return <Navigate to='/cuentaNoActiva' replace />

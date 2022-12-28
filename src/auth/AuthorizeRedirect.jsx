@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import UserService from '../fetchers/UserService'
 import useUser from '../data/hooks/useUser'
+import { useEffect } from 'react'
 
 const AuthorizeRedirect = () => {
 	const { user } = useAuth0()
@@ -18,11 +19,16 @@ const AuthorizeRedirect = () => {
 		isSuccess: isSuccessUser,
 	} = useQuery('userData', () => UserService.getUserData(user.email))
 
+	useEffect(() => {
+		if (isSuccess && isSuccessUser) {
+			updateFlags(data)
+			updateUserData(dataUser)
+		}
+	}, [data, dataUser, isSuccess, isSuccessUser, updateFlags, updateUserData])
+
 	if (isLoading || isLoadingUser) return <div>Redirecting...</div>
 
 	if (isSuccess && isSuccessUser) {
-		updateFlags(data)
-		updateUserData(dataUser)
 		if (!data.is_registered) return <Navigate to='/registro' replace />
 		else if (!data.is_active) return <Navigate to='/cuentaNoActiva' replace />
 		else if (data.is_first_time) return <Navigate to='/tutorial' replace />

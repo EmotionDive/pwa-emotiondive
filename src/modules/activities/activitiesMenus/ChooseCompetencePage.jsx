@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRef } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { LargeButton } from '../../../components/Buttons'
 import { useModalAction } from '../../../components/Modal'
 import useActivities from '../../../data/hooks/useActivities'
@@ -14,7 +14,8 @@ const ChooseCompetencePage = () => {
 	const { userData } = useUser()
 	const [error, setError] = useState(false)
 	const { operateModal } = useModalAction()
-	const { updateCompetences, competences: actualCompetences } = useActivities()
+	const { updateAll } = useActivities()
+	const location = useLocation()
 
 	const modalActivities = () => {
 		ActivitiesService.registerCompetences(
@@ -30,7 +31,7 @@ const ChooseCompetencePage = () => {
 							'confirm',
 							['¡Vamos a las Actividades!'],
 							() => {
-								updateCompetences()
+								updateAll()
 								navigate('/actividades', {
 									replace: true,
 								})
@@ -62,34 +63,33 @@ const ChooseCompetencePage = () => {
 		}
 	}
 
-	if (actualCompetences.length !== 0)
-		return <Navigate to='/actividades' replace />
-
-	return (
-		<div className='chooseCompetencesSlide'>
-			<h1 className='text--big'>
-				¡Es hora de elegir que competencia trabajarás!
-			</h1>
-			<span className='systemText__instruction'>
-				Elige 2 competencias de la Inteligencia Emocional:
-			</span>
-			<CognitiveChooser
-				onChange={(value) => {
-					competences.current = value
-					if (error) setError(false)
-				}}
-			/>
-			{error ? (
-				<span className='error'>Porfavor, selecciona tus competencias.</span>
-			) : null}
-			<span className='text--small justifyText'>
-				Te sugerimos elijas las competencias <b>autoconocimiento</b> y{' '}
-				<b>autoeficacia</b> ya que son tus áreas de oportunidad con base en tus
-				estadísticas.
-			</span>
-			<LargeButton onClick={readyButton}>Listo</LargeButton>
-		</div>
-	)
+	if (location.state?.fromMenuPage)
+		return (
+			<div className='chooseCompetencesSlide'>
+				<h1 className='text--big'>
+					¡Es hora de elegir que competencia trabajarás!
+				</h1>
+				<span className='systemText__instruction'>
+					Elige 2 competencias de la Inteligencia Emocional:
+				</span>
+				<CognitiveChooser
+					onChange={(value) => {
+						competences.current = value
+						if (error) setError(false)
+					}}
+				/>
+				{error ? (
+					<span className='error'>Porfavor, selecciona tus competencias.</span>
+				) : null}
+				<span className='text--small justifyText'>
+					Te sugerimos elijas las competencias <b>autoconocimiento</b> y{' '}
+					<b>autoeficacia</b> ya que son tus áreas de oportunidad con base en
+					tus estadísticas.
+				</span>
+				<LargeButton onClick={readyButton}>Listo</LargeButton>
+			</div>
+		)
+	else return <Navigate to='/actividades' replace />
 }
 
 export default ChooseCompetencePage
