@@ -12,7 +12,7 @@ const ActivitiesProvider = ({ children }) => {
 	const [competences, setCompetences] = useState(null)
 	const [statusWeekPlan, setStatusWeekPlan] = useState(null)
 	const [doneActivities, setDoneActivities] = useState([])
-	const weekplan = useRef({})
+	const [weekplan, setWeekplan] = useState({})
 	const [flagsActivities, setFlagsActivities] = useState({})
 	const [numberOfTest, setNumberOfTest] = useState(0)
 	//Loading variable
@@ -55,23 +55,23 @@ const ActivitiesProvider = ({ children }) => {
 
 						if (actualDate.getTime() > deadlineDate.getTime()) {
 							status = 'expired'
-							weekplan.current = {}
+							setWeekplan({})
+							localStorage.setItem('weekplan', JSON.stringify({}))
 						} else {
 							status = 'onTime'
-							weekplan.current = res
+							setWeekplan(res)
+							localStorage.setItem('weekplan', JSON.stringify(res))
 						}
 					} else {
 						status = 'none'
 					}
 					setStatusWeekPlan(status)
 					localStorage.setItem('statusWeekPlan', JSON.stringify(status))
-					localStorage.setItem('weekplan', JSON.stringify(weekplan.current))
 				})
 				.catch(() => {
 					setStatusWeekPlan('none')
-					weekplan.current = {}
 					localStorage.setItem('statusWeekPlan', 'none')
-					localStorage.setItem('weekplan', JSON.stringify(weekplan.current))
+					localStorage.setItem('weekplan', JSON.stringify({}))
 				})
 		}
 

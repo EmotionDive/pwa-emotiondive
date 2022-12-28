@@ -16,7 +16,7 @@ export default function useActivities() {
 	return {
 		competences,
 		statusWeekPlan,
-		weekplan: weekplan.current,
+		weekplan,
 		doneActivities,
 		flagsActivities,
 		numberOfTest,
