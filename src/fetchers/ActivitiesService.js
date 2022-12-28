@@ -15,6 +15,13 @@ export default class ActivitiesService {
 		})
 	}
 
+	static getUndoneCompetences(username) {
+		return clientRequest({
+			method: 'get',
+			url: `/competences/undone/${username}`,
+		})
+	}
+
 	static registerCompetences(username, competences) {
 		const EScompetences = competences.map(
 			(competence) => competencesTranslation[competence]

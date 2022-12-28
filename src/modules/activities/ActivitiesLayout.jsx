@@ -11,7 +11,7 @@ const ActivitiesLayout = () => {
 	const { pathname } = useLocation()
 
 	const handleTab = (activeTab) => {
-		if (activeTab === 'activities') navigate('/actividades/verActividades')
+		if (activeTab === 'activities') navigate('/actividades/')
 		else navigate('/actividades/planSemanal')
 	}
 

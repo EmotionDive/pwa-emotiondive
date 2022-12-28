@@ -103,10 +103,10 @@ const ActivitiesProvider = ({ children }) => {
 		}
 
 		setIsLoading(true)
+		await numberOfTest()
 		await updateCompetences()
 		await updateWeekPlan()
 		await updateDoneActivities()
-		await numberOfTest()
 		setIsLoading(false)
 		console.log('updateActivities')
 	}, [doneActivities, userData])
