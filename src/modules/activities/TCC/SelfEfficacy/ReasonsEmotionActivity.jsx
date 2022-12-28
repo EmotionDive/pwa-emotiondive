@@ -1,18 +1,17 @@
 import React from 'react'
 import { ActivitiesLocalizationBar } from '../../../../components/LocalizationBar'
-import {
-	LargeButtonModal,
-	ModalAction,
-	ModalProvider,
-} from '../../../../components/Modal'
-import { Select, TextArea } from '../../../../components/Forms'
+import { ModalAction, ModalProvider } from '../../../../components/Modal'
 import data from './data/DecisionsEmotionReason.json'
-import { useState } from 'react'
-import { useEffect } from 'react'
 import RedactSuccess from './components/RedactSuccess'
 import { Slide, SlideSwitch } from '../../../../utils/Slides'
 import RedactEmotionsAndReasons from './components/RedactEmotionsAndReasons'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 const ReasonEmotionActivity = () => {
+	const { accessFromMenu } = useActivityUtils()
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
+
 	return (
 		<div className='SelfEfficacyActivity'>
 			<ModalProvider>

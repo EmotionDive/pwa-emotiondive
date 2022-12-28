@@ -1,11 +1,19 @@
 {
-    "title":"¿Qué harías ante estas situaciones?",
-    "instructions":"En esta actividad se te presentara una situación, en la que una persona se autosabotea, no reconocera sus opciones ni sus capacidades, deberas redactar un párrafo de como resolvería la situación esta persona, haciendo uso de sus capacidades y virtudes.",
-    "scenario":[
-    {
-    "situation":"Sarah presentara su certificación de ingles sin embargo desconfia de ella, piensa que reprobara y perdera el tiempo y esfuerzo invertido en su curso, la ansiedad ha llegado a tal punto que ha pensado no hacer el examen, ha estudiado constantemente, incluso ha sido felicitada por su maestra debido a su comprensión lectora en ingles, Sarah tiene una semana mas para prepararse,¿Qué puede hacer Sarah para aprobar su certificación?",
-    "feedback": "Sarah tiene muchas aptitudes para el ingles, se menciona que tiene la capacidad de comprender el ingles a través de la lectura, por lo que debe de enfocarse en sus fortalezas, es decir, aprender más haciendo uso de la lectura, también puede apoyarse de agentes externos como lo sería su maestra, comentando su situación y generando estrategias de estudio, el autosabotaje de Sarah se refleja en pensar que no esta lista, que no es lo suficientemente buena sin intentar primero, el éxito es la suma de la oportunidad y la preparación y a Sarah le ha llegado el momento del éxito."
-    }
-    ],
-    "final_message":"Increible, vas muy bien en tu proceso!, recuerda que reconocerse a uno mismo es vital ante cualquier situación, evita autosabotearte, primero actua y conoce tus capacidades."
-    }
+	"title": "¿Qué harías ante estas situaciones?",
+	"instructions": "En esta actividad se te presentara una situación, en la que una persona se autosabotea y no reconoce sus opciones ni sus capacidades. Deberás redactar un párrafo de como resolvería la situación esta persona, haciendo uso de sus capacidades y virtudes.",
+	"scenario": [
+		{
+			"situation": "Sarah presentara su certificación de ingles sin embargo desconfia de ella, piensa que reprobara y perdera el tiempo y esfuerzo invertido en su curso, la ansiedad ha llegado a tal punto que ha pensado no hacer el examen, ha estudiado constantemente, incluso ha sido felicitada por su maestra debido a su comprensión lectora en ingles, Sarah tiene una semana mas para prepararse, ¿Qué puede hacer Sarah para aprobar su certificación?",
+			"feedback": "Sarah tiene muchas aptitudes para el ingles, se menciona que tiene la capacidad de comprender el ingles a través de la lectura, por lo que debe de enfocarse en sus fortalezas, es decir, aprender más haciendo uso de la lectura, también puede apoyarse de agentes externos como lo sería su maestra, comentando su situación y generando estrategias de estudio, el autosabotaje de Sarah se refleja en pensar que no esta lista, que no es lo suficientemente buena sin intentar primero, el éxito es la suma de la oportunidad y la preparación y a Sarah le ha llegado el momento del éxito."
+		},
+		{
+			"situation": "Sarah2 presentara su certificación de ingles sin embargo desconfia de ella, piensa que reprobara y perdera el tiempo y esfuerzo invertido en su curso, la ansiedad ha llegado a tal punto que ha pensado no hacer el examen, ha estudiado constantemente, incluso ha sido felicitada por su maestra debido a su comprensión lectora en ingles, Sarah tiene una semana mas para prepararse, ¿Qué puede hacer Sarah para aprobar su certificación?",
+			"feedback": "Sarah2 tiene muchas aptitudes para el ingles, se menciona que tiene la capacidad de comprender el ingles a través de la lectura, por lo que debe de enfocarse en sus fortalezas, es decir, aprender más haciendo uso de la lectura, también puede apoyarse de agentes externos como lo sería su maestra, comentando su situación y generando estrategias de estudio, el autosabotaje de Sarah se refleja en pensar que no esta lista, que no es lo suficientemente buena sin intentar primero, el éxito es la suma de la oportunidad y la preparación y a Sarah le ha llegado el momento del éxito."
+		},
+		{
+			"situation": "Sarah3 presentara su certificación de ingles sin embargo desconfia de ella, piensa que reprobara y perdera el tiempo y esfuerzo invertido en su curso, la ansiedad ha llegado a tal punto que ha pensado no hacer el examen, ha estudiado constantemente, incluso ha sido felicitada por su maestra debido a su comprensión lectora en ingles, Sarah tiene una semana mas para prepararse, ¿Qué puede hacer Sarah para aprobar su certificación?",
+			"feedback": "Sarah3 tiene muchas aptitudes para el ingles, se menciona que tiene la capacidad de comprender el ingles a través de la lectura, por lo que debe de enfocarse en sus fortalezas, es decir, aprender más haciendo uso de la lectura, también puede apoyarse de agentes externos como lo sería su maestra, comentando su situación y generando estrategias de estudio, el autosabotaje de Sarah se refleja en pensar que no esta lista, que no es lo suficientemente buena sin intentar primero, el éxito es la suma de la oportunidad y la preparación y a Sarah le ha llegado el momento del éxito."
+		}
+	],
+	"final_message": "Increible, vas muy bien en tu proceso!, recuerda que reconocerse a uno mismo es vital ante cualquier situación, evita autosabotearte, primero actua y conoce tus capacidades."
+}
