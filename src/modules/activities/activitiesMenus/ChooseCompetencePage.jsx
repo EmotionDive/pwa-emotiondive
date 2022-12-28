@@ -37,7 +37,7 @@ const ChooseCompetencePage = () => {
 							['¡Vamos a las Actividades!'],
 							() => {
 								updateAll()
-								navigate('/actividades', {
+								navigate('/actividades/verActividades', {
 									replace: true,
 								})
 							},

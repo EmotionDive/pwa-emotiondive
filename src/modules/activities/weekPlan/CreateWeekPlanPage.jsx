@@ -48,8 +48,13 @@ const CreateWeekPlanPage = () => {
 	const [dataActivityInfo, setDataActivityInfo] = useState({})
 	const [activityCompetence, setActivityCompetence] = useState('')
 	const [addOrDelete, setAddOrDelete] = useState('true')
-	const { competences, statusWeekPlan, doneActivities, flagsActivities } =
-		useActivities()
+	const {
+		competences,
+		statusWeekPlan,
+		doneActivities,
+		flagsActivities,
+		updateAll,
+	} = useActivities()
 
 	const { data } = useQuery(
 		'getActivities',
@@ -144,6 +149,7 @@ const CreateWeekPlanPage = () => {
 							'confirm',
 							['¡Empecemos ya!'],
 							() => {
+								updateAll()
 								navigate('/actividades', {
 									replace: true,
 								})
