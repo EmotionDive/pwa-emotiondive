@@ -13,12 +13,14 @@ import Miedo from '../../../../assets/images/pictures/SelfKnowledge-Miedo.png'
 import Enojo from '../../../../assets/images/pictures/SelfKnowledge-Enojo.png'
 import Afecto from '../../../../assets/images/pictures/SelfKnowledge-Afecto.jpg'
 import data from './data/EmotionRecognitionData.json'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const emotionsImages = [Alegria, Tristeza, Miedo, Enojo, Afecto]
 
 const EmotionRecognitionActivity = () => {
+	const { accessFromMenu, completeActivity } = useActivityUtils()
 	const [emotion, setEmotion] = useState(0)
-	const [finished, setFinished] = useState(false)
 	const [similarities, setSimilarities] = useState('')
 	const [diferences, setDiferences] = useState('')
 
@@ -28,10 +30,15 @@ const EmotionRecognitionActivity = () => {
 		setDiferences('')
 	}
 
+	if (!accessFromMenu) return <Navigate to='/' replace />
+
 	return (
 		<div className='SelfKnowledgeActivity'>
 			<ModalProvider>
-				<ActivitiesLocalizationBar title={data.title} variant='SelfKnowledge' />
+				<ActivitiesLocalizationBar
+					title='Reconocimiento de emociones'
+					variant='SelfKnowledge'
+				/>
 				<main className='EmotionRecognitionActivity'>
 					<span className='systemText__instruction'>{data.instructions}</span>
 					<div className='wrapper'>
@@ -45,14 +52,14 @@ const EmotionRecognitionActivity = () => {
 						<div className='section'>
 							<TextArea
 								label={data.emotions[emotion].questions[0]}
-								placeholder='Redacta las diferencias en la forma en que tu demuestras esa emocion...'
+								placeholder='Redacta las diferencias en la forma en que tu demuestras esa emoción...'
 								rows={3}
 								value={similarities}
 								onChange={(e) => setSimilarities(e.target.value)}
 							/>
 							<TextArea
 								label={data.emotions[emotion].questions[1]}
-								placeholder='Redacta las diferencias en la forma en que tu demuestras esa emocion...'
+								placeholder='Redacta las diferencias en la forma en que tu demuestras esa emoción...'
 								rows={3}
 								value={diferences}
 								onChange={(e) => setDiferences(e.target.value)}
@@ -76,9 +83,7 @@ const EmotionRecognitionActivity = () => {
 								variant='confirmation'
 								buttonLabels={['Okey']}
 								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
+								onConfirmationCallback={completeActivity}
 							>
 								Terminar
 							</LargeButtonModal>

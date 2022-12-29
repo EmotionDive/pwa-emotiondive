@@ -63,6 +63,14 @@
 			}
 		}
 
+		.image {
+			img {
+				margin: 0 auto 20px auto;
+				min-height: 200px;
+				max-height: 250px;
+			}
+		}
+
 		.button--large {
 			margin: 0 auto;
 		}

@@ -7,5 +7,47 @@
 			"messages": ["Miedo", "Alegría", "Tristeza", "Enojo", "Amor"]
 		}
 	],
-	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una descición, recuerda que lo mas importante es siempre sentirse bien con uno mismo!!, sigue así."
+	"emotions": [
+		{
+			"emotion_id": 0,
+			"emotion": "happiness",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras alegría?",
+				"¿Qué similitudes notas con la forma en que tu muestras alegría?"
+			]
+		},
+		{
+			"emotion_id": 1,
+			"emotion": "sad",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras tristeza?",
+				"¿Qué similitudes notas con la forma en que tu muestras tristeza?"
+			]
+		},
+		{
+			"emotion_id": 2,
+			"emotion": "scare",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras miedo?",
+				"¿Qué similitudes notas con la forma en que tu muestras miedo?"
+			]
+		},
+		{
+			"emotion_id": 3,
+			"emotion": "angry",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras enojo?",
+				"¿Qué similitudes notas con la forma en que tu muestras enojo?"
+			]
+		},
+		{
+			"emotion_id": 4,
+			"emotion": "love",
+			"questions": [
+				"¿Qué diferencias notas con la forma en que tu muestras afecto?",
+				"¿Qué similitudes notas con la forma en que tu muestras afecto?"
+			]
+		}
+	],
+	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una desición, recuerda que lo mas importante es siempre sentirse bien con uno mismo, ¡Sigue así!"
 }

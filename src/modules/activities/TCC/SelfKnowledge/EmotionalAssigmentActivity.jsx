@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import { LargeButton } from '../../../../components/Buttons'
 import { ActivitiesLocalizationBar } from '../../../../components/LocalizationBar'
 import {
@@ -6,15 +7,21 @@ import {
 	ModalAction,
 	ModalProvider,
 } from '../../../../components/Modal'
+import useActivityUtils from '../../hooks/useActivityUtils'
 import { EmotionButton } from './components'
 import data from './data/EmotionalAssignmentData.json'
 
 const emotionsMATEA = ['scare', 'happiness', 'sad', 'angry', 'love']
 
 const EmotionalAssigmentActivity = () => {
-	const [repetition] = useState(1)
+	const {
+		accessFromMenu,
+		numberOfRealization: repetition,
+		completeActivity,
+	} = useActivityUtils()
 
-	const [questionIndex, setQuestionIndex] = useState(0)
+	const [questionIndex, setQuestionIndex] = useState(repetition * 5)
+	const limit = repetition * 5 + 4
 	const [selectedEmotions, setSelectedEmotions] = useState([])
 	const [results, setResults] = useState(null)
 
@@ -22,8 +29,8 @@ const EmotionalAssigmentActivity = () => {
 	const scrollBottom = useRef(null)
 
 	useEffect(() => {
-		if (results) scrollBottom.current.scrollIntoView({ behavior: 'smooth' })
-		else scrollTop.current.scrollIntoView({ behavior: 'smooth' })
+		if (results) scrollBottom.current?.scrollIntoView({ behavior: 'smooth' })
+		else scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [questionIndex, results])
 
 	const handleEmotion = (emotion) => {
@@ -53,6 +60,8 @@ const EmotionalAssigmentActivity = () => {
 		setSelectedEmotions([])
 		setQuestionIndex((prev) => prev + 1)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfKnowledgeActivity' ref={scrollTop}>
@@ -100,18 +109,16 @@ const EmotionalAssigmentActivity = () => {
 						>
 							Calificar
 						</LargeButton>
-					) : questionIndex < data.situations.length - 1 ? (
+					) : questionIndex < limit ? (
 						<LargeButton onClick={nextQuestion}>Siguiente</LargeButton>
 					) : (
 						<LargeButtonModal
 							title={'¡Terminaste de asignar emociones!'}
-							info={repetition < 3 ? data.finalPartial : data.finalComplete}
+							info={repetition !== 2 ? data.finalPartial : data.finalComplete}
 							variant='confirmation'
 							buttonLabels={['Okey']}
 							exitOnClickOut={false}
-							onConfirmationCallback={() => {
-								console.log('Finish')
-							}}
+							onConfirmationCallback={completeActivity}
 						>
 							Terminar
 						</LargeButtonModal>

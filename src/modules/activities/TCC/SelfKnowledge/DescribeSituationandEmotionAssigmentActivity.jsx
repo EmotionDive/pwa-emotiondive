@@ -8,11 +8,17 @@ import { TextArea } from '../../../../components/Forms'
 import data from './data/DescribeSituationAndEmotionAssignmentData.json'
 import { EmotionButton } from './components'
 import { useState } from 'react'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const emotionsMATEA = ['scare', 'happiness', 'sad', 'angry', 'love']
 
 const DescribeSituationandEmotionAssigmentActivity = () => {
-	const [repetition] = useState(5)
+	const {
+		accessFromMenu,
+		numberOfRealization: repetition,
+		completeActivity,
+	} = useActivityUtils()
 	const [selectedEmotions, setSelectedEmotions] = useState([])
 	const [situation, setSituation] = useState('')
 	const [reason, setReason] = useState('')
@@ -24,6 +30,8 @@ const DescribeSituationandEmotionAssigmentActivity = () => {
 		else emotionsCopy.push(emotion)
 		setSelectedEmotions(emotionsCopy)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfKnowledgeActivity'>
@@ -64,13 +72,11 @@ const DescribeSituationandEmotionAssigmentActivity = () => {
 					</div>
 					<LargeButtonModal
 						title={'¡Terminaste de asignar tus propias emociones!'}
-						info={repetition < 5 ? data.finalPartial : data.finalComplete}
+						info={repetition !== 4 ? data.finalPartial : data.finalComplete}
 						variant='confirmation'
 						buttonLabels={['Okey']}
 						exitOnClickOut={false}
-						onConfirmationCallback={() => {
-							console.log('Finish')
-						}}
+						onConfirmationCallback={completeActivity}
 						disabled={
 							selectedEmotions.length === 0 ||
 							situation.length < 20 ||
