@@ -12,20 +12,21 @@ const opportunityCards = [
 		enfocar.
 	</CardOpportunityArea>,
 	<CardOpportunityArea key={1} type='SelfRegulation'>
-		En <b>autoregulación</b> tienes muchas oportunidades para poder crecer,
-		donde el entender mejor cómo es que funcionan tus emociones básicas como la
-		alegría, la tristeza o la ira sería de lo primero en lo que te tienes que
-		enfocar.
+		En <b>autorregulación</b> tienes la oportunidad de aprender cómo es que
+		podrás afrontar diversas situaciones tomando en cuenta tus emociones pero a
+		la vez no dejando que ellas tomen el control por tí. Usar las emociones de
+		forma controlada es la meta para un mejor sentir y actuar.
 	</CardOpportunityArea>,
 	<CardOpportunityArea key={2} type='SelfEfficacy'>
-		En <b>autoeficacia</b> puedes mejorar en varios aspectos! Uno de ellos es
+		En <b>autoeficacia</b> puedes mejorar en varios aspectos. Uno de ellos es
 		aprender a utilizar tus emociones a tu favor para afrontar mejor tu día a
-		día (no en contra).
+		día (no en contra) y sobre todo, mejorar nuestras decisiones.
 	</CardOpportunityArea>,
 	<CardOpportunityArea key={3} type='Empathy'>
-		En <b>empatía</b> tienes muchas oportunidades para poder crecer, donde el
-		entender mejor cómo es que funcionan tus emociones básicas como la alegría,
-		la tristeza o la ira sería de lo primero en lo que te tienes que enfocar.
+		En <b>empatía</b> tienes un gran área de mejora para poder entender y
+		comprender las emociones y sentimientos de los demás. Por otro lado, puedes
+		mejorar tu autoestima, tus habilidades sociales y tu actitud en el día a
+		día.
 	</CardOpportunityArea>,
 ]
 
