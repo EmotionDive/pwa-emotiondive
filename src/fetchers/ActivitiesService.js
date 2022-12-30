@@ -81,6 +81,22 @@ export default class ActivitiesService {
 		})
 	}
 
+	static allCompetencesCompleted(username) {
+		return clientRequest({
+			method: 'post',
+			url: `/activities/competence_completed/by_user/${username}`,
+			data: {
+				competences: [
+					'Empatia',
+					'Autoconocimiento',
+					'Autorregulación',
+					'Autoeficacia',
+				],
+				test_flag: true,
+			},
+		})
+	}
+
 	static activityCompleted(username, activityId) {
 		const progress = clientRequest({
 			method: 'post',

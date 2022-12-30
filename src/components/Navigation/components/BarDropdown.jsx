@@ -15,7 +15,7 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 	const ref = useOutsideClick(onClickOutside)
 	const navigate = useNavigate()
 	const { logout, userData } = useUser()
-	const { competences } = useActivities()
+	const { flagsActivities, numberOfTest, statusWeekPlan } = useActivities()
 	const { operateModal } = useModalAction()
 
 	const handleNavigate = (path) => {
@@ -24,21 +24,13 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 	}
 
 	const handleTestIE = async () => {
-		let isTime = false
-		if (competences.length !== 0) {
-			await ActivitiesService.areCompletedAndTimeForTest(
-				userData.username,
-				competences
-			)
-				.then((res) => {
-					if (res.status == 'success') {
-						isTime = res.test_ready_flag
-					}
-				})
-				.catch(() => console.error('Error on Server'))
-		}
-
-		if (!isTime)
+		if (
+			flagsActivities.testReady &&
+			numberOfTest !== 2 &&
+			statusWeekPlan === 'expired'
+		)
+			navigate('/testIE', { state: { fromTestIE: true } })
+		else
 			operateModal(
 				'¡No tan rápido!',
 				'Aún no es tiempo de volver a realizar el Test de Inteligencia Emocional. ¡Vuelve cuando hayas terminado todas las actividades de tus competencias seleccionadas!',
@@ -47,7 +39,6 @@ const NavBarDropdown = ({ onClickOutside, selectedButton }) => {
 				() => {},
 				true
 			)
-		else navigate('/testIE', { state: { fromTestIE: true } })
 		setTimeout(onClickOutside, 300)
 	}
 

@@ -22,6 +22,7 @@ const ActivitiesProvider = ({ children }) => {
 		const updateCompetences = async () => {
 			await ActivitiesService.getCompetences(userData.username).then(
 				async (res) => {
+					const flags = {}
 					if (res.status === 'success') {
 						setCompetences(res.selected_competences)
 						localStorage.setItem(
@@ -32,14 +33,18 @@ const ActivitiesProvider = ({ children }) => {
 							userData.username,
 							res.selected_competences
 						).then((res2) => {
-							const flags = {}
 							flags.testReady = res2.test_ready_flag
 							flags.timeForCompetences = Object.values(
 								res2.competences_state
 							).every((competence) => competence.status === 'complete')
-							setFlagsActivities(flags)
-							localStorage.setItem('flagsActivities', JSON.stringify(flags))
 						})
+						await ActivitiesService.allCompetencesCompleted(
+							userData.username
+						).then((res3) => {
+							flags.allCompleted = res3.test_ready_flag
+						})
+						setFlagsActivities(flags)
+						localStorage.setItem('flagsActivities', JSON.stringify(flags))
 					}
 				}
 			)
@@ -49,7 +54,7 @@ const ActivitiesProvider = ({ children }) => {
 			await ActivitiesService.getWeekPlan(userData.username)
 				.then((res) => {
 					let status = ''
-					if (res.status === 'success') {
+					if (res.status === 'success' && res.deadline !== '') {
 						const actualDate = new Date()
 						const deadlineDate = new Date(res.deadline)
 

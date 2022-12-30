@@ -35,8 +35,8 @@ const ChooseCompetencePage = () => {
 							'Ahora, para empezar, vamos a ver con que actividades puedes iniciar para así preparar tu plan de esta semana.',
 							'confirm',
 							['¡Vamos a las Actividades!'],
-							() => {
-								updateAll()
+							async () => {
+								await updateAll()
 								navigate('/actividades/verActividades', {
 									replace: true,
 								})
@@ -92,9 +92,8 @@ const ChooseCompetencePage = () => {
 						</span>
 					) : null}
 					<span className='text--small justifyText'>
-						Te sugerimos elijas las competencias <b>autoconocimiento</b> y{' '}
-						<b>autoeficacia</b> ya que son tus áreas de oportunidad con base en
-						tus estadísticas.
+						Te sugerimos elijas las competencias que son tus{' '}
+						<b>áreas de oportunidad</b> en el apartado <i>Estadísticas</i>.
 					</span>
 					<LargeButton onClick={readyButton}>Listo</LargeButton>
 				</div>

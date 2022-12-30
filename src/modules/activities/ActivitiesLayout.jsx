@@ -6,7 +6,8 @@ import { ActivitiesTabNav } from './components'
 
 const ActivitiesLayout = () => {
 	const navigate = useNavigate()
-	const { competences, flagsActivities, numberOfTest } = useActivities()
+	const { competences, flagsActivities, numberOfTest, statusWeekPlan } =
+		useActivities()
 	const { operateModal } = useModalAction()
 	const { pathname } = useLocation()
 
@@ -16,7 +17,11 @@ const ActivitiesLayout = () => {
 	}
 
 	useEffect(() => {
-		if (flagsActivities.testReady && numberOfTest !== 2) {
+		if (
+			flagsActivities.testReady &&
+			numberOfTest !== 2 &&
+			statusWeekPlan === 'expired'
+		) {
 			operateModal(
 				'¡Ya es hora de hacer tu Test IE!',
 				'¡Muy bien, terminaste todas las actividades de las competencias que elegiste! Ahora, toca ver cómo se encuentra tu Inteligencia Emocional y después volverás a elegir que competencias deseas desarrollar.',
@@ -35,7 +40,11 @@ const ActivitiesLayout = () => {
 			<ActivitiesTabNav
 				value={pathname.includes('planSemanal') ? 'weekPlan' : 'activities'}
 				onChange={handleTab}
-				disableWeekPlan={!competences || competences.length === 0}
+				disableWeekPlan={
+					!competences ||
+					competences.length === 0 ||
+					(flagsActivities.timeForCompetences && statusWeekPlan !== 'onTime')
+				}
 			/>
 			<div className='activitiesPage__content'>
 				<Outlet />

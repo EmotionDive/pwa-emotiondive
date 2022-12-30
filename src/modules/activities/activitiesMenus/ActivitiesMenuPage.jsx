@@ -7,7 +7,15 @@ const ActivitiesMenuPage = () => {
 	if (competences === null || statusWeekPlan === null)
 		return <div>Loading...</div>
 
-	if (competences.length === 0 || flagsActivities.timeForCompetences)
+	if (flagsActivities.allCompleted && statusWeekPlan !== 'onTime')
+		return (
+			<Navigate to='/actividades/fin' state={{ fromMenuPage: true }} replace />
+		)
+
+	if (
+		competences.length === 0 ||
+		(flagsActivities.timeForCompetences && statusWeekPlan !== 'onTime')
+	)
 		return (
 			<Navigate
 				to='/actividades/elegirCompetencias'

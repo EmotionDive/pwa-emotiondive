@@ -37,7 +37,13 @@ const OpportunityAreas = ({ grades }) => {
 		smallers.push(Math.min.apply(Math, copyArray))
 		copyArray.splice(copyArray.indexOf(smallers[0]), 1)
 		smallers.push(Math.min.apply(Math, copyArray))
-		return [array.indexOf(smallers[0]), array.indexOf(smallers[1])]
+
+		return [
+			array.indexOf(smallers[0]),
+			smallers[0] !== smallers[1]
+				? array.indexOf(smallers[1])
+				: copyArray.indexOf(smallers[1]) + 1,
+		]
 	}
 
 	const opportunities = useMemo(() => smallestIndexes(grades), [grades])
