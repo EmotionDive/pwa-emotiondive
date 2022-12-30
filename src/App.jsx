@@ -48,6 +48,7 @@ import {
 	IdentifyEmotionsActivity,
 	WhatDoilLikeActivity,
 } from './modules/activities/TCC/SelfKnowledge'
+import TheEnd from './modules/activities/activitiesMenus/TheEnd'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -78,6 +79,7 @@ function App() {
 								element={<ChooseCompetencePage />}
 							/>
 							<Route path='verActividades' element={<ShowActivitiesPage />} />
+							<Route path='fin' element={<TheEnd />} />
 						</Route>
 					</Route>
 				</Route>
