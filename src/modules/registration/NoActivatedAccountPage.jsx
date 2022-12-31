@@ -1,11 +1,15 @@
 import { LargeButton, TextButton } from '../../components/Buttons'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
 import image from '@assets/images/pictures/NoActive-Image.png'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useUser from '../../data/hooks/useUser'
 import { Navigate } from 'react-router-dom'
+import UserService from '../../fetchers/UserService'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const NoActivatedAccountPage = () => {
+	const { user } = useAuth0()
+	const [disable, setDisable] = useState(false)
 	const { logout, flags } = useUser()
 
 	useEffect(() => {
@@ -39,15 +43,33 @@ const NoActivatedAccountPage = () => {
 							correo que te hemos enviado.
 						</span>
 						<LargeButton
+							disabled={disable}
 							onClick={() => {
-								window.open(
-									'https://mail.google.com/mail/u/0/#search/EmotionDive',
-									'_blank'
-								)
-								logout()
+								setDisable(true)
+								UserService.sendEmail(user.email)
+									.then((response) => {
+										if (response.status !== 'success')
+											console.error(
+												`No se pudo enviar el correo: ${JSON.parse(
+													response.message
+												)}`
+											)
+										else
+											window.open(
+												'https://mail.google.com/mail/u/0/#search/EmotionDive',
+												'_blank'
+											)
+									})
+									.catch((error) => {
+										console.error(error)
+									})
+									.finally(() => {
+										setDisable(false)
+										logout()
+									})
 							}}
 						>
-							Abrir Correo
+							Reenviar y abrir correo
 						</LargeButton>
 						<TextButton
 							color='secondary'

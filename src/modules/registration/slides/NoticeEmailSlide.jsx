@@ -46,6 +46,7 @@ const NoticeEmailSlide = () => {
 					<div className='registerPage__mainContent'>
 						<span className='text--small'>
 							Activa tu cuenta con el correo que te hemos enviado.
+							<br /> (Puede encontrarse en Spam)
 						</span>
 						<LargeButton
 							onClick={() => {
