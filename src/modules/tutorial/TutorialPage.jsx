@@ -4,20 +4,26 @@ import { LargeButton } from '../../components/Buttons'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import useUser from '../../data/hooks/useUser'
 import FaderDiv from '../../utils/FaderDiv/FaderDiv'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import EmotionDiveLogo from '../../assets/images/logos/BigLogoInApp.png'
 import selfKnowledge from '../../assets/images/pictures/Self-knowledge.png'
 import selfEfficacy from '../../assets/images/pictures/Self-efficacy.png'
 import selfRegulation from '../../assets/images/pictures/Self-regulation.png'
 import empathy from '../../assets/images/pictures/Empathy.png'
+import UserService from '../../fetchers/UserService'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const TutorialPage = () => {
-	const { userData } = useUser()
+	const { updateFlags, updateUserData, userData } = useUser()
+	const { user } = useAuth0()
+
 	const navigate = useNavigate()
 	const location = useLocation()
 
 	const [slideIndex, setSlideIndex] = useState(0)
 	const [disableButton, setDisableButton] = useState(true)
+
+	const scrollTop = useRef()
 
 	const handleNext = () => {
 		setSlideIndex((prev) => prev + 1)
@@ -27,15 +33,29 @@ const TutorialPage = () => {
 
 	useEffect(() => {
 		const timeoutId = setTimeout(() => setDisableButton(false), 800)
+
+		// If account
+		if (location.state?.from === 'redirect') {
+			UserService.getAccountStatus(user.email).then((res) => {
+				updateFlags(res)
+				if (!res.is_first_time) navigate('/', { replace: true })
+			})
+			UserService.getUserData(user.email).then((res) => updateUserData(res))
+		}
+
 		return () => clearTimeout(timeoutId)
 	}, [])
+
+	useEffect(() => {
+		scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
+	}, [slideIndex])
 
 	if (location.state === null) return <Navigate to='/' replace />
 
 	return (
 		<AnimatedGradient>
 			<div className='tutorialPage'>
-				<main>
+				<main ref={scrollTop}>
 					<div className='info'>
 						<FaderDiv className='slide zero' visible={slideIndex === 0}>
 							<span className='bigText'>

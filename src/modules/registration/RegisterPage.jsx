@@ -8,9 +8,19 @@ import {
 import { SlideSwitch, Slide } from '../../utils/Slides'
 import useUser from '../../data/hooks/useUser'
 import { Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import UserService from '../../fetchers/UserService'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const RegisterPage = () => {
-	const { flags } = useUser()
+	const { flags, updateFlags } = useUser()
+	const { user } = useAuth0()
+
+	useEffect(() => {
+		UserService.getAccountStatus(user.email).then((res) => {
+			updateFlags(res)
+		})
+	}, [])
 
 	if (flags.is_registered) return <Navigate to='/' /> //Send to 404
 
