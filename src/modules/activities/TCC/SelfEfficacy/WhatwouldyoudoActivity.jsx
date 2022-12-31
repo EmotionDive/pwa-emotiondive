@@ -10,11 +10,13 @@ import data from './data/Whatwouldyoudo.json'
 import { useState } from 'react'
 import useActivityUtils from '../../hooks/useActivityUtils'
 import { Navigate } from 'react-router-dom'
+import { LargeButton } from '../../../../components/Buttons'
 
 const WhatWouldYouDoActivity = () => {
-	const [text1, setText1] = useState('')
 	const { accessFromMenu, numberOfRealization, completeActivity } =
 		useActivityUtils()
+	const [text1, setText1] = useState('')
+	const [completed, setCompleted] = useState(false)
 
 	if (!accessFromMenu) return <Navigate to='/' replace />
 
@@ -30,28 +32,40 @@ const WhatWouldYouDoActivity = () => {
 								<b>Situación: </b>
 								{data.scenario[numberOfRealization].situation}
 							</p>
-							<p>
-								<b>Aptitudes: </b>
-								{data.scenario[numberOfRealization].feedback}
-							</p>
 							<TextArea
-								label='En el siguiente cuadro, describe ¿Cómo solucionarias la situación que se te presento?'
+								label='En el siguiente cuadro, describe ¿Cómo solucionarías la situación que se te presento?'
 								placeholder='Desarrolla tu solución en este recuadro ...'
 								rows={4}
 								value={text1}
 								onChange={(e) => setText1(e.target.value)}
+								disabled={completed}
 							/>
-							<LargeButtonModal
-								title={'Concluiste la actividad, ¡Felicidades!'}
-								info='El identificar las aptitudes y áreas de mejora en las personas nos permiten de igual manera hacerlo con nosotros mismos. La idea es que, mientras más atentos estemos sobre ellos, podemos usarlos a nuestro favor para resolver nuestros conflictos. Sigue haciendo esta práctica día con día.'
-								variant='confirmation'
-								buttonLabels={['Okey']}
-								exitOnClickOut={false}
-								onConfirmationCallback={completeActivity}
-								disabled={text1.length < 30}
-							>
-								Terminar
-							</LargeButtonModal>
+							{completed ? (
+								<p>
+									<b>Reflexión: </b>
+									{data.scenario[numberOfRealization].feedback}
+								</p>
+							) : null}
+							{!completed ? (
+								<LargeButton
+									color='secondary'
+									disabled={text1.length < 30}
+									onClick={() => setCompleted(true)}
+								>
+									Calificar
+								</LargeButton>
+							) : (
+								<LargeButtonModal
+									title={'Concluíste la actividad, ¡Felicidades!'}
+									info='El identificar las aptitudes y áreas de mejora en las personas nos permiten de igual manera hacerlo con nosotros mismos. La idea es que, mientras más atentos estemos sobre ellos, podemos usarlos a nuestro favor para resolver nuestros conflictos. Sigue haciendo esta práctica día con día.'
+									variant='confirmation'
+									buttonLabels={['Okey']}
+									exitOnClickOut={false}
+									onConfirmationCallback={completeActivity}
+								>
+									Terminar Actividad
+								</LargeButtonModal>
+							)}
 						</div>
 					</div>
 				</main>
