@@ -29,7 +29,7 @@ const EndTestIESlide = () => {
 						onClick={() => navigate('/estadisticas')}
 						type='outlined-lighter'
 					>
-						Ir a Estadísticas IE
+						Ir a los resultados
 					</LargeButton>
 				</section>
 			</main>

@@ -56,7 +56,7 @@ const OwnDecisionsEmotionandReasonsActivity = () => {
 									console.log('Finish')
 								}}
 							>
-								Terminar
+								Continuar
 							</LargeButtonModal>
 						</div>
 					</div>

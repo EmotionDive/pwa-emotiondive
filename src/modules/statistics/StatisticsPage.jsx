@@ -44,7 +44,7 @@ const StatisticsPage = () => {
 					<p>
 						Tienes una Inteligencia Emocional que te permite ser <b>empático</b>{' '}
 						con las personas que te rodean, ya sea porque comprendes sus
-						emociones y sabes cómo hacercarte a ellos.
+						emociones y sabes como estar cerca de ellas.
 					</p>
 					<p>
 						Tal vez te cueste un poco creer en tus propias capacidades y puede
@@ -58,7 +58,7 @@ const StatisticsPage = () => {
 					</p>
 					<p>
 						Un lugar a mejorar de tu Inteligencia Emocional sería el comprender
-						cómo es que las emociones influyen en tu vida en ciertos escenarios
+						como es que las emociones influyen en tu vida en ciertos escenarios
 						para así alcanzar el <b>autoconocimiento</b>.
 					</p>
 				</div>

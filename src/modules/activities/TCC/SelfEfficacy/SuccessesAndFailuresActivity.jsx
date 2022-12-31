@@ -73,14 +73,14 @@ const SuccessesAndFailuresActivity = () => {
 									onChange={(e) => setRedaction(e.target.value)}
 								/>
 								<TextArea
-									label={`¿Qué estuvo en tus manos en el ${typeAct}?`}
+									label={`¿Qué hiciste para alcanzar el ${typeAct}?`}
 									placeholder='Redacta aquí tu respuesta...'
 									rows={4}
 									value={onHands}
 									onChange={(e) => setOnHands(e.target.value)}
 								/>
 								<TextArea
-									label={`¿Qué estuvo más allá de tu alcance en el ${typeAct}?`}
+									label={`¿Qué estuvo más allá de tu alcance para el ${typeAct}?`}
 									placeholder='Redacta aquí tu respuesta...'
 									rows={4}
 									value={outReach}

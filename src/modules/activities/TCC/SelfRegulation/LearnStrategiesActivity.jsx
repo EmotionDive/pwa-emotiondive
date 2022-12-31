@@ -125,7 +125,7 @@ const LearnStrategiesActivity = () => {
 											: data.finalComplete
 									}
 									variant='confirmation'
-									buttonLabels={['Okey']}
+									buttonLabels={['Siguiente']}
 									exitOnClickOut={false}
 									onConfirmationCallback={() => {
 										console.log('Finish')

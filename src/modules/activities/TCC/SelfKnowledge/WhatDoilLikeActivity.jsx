@@ -76,18 +76,18 @@ const WhatDoilLikeActivity = () => {
 				<main className='WhatDoiLikeActivity'>
 					<div className='questions'>
 						<p className='systemText__instruction'>
-							Deberas realizar la selección de las cosas que te agradan de ti,
-							es decir, tus atributos, ademas reconoceras las cosas que quiza no
-							sean de tu agrado, por ultimo elaboraras un pequeño texto en el
-							que describiras una estrategia para mejorar los atributos que no
+							Deberás realizar la selección de las cosas que te agradan de tí,
+							es decir, tus atributos, además reconocerás las cosas que quizá no
+							sean de tu agrado, por último elaborarás un pequeño texto en el
+							que describirás una estrategía para mejorar los atríbutos que no
 							son de tu agrado, comprendiendo que los mismos son un área de
 							oportunidad para tu desarrollo.
 						</p>
 						<div className='formContainer'>
 							<p>
-								Primero, debera de seleccionar las cualidades que considere que
-								se acoplan a lo que percibe de usted mismo, debera de
-								seleccionar al menos un atributo que usted considere que tiene:
+								Primero, deberás de seleccionar las cualidades que consideres
+								que se acoplan a lo que percibes de tí mismo, deberás de
+								seleccionar al menos un atributo que consideres que tienes:
 							</p>
 							<br />
 							<table className='table table-sm table-hover'>
@@ -118,9 +118,9 @@ const WhatDoilLikeActivity = () => {
 								Seleccionar
 							</button>
 							<p>
-								Ahora que ha seleccionado los atributos que considera poseer,
-								debera de describir aquello que considera que no es un atributo,
-								es decir, ¿Qué ve como una area de mejora?
+								Ahora que has seleccionado los atríbutos que consideras poseer,
+								deberás describir aquellos que consideras que no son un
+								atributo, es decir, ¿Qué ves como una área de mejora?
 							</p>
 							<br />
 							<table className='table table-sm table-hover'>
