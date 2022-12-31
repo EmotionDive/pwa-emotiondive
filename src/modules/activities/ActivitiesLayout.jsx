@@ -17,14 +17,10 @@ const ActivitiesLayout = () => {
 	}
 
 	useEffect(() => {
-		if (
-			flagsActivities.testReady &&
-			numberOfTest !== 2 &&
-			statusWeekPlan === 'expired'
-		) {
+		if (numberOfTest !== 2 && statusWeekPlan === 'expired') {
 			operateModal(
 				'¡Ya es hora de hacer tu Test IE!',
-				'¡Muy bien, terminaste todas las actividades de las competencias que elegiste! Ahora, toca ver cómo se encuentra tu Inteligencia Emocional y después volverás a elegir que competencias deseas desarrollar.',
+				'¡Muy bien, ya terminaste tu plan semanal de esta Beta! Veamos que tal te va al realizar este nuevo Test IE.',
 				'confirm',
 				['Realizar Test IE'],
 				() => {
@@ -33,7 +29,7 @@ const ActivitiesLayout = () => {
 				false
 			)
 		}
-	}, [flagsActivities.testReady])
+	}, [numberOfTest, statusWeekPlan])
 
 	return (
 		<div className='activitiesPage'>

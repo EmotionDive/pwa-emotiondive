@@ -10,6 +10,7 @@ import ActivitiesService from '../../../fetchers/ActivitiesService'
 import { ActivityInfo, ListActivities } from '../components'
 import CardActivitie from '../components/CardActivitie'
 import { months, weekdays } from './data/datesInSpanish'
+import TheEnd from '../activitiesMenus/TheEnd'
 
 const weekPlanDates = () => {
 	const start = new Date()
@@ -183,19 +184,21 @@ const CreateWeekPlanPage = () => {
 	}
 
 	useEffect(() => {
-		if (statusWeekPlan === 'expired' && !flagsActivities.testReady)
-			operateModal(
-				'Se acabó tu plan semanal',
-				'Llegó la hora de una nueva semana. Si no acabaste alguna actividad podrás incluirla en este nuevo plan. ¡Mucho éxito!',
-				'confirm',
-				['¡Vamos allá!'],
-				() => {},
-				true
-			)
+		// if (statusWeekPlan === 'expired' && !flagsActivities.testReady)
+		// 	operateModal(
+		// 		'Se acabó tu plan semanal',
+		// 		'Llegó la hora de una nueva semana. Si no acabaste alguna actividad podrás incluirla en este nuevo plan. ¡Mucho éxito!',
+		// 		'confirm',
+		// 		['¡Vamos allá!'],
+		// 		() => {},
+		// 		true
+		// 	)
 		// When first render
 		if (data.competence_activities.length !== 0)
 			setAvailableForSelection(searchFirstAvailables())
 	}, [data])
+
+	if (statusWeekPlan === 'expired') return <TheEnd />
 
 	return (
 		<>
