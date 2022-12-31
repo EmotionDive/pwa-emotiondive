@@ -1,11 +1,15 @@
 import logo from '@assets/images/logos/LogoHorizontal.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { LargeButton, TextButton } from '../../../components/Buttons'
+import useUser from '../../../data/hooks/useUser'
 import { useSlides } from '../../../utils/Slides'
 
 const StartTestIESlide = () => {
 	const [inst, setInst] = useState(0)
 	const { slideTo } = useSlides()
+	const navigate = useNavigate()
+	const { userData } = useUser()
 
 	const instructions = [
 		<section key={0}>
@@ -29,11 +33,13 @@ const StartTestIESlide = () => {
 			<LargeButton type='outlined-lighter' onClick={() => setInst(1)}>
 				Comenazar Test IE
 			</LargeButton>
-			<TextButton>Mejor en otro momento...</TextButton>
+			<TextButton onClick={() => navigate(-1)}>
+				Mejor en otro momento...
+			</TextButton>
 		</section>,
 		<section key={1}>
 			<h1 className='text--big'>
-				Muy bien Sarah,
+				Muy bien {userData.nombre},
 				<br /> ¡Comencemos con el Test!
 			</h1>
 			<p>
