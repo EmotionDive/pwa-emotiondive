@@ -15,7 +15,8 @@ const RootAuthPage = () => {
 
 		if (!flags.is_registered) return <Navigate to='/registro' replace />
 		else if (!flags.is_active) return <Navigate to='/cuentaNoActiva' replace />
-		else if (flags.is_first_time) return <Navigate to='/tutorial' replace />
+		else if (flags.is_first_time)
+			return <Navigate to='/tutorial' state={{ from: 'redirect' }} replace />
 		else return <Navigate to='/actividades' replace />
 	} else return <LoginPage />
 }
