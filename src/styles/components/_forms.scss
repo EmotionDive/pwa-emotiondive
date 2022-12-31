@@ -56,6 +56,33 @@
 	}
 }
 
+.textarea {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: left;
+
+	span {
+		@include systemInstructions;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+
+	textarea {
+		box-sizing: border-box;
+		width: 100%;
+		height: auto;
+		padding: 14px 17px;
+		border-radius: 0.7rem;
+		background-color: var(--neutral-500);
+		border: 3px solid var(--neutral-600);
+		transition: all $transitionDuration ease-in-out;
+		outline: none;
+		resize: none;
+		font-weight: 400 !important;
+	}
+}
+
 .select {
 	display: flex;
 	flex-direction: column;

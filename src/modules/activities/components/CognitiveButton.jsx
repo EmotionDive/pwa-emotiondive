@@ -13,7 +13,7 @@ const images = {
 
 const labels = {
 	SelfKnowledge: 'Autoconocimiento',
-	SelfRegulation: 'Autoregulación',
+	SelfRegulation: 'Autorregulación',
 	SelfEfficacy: 'Autoeficacia',
 	Empathy: 'Empatía',
 }

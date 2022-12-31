@@ -1,0 +1,120 @@
+{
+	"title": "Aprende a usar las estrategias",
+	"instructions": "Dada la situación, elige la forma de actuar que represente de mejor manera el uso de la ",
+	"distraction": [
+		{
+			"situation": "Llegas de un día normal de trabajo y te dispones a platicar con tu pareja por teléfono. Ya es de noche y la notas algo cansada, al final te dice: \"Oye, necesito hablar contigo de algo en persona, mañana te veo.\" y se despiden de forma usual.",
+			"answers": [
+				"Te dispones a analizar todas tus acciones de la semana para poder hallar la razón del porqué tu pareja quiere hablar contigo.",
+				"Como ya es tarde, te preparas para cenar, asearte, alistas tus cosas para el día siguiente y te dispones a relajarte en la comodidad de tu cama para así dormir.",
+				"Empiezas a analizar el comportamiento de tu pareja en redes sociales para ver si le pasó algo en la semana y tratar de preparar escenarios imaginarios para ver como apoyarla el siguiente día.",
+				"Le vuelves a marcar para convencerla de que te explique en ese momento qué esta pasando."
+			],
+			"correct": 1,
+			"explication": "No es fácil afrontar las famosas palabras \"Tenemos que hablar\", pero algo que debemos de entender es que nunca sabremos con exactitud de qué se quiere dialogar hasta que sea el momento de conversar con la otra persona. Generar hipotesis sobre posibles problemas a partir de las acciones de uno mismo o de la otra persona puede ser muy desgastante, o peor aún, puedes ocasionar un problema si no se respetas los tiempos de la otra persona para hablar, por lo que es mejor esperar el momento y concentrarse en uno mismo, como prepararse una buena taza de café, ver un último episodio de tu serie favorita y disponerse a dormir."
+		},
+		{
+			"situation": "Es Viernes por la tarde; tu jefe anunció que el Lunes dará a conocer quien recibirá el bono al \"empleado del mes\". Eres uno de los dos posibles candidatos a mejor empleado y deseas mucho ganar ese bono ya que opinas que has hecho todo lo posible para merecerlo.",
+			"answers": [
+				"Buscar todo el fin de semana a mi jefe para incrementar mis posibilidades de recibir el bono.",
+				"Pensar qué hacer el Lunes al llegar al trabajo para asegurar la ganancia del bono.",
+				"Eliminar a la competencia.",
+				"Pensar en pasar tiempo con mi familia y amigos."
+			],
+			"correct": 3,
+			"explication": "Puede que pienses que debas de hacer más cosas para asegurar recibir el bono, pero en un fin de semana no laboral no lograrás marcar ninguna diferencia en ello por lo que distraerte en cosas importantes como lo son tu familia y amigos pueden ser algo que mejore esas ansias por saber el resultado del Lunes."
+		},
+		{
+			"situation": "Quedaste de ir por unos tragos con tus amigos para celebrar el nuevo trabajo de tu mejor amigo. Al llegar observas que van a un lugar donde de momento no puedes permitirte gastar tanto dinero. Al verte un poco angustiado, tu mejor amigo se acerca y le explicas la situación. Él te dice que no te preocupes y disfrutes junto a él ya que los tragos los va a invitar por ser una ocasión especial.",
+			"answers": [
+				"Agradeces a tu amigo por su buen gesto pero te sientes muy culpable al aceptar eso y te marchas.",
+				"Decides quedarte pero no aceptas el gesto de tu amigo y racionas lo que consumes teniendo todo el tiempo angustia de no gastar más de tu presupuesto.",
+				"Le agradeces mucho a tu amigo y te dispones a pasar un gran rato en compañía de todos tus amigos, poniendo como papel principal el celebrar el gran logro de tu mejor amigo.",
+				"Aceptas el buen gesto de tu mejor amigo pero te dispones a pensar en cómo en un futuro podrás conseguir el dinero para pagarle de vuelta."
+			],
+			"correct": 2,
+			"explication": "Es posible que te sientas algo apenado cuando alguien te invite algo cuando la razón es económica, sin embargo, no debemos de centrarnos en ese pensamiento negativo de culpabilidad. En el caso de esta situación, tu mejor amigo comprende tu estado y busca que ambos se sientan bien, cómodos y se diviertan juntos. La mejor manera de agradecer ese gesto es usar la estrategia de distracción donde simplemente haces lo que era el plan original de la salida que es convivir y celebrar a tu mejor amigo.  Ya después de haber pasado ese día es tú decisión si en otra ocasión te toca a ti invitar los tragos."
+		},
+		{
+			"situation": "En un proyecto escolar, tu equipo y tú se repartieron de forma equitativa el trabajo. Tú te adelantaste y lograste terminar tu parte días antes de la fecha de entrega y le avisas a tus compañeros. Ellos te dicen que aún no terminan la suya pero se comprometen a terminarlo lo suficientemene antes de la fecha de entrega. Haz tenido experiencias en el pasado con equipos que no trabajaron, sin embargo, tu equipo actual te ha demostrado que es responsable.",
+			"answers": [
+				"Como terminaste antes, usas el tiempo sobrante para atender otros pendientes que tienes o simplemente usas el tiempo para relajarte.",
+				"Piensas que tus compañeros no van a acabar a tiempo por las experiencias que tuviste y constantemente los presionas para que acaben lo más pronto posible.",
+				"Como terminaste antes les pides a tus compañeros que te den parte de su trabajo para así asegurarte de que todo estará terminado.",
+				"Empiezas a averiguar como van progresando otros equipos de la escuela para así poder comparar tu equipo con ellos y ver si es necesario presionar o relajarse."
+			],
+			"correct": 0,
+			"explication": "Tu equipo te ha demostrado en el pasado que puedes contar con ellos y no deberías gastar tu tiempo en compararlos con otras personas, presionarlos o hasta cargarte más trabajo que no te corresponde. En vez de eso es mejor el uso de la estrategia de distracción que te permite concentrarte en otros pendientes que tienes o simplemente gozar de la tranquilidad que ganaste después de haber acabado satisfactoriamente tu parte."
+		},
+		{
+			"situation": "Invitaste a salir a una persona que se te hizo interesante conocer, sin embargo, cuando estas a punto de llegar a la plaza donde acordaron verse recibiste un mensaje de tu cita pidiendote disculpas ya que no podrá llegar a la cita debido a que le surgió un contratiempo.",
+			"answers": [
+				"Empiezas a pensar que posiblemente la otra persona ya no tuvo interes en salir contigo y prefirió poner una excusa para no ir a a la cita.",
+				"Te entristece un poco la situación pero ya que estás en la plaza te dedicas a explorar las tiendas, te comprás un café y vas al cine a ver esa película que tantas ganas tenías de ver.",
+				"El hecho de que tu cita no apareciera hace que tengas que buscar en todas sus redes sociales cualquier indicio para corroborar su historia.",
+				"Le devuelves un mensaje exigiendole una explicación más completa y le haces saber que te hizo perder el tiempo."
+			],
+			"correct": 1,
+			"explication": "Es normal que cuando nuestros planes no se concreten como los teníamos pensados empecemos a sentir sentimientos de frustación o decepción, sin embargo la forma más serena de controlar esta situación es usando la estrategia de distracción donde aprovechamos la salida y buscamos la manera de pasarnosla bien y consentirnos. Poco después verás que no era necesario llevarse completamente por la emoción y posiblemente generar un conflicto contigo mismo u otras personas."
+		}
+	],
+	"re-evaluation": [
+		{
+			"situation": "Acabas de graduarte de la universidad y acudes a tu primer entrevista de trabajo en tu empresa de ensueño. Estudiaste mucho sobre la carrera pero a la hora de le entrevista te sentiste algo nervioso. Días después te manda un mensaje tu reclutador diciendote que agradecen tu tiempo pero decidieron no seguir adelante con tu candidatura para ese cargo, sin embargo te dieron retroalimentación sobre en qué puedes mejorar y te invitan a volver a aplicar en un futuro.",
+			"answers": [
+				"Piensas que tu carrera no fué suficiente y pones en duda todos los conocimientos que tienes preguntandote si la vocación por la cual estudiaste realmente era para tí.",
+				"Empiezas a pensar que tu reclutador tenía algo en tu contra (ya sea por tu procedencia, estatús actual, etc) y le empiezas a decir a todos tus conocidos que la empresa donde aplicaste no es nada buena y perdieron a un gran profesionista.",
+				"Te recuerdas que fue un gran esfuerzo tuyo terminar tu carrera y tienes suficientes conocimientos. Sin embargo, tal vez necesites prácticar más en lo que tu reclutador indicó. Empiezas a no solo concentrarte en tus fallos para mejorarlos, si no también en las cosas que fueron buenas en tu entrevista para así sentirte más seguro para la próxima.",
+				"Empiezas a sentir desprecio por ti ya que gracias a tus nervios no pudiste demostrar lo que aprendiste en tu carrera, es por ello que te pones a estudiar de manera excesiva olvidandote de todo lo demás para así asegurarte un trabajo. "
+			],
+			"correct": 2,
+			"explication": "El fallar es algo bastante humano, ya que a partir de esas experiencias podemos aprender y crecer mucho más que hasta de los éxitos. Sin embargo, es posible que nos volquemos enteramente a sentir las emociones negativas que se despreden, es por ello que con la estrategia de reevaluación logramos no solo darnos crédito por el empeño que hemos dado en el pasado, si no pulimos lo que funciona y lo que no funciona en partes iguales para volver a intentarlo en un futuro."
+		},
+		{
+			"situation": "Tienes un grupo de amigos que se conocen de toda la vida y los consideras como tu segunda familia. Sin embargo, algunas veces no sales con ellos porque se encuentran lejos de donde vives. Por medio de redes sociales empiezas a ver que algunos de ellos empiezan a salir más seguido entre ellos haciendote sentir algo rechazado (a pesar de que algunas veces si te invitan).",
+			"answers": [
+				"Empiezas a creer que ellos ya no se preocupan por ti y atribuyes su conducta a que les pesa invitarte porque vives lejos y te dispones a buscar nuevos amigos.",
+				"Piensas que, a pesar de que no los ves tan seguido, realmente si has convivido con ellos. Recuerdas que todos valoran tu amistad e, independientemente de luego no poder acompañarlos en \"las buenas\", todos han estado para ti y tu para ellos cuando se necesitan. Es por ello que analizas que es normal que de repente salgan juntos entre ellos por ventajas evidentes como la distancia.",
+				"Piensas que tal vez tú eres un mal amigo o que hiciste algo en el pasado que posiblemente haya hecho que no les cayeras bien ya y decidieran excluirte.",
+				"Piensas que deberías de reclamarles el porqué salen sin ti y condicionarlos a que si en verdad quieren ser tus amigos deben de demostrarlo con siempre avisarte cuando salen."
+			],
+			"correct": 1,
+			"explication": "El rechazo es una emoción común sobre todo dentro de nuestras relaciones. Sin embargo, si profundizamos demasiado en esa emoción puede que analicemos conductas propias o de las demas que se alejan mucho de la realidad, haciendo que uno mismo se sienta miserable o generemos un conflicto donde es posible no lo haya. Es por ello que reevaluar lo que sentimos desde todos los ángulos (no solo los negativos o los positivos) te permitirá no solo mejorar tu estado emocional, si no valorar tus relaciones."
+		},
+		{
+			"situation": "Has estado saliendo ya por varios meses con una persona, sin embargo, constantemente pelean por diferencias entre ustedes y, a pesar de que han tenido lindos momentos, no logran sentirse del todo bien el uno con el otro por lo que deciden terminar su relación.",
+			"answers": [
+				"Valoras el tiempo convivido con la persona y reconoces de tu parte que trataste de dar lo mejor para la relación. Admites que es triste, pero entiendes que no es que alguien tenga la culpa por no dar continuidad a su relación, si no simplemente eran diferentes y ambos desean buscar a alguien que los entienda como ellos desean.",
+				"Piensas que debiste dar más por la relación, tal vez lo ideal hubiera sido darle la razón siempre a tu pareja a pesar de que te sintieras incomodo algunas veces, por lo que terminas culpabilizandote de todo lo que paso.",
+				"Piensas que tu pareja debió haber dado más por la relación, donde puede que ella no haya querido comprender tus formas de ser y de pensar, por lo que terminas muy resentido con ella.",
+				"Piensas que perdiste tu tiempo y tal vez el amor no es para tí, es por ello que decides continuar con tu vida ignorando lo que pasó y tus emociones."
+			],
+			"correct": 0,
+			"explication": "Terminar una relación es difícil e implica todo un proceso de duelo que involucra el procesar muchas emociones. Sin embargo, el consumir las emociones no significa que tengamos que definir nuestra persona y acciones con lo que ellas dicten. Usando la reevaluación nos damos cuenta de lo positivo que se generó a partir de nosotros y la propia relación que acaba de terminar, dandonos un poco más de serenidad a la hora de consumir emociones como la tristeza."
+		},
+		{
+			"situation": "Tienes un amigo a el que le confiaste un secreto tuyo. Sin embargo, días después te das cuenta que tu amigo le contó tu secreto a otras personas.",
+			"answers": [
+				"Te dejas llevar por la rabia de que tu amigo haya esparcido tu secreto de modo que lo buscas y lo agredes para que no se vuelva a meter contigo.",
+				"Piensas que todas las personas no son dignas de tu confianza por lo que, ante la decepción de la humanidad, decides encerrarte en tus relaciones y nunca confiar en nadie.",
+				"Sientes que es necesario vengarte de alguna forma para que la otra persona sienta lo mismo que tú por lo que buscas algún secreto que te haya contado él y lo esparces a otras personas.",
+				"Te haces consciente que este hecho te hace mucho enojar y evaluas con serenidad todo lo que sientes para que, en lugar de arremeter con agresividad, solo confrontes a la persona haciendole saber que estas molesto con él por su acción y hay límites que vas a marcar."
+			],
+			"correct": 3,
+			"explication": "Siempre se tiene la opción de cómo responder y, ante una emoción como la ira, es muy beneficioso reevaluar lo que sentimos para apaciguar un poco la emoción, pero sin olvidarnos de ella, usandola a nuestro favor para así marcar nuestros límites personales y confrontar a las personas con serenidad. De lo contrario, puede que actuar con ira total nos genere bienestar momentaneo, pero las consecuencias de esas acciones siempre son dolorosas."
+		},
+		{
+			"situation": "Después de años de intentar te llegó un golpe de suerte y ganaste mucho dinero a partir de un concurso famoso de televisión.",
+			"answers": [
+				"Te sientes tan eufórico que vas a decirle a todo el mundo tus nuevas noticias, presumiendoles tu suerte y tu nuevo estatus económico.",
+				"Sabes que esto te da mucho euforia, sin embargo, tratas de procesar todo lo que esta pasando lo más sereno posible, donde sólo le cuentas a tus personas más allegadas (familia) y buscas la manera de usar tus nuevos fondos de forma inteligente apelando tanto tus necesidades reales como ciertos deseos.",
+				"Te sientes tan poderoso ahora que decides inmediatamente renunciar a tu empleo y piensas que de ahora en adelante tienes la facultad de hacer lo que sea ya que te acaba de pasar algo increíble.",
+				"Inmediatamente de recibido el dinero empiezas a disponer de él continuamente para que esa emoción de gastar y obtener cosas nuevas se mantenga."
+			],
+			"correct": 1,
+			"explication": "La alegría es una emoción que muy pocas veces se piensa que se deba regular, sin embargo, la euforia sin ser apaciguada puede hacernos tomar decisiones con pesimas consecuencias ya que carecen totalmente de razón. En el caso de un premio económico, la euforia puede hacer quedarnos en bancarrota, sin empleo o que alguien se aproveche de nosotros por nuestro estado irracional y de supuesta invencibilidad. Reevaluar apacigua la euforia y nos conecta con nuestra parte racional."
+		}
+	],
+	"finalPartial": "¡Muy bien! has practicado a usar la estrategia de distracción. Vuelve mañana para practicar la estrategia de reevaluación.",
+	"finalComplete": "¡Felicidades, terminaste de aprender ambas estrategias! Ahora que conoces su uso en diversos escenarios ejemplo. Lo siguiente es que las pongas en práctica en tus propias situaciones."
+}

@@ -5,13 +5,180 @@
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow-y: auto;
 
 	main {
-		flex-grow: 1;
 		display: flex;
-		justify-content: center;
+		flex-grow: 1;
+		flex-direction: column;
 		align-items: center;
-		@include bigText;
+		padding: 0 1.125rem;
+		padding-top: 30px;
+
+		@include mediaQuery('tablet') {
+			padding: 0 3.125rem;
+			padding-top: 30px;
+		}
+
+		@include mediaQuery('desktop') {
+			padding: 0 6.25rem;
+			padding-top: 30px;
+		}
+
+		.info {
+			flex-grow: 1;
+			width: 100%;
+			display: flex;
+		}
+
+		.info + button {
+			margin: 20px 0;
+			&:disabled {
+				background-color: var(--secondary-500);
+				filter: brightness(70%);
+			}
+		}
+
+		.slide {
+			display: flex;
+			flex-grow: 1;
+			width: 100vw;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 20px;
+			text-align: center;
+
+			.bigText {
+				@include bigText;
+			}
+
+			span:not(.bigText) {
+				@include justifyText;
+			}
+
+			&.zero {
+				img {
+					width: 70%;
+					max-width: 500px;
+					@include mediaQuery('desktop') {
+						height: 50vh;
+						width: auto;
+						max-width: 400px;
+					}
+					filter: drop-shadow(0px 10px 7px rgba(31, 30, 41, 0.2));
+					transition: transform $transitionDuration ease-in-out;
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+			}
+
+			&.seven {
+				.competences {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 10px;
+					width: 100%;
+					max-width: 1300px;
+
+					div {
+						width: 100%;
+						animation: upCompetence 0.6s ease-in-out forwards;
+						opacity: 0;
+
+						@for $i from 1 through 4 {
+							&:nth-child(#{$i}n) {
+								animation-delay: #{$i * 0.6}s;
+							}
+						}
+
+						img {
+							width: 90%;
+							max-width: 200px;
+							margin: auto;
+							filter: drop-shadow(0px 10px 7px rgba(31, 30, 41, 0.2));
+							transition: transform $transitionDuration ease-in-out;
+							&:hover {
+								transform: scale(1.05);
+							}
+						}
+
+						span {
+							display: block;
+							width: fit-content;
+							margin: 10px auto 0 auto;
+							font-weight: 600;
+							letter-spacing: 0.02em;
+							font-size: 1.125rem;
+						}
+					}
+
+					@include mediaQuery('tablet') {
+						gap: 30px;
+						div {
+							span {
+								font-size: 1.25rem;
+							}
+						}
+					}
+
+					@include mediaQuery('desktop') {
+						grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+						margin: 30px 0;
+					}
+				}
+			}
+
+			&.eachCompetence {
+				.info {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-grow: 0;
+					margin: 30px 0;
+					flex-wrap: wrap;
+					gap: 30px;
+
+					@include mediaQuery('desktop') {
+						max-width: 1000px;
+						flex-wrap: nowrap;
+						gap: 50px;
+					}
+
+					img {
+						width: 250px;
+						height: 250px;
+						opacity: 0;
+						filter: drop-shadow(0px 10px 7px rgba(31, 30, 41, 0.2));
+						transition: transform $transitionDuration ease-in-out;
+						&:hover {
+							transform: scale(1.05);
+						}
+						animation: upCompetence 0.6s ease-in-out forwards;
+						animation-delay: 0.3s;
+					}
+
+					div {
+						max-width: 90%;
+						display: flex;
+						gap: 20px;
+						flex-direction: column;
+					}
+				}
+			}
+
+			&.final {
+				img {
+					width: 150px;
+					filter: drop-shadow(0px 10px 7px rgba(31, 30, 41, 0.2));
+					transition: transform $transitionDuration ease-in-out;
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+			}
+		}
 	}
 
 	footer {
@@ -21,5 +188,17 @@
 			margin-bottom: 40px;
 			max-width: 190px;
 		}
+	}
+}
+
+@keyframes upCompetence {
+	0% {
+		opacity: 0;
+		translate: 0 15px;
+	}
+
+	100% {
+		opacity: 1;
+		translate: 0;
 	}
 }

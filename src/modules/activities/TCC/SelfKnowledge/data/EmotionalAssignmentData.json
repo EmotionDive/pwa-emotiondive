@@ -1,0 +1,83 @@
+{
+	"title": "Emociones en la vida diaria",
+	"instructions": "Lee la situación que se te presenta y asigna las emociones (una o varias) que crees puedan generarse.",
+	"situations": [
+		{
+			"situation": "Estas caminando por la calle por la noche. Empiezas a ver que hay muchas luces fundidas y aún estás lejos de casa.",
+			"emotions": ["scare"],
+			"explication": "El miedo es una de las emociones más básicas que tenemos los seres humanos. Nos sirve principalmente para poder sobrevivir ante situaciones que pueden ser una amenaza potencial hacia nosotros o hacia personas que nos importen."
+		},
+		{
+			"situation": "Haz terminado una tarea que te costó mucho trabajo hacer y al final resultó que fuiste la mejor tarea de la clase.",
+			"emotions": ["happiness"],
+			"explication": "La alegría puede relucir sobre todo cuando tenemos ese sentido de autorealización (el sentir una gran satisfacción por un mismo ya que se logró un objetivo)."
+		},
+		{
+			"situation": "Haz estado hablando con una chica por muchos meses y te sientes muy cómodo con ella. Decides pedirle ser novios y ella acepta diciendote que es lo que más quisera en el mundo.",
+			"emotions": ["happiness", "love"],
+			"explication": "El empezar una relación siempre es emocionante y lo más común es que se detone una gran felicidad en ti además de el gran afecto que le tienes a esa persona."
+		},
+		{
+			"situation": "Haz llegado al fin de tu carrera. Sabes que vienen nuevas cosas para tí y muchas oportunidades. Sin embargo, también será de las últimas veces que verás a tus amigos de manera constante y cada uno tomará diferentes caminos.",
+			"emotions": ["happiness", "sad"],
+			"explication": "Las emociones en esta situación son estas dos ya que el terminar algo que conllevo mucho tiempo y sacrificio obedece a una gran satisfacción de uno mismo. Sin embargo, no se puede negar la tristeza de dejar atrás amigos, compañeros y todo un estilo de vida para iniciar uno nuevo."
+		},
+		{
+			"situation": "Estas llegando a casa después de un día muy cansado de trabajo. Sin embargo, llegas y tu esposa te preparó tu cena favorita y te consiente.",
+			"emotions": ["love"],
+			"explication": "El recibir algún tipo de gesto por parte de un ser amado siempre es reconfortante y la emoción que más sobresale es el afecto que sientes hacia la otra persona."
+		},
+		{
+			"situation": "Un amigo tuyo habló con alguien sobre un secreto que le habías confiado y le habías pedido encarcidamente que no contara. Empiezas a dudar de su amistad y el hecho de que contara tu secreto te ocasionó muchos problemas.",
+			"emotions": ["angry", "sad"],
+			"explication": "Cuando un amigo hace algo que nos decepciona siempre esta la tristeza presente. Además, el hecho de que se hayan generado más problemas al saberse el secreto es completamente normal que también se encuentre el enojo dentro de nosotros."
+		},
+		{
+			"situation": "Llegas a tu casa y encuentras todo en silencio. Te encuentras con tu madre y te cuenta que un familiar muy cercano a ti acaba de fallecer.",
+			"emotions": ["sad"],
+			"explication": "El fallecimiento de alguien siempre es doloroso y la tristeza es la emoción que por naturaleza nos acompaña en el proceso de duelo. Es necesaria porque actua como refugio reflexivo para asimilar todo lo que pasa para que así, poco a poco, sigamos adelante."
+		},
+		{
+			"situation": "Estuviste un buen rato trabajando en arreglar algo, quitandote mucho de tu tiempo personal. Al final de muchas horas llegas a resolver el problema dandote cuenta que estabas fallando en algo muy sencillo y te preguntas cómo es que no te diste cuenta antes.",
+			"emotions": ["angry", "happiness"],
+			"explication": "Es normal que nos atasquemos en un problema o situación y, en este caso, es normal que se genere frustración por la gran perdida de tiempo. Sin embargo, al final al encontrar la respuesta se genera un alivio que conduce a alegría."
+		},
+		{
+			"situation": "Vas caminando por la calle y de repente llega un hombre y te amenaza con un arma para que le des tu celular que acabas de comprar con mucho sacrificio.",
+			"emotions": ["angry", "scare", "sad"],
+			"explication": "Sufrir un acto delictivo de inicio siempre nos genera miedo ya que es parte de nuestro instinto de supervivencia ante amenazas de este tipo. Sin embargo, a la hora de sufrirlo también actúan la tristeza por perder nuestras posesiones y a la vez el enojo en forma de frustración por haber vivido tal experiencia."
+		},
+		{
+			"situation": "Llegas a tu casa y notas todo oscuro. De repente, las luces se encienden y te gritan \"¡Feliz Cumpleaños!\".",
+			"emotions": ["scare", "happiness"],
+			"explication": "De inicio, el recibir una sopresa se genera una reacción de miedo. Sin embargo, al seguir viviendo este contexto se traduce en una alegría por festejar de esta manera."
+		},
+		{
+			"situation": "Trabajaste mucho en un proyecto para ganar un concurso. Sin embargo, ves que un equipo hizo un mejor proyecto y ellos se llevan el premio.",
+			"emotions": ["sad", "angry"],
+			"explication": "La envidia es una combinación de estas dos emociones y es completamente normal sentirla. Puede que de inicio la envidia tenga una connotación negativa. Sin embargo, la envidia nos ofrece la oportunidad de aprender sobre uno mismo y resaltar las áreas de oportunidad que tenemos para crecer y mejorar."
+		},
+		{
+			"situation": "Regresas a un lugar donde se la pasaban muy bien tú y una persona importante para ti que ya no ves más. Te sientas un rato y recuerdas los viejos tiempos.",
+			"emotions": ["sad", "happiness"],
+			"explication": "La nostalgia es una combinación de estas dos emociones y es muy común vivirla sobre todo cuando miramos el pasado. Es natural vivirla y nos ayuda a verle sentido a la vida ya que nos hace recordar que somos capaces de vivir una vida significativa conectados con los demás."
+		},
+		{
+			"situation": "Es el día de tu presentación final de proyecto. Por otro lado, antes del gran momento recibes varios mensajes de apoyo de tus amigos y familiares.",
+			"emotions": ["scare", "love"],
+			"explication": "Es normal sentir miedo ante una presentación de este tipo y requiere un gran coraje para poder afrontarlo. Sin embargo, a menudo las cosas que más nos asustan son las que proporcionan el mayor valor en el futuro. Y, al recibir apoyo de las personas que queremos logramos aumentar el coraje y usar el afecto que sentimos a nuestro favor para darnos seguridad."
+		},
+		{
+			"situation": "Estuviste buscando por muchos lados una camisa de la banda favorita de tu mejor amigo. Lo unico que tienes duda es si le compraste la talla correcta.",
+			"emotions": ["love", "scare"],
+			"explication": "El hacer actos de servicio o detalles hacia nuestros seres queridos son actos acompañados enteramente del afecto. Por otro lado, en este caso, ante desconocimiento de algún tipo se genera inseguridad que se traduce en un tipo de miedo."
+		},
+		{
+			"situation": "Tu amigo un día te visita de sorpresa a tu casa y te trae preparada una tarde de juegos y diversión.",
+			"emotions": ["happiness", "love"],
+			"explication": "Las relaciones de todo tipo, con sus acciones, nos producen afecto que solo hace que se fortalezcan los vínculos. Y, cuando se combina con la alegría, genera mucho placer."
+		}
+	],
+	"finalPartial": "Muy bien, poco a poco ya estas identificando qué emociones se producen comúnmente en diversas situaciones. ¡Vuelve mañana para seguir practicando!",
+	"finalComplete": "!Excelente! Finalizaste toda la actividad. Recuerda que el reconocer las emociones en la vida diaria nos permite conocer cómo nos desenvolvemos normalmente en ciertas situaciones. Una vez bien conocidas las razones por las que se generan podremos mejorar en sus efectos."
+}

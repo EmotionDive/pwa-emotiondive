@@ -1,0 +1,78 @@
+{
+	"title": "¿Cómo me autorregulo?",
+	"mainScript": [
+		[
+			"Muchas personas viven bajo la impresión de que \"regular las emociones\" significa suprimirlas, incluso reprimirlas. Por lo tanto, pasan la vida **ignorando sus propios sentimientos** e ignorando también los de los demás.",
+			"La **autorregulación** es la capacidad que tienes para **reconocer** tus emociones iniciales y **ser consciente** de ellas."
+		],
+		[
+			"El ser capaces de autoregularnos hace que nos **beneficiemos de nuestras emociones**, sobre todo cuando somos capaces de **transformar los sentimientos negativos en sentimientos positivos** que nos ayudan a **aprender** y **crecer** más como personas. ",
+			"Asimismo, el ser capaces de autoregularnos **previene a que adoptemos conductas reactivas**.",
+			"En otras palabras, el autoregularnos permite **no dejarnos llevar por completo por nuestras emociones**, simplemente **tenerlas en cuenta** como \"nuestro copiloto\" y **actuar de manera serena** ante cualquier situación que haya generado la emoción."
+		],
+		[
+			"La idea es que, a través del tiempo y con la práctica, aprendas a **controlar tus emociones y hacerte cargo de ellas**.",
+			"Las actividades de este módulo te enseñaran a **cómo lograr y practicar** la autorregulación.",
+			"A continuación, **¡Veamos cómo es que te autorregulas frente a ciertas situaciones!** "
+		]
+	],
+	"instruction": "Dada la situación, elige la forma de actuar que mayormente te represente: ",
+	"situations": [
+		{
+			"situation": "Es Viernes por la tarde; tu jefe anunció que el Lunes dará a conocer quien recibirá el bono al \"empleado del mes\". Eres uno de los dos posibles candidatos a mejor empleado y deseas mucho ganar ese bono ya que opinas que has hecho todo lo posible para merecerlo.",
+			"answers": [
+				"Eliminar a la competencia.",
+				"Pensar qué hacer el Lunes al llegar al trabajo para asegurar la ganancia del bono.",
+				"Pensar en pasar tiempo con mi familia y amigos.",
+				"Buscar todo el fin de semana a mi jefe para incrementar mis posibilidades de recibir el bono."
+			],
+			"correct": 2,
+			"explication": "Puede que pienses que debas de hacer más cosas para asegurar recibir el bono, pero en un fin de semana no laboral no lograrás marcar ninguna diferencia en ello. Más adelante aprenderás cómo es mejor lidiar con esta situación."
+		},
+		{
+			"situation": "Vas caminando por la calle con tu café cuando de repente tropiezas y le tiras el café encima a una persona que iba frente a ti. Sientes mucha culpa y mucha incomodidad.",
+			"answers": [
+				"Sientes tanta culpa que necesitas evadir a toda costa esa situación así que sales corriendo del lugar sin mirar atrás.",
+				"Te disculpas con la persona. Sin embargo, después del incidente te la pasas todo el día repasando en tu mente el cómo tropezaste y le estropeaste el atuendo a alguien.",
+				"Deseas no quedar mal con la persona así que te disculpas incandote de rodillas pidiendo clemencia, le ofreces todo el dinero que llevas y no te vas hasta que él pueda liberar tu culpa.",
+				"Analizas que fue un accidente el que ocasionaste y que a todos les puede pasar. Pides disculpas serenamente,si es el caso, le ofreces algo de dinero para la lavandería y sigues tu día."
+			],
+			"correct": 3,
+			"explication": "Estas situaciones pueden resultarte bastante incómodas, sin embargo, dejarse llevar por lo que sentimos puede ocasionar que nos comportemos de una forma o muy sumisa o muy desinteresada. Por otro lado, si no dejamos pasar este momento de incomodidad repensandolo aún mucho después del incidente hace que nuestro estado de ánimo decaiga bastante y afecte todas nuestras actividades. Más adelante descubrirás porqué es mejor tomar un repiro en el momento y repensar lo que sentimos para afrontarlo."
+		},
+		{
+			"situation": "Tienes un amigo a el que le confiaste un secreto tuyo. Sin embargo, días después te das cuenta que tu amigo le contó tu secreto a otras personas.",
+			"answers": [
+				"Sientes que es necesario vengarte de alguna forma para que la otra persona sienta lo mismo que tú por lo que buscas algún secreto que te haya contado él y lo esparces a otras personas.",
+				"Te haces consciente que este hecho te hace mucho enojar y evaluas con serenidad todo lo que sientes para que, en lugar de arremeter con agresividad, solo confrontes a la persona haciendole saber que estas molesto con él por su acción y hay límites que vas a marcar.",
+				"Piensas que todas las personas no son dignas de tu confianza por lo que, ante la decepción de la humanidad, decides encerrarte en tus relaciones y nunca confiar en nadie.",
+				"Te dejas llevar por la rabia de que tu amigo haya esparcido tu secreto de modo que lo buscas y lo agredes para que no se vuelva a meter contigo."
+			],
+			"correct": 1,
+			"explication": "Siempre se tiene la opción de cómo responder y, ante una emoción como la ira es necesario no dejarla salir de control debido a que puede traernos graves consecuencias. Más adelante verás el cómo empezar a apaciguar esta emoción."
+		},
+		{
+			"situation": "Vas iniciando tu día pero no dejas de pensar en lo emocionado que estas ya que el día siguiente te vas a ir de vacaciones junto a tu pareja por primera vez.",
+			"answers": [
+				"En el trabajo decides empezar a buscar más destinos que puedes visitar con tu pareja e ir generando un cronograma.",
+				"Mientras vas caminando por la calle decides ponerte a buscar en tu celular más ropa que puedes ordenar de último momento para estrenarla en tus vacaciones.",
+				"Sabes que estas emocionado pero nada hará que el tiempo pase más rápido para que ya sea mañana así que te dispones a concentrarte en tu trabajo y una vez acabado te dispones a preparar todo y dormir temprano para el día siguiente.",
+				"Empiezas a mandarle mensajes a tu pareja todo el día para que te vaya confirmando si ya esta preparada para el viaje y que te cuente más sobre lo que piensa con respecto a él."
+			],
+			"correct": 2,
+			"explication": "La felicidad descontrolada puede generar que nos desconcentremos de nuestras responsabilidades o la de los demás, es por ello que tratar de apaciguarla de una manera es lo ideal para seguir con nuestras actividades."
+		},
+		{
+			"situation": "Vas a inicios de camino rumbo a tu escuela usando el transporte público. Sin embargo, ves que hay mucho tráfico y según el mapa de tu celular vas en la ruta más rápida. Te empiezas a frustar e irritar porque sabes que llegarás tarde.",
+			"answers": [
+				"Empiezas a reconocer que no tienes control de la situación y no hay manera de llegar a tu escuela sin el transporte así que mejor te dispones a tratar de relajarte escuchando música en tu celular.",
+				"Empiezas a pensar que te ira muy mal en la escuela de ahora en adelante, que tu maestro te reprobará y que no terminarás tu carrera.",
+				"Empiezas a frustarte de más y empiezas a gritar al chofer del transporte público para que vaya más rápido.",
+				"Sientes que necesitas hacer algo y, a pesar de que sabes que sigues muy lejos de tu escuela, sales del transporte público e intentas correr para ver si de casualidad llegas."
+			],
+			"correct": 0,
+			"explication": "No poder atender a tiempo un compromiso en el trayecto puede ser muy frustante y si no apacigüamos esta emoción podemos generar muchos problemas a nosotros mismos debido a nuestras decisiones reactivas y un tanto radicales. Más adelante aprenderás porqué este es el mejor modo de actuar."
+		}
+	],
+	"final": "Este es el inicio del camino para poder autoregularte. En las siguientes actividades se te explicarán formas en las que puedes autoregularte y el cómo identificarlas y aplicarlas."
+}

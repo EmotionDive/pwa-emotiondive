@@ -1,0 +1,25 @@
+{
+	"title": "Decisiones Razón-Emoción Actividad 1",
+	"instructions": "Se te presentara un caso en el que podras elegir una opción al final de la actividad, para seleccionar tu opción deberas descomponer en razones y emociones el caso, es decir, ¿Por qué razones escogeria la primera opción? y ¿Qué emociones me produce esa elección?, posteriormente describiras las razones por las que escogerías la opción 2 y las emociones que te produce esa elección.",
+	"scenarios": [
+		{
+			"situation": "Tienes la oportunidad de emprender el negocio que siempre soñaste, sin embargo, llega una oferta de trabajo que resuelve tus necesidades economicas ademas de ofrecer un contrato seguro por un largo periodo de tiempo, tienes que responder a la oferta de trabajo lo antes posible, ¿Qué decidiras? Opción 1: Emprender el negocio de tus sueños, Opción 2: Tomar la oferta laboral.",
+			"messages": [
+				"Comience con la lista de razones correspondiente a la oferta laboral.",
+				"Continue con la lista de razones correspondiente a emprendimiento.",
+				"Genial!, avanza con la lista de emociones que te produce el tomar la descición de la propuesta de trabajo.",
+				"Estas a un paso, sigue así!, por ultimo realiza la lista de emociones que te produce el tomar la descición de emprender."
+			]
+		},
+		{
+			"situation": "Tienes la oportunidad de estudiar en el extranjero, sin embargo mantienes una relación en tu país natal, deberas de tomar la elección de viajar al extranjero o quedarte en tu país con tu relación, realizara cuatro listas, dos en donde exponga las razones y emociones por las que debería tomar la oportunidad de ir al extranjero y dos listas que expongan la descición de quedarte en tu país",
+			"messages": [
+				"Comience con la lista de razones correspondiente a tomar la oferta de estudiar en el extranjero.",
+				"Continue con la lista de razones correspondiente a quedarte en tu país.",
+				"Genial!, avanza con la lista de emociones que te produce el quedarte con tu relación dentro de tu país.",
+				"Estas a un paso, sigue así!, por ultimo realiza la lista de emociones que te produce el salir del país a estudiar."
+			]
+		}
+	],
+	"finalmessage": "Felicidades por completar la actividad, no es fácil reconocer nuestras emociones y razones al tomar una decisión, recuerda que lo mas importante es siempre sentirse bien con uno mismo!!, sigue así."
+}

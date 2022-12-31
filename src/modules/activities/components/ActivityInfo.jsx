@@ -7,9 +7,22 @@ import Progress from '../../../assets/icons/Progress.svg?component'
 import Time from '../../../assets/icons/Time.svg?component'
 import Benefits from '../../../assets/icons/Benefits.svg?component'
 import PropTypes from 'prop-types'
+import { TextButton } from '../../../components/Buttons'
 
-const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
+const ActivityInfo = ({
+	open,
+	onClickButton,
+	onClickOutside,
+	data,
+	variant,
+	addToWeekPlanButton,
+	onClickAddToWeekPlanButton,
+	addDoActivityButton,
+	onClickDoActivityButton,
+	showRealizations,
+}) => {
 	const [openInfo, setOpenInfo] = useState(false)
+	const [notTimeToDo, setNotTimeToDo] = useState(false)
 	const [exit, onExit] = useState(false)
 
 	useEffect(() => {
@@ -19,6 +32,18 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 			close()
 		}
 	}, [open])
+
+	useEffect(() => {
+		let bool = false
+		if (data.last_realization) {
+			const currentTime = new Date()
+			const lastTime = new Date(data.last_realization)
+			lastTime.setDate(lastTime.getDate() + 1)
+			bool = currentTime.getTime() < lastTime.getTime()
+		}
+
+		setNotTimeToDo(bool)
+	}, [data])
 
 	const close = () => {
 		onExit(true)
@@ -39,32 +64,40 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 					open ? 'open' : ''
 				} `}
 			>
-				<div className='activityInfo' ref={ref}>
+				<div className={`activityInfo ${variant}`} ref={ref}>
 					<div className='activityInfo__title'>
-						<span>1</span>
-						¡Identifica emociones faciales!
+						<span>{data.activity.id_actividad}</span>
+						{data.activity.nombre}
 					</div>
 					<div className='activityInfo__content'>
 						<div className='activityInfo__chips'>
-							<span className='activityInfo__chips__chipActivity'>
-								<ActivitiesTCC />
-								Act. Anterior: 1
-							</span>
-							<span className='activityInfo__chips__chipOffline'>
-								<Offline />
-								Offline
-							</span>
+							{showRealizations ? (
+								<span className='activityInfo__chips__chipActivity'>
+									<ActivitiesTCC />
+									Realizada {data.progreso}{' '}
+									{data.progreso === 1 ? 'vez' : 'veces'}
+								</span>
+							) : data.next_activity === null ? null : (
+								<span className='activityInfo__chips__chipActivity'>
+									<ActivitiesTCC />
+									Act. Siguiente: {data.next_activity}
+								</span>
+							)}
+							{data.activity.offline_bandera ? (
+								<span className='activityInfo__chips__chipOffline'>
+									<Offline />
+									Offline
+								</span>
+							) : null}
 						</div>
 						<div className='activityInfo__data book'>
 							<div>
 								<Book />
 							</div>
 							<div>
-								<p>Aprende a identificar las emociones de las personas.</p>
-								<p>
-									Se te plantearan una breve situación y un rostro de una
-									persona, tu trabajo es identificar que emoción se percibe.
-								</p>
+								{data.activity.descripcion.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
 						<div className='activityInfo__data progress'>
@@ -72,10 +105,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 								<Progress />
 							</div>
 							<div>
-								<p>
-									Debes de realizar 1 vez esta actividad y se te retroalimentará
-									al finalizar.
-								</p>
+								{data.activity.instrucciones.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
 						<div className='activityInfo__data time'>
@@ -84,7 +116,9 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 							</div>
 							<div>
 								<p>
-									Esta actividad te tomará alrededor de 15 minutos completarla.
+									Esta actividad te tomará alrededor de{' '}
+									{parseInt(data.activity.tiempo_estimado.split(':')[1])}{' '}
+									minutos completarla.
 								</p>
 							</div>
 						</div>
@@ -93,15 +127,57 @@ const ActivityInfo = ({ open, onClickButton, onClickOutside }) => {
 								<Benefits />
 							</div>
 							<div>
-								<p>
-									Al completar esta actividad comprenderás como se expresan las
-									emociones ante diversas situaciones.
-								</p>
+								{data.activity.beneficios.split('\n').map((p, key) => (
+									<p key={key}>{p}</p>
+								))}
 							</div>
 						</div>
-						<button className='button' onClick={onClickButton}>
-							Okey
-						</button>
+						{notTimeToDo && addDoActivityButton === true && !data.done_flag ? (
+							<span className='systemText__paragraph'>
+								Ya realizaste la iteración de hoy, vuelve mañana para realizar
+								la siguiente.
+							</span>
+						) : null}
+						<div
+							className={`button__container ${
+								addToWeekPlanButton === null && addDoActivityButton === false
+									? ''
+									: 'weekPlan'
+							}`}
+						>
+							<button className='button' onClick={onClickButton}>
+								{addToWeekPlanButton === null && addDoActivityButton === false
+									? 'Okey'
+									: 'Ver otra'}
+							</button>
+							{addToWeekPlanButton === null ? null : (
+								<button
+									className='button'
+									onClick={() =>
+										onClickAddToWeekPlanButton(data.activity.id_actividad)
+									}
+								>
+									{addToWeekPlanButton === 'true'
+										? 'Agregar a Plan Semanal'
+										: 'Quitar de Plan Semanal'}
+								</button>
+							)}
+							{addDoActivityButton === false ? null : data.done_flag ? (
+								<TextButton className='disabled'>
+									¡Actividad Completada!
+								</TextButton>
+							) : (
+								<button
+									className='button'
+									onClick={() =>
+										onClickDoActivityButton(data.activity.id_actividad)
+									}
+									disabled={notTimeToDo}
+								>
+									Realizar actividad
+								</button>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,12 +191,31 @@ ActivityInfo.propTypes = {
 	onClickOutside: PropTypes.func,
 	exitOnClickButton: PropTypes.bool,
 	exitOnClickOutside: PropTypes.bool,
+	data: PropTypes.object,
+	variant: PropTypes.oneOf([
+		'SelfKnowledge',
+		'SelfRegulation',
+		'SelfEfficacy',
+		'Empathy',
+		'',
+	]),
+	addToWeekPlanButton: PropTypes.oneOf(['true', 'false']),
+	onClickAddToWeekPlanButton: PropTypes.func,
+	addDoActivityButton: PropTypes.bool,
+	onClickDoActivityButton: PropTypes.func,
+	showRealizations: PropTypes.bool,
 }
 
 ActivityInfo.defaultProps = {
 	open: false,
 	onClickButton: () => {},
 	onClickOutside: () => {},
+	data: {},
+	addToWeekPlanButton: null,
+	onClickAddToWeekPlanButton: () => {},
+	addDoActivityButton: false,
+	onClickDoActivityButton: () => {},
+	showRealizations: false,
 }
 
 export default ActivityInfo

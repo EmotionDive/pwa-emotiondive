@@ -64,7 +64,7 @@ OptionButtonGroup.propTypes = {
 	},
 	wrapWith: PropTypes.oneOf(['none', 'div', 'span', 'section', 'main']),
 	className: PropTypes.string,
-	value: PropTypes.string,
+	value: PropTypes.any,
 	onChange: PropTypes.func,
 }
 

@@ -2,7 +2,14 @@ import { useState } from 'react'
 import CognitiveButton from './CognitiveButton'
 import PropTypes from 'prop-types'
 
-const CognitiveChooser = ({ onChange }) => {
+const translate = {
+	Autoconocimiento: 'SelfKnowledge',
+	Autoeficacia: 'SelfEfficacy',
+	Autorregulación: 'SelfRegulation',
+	Empatia: 'Empathy',
+}
+
+const CognitiveChooser = ({ onChange, undone }) => {
 	const [competences, setCompetences] = useState([])
 
 	const addCompetence = (competence) => {
@@ -22,32 +29,24 @@ const CognitiveChooser = ({ onChange }) => {
 
 	return (
 		<div className='cognitiveCards'>
-			<CognitiveButton
-				variant='SelfKnowledge'
-				active={competences.includes('SelfKnowledge')}
-				onClick={() => addCompetence('SelfKnowledge')}
-			/>
-			<CognitiveButton
-				variant='SelfRegulation'
-				active={competences.includes('SelfRegulation')}
-				onClick={() => addCompetence('SelfRegulation')}
-			/>
-			<CognitiveButton
-				variant='SelfEfficacy'
-				active={competences.includes('SelfEfficacy')}
-				onClick={() => addCompetence('SelfEfficacy')}
-			/>
-			<CognitiveButton
-				variant='Empathy'
-				active={competences.includes('Empathy')}
-				onClick={() => addCompetence('Empathy')}
-			/>
+			{undone.map((competence, key) => {
+				const translation = translate[competence]
+				return (
+					<CognitiveButton
+						variant={translation}
+						key={key}
+						active={competences.includes(translation)}
+						onClick={() => addCompetence(translation)}
+					/>
+				)
+			})}
 		</div>
 	)
 }
 
 CognitiveChooser.propTypes = {
 	onChange: PropTypes.func,
+	undone: PropTypes.array.isRequired,
 }
 
 CognitiveChooser.defaltProps = {

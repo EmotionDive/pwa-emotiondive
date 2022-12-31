@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActivitiesTCC from '../../../assets/icons/ActivitiesTCC.svg?component'
 import WeekPlan from '../../../assets/icons/WeekPlan.svg?component'
 import PropTypes from 'prop-types'
 
-const ActivitiesTabNav = ({ value, onChange }) => {
+const ActivitiesTabNav = ({ value, onChange, disableWeekPlan }) => {
 	const [active, setActive] = useState(value)
+
+	useEffect(() => setActive(value), [value])
 
 	const toggleActive = (tab) => {
 		if (active !== tab) {
@@ -26,7 +28,9 @@ const ActivitiesTabNav = ({ value, onChange }) => {
 				Actividades
 			</span>
 			<span
-				className={active === 'weekPlan' ? 'active' : ''}
+				className={`${active === 'weekPlan' ? 'active' : ''}${
+					disableWeekPlan ? 'disabled' : ''
+				}`}
 				onClick={() => toggleActive('weekPlan')}
 				onKeyDown={() => toggleActive('weekPlan')}
 				tabIndex='0'
@@ -42,11 +46,13 @@ const ActivitiesTabNav = ({ value, onChange }) => {
 ActivitiesTabNav.propTypes = {
 	value: PropTypes.oneOf(['activities', 'weekPlan']),
 	onChange: PropTypes.func,
+	disableWeekPlan: PropTypes.bool,
 }
 
 ActivitiesTabNav.defaultProps = {
 	value: 'activities',
 	onChange: () => {},
+	disableWeekPlan: false,
 }
 
 export default ActivitiesTabNav

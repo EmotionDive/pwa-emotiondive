@@ -1,0 +1,20 @@
+{
+	"title": "Aprende nuevos conceptos",
+	"concepts": [
+		{
+			"concept_id": 1,
+			"concept_name": "Empatía",
+			"concept_definition": "Es la capacidad que tiene una persona para reconocer y comprender las emociones en los demás e incluso compartirlos."
+		},
+		{
+			"concept_id": 2,
+			"concept_name": "Simpatía",
+			"concept_definition": "Es la capacidad de entender como se siente una persona sin la necesidad de compartir sus sentimientos."
+		},
+		{
+			"concept_id": 3,
+			"concept_name": "Antipatía",
+			"concept_definition": "Sentimiento de rechazo hacia una persona o sus actitudes, a tal grado de desear que las cosas no le salgan bien a dicha persona."
+		}
+	] 
+}
