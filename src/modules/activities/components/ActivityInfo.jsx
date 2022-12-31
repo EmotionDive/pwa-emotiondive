@@ -83,12 +83,12 @@ const ActivityInfo = ({
 									Act. Siguiente: {data.next_activity}
 								</span>
 							)}
-							{data.activity.offline_bandera ? (
+							{/* {data.activity.offline_bandera ? (
 								<span className='activityInfo__chips__chipOffline'>
 									<Offline />
 									Offline
 								</span>
-							) : null}
+							) : null} */}
 						</div>
 						<div className='activityInfo__data book'>
 							<div>

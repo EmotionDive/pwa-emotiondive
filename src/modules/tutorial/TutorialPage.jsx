@@ -42,7 +42,7 @@ const TutorialPage = () => {
 								¡Hola <b>{userData.nombre}</b>!
 							</span>
 							<span className='bigText'>
-								Te damos la bienvenida a <b>EmotionDive</b>
+								Te damos la bienvenida a la Beta de <b>EmotionDive</b>
 							</span>
 							<img src={EmotionDiveLogo} alt='EmotionDive' />
 						</FaderDiv>
@@ -101,6 +101,13 @@ const TutorialPage = () => {
 								examen, medir tu Inteligencia Emocional, y comparar con tu
 								anterior estado para así repetir el proceso con las otras
 								competencias que te faltan.
+							</span>
+							<span
+								className='text--small'
+								style={{ color: 'var(--neutral-400)' }}
+							>
+								Al ser esta una <b>Beta</b> solo harás un plan semanal de corta
+								duración y las actividades que quieras de 2 competencias.
 							</span>
 							<span className='bigText'>
 								<i>
