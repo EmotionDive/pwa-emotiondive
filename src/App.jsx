@@ -49,6 +49,8 @@ import {
 	WhatDoilLikeActivity,
 } from './modules/activities/TCC/SelfKnowledge'
 import TheEnd from './modules/activities/activitiesMenus/TheEnd'
+import WorkInProgress from './modules/extra/WorkInProgress'
+import NotFound from './modules/extra/NotFound'
 
 function App() {
 	const { isLoading } = useAuth0()
@@ -68,8 +70,8 @@ function App() {
 				<Route path='/cuentaNoActiva' element={<NoActivatedAccountPage />} />
 				<Route element={<MainAppLayout />}>
 					<Route path='/estadisticas' element={<StatisticsPage />} />
-					<Route path='/configuracion' element={<ConfigurationPage />} />
-					<Route path='/ayuda' element={<HelpPage />} />
+					<Route path='/configuracion' element={<WorkInProgress />} />
+					<Route path='/ayuda' element={<WorkInProgress />} />
 					<Route path='/actividades'>
 						<Route element={<ActivitiesLayout />}>
 							<Route index element={<ActivitiesMenuPage />} />
@@ -124,6 +126,7 @@ function App() {
 					</Route>
 				</Route>
 			</Route>
+			<Route path='*' element={<NotFound />} />
 		</Routes>
 	)
 }
