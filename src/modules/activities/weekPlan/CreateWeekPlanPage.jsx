@@ -14,7 +14,7 @@ import { months, weekdays } from './data/datesInSpanish'
 const weekPlanDates = () => {
 	const start = new Date()
 	const end = new Date()
-	end.setDate(start.getDate() + 7)
+	end.setDate(start.getDate() + 2)
 
 	const weekPlanStart = `${weekdays[start.getDay()]} ${start.getDate()} de ${
 		months[start.getMonth()]
@@ -118,7 +118,7 @@ const CreateWeekPlanPage = () => {
 				setAvailableForSelection(copyAvailable)
 			}
 		} else {
-			if (selections.length === 5)
+			if (selections.length === 11)
 				operateModal(
 					'¡Ups, ya son muchas actividades!',
 					'Es ideal que poco a poco semanalmente vayas completando las actividades para tener un mejor aprendizaje y desarrollo de tu Inteligencia Emocional. Quita de tu plan otra actividad para seleccionar la que acabas de elegir.',
@@ -145,7 +145,7 @@ const CreateWeekPlanPage = () => {
 					setTimeout(() => {
 						operateModal(
 							'¡Excelente, tu plan comienza ahora!',
-							`Tienes hasta el ${weekPlanEnd} para terminar tus actividades. ¡Mucho éxito trabajando tu Inteligencia Emocional!`,
+							`Tienes hasta el ${weekPlanEnd} a las 23:59 para terminar tus actividades. ¡Mucho éxito trabajando tu Inteligencia Emocional!`,
 							'confirm',
 							['¡Empecemos ya!'],
 							() => {
@@ -228,7 +228,8 @@ const CreateWeekPlanPage = () => {
 						plan semanal.
 					</span>
 					<span className='text--small'>
-						Recuerda que debes de elegir mínimo 2 actividades y máximo 5.
+						Recuerda que en esta Beta debes de elegir mínimo 5 actividades (de
+						preferencia todas).
 					</span>
 					<div className='showActivitiesPage__displayActivities'>
 						{data.competence_activities.map((competence, indexCompetence) => (
@@ -263,7 +264,7 @@ const CreateWeekPlanPage = () => {
 						))}
 					</div>
 					<LargeButton
-						disabled={selectedActivities.length < 2}
+						disabled={selectedActivities.length < 5}
 						onClick={() =>
 							operateModal(
 								'¿Seguro de tu elección de actividades?',
