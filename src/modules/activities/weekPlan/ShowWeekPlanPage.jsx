@@ -15,8 +15,6 @@ const competencesTranslation = {
 	Empatia: 'Empathy',
 }
 
-// TODO: INVALIDATE BUTTON WHEN DONE AND WHEN REALIZATION OF THE DAY
-
 const ShowWeekPlanPage = () => {
 	const { weekplan } = useActivities()
 	const { userData } = useUser()
@@ -24,6 +22,7 @@ const ShowWeekPlanPage = () => {
 
 	const weekplanDate = useMemo(() => {
 		const date = new Date(weekplan.deadline)
+		date.setDate(date.getDate() - 1)
 		return `${weekdays[date.getDay()]} ${date.getDate()} de ${
 			months[date.getMonth()]
 		} de ${date.getFullYear()}`
@@ -65,7 +64,9 @@ const ShowWeekPlanPage = () => {
 					Pulsa en alguna de las actividades para realizarla.
 				</span>
 			)}
-			<span className='text--small'>Tu plan finaliza el {weekplanDate}</span>
+			<span className='text--small'>
+				Tu plan finaliza el {weekplanDate} a las 23:59
+			</span>
 			<div className='showActivitiesPage__displayActivities'>
 				{weekplan.activities.map((activity, indexActivity) => (
 					<CardActivitie

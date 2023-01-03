@@ -9,7 +9,7 @@ En el supuesto que cualquiera de los términos a los que habrá de sujetarse el 
 
 **2. Compromiso del usuario**
 
-Al utilizar este sitio me obligo a cumplir con los términos y condiciones de uso, establecidos en el presente documento por lo que reconozco haber leído, entendido y estar de acuerdo con sujetarme a sus términos y condiciones. De manera que, al acceder al sitio acatare lo anteriormente acordado.
+Al utilizar este sitio me obligo a cumplir con los términos y condiciones de uso, establecidos en el presente documento por lo que reconozco haber leído, entendido y estar de acuerdo con sujetarme a sus términos y condiciones. De manera que, al acceder al sitio acataré lo anteriormente acordado.
 
 La información y los servicios que ofrece EmotionDive hacen referencia al uso de la teoría cognitivo conductual de Beck y el uso de actividades para el desarrollo de la inteligencia emocional (autoconocimiento, autoeficacia, autorregulación y empatía) además de que EmotionDive se acata a la normatividad que rige en los Estados Unidos Mexicanos.
 
@@ -22,20 +22,20 @@ El usuario que utilice este sitio fuera de la República Mexicana se hará respo
 
 Se autoriza al usuario a visualizar y realización de las actividades contenidos en el sitio solamente para uso personal y no para un uso comercial.
 
-1. El usuario deberá de conservar en todas las copias de materiales que descargue, todos los avisos sobre derechos de autor y propiedad intelectual de los materiales, contenidos en los mismos.
+1. El usuario deberá conservar en todas las copias de materiales que descargue, todos los avisos sobre derechos de autor y propiedad intelectual de los materiales, contenidos en los mismos.
 2. El usuario no deberá modificar, reproducir o mostrar pública o comercialmente los materiales, ni podrá distribuir o utilizarlos con algún propósito público o comercial.
 3. El usuario no deberá transferir los materiales a ningún tercero.
    Nos reservamos el derecho de suspender, interrumpir o dejar de operar el servicio en cualquier momento, de igual manera nos reservamos el derecho de dejar de ofertar el servicio a los usuarios que no respeten los términos y condiciones de EmotionDive.
 
 **4. Derechos del usuario durante el uso del servicio de EmotionDive**
 
-Durante el uso de EmotionDive se requerirá el uso de información sensible, los cuales refieren a información que pueden revelar aspectos íntimos de una persona, por lo que EmotionDive se compromete a reservar el uso de esta información solo para propósitos relacionados con el seguimiento del desarrollo de la inteligencia emocional de los usuarios sin fines de lucro de manera comercial, dentro de los derechos de los usuarios se reafirman los derechos “ARCO”, los cuales se conforman por los derechos de Acceso, Rectificación, Cancelación y Oposición, todos ellos relacionados con el tratamiento de datos personales, se seguirá el procedimiento recomendado por la República Mexicana y la DGT(Dirección General de Transparencia de la secretaría de la función pública).
+Durante el uso de EmotionDive se requerirá el uso de información sensible, la cual refiere a información que pueden revelar aspectos íntimos de una persona, por lo que EmotionDive se compromete a reservar el uso de esta información solo para propósitos relacionados con el seguimiento del desarrollo de la inteligencia emocional de los usuarios sin fines de lucro de manera comercial, dentro de los derechos de los usuarios se reafirman los derechos “ARCO”, los cuales se conforman por los derechos de Acceso, Rectificación, Cancelación y Oposición, todos ellos relacionados con el tratamiento de datos personales, se seguirá el procedimiento recomendado por la República Mexicana y la DGT(Dirección General de Transparencia de la secretaría de la función pública).
 
 **5. Restricciones del sistema**
-Mencionamos que EmotionDive no es una solución para los usuarios que presentan situaciones personales que requieran atención profesional, el proposito de EmotionDive es el desarrollo de la inteligencia emocional, mas no reemplaza bajo ningún contexto la atención psicologica, se recomienda dar seguimiento con un experto si se presentan una situación distinta al puro deseo del desarrollo de la inteligencia emocional, EmotionDive no es responsable de ningún daño que pueda presentarse debido al mal uso del prototipo.
+Mencionamos que EmotionDive no es una solución para los usuarios que presentan situaciones personales que requieran atención profesional, el propósito de EmotionDive es el desarrollo de la inteligencia emocional, mas no reemplaza bajo ningún contexto la atención psicológica, se recomienda dar seguimiento con un experto si se presenta una situación distinta al puro deseo del desarrollo de la inteligencia emocional, EmotionDive no es responsable de ningún daño que pueda presentarse debido al mal uso del prototipo.
 
-A continuación, se recomienda hacer uso de la atención psicologica que presta la UNAM (Universidad Autonoma de México), el horario de atención es de Lunes a Viernes de 8:00 a 18:00 hrs horario Ciudad de México o contactarse a su número telefonico: 50 25 08 55.
+A continuación, se recomienda hacer uso de la atención psicológica que presta la UNAM (Universidad Autonoma de México), el horario de atención es de Lunes a Viernes de 8:00 a 18:00 hrs horario Ciudad de México o contactarse a su número telefónico: 50 25 08 55.
 
-**6. Contactanos**
+**6. Contáctanos**
 
 Para dudas o aclaraciones, fallos técnicos o situaciones emergentes contactar al email: contact@emotiondive.com.

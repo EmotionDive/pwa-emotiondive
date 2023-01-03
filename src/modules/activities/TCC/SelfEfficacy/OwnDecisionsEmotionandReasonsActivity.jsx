@@ -75,7 +75,7 @@ const OwnDecisionsEmotionandReasonsActivity = () => {
 									text4.length < 30
 								}
 							>
-								Terminar
+								Continuar
 							</LargeButtonModal>
 						</div>
 					</div>

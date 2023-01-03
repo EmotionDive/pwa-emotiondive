@@ -49,14 +49,14 @@ const EmpathySympathyAntipathy = () => {
 	}
 
 	if (!accessFromMenu) return <Navigate to='/' replace />
-
+  
 	return (
 		<div className='EmpathyActivity'>
 			<ModalProvider>
 				<ActivitiesLocalizationBar variant='Empathy' title={data.title} />
 				<main className='EmpathySympathyAntipathy2Activity'>
 					<span className='instruction'>
-						Revisa los siguientes conceptos que te seran de utilidad en
+						Revisa los siguientes conceptos que te serán de utilidad en
 						actividades posteriores y en tu vida diaria.
 					</span>
 					<div className='sliderContainer'>

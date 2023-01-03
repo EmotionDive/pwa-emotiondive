@@ -1,11 +1,15 @@
 import logo from '@assets/images/logos/LogoHorizontal.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { LargeButton, TextButton } from '../../../components/Buttons'
+import useUser from '../../../data/hooks/useUser'
 import { useSlides } from '../../../utils/Slides'
 
 const StartTestIESlide = () => {
 	const [inst, setInst] = useState(0)
 	const { slideTo } = useSlides()
+	const navigate = useNavigate()
+	const { userData } = useUser()
 
 	const instructions = [
 		<section key={0}>
@@ -15,7 +19,7 @@ const StartTestIESlide = () => {
 			<span className='testIEPage__duration'>Duración (10-20 min)</span>
 			<p>
 				Te presentaremos una serie de preguntas acerca de tu forma de
-				<b>pensar</b>, <b>sentir</b> y <b>ser</b>.
+				<b> pensar</b>, <b>sentir</b> y <b>ser</b>.
 			</p>
 			<p>
 				Procura ser sincero y recuerda que <b>NO</b> existen respuestas buenas o
@@ -27,13 +31,15 @@ const StartTestIESlide = () => {
 				tomará alrededor de 10-20 minutos contestarlo.
 			</p>
 			<LargeButton type='outlined-lighter' onClick={() => setInst(1)}>
-				Comenazar Test IE
+				Comenzar Test IE
 			</LargeButton>
-			<TextButton>Mejor en otro momento...</TextButton>
+			<TextButton onClick={() => navigate(-1)}>
+				Mejor en otro momento...
+			</TextButton>
 		</section>,
 		<section key={1}>
 			<h1 className='text--big'>
-				Muy bien Sarah,
+				Muy bien {userData.nombre},
 				<br /> ¡Comencemos con el Test!
 			</h1>
 			<p>
@@ -44,7 +50,7 @@ const StartTestIESlide = () => {
 				type='outlined-lighter'
 				onClick={() => slideTo('/questions')}
 			>
-				Okey
+				Siguiente
 			</LargeButton>
 		</section>,
 	]

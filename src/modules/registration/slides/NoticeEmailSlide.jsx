@@ -2,7 +2,6 @@ import { LargeButton, TextButton } from '../../../components/Buttons'
 import image from '@assets/images/pictures/Email-Image.png'
 import { useEffect } from 'react'
 import UserService from '../../../fetchers/UserService'
-import { useSlides } from '../../../utils/Slides'
 import useUser from '../../../data/hooks/useUser'
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -47,6 +46,7 @@ const NoticeEmailSlide = () => {
 					<div className='registerPage__mainContent'>
 						<span className='text--small'>
 							Activa tu cuenta con el correo que te hemos enviado.
+							<br /> (Puede encontrarse en Spam)
 						</span>
 						<LargeButton
 							onClick={() => {
@@ -55,6 +55,7 @@ const NoticeEmailSlide = () => {
 									'_blank'
 								)
 								logout()
+								window.close()
 							}}
 						>
 							Abrir Correo

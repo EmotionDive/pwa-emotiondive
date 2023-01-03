@@ -9,7 +9,7 @@ const Textfield = ({
 	value,
 	defaultValue,
 	onChange,
-
+	onKeyDown,
 	type,
 	min,
 	max,
@@ -29,6 +29,7 @@ const Textfield = ({
 				placeholder={placeholder}
 				disabled={disabled}
 				onChange={onChange}
+				onKeyDown={onKeyDown}
 				min={min}
 				max={max}
 				maxLength={maxLength}
@@ -46,6 +47,7 @@ Textfield.propTypes = {
 	value: PropTypes.string,
 	defaultValue: PropTypes.string,
 	onChange: PropTypes.func,
+	onKeyDown: PropTypes.func,
 	type: PropTypes.oneOf(['text', 'number']),
 	min: PropTypes.number,
 	max: PropTypes.number,
@@ -60,6 +62,7 @@ Textfield.defaultProps = {
 	value: undefined,
 	defaultValue: undefined,
 	onChange: () => {},
+	onKeyDown: () => {},
 	type: 'text',
 	min: undefined,
 	max: undefined,

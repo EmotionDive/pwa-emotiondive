@@ -115,7 +115,7 @@ const EmpathicConversations = () => {
 										'Terminaste la conversación, esperamos que la retroalimentación te haya sido de ayuda!'
 									}
 									variant='confirmation'
-									buttonLabels={['Okey']}
+									buttonLabels={['Siguiente']}
 									exitOnClickOut={false}
 									onConfirmationCallback={completeActivity}
 								>
