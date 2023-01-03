@@ -9,7 +9,7 @@ const TermsConditionsSlide = () => {
 	const [scrollAtBottom, setScrollAtBottom] = useState(false)
 
 	useEffect(() => {
-		fetch('/src/assets/markdown/TermsAndConditions.md')
+		fetch('/markdown/TermsAndConditions.md')
 			.then((response) => response.text())
 			.then((text) => {
 				setTerms(text.split('\n').filter((paragraph) => paragraph !== '\r'))
