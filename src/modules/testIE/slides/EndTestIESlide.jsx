@@ -7,7 +7,7 @@ import useUser from '../../../data/hooks/useUser'
 
 const EndTestIESlide = () => {
 	const navigate = useNavigate()
-	const { flags, updateFlags } = useUser()
+	const { flags, updateFlags, userData } = useUser()
 
 	useEffect(() => {
 		flags.is_first_time = false
@@ -19,7 +19,7 @@ const EndTestIESlide = () => {
 			<main>
 				<section className='testIEPage__end'>
 					<h1>
-						¡Felicidades!
+						¡Felicidades {userData.nombre}!
 						<br />
 						Ya terminaste tu Test.
 					</h1>
