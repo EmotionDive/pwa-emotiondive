@@ -145,7 +145,7 @@ const CreateWeekPlanPage = () => {
 					setTimeout(() => {
 						operateModal(
 							'¡Excelente, tu plan comienza ahora!',
-							`Tienes hasta el ${weekPlanEnd} para terminar tus actividades. ¡Mucho éxito trabajando tu Inteligencia Emocional!`,
+							`Tienes hasta el ${weekPlanEnd} a las 23:59 para terminar tus actividades. ¡Mucho éxito trabajando tu Inteligencia Emocional!`,
 							'confirm',
 							['¡Empecemos ya!'],
 							() => {
