@@ -63,7 +63,7 @@ const UseStrategiesOnYouActivity = () => {
 							title={'¡Terminaste de usar la estrategia!'}
 							info={repetition !== 4 ? data.finalPartial : data.finalComplete}
 							variant='confirmation'
-							buttonLabels={['Okey']}
+							buttonLabels={['Siguiente']}
 							exitOnClickOut={false}
 							onConfirmationCallback={completeActivity}
 							disabled={situation.length === 0 || strategie.length === 0}

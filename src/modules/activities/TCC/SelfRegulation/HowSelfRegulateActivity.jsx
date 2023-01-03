@@ -164,7 +164,7 @@ const HowSelfRegulateActivity = () => {
 								title='¡Actividad Completada!'
 								info={data.final}
 								variant='confirmation'
-								buttonLabels={['Okey']}
+								buttonLabels={['Siguiente']}
 								exitOnClickOut={false}
 								onConfirmationCallback={completeActivity}
 							>

@@ -25,12 +25,12 @@ const SuccessesAndFailuresActivity = () => {
 					<div className='questions'>
 						<p className='systemText__instruction'>
 							Instrucciones: De la actividad anterior, recuerda cual fue tu
-							éxito y fracaso descrito posteriormente, realiza las siguientes
+							éxito y fracaso descrito, posteriormente realiza las siguientes
 							preguntas:{' '}
 						</p>
 						<div className='formContainer'>
 							<TextArea
-								label='Imagina que tu situación de exito resulto en un fracaso, ¿Cómo lo afrontarías?'
+								label='Imagina que tu situación de éxito resulto en un fracaso, ¿Cómo lo afrontarías?'
 								placeholder='Redacta aquí el último éxito que recuerdes...'
 								rows={4}
 								value={text1}

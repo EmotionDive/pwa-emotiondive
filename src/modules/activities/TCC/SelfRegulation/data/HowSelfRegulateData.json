@@ -38,10 +38,10 @@
 				"Analizas que fue un accidente el que ocasionaste y que a todos les puede pasar. Pides disculpas serenamente,si es el caso, le ofreces algo de dinero para la lavandería y sigues tu día."
 			],
 			"correct": 3,
-			"explication": "Estas situaciones pueden resultarte bastante incómodas, sin embargo, dejarse llevar por lo que sentimos puede ocasionar que nos comportemos de una forma o muy sumisa o muy desinteresada. Por otro lado, si no dejamos pasar este momento de incomodidad repensandolo aún mucho después del incidente hace que nuestro estado de ánimo decaiga bastante y afecte todas nuestras actividades. Más adelante descubrirás porqué es mejor tomar un repiro en el momento y repensar lo que sentimos para afrontarlo."
+			"explication": "Estas situaciones pueden resultarte bastante incómodas, sin embargo, dejarse llevar por lo que sentimos puede ocasionar que nos comportemos de una forma o muy sumisa o muy desinteresada. Por otro lado, si no dejamos pasar este momento de incomodidad pensandolo aún mucho después del incidente hace que nuestro estado de ánimo decaiga bastante y afecte todas nuestras actividades. Más adelante descubrirás porqué es mejor tomar un respiro en el momento y volver a pensar lo que sentimos para afrontarlo."
 		},
 		{
-			"situation": "Tienes un amigo a el que le confiaste un secreto tuyo. Sin embargo, días después te das cuenta que tu amigo le contó tu secreto a otras personas.",
+			"situation": "Tienes un amigo al que le confiaste un secreto tuyo. Sin embargo, días después te das cuenta que tu amigo le contó tu secreto a otras personas.",
 			"answers": [
 				"Sientes que es necesario vengarte de alguna forma para que la otra persona sienta lo mismo que tú por lo que buscas algún secreto que te haya contado él y lo esparces a otras personas.",
 				"Te haces consciente que este hecho te hace mucho enojar y evaluas con serenidad todo lo que sientes para que, en lugar de arremeter con agresividad, solo confrontes a la persona haciendole saber que estas molesto con él por su acción y hay límites que vas a marcar.",
@@ -49,7 +49,7 @@
 				"Te dejas llevar por la rabia de que tu amigo haya esparcido tu secreto de modo que lo buscas y lo agredes para que no se vuelva a meter contigo."
 			],
 			"correct": 1,
-			"explication": "Siempre se tiene la opción de cómo responder y, ante una emoción como la ira es necesario no dejarla salir de control debido a que puede traernos graves consecuencias. Más adelante verás el cómo empezar a apaciguar esta emoción."
+			"explication": "Siempre se tiene la opción de cómo responder y, ante una emoción como la ira es necesario no dejarla salir de control debido a que puede traernos graves consecuencias. Más adelante verás el cómo empezar a calmar esta emoción."
 		},
 		{
 			"situation": "Vas iniciando tu día pero no dejas de pensar en lo emocionado que estas ya que el día siguiente te vas a ir de vacaciones junto a tu pareja por primera vez.",
@@ -60,7 +60,7 @@
 				"Empiezas a mandarle mensajes a tu pareja todo el día para que te vaya confirmando si ya esta preparada para el viaje y que te cuente más sobre lo que piensa con respecto a él."
 			],
 			"correct": 2,
-			"explication": "La felicidad descontrolada puede generar que nos desconcentremos de nuestras responsabilidades o la de los demás, es por ello que tratar de apaciguarla de una manera es lo ideal para seguir con nuestras actividades."
+			"explication": "La felicidad descontrolada puede generar que nos desconcentremos de nuestras responsabilidades o la de los demás, es por ello que tratar de calmar la emoción, es lo ideal para seguir con nuestras actividades."
 		},
 		{
 			"situation": "Vas a inicios de camino rumbo a tu escuela usando el transporte público. Sin embargo, ves que hay mucho tráfico y según el mapa de tu celular vas en la ruta más rápida. Te empiezas a frustar e irritar porque sabes que llegarás tarde.",
@@ -71,7 +71,7 @@
 				"Sientes que necesitas hacer algo y, a pesar de que sabes que sigues muy lejos de tu escuela, sales del transporte público e intentas correr para ver si de casualidad llegas."
 			],
 			"correct": 0,
-			"explication": "No poder atender a tiempo un compromiso en el trayecto puede ser muy frustante y si no apacigüamos esta emoción podemos generar muchos problemas a nosotros mismos debido a nuestras decisiones reactivas y un tanto radicales. Más adelante aprenderás porqué este es el mejor modo de actuar."
+			"explication": "No poder atender a tiempo un compromiso en el trayecto puede ser muy frustante, si no calmamos esta emoción podemos generar muchos problemas a nosotros mismos debido a nuestras decisiones reactivas y un tanto radicales. Más adelante aprenderás porqué este no es el mejor modo de actuar."
 		}
 	],
 	"final": "Este es el inicio del camino para poder autoregularte. En las siguientes actividades se te explicarán formas en las que puedes autoregularte y el cómo identificarlas y aplicarlas."

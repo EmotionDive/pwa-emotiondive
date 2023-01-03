@@ -13,6 +13,7 @@ import useActivityUtils from '../../hooks/useActivityUtils'
 import { Navigate } from 'react-router-dom'
 
 const EmpathicComments = () => {
+
 	const { accessFromMenu, completeActivity } = useActivityUtils()
 
 	const [currentPost, setCurrentPost] = useState(0)
@@ -78,7 +79,7 @@ const EmpathicComments = () => {
 						<div className='posts__label'>
 							<TextArea
 								label={
-									'¿Cómo reescribirias el comentario anterior de forma que fuera empatica?'
+							    '¿Cómo escribirías el comentario anterior de forma empática?'
 								}
 								placeholder='Redacta un comentario empatico...'
 								rows={4}
@@ -91,7 +92,7 @@ const EmpathicComments = () => {
 							<div className='posts__bottom'>
 								<strong>
 									<p className='posts__label'>
-										Ahora te presentamos un comentario empatico para puedas
+										Ahora te presentamos un comentario empático para puedas
 										compararlo con el tuyo:
 									</p>
 								</strong>
@@ -132,7 +133,7 @@ const EmpathicComments = () => {
 							<LargeButtonModal
 								title={'¡Terminaste de Aprender!'}
 								info={
-									'Terminaste de reescribir los comentarios de las redes sociales, esperamos que esto te haya ayudado a tener un comportamiento más empático en linea!'
+									'Terminaste de escribir los comentarios de las redes sociales, esperamos que esto haya ayudado a tener un comportamiento más empático en internet!'
 								}
 								variant='confirmation'
 								buttonLabels={['Okey']}
