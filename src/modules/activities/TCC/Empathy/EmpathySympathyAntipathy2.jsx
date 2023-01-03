@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { Navigate } from 'react-router-dom'
 import {
 	LargeButton,
 	OptionButton,
@@ -10,11 +11,14 @@ import {
 	ModalProvider,
 	LargeButtonModal,
 } from '../../../../components/Modal'
+import useActivityUtils from '../../hooks/useActivityUtils'
 import data from './data/EmpathySympathyAntipathy2Data.json'
 
 const opts = ['A', 'B', 'C']
 
 const EmpathySympathyAntipathy2 = () => {
+	const { accessFromMenu, completeActivity } = useActivityUtils()
+
 	const [currentSet] = useState(
 		Math.floor(Math.random() * (data.sets.length - 0))
 	)
@@ -26,8 +30,8 @@ const EmpathySympathyAntipathy2 = () => {
 
 	useEffect(() => {
 		if (correctAnswer === null)
-			scrollTop.current.scrollIntoView({ behavior: 'smooth' })
-		else scrollBottom.current.scrollIntoView({ behavior: 'smooth' })
+			scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
+		else scrollBottom.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [correctAnswer])
 
 	const handleGrade = () => {
@@ -41,6 +45,8 @@ const EmpathySympathyAntipathy2 = () => {
 		setCorrectAnswer(null)
 		setCurrentScenario((prev) => prev + 1)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='EmpathyActivity'>
@@ -136,9 +142,7 @@ const EmpathySympathyAntipathy2 = () => {
 									variant='confirmation'
 									buttonLabels={['Okey']}
 									exitOnClickOut={false}
-									onConfirmationCallback={() => {
-										console.log('Finish')
-									}}
+									onConfirmationCallback={completeActivity}
 								>
 									Terminar
 								</LargeButtonModal>

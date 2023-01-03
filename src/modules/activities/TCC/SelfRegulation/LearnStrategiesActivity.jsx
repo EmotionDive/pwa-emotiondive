@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import {
 	LargeButton,
 	OptionButton,
@@ -10,14 +11,17 @@ import {
 	ModalProvider,
 	LargeButtonModal,
 } from '../../../../components/Modal'
+import useActivityUtils from '../../hooks/useActivityUtils'
 import data from './data/LearnStrategiesData.json'
 
 const letters = ['A', 'B', 'C', 'D']
 
-// TODO: CALLBACK TO SEND API COMPLETATION (PARTIAL AND FULL) | REDIRECT | ANALIZE IF IS FIRST OR SECOND TIME
-
 const LearnStrategiesActivity = () => {
-	const [strategie, setStrategie] = useState('re-evaluation') //distraction || re-evaluation
+	const { accessFromMenu, numberOfRealization, completeActivity } =
+		useActivityUtils()
+	const [strategie] = useState(
+		numberOfRealization === 0 ? 'distraction' : 're-evaluation'
+	)
 	const [questionIndex, setQuestionIndex] = useState(0)
 	const [currentAnswer, setCurrentAnswer] = useState(null)
 	const [explication, setExplication] = useState(null)
@@ -27,8 +31,8 @@ const LearnStrategiesActivity = () => {
 
 	useEffect(() => {
 		if (correctAnswer === null)
-			scrollTop.current.scrollIntoView({ behavior: 'smooth' })
-		else scrollBottom.current.scrollIntoView({ behavior: 'smooth' })
+			scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
+		else scrollBottom.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [correctAnswer])
 
 	const handleGrade = () => {
@@ -42,6 +46,8 @@ const LearnStrategiesActivity = () => {
 		setExplication(null)
 		setCorrectAnswer(null)
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfRegulationActivity'>
@@ -127,9 +133,7 @@ const LearnStrategiesActivity = () => {
 									variant='confirmation'
 									buttonLabels={['Siguiente']}
 									exitOnClickOut={false}
-									onConfirmationCallback={() => {
-										console.log('Finish')
-									}}
+									onConfirmationCallback={completeActivity}
 								>
 									Terminar
 								</LargeButtonModal>

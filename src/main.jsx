@@ -5,7 +5,7 @@ import './styles/main.scss'
 import { BrowserRouter } from 'react-router-dom'
 import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { UserProvider } from './data'
+import { ActivitiesProvider, UserProvider } from './data'
 
 const queryClient = new QueryClient()
 
@@ -14,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		<QueryClientProvider client={queryClient}>
 			<Auth0ProviderWithHistory>
 				<UserProvider>
-					<App />
+					<ActivitiesProvider>
+						<App />
+					</ActivitiesProvider>
 				</UserProvider>
 			</Auth0ProviderWithHistory>
 		</QueryClientProvider>

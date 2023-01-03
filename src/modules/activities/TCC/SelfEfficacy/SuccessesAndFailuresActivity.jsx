@@ -11,13 +11,17 @@ import { LargeButton } from '../../../../components/Buttons'
 import TextFormatter from '../../../../utils/TextFormatter/TextFormatter'
 import img1 from '../../../../assets/images/pictures/SelfEfficacyAct4-2.png'
 import img2 from '../../../../assets/images/pictures/SelfEfficacyAct4-1.png'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const imgs = [img1, img2]
 
-// TODO: Add redirections and API Integration
-
 const SuccessesAndFailuresActivity = () => {
-	const [repetition] = useState(1)
+	const {
+		accessFromMenu,
+		numberOfRealization: repetition,
+		completeActivity,
+	} = useActivityUtils()
 	const [scriptIndex, setScriptIndex] = useState(0)
 	const [typeAct, setTypeAct] = useState('éxito')
 	const [redaction, setRedaction] = useState('')
@@ -27,15 +31,17 @@ const SuccessesAndFailuresActivity = () => {
 
 	useEffect(() => {
 		if (typeAct === 'fracaso')
-			topRef.current.scrollIntoView({ behavior: 'smooth' })
+			topRef.current?.scrollIntoView({ behavior: 'smooth' })
 	}, [typeAct])
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfEfficacyActivity' ref={topRef}>
 			<ModalProvider>
 				<ActivitiesLocalizationBar title={data.title} variant='SelfEfficacy' />
 				<main className='successesAndFailuresActivity'>
-					{repetition === 1 && scriptIndex <= 1 ? (
+					{scriptIndex <= 1 ? (
 						<div className='introduction'>
 							<div className='textWithImage'>
 								<img src={imgs[scriptIndex]} alt='' />
@@ -103,14 +109,12 @@ const SuccessesAndFailuresActivity = () => {
 									<LargeButtonModal
 										title={'¡Terminaste de usar la estrategia!'}
 										info={
-											repetition !== 3 ? data.finalPartial : data.finalComplete
+											repetition !== 2 ? data.finalPartial : data.finalComplete
 										}
 										variant='confirmation'
 										buttonLabels={['Okey']}
 										exitOnClickOut={false}
-										onConfirmationCallback={() => {
-											console.log('Finish')
-										}}
+										onConfirmationCallback={completeActivity}
 										disabled={!redaction || !onHands || !outReach}
 									>
 										Terminar

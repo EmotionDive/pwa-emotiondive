@@ -7,13 +7,17 @@ import {
 } from '../../../../components/Modal'
 import { Select, TextArea } from '../../../../components/Forms'
 import data from './data/UseStrategiesOnYouData.json'
-
-// TODO: CALLBACK TO SEND API COMPLETATION (PARTIAL AND FULL) | REDIRECT | ANALIZE REPETITION
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const UseStrategiesOnYouActivity = () => {
+	const { accessFromMenu, numberOfRealization, completeActivity } =
+		useActivityUtils()
 	const [situation, setSituation] = useState('')
 	const [strategie, setStrategie] = useState('')
-	const [repetition, setRepetition] = useState(0)
+	const [repetition] = useState(numberOfRealization)
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfRegulationActivity'>
@@ -61,9 +65,7 @@ const UseStrategiesOnYouActivity = () => {
 							variant='confirmation'
 							buttonLabels={['Siguiente']}
 							exitOnClickOut={false}
-							onConfirmationCallback={() => {
-								console.log('Finish')
-							}}
+							onConfirmationCallback={completeActivity}
 							disabled={situation.length === 0 || strategie.length === 0}
 						>
 							Terminar

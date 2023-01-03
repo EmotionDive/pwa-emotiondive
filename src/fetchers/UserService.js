@@ -16,6 +16,13 @@ export default class UserService {
 		})
 	}
 
+	static getUserData(email) {
+		return clientRequest({
+			method: 'get',
+			url: `/get_user/${email}`,
+		})
+	}
+
 	static verifyUsernameAvailability(username) {
 		return clientRequest({
 			method: 'get',
@@ -23,14 +30,20 @@ export default class UserService {
 		})
 	}
 
-	static sendEmail(username) {
+	static sendEmail(email) {
 		return clientRequest({
 			method: 'get',
-			url: `/verification/verify_mail/${username}`,
+			url: `/verification/send_verify_mail/${email}`,
 		})
 	}
 
-	static verifyEmail(username) {
-		return clientRequest()
+	static verifyEmail(code) {
+		return clientRequest({
+			method: 'post',
+			url: '/verification/verify_token',
+			data: {
+				code,
+			},
+		})
 	}
 }

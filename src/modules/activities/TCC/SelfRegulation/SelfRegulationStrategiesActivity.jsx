@@ -14,16 +14,20 @@ import {
 	ModalAction,
 	useModalAction,
 } from '../../../../components/Modal'
+import { Navigate } from 'react-router-dom'
+import useActivityUtils from '../../hooks/useActivityUtils'
 
 const imgs = [img1, img2, img3, img4, img5]
-
-// TODO: CALLBACK TO SEND API COMPLETATION AND REDIRECT
 
 const SelfRegulationStrategiesActivity = () => {
 	const [scriptIndex, setScriptIndex] = useState(0)
 	const [watchSlide, setWatchSlide] = useState(-1)
 	const [finishDistraction, setFinishDistraction] = useState(false)
 	const [finishReevaluation, setFinishReevaluation] = useState(false)
+
+	const { accessFromMenu } = useActivityUtils()
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='SelfRegulationActivity'>
@@ -101,6 +105,7 @@ const MainStrategiesMenu = ({
 	callbackReevaluation,
 }) => {
 	const { operateModal } = useModalAction()
+	const { completeActivity } = useActivityUtils()
 
 	return (
 		<div className='strategiesContainer'>
@@ -129,7 +134,7 @@ const MainStrategiesMenu = ({
 						data.final,
 						'confirm',
 						['Terminar'],
-						() => {},
+						completeActivity,
 						false
 					)
 				}}

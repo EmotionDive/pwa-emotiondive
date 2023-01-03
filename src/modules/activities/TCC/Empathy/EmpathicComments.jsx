@@ -9,8 +9,13 @@ import {
 import { TextArea } from '../../../../components/Forms'
 import data from './data/EmpathicCommentsData.json'
 import SocialMediaPost from './components/SocialMediaPost'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const EmpathicComments = () => {
+
+	const { accessFromMenu, completeActivity } = useActivityUtils()
+
 	const [currentPost, setCurrentPost] = useState(0)
 	const [answer, setAnswer] = useState('')
 	const [evaluation, setEvaluation] = useState(false)
@@ -24,6 +29,8 @@ const EmpathicComments = () => {
 		setEvaluation(false)
 		setAnswer('')
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
 
 	return (
 		<div className='EmpathyActivity'>
@@ -72,12 +79,13 @@ const EmpathicComments = () => {
 						<div className='posts__label'>
 							<TextArea
 								label={
-									'¿Cómo escribirías el comentario anterior de forma empática?'
+							    '¿Cómo escribirías el comentario anterior de forma empática?'
 								}
-								placeholder='Redacta un comentario empático...'
+								placeholder='Redacta un comentario empatico...'
 								rows={4}
 								value={answer}
 								onChange={(e) => setAnswer(e.target.value)}
+								disabled={evaluation}
 							/>
 						</div>
 						{!evaluation ? null : (
@@ -128,11 +136,9 @@ const EmpathicComments = () => {
 									'Terminaste de escribir los comentarios de las redes sociales, esperamos que esto haya ayudado a tener un comportamiento más empático en internet!'
 								}
 								variant='confirmation'
-								buttonLabels={['Siguiente']}
+								buttonLabels={['Okey']}
 								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
+								onConfirmationCallback={completeActivity}
 							>
 								Terminar
 							</LargeButtonModal>

@@ -2,9 +2,17 @@ import logo from '@assets/images/logos/LogoHorizontal.png'
 import image from '@assets/images/pictures/Test-Image.png'
 import { LargeButton } from '../../../components/Buttons'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import useUser from '../../../data/hooks/useUser'
 
 const EndTestIESlide = () => {
 	const navigate = useNavigate()
+	const { flags, updateFlags } = useUser()
+
+	useEffect(() => {
+		flags.is_first_time = false
+		updateFlags(flags)
+	}, [])
 
 	return (
 		<div className='testIEPage mainWrapper'>

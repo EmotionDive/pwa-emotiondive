@@ -10,10 +10,13 @@ import empathyImg from '../../../../assets/images/pictures/Empathy-EmpathyLogo.p
 import sympathyImg from '../../../../assets/images/pictures/Empathy-SympathyLogo.png'
 import antipathyImg from '../../../../assets/images/pictures/Empathy-AntipathyLogo.png'
 import data from './data/EmpathySympathyAntipathyData.json'
+import useActivityUtils from '../../hooks/useActivityUtils'
+import { Navigate } from 'react-router-dom'
 
 const conceptImg = [empathyImg, sympathyImg, antipathyImg]
 
 const EmpathySympathyAntipathy = () => {
+	const { accessFromMenu, completeActivity } = useActivityUtils()
 	const [currentSlide, setCurrentSlide] = useState(1)
 	const [seenConcepts, setSeenConcepts] = useState([1])
 
@@ -45,6 +48,8 @@ const EmpathySympathyAntipathy = () => {
 		}
 	}
 
+	if (!accessFromMenu) return <Navigate to='/' replace />
+  
 	return (
 		<div className='EmpathyActivity'>
 			<ModalProvider>
@@ -88,14 +93,12 @@ const EmpathySympathyAntipathy = () => {
 							<LargeButtonModal
 								title={'¡Terminaste de Aprender!'}
 								info={
-									'Esperamos haber sido claros con los conceptos y diferencias de empatía, simpatía y antipatía, sigue así =).'
+									'Esperamos que te hayan quedado un poco más claro los conceptos y diferencias de empatía, simpatía y antipatía =).'
 								}
 								variant='confirmation'
-								buttonLabels={['continuar']}
+								buttonLabels={['Okey']}
 								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
+								onConfirmationCallback={completeActivity}
 							>
 								Terminar
 							</LargeButtonModal>

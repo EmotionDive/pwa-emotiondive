@@ -3,6 +3,8 @@ import { LargeButton } from '../../components/Buttons'
 import { TransparentLocalizationBar } from '../../components/LocalizationBar'
 import image from '@assets/images/pictures/Activated-Image.png'
 import { useEffect, useState } from 'react'
+import UserService from '../../fetchers/UserService'
+import useUser from '../../data/hooks/useUser'
 const ActivatedAccountPage = () => {
 	const navigate = useNavigate()
 	const [searchParams] = useSearchParams()
@@ -14,13 +16,16 @@ const ActivatedAccountPage = () => {
 		if (!code) {
 			navigate('/')
 		} else {
-			console.log(code)
-			//TODO: ENDPOINT VERIFY MAIL
-			setShowInterface(true)
+			UserService.verifyEmail(code)
+				.then((data) => {
+					if (data.status === 'success') setShowInterface(true)
+					else navigate('/')
+				})
+				.catch((error) => console.error(error))
 		}
 	}, [navigate, searchParams])
 
-	if (!showInterface) return null
+	if (!showInterface) return <span>Activating...</span>
 	else
 		return (
 			<div className='mainWrapper mainWrapper__fullHeight'>

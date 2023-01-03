@@ -5,14 +5,15 @@ import {
 	ModalAction,
 	ModalProvider,
 } from '../../../../components/Modal'
-import { Select, TextArea } from '../../../../components/Forms'
-import { Slide, SlideSwitch } from '../../../../utils/Slides'
+import { TextArea } from '../../../../components/Forms'
+import useActivityUtils from '../../hooks/useActivityUtils'
 import { useState } from 'react'
-import { element } from 'prop-types'
+import { Navigate } from 'react-router-dom'
 
 const WhatDoilLikeActivity = () => {
-	const [buttonActive, setButtonActive] = useState(false)
-	const [cualidades, setCualidades] = useState([
+	const { accessFromMenu, completeActivity } = useActivityUtils()
+
+	const [cualidades] = useState([
 		{
 			cualidad: 'Físico',
 			descripción:
@@ -29,7 +30,7 @@ const WhatDoilLikeActivity = () => {
 				'Reconozco mis emociones, además de reconocer las del resto de personas',
 		},
 	])
-	const [oportunidades, setOportunidad] = useState([
+	const [oportunidades] = useState([
 		{
 			oportunidad: 'Físico',
 			descripción:
@@ -48,6 +49,8 @@ const WhatDoilLikeActivity = () => {
 	])
 
 	const [checkBoxSelected, setcheckBoxSelected] = useState([])
+	const [text1, setText1] = useState('')
+
 	const handlerChangeCheckBox = (e) => {
 		console.log(e.target.value)
 		var extraState = null
@@ -59,21 +62,18 @@ const WhatDoilLikeActivity = () => {
 			extraState = checkBoxSelected.concat(e.target.value)
 		}
 		setcheckBoxSelected(extraState)
-
-		if (extraState.length > 0) {
-			setButtonActive(true)
-		} else {
-			setButtonActive(false)
-		}
 	}
+
+	if (!accessFromMenu) return <Navigate to='/' replace />
+
 	return (
-		<div className='WhatDoiLikeActivity'>
+		<div className='SelfEfficacyActivity '>
 			<ModalProvider>
 				<ActivitiesLocalizationBar
 					title='¿Qué me gusta?'
 					variant='SelfKnowledge'
 				/>
-				<main className='WhatDoiLikeActivity'>
+				<main className='successesAndFailuresActivity'>
 					<div className='questions'>
 						<p className='systemText__instruction'>
 							Deberás realizar la selección de las cosas que te agradan de tí,
@@ -99,8 +99,8 @@ const WhatDoilLikeActivity = () => {
 									</tr>
 								</thead>
 								<tbody>
-									{cualidades.map((cualidad) => (
-										<tr>
+									{cualidades.map((cualidad, key) => (
+										<tr key={key}>
 											<td>
 												<input
 													type='checkbox'
@@ -114,9 +114,6 @@ const WhatDoilLikeActivity = () => {
 									))}
 								</tbody>
 							</table>
-							<button className='btn btn-primary' disabled={!buttonActive}>
-								Seleccionar
-							</button>
 							<p>
 								Ahora que has seleccionado los atríbutos que consideras poseer,
 								deberás describir aquellos que consideras que no son un
@@ -132,8 +129,8 @@ const WhatDoilLikeActivity = () => {
 									</tr>
 								</thead>
 								<tbody>
-									{oportunidades.map((oportunidad) => (
-										<tr>
+									{oportunidades.map((oportunidad, key) => (
+										<tr key={key}>
 											<td>
 												<input
 													type='checkbox'
@@ -147,23 +144,21 @@ const WhatDoilLikeActivity = () => {
 									))}
 								</tbody>
 							</table>
-							<button className='btn btn-primary' disabled={!buttonActive}>
-								Seleccionar
-							</button>
-
 							<TextArea
 								label='Redacta la estrategia que usarias para tomar acción en tus areas de oportunidad.'
 								placeholder='Redacta aquí tu respuesta...'
 								rows={4}
+								value={text1}
+								onChange={(e) => setText1(e.target.value)}
 							/>
 							<LargeButtonModal
 								title={'¡Excelente, concluiste la actividad!'}
+								info='Reconocer cuales son tus mejores atributos y cuales son tus áreas de mejora te ayudan a hacerte consciente de tu estado actual y el cómo manejas todo tipo de situaciones. Realizar esta práctica de autoconocimiento de forma regular nos permite identificar cambios en nosotros y apoyarnos en todo momento.'
 								variant='confirmation'
 								buttonLabels={['Okey']}
 								exitOnClickOut={false}
-								onConfirmationCallback={() => {
-									console.log('Finish')
-								}}
+								onConfirmationCallback={completeActivity}
+								disabled={text1.length < 30}
 							>
 								Terminar
 							</LargeButtonModal>

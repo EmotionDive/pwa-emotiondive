@@ -4,10 +4,11 @@ import { useEffect } from 'react'
 import UserService from '../../../fetchers/UserService'
 import { useSlides } from '../../../utils/Slides'
 import useUser from '../../../data/hooks/useUser'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const NoticeEmailSlide = () => {
+	const { user } = useAuth0()
 	const { logout, flags, updateFlags } = useUser()
-	const { state } = useSlides()
 
 	useEffect(() => {
 		window.addEventListener('beforeunload', logout)
@@ -18,7 +19,7 @@ const NoticeEmailSlide = () => {
 	}, [])
 
 	useEffect(() => {
-		UserService.sendEmail(state.username)
+		UserService.sendEmail(user.email)
 			.then((response) => {
 				if (response.status !== 'success')
 					console.error(
@@ -48,12 +49,13 @@ const NoticeEmailSlide = () => {
 							Activa tu cuenta con el correo que te hemos enviado.
 						</span>
 						<LargeButton
-							onClick={() =>
+							onClick={() => {
 								window.open(
 									'https://mail.google.com/mail/u/0/#search/EmotionDive',
 									'_blank'
 								)
-							}
+								logout()
+							}}
 						>
 							Abrir Correo
 						</LargeButton>

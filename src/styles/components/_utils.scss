@@ -1,0 +1,31 @@
+.faderDiv {
+	animation: fadeIn 0.6s ease-in-out;
+
+	&.invisible {
+		display: none !important;
+	}
+
+	&.fade-out {
+		animation: fadeOut 0.6s forwards ease-in-out;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		translate: 0 50px;
+	}
+	100% {
+		opacity: 1;
+		translate: 0;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

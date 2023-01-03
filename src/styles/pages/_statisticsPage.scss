@@ -6,8 +6,10 @@
 		margin: 0 auto 30px auto;
 	}
 	div {
-		p:not(p:last-child) {
+		p {
 			@include justifyText;
+		}
+		p:not(p:last-child) {
 			margin-bottom: 10px;
 		}
 	}

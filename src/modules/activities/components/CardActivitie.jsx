@@ -8,10 +8,15 @@ const CardActivitie = ({
 	variant = 'SelfKnowledge',
 	optional = false,
 	onClick,
+	choosed,
+	disabled,
+	done,
 }) => {
 	return (
 		<div
-			className={`activitieCard ${variant}`}
+			className={`activitieCard ${variant} ${choosed ? 'choosed' : ''} ${
+				disabled ? 'disabled' : ''
+			} ${done ? 'done' : ''}`}
 			tabIndex='0'
 			role='button'
 			onClick={onClick}
@@ -20,7 +25,7 @@ const CardActivitie = ({
 			}}
 		>
 			<div className='activitieCard__title'>
-				<span>{number}</span>
+				<span>{done ? '✔' : number}</span>
 				{title}
 			</div>
 			<div className='justifyText'>
@@ -43,10 +48,16 @@ CardActivitie.propTypes = {
 		'Empathy',
 	]),
 	onClick: PropTypes.func,
+	choosed: PropTypes.bool,
+	disabled: PropTypes.bool,
+	done: PropTypes.bool,
 }
 
 CardActivitie.defaultProps = {
 	onClick: () => {},
+	choosed: false,
+	disabled: false,
+	done: false,
 }
 
 export default CardActivitie
