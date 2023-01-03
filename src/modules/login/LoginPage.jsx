@@ -32,9 +32,6 @@ const LoginPage = () => {
 							loginWithRedirect({
 								ui_locales: 'es',
 								screen_hint: 'signup',
-								appState: {
-									returnTo: '/registro',
-								},
 							})
 						}
 					>
