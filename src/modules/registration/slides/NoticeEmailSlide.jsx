@@ -55,7 +55,6 @@ const NoticeEmailSlide = () => {
 									'_blank'
 								)
 								logout()
-								window.close()
 							}}
 						>
 							Abrir Correo
