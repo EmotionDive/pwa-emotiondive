@@ -120,3 +120,4 @@ In the ``App.jsx`` file there will be the routes of all the aplication and you n
 In some cases there are already some pages that uses the API and Auth0, so you need to run the API first in order to prevent issues on the development.
 
 Also, you need to have an ``.env.development`` file with the same secrets as in ``.env.example``.
+
