@@ -29,8 +29,8 @@ export default defineConfig({
 				short_name: 'EmotionDive',
 				description:
 					'El lugar perfecto para prácticar y desarrollar tu Inteligencia Emocional.',
-				start_url: 'emotiondive.com',
-				display: 'standalone',
+				start_url: '/',
+				display: 'minimal-ui',
 				theme_color: '#f8f8f8',
 				background_color: '#f8f8f8',
 				icons: [
